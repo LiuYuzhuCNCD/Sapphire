@@ -97,7 +97,7 @@ struct PlaneEditorView: View {
                 .background(Color.black.opacity(0.15))
                 .clipShape(RoundedRectangle(cornerRadius: 12))
             } else {
-                Text("Select a valid layout to assign apps.")
+                Text("请先选一个可用布局再指派应用。")
                     .foregroundColor(.secondary)
                     .frame(maxHeight: .infinity)
             }

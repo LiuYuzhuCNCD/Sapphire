@@ -80,7 +80,7 @@ struct DevActivitySettingsView: View {
             Divider().padding(.leading, 20)
 
             ToggleRow(
-                title: "Prioritize Over Other Activities",
+                title: "优先于其他活动",
                 description: "Rank running work alongside notifications instead of with the ambient readouts, so it shows even while music is playing.",
                 isOn: $settings.settings.devActivityHighPriority
             )

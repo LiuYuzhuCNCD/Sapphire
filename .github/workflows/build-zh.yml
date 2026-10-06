@@ -3,7 +3,7 @@ name: build-zh
 on:
   workflow_dispatch:
   push:
-    branches: [ main, zh-cn ]
+    branches: [ main ]
 
 jobs:
   build:

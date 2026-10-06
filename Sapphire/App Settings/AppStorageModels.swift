@@ -1164,7 +1164,7 @@ private enum StorageScanner {
             await progress(StorageScanProgress(
                 state: .hashingDuplicates,
                 fraction: 0.99,
-                label: "Duplicate verification complete"
+                label: "重复核验完成"
             ))
         }
 
@@ -3220,7 +3220,7 @@ private struct StoragePresentedScan {
         updateScanPresentation(
             state: .loadingCache,
             progress: 0,
-            label: "Looking for a recent storage index…"
+            label: "正在查找最近的存储索引…"
         )
 
         let key = StorageCacheKey(url: target, deepScan: deepScanEnabled)
@@ -3266,7 +3266,7 @@ private struct StoragePresentedScan {
                   let free = values.volumeAvailableCapacity,
                   capacity > 0 else {
                 resetCapacityState(
-                    message: "Storage capacity is unavailable for this location.",
+                    message: "此位置无法获取存储容量。",
                     volumeURL: values.volume ?? currentURL
                 )
                 return
@@ -3585,7 +3585,7 @@ private struct StoragePresentedScan {
             let size = cacheEntries.reduce(Int64(0)) { saturatingAdd($0, $1.size) }
             recommendations.append(CleanupRecommendation(
                 category: .caches,
-                description: "System and app caches can safely be removed",
+                description: "系统与应用缓存可安全删除",
                 potentialSpaceFreed: size,
                 actionDescription: "Clear \(cacheEntries.count) cache files",
                 isAutomatic: true,
@@ -3610,7 +3610,7 @@ private struct StoragePresentedScan {
             let size = largeFiles.reduce(Int64(0)) { saturatingAdd($0, $1.size) }
             recommendations.append(CleanupRecommendation(
                 category: .largeFiles,
-                description: "Large files that could be moved or compressed",
+                description: "可搬移或压缩的大文件",
                 potentialSpaceFreed: size,
                 actionDescription: "Review \(largeFiles.count) large files",
                 isAutomatic: false,
@@ -3623,7 +3623,7 @@ private struct StoragePresentedScan {
             let size = oldFiles.reduce(Int64(0)) { saturatingAdd($0, $1.size) }
             recommendations.append(CleanupRecommendation(
                 category: .oldFiles,
-                description: "Older files that may no longer be needed",
+                description: "可能已不再需要的旧文件",
                 potentialSpaceFreed: size,
                 actionDescription: "Review \(oldFiles.count) older file\(oldFiles.count == 1 ? "" : "s")",
                 isAutomatic: false,
@@ -3635,7 +3635,7 @@ private struct StoragePresentedScan {
             let size = downloads.reduce(Int64(0)) { saturatingAdd($0, $1.size) }
             recommendations.append(CleanupRecommendation(
                 category: .downloads,
-                description: "Downloaded files worth reviewing before removal",
+                description: "删除前值得一看的下载文件",
                 potentialSpaceFreed: size,
                 actionDescription: "Review \(downloads.count) download\(downloads.count == 1 ? "" : "s")",
                 isAutomatic: false,

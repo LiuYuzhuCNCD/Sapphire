@@ -213,7 +213,7 @@ struct WidgetRowView: View {
                         .font(.system(size: 14, weight: .medium))
                         .foregroundStyle(.white)
                     if isAtCapacity {
-                        Text("Not enough notch space on this display.")
+                        Text("此显示器的刘海空间不足。")
                             .font(.caption2)
                             .foregroundStyle(.orange)
                     }
