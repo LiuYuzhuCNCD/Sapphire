@@ -164,7 +164,7 @@ struct OpenBubblesActivationView: View {
                 Image(systemName: "exclamationmark.triangle.fill").foregroundColor(.orange)
                 Text("Do not share this code publicly. It is permanently tied to your Mac's hardware identity.").font(.caption)
             }.padding(10).background(.orange.opacity(0.15)).clipShape(RoundedRectangle(cornerRadius: 8))
-            Text("Your Personal Code (Unlimited Use):").font(.caption)
+            Text("你的个人代码（不限次使用）：").font(.caption)
             if let code = defaultActivationCode {
                 HStack {
                     TextField("Activation Code", text: .constant(code)).textFieldStyle(.plain).disabled(true)

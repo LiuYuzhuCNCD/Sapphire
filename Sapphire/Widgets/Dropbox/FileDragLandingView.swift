@@ -314,7 +314,7 @@ private struct EmptyDropZoneView: View {
                 .font(.system(size: 25, weight: .light))
             Text("No destinations enabled")
                 .font(.system(.headline, design: .rounded).weight(.medium))
-            Text("Choose destinations in File Shelf settings")
+            Text("在文件架设置中选择投放目标")
                 .font(.system(size: 10, design: .rounded))
         }
         .foregroundStyle(.secondary)

@@ -308,10 +308,10 @@ class Helper: NSObject, HelperProtocol {
                     reply(error)
                 }
             } else {
-                reply(makeError(code: .smcWriteFailed, description: "No charge limit key found for this Mac."))
+                reply(makeError(code: .smcWriteFailed, description: "本机未找到充电上限键。"))
             }
         case .unsupported:
-            reply(makeError(code: .smcWriteFailed, description: "No charge control key found for this Mac."))
+            reply(makeError(code: .smcWriteFailed, description: "本机未找到充电控制键。"))
         }
     }
 
@@ -333,7 +333,7 @@ class Helper: NSObject, HelperProtocol {
 
     private func writeFirmwareActivation(_ active: Bool) -> Error? {
         guard let key = keyFirmwareChargeLimitActivation else {
-            return makeError(code: .smcWriteFailed, description: "Firmware charge-limit activation key not found.")
+            return makeError(code: .smcWriteFailed, description: "未找到固件充电上限激活键。")
         }
         let value: UInt8 = active ? 0x02 : 0x00
         for attempt in 1...3 {
@@ -368,7 +368,7 @@ class Helper: NSObject, HelperProtocol {
         guard keyFirmwareChargeLimitActivation != nil,
               let upperKey = keyFirmwareChargeLimitUpper,
               let lowerKey = keyFirmwareChargeLimitLower else {
-            return makeError(code: .smcWriteFailed, description: "Firmware charge-limit keys not found.")
+            return makeError(code: .smcWriteFailed, description: "未找到固件充电上限键。")
         }
 
         if upper >= 100 {
@@ -407,7 +407,7 @@ class Helper: NSObject, HelperProtocol {
                 return
             }
             logger.error("[SapphireHelper] ERROR: No charge control key found. Cannot execute enableCharging.")
-            reply(makeError(code: .smcWriteFailed, description: "No charge control key found for this Mac."))
+            reply(makeError(code: .smcWriteFailed, description: "本机未找到充电控制键。"))
             return
         }
 
@@ -497,7 +497,7 @@ class Helper: NSObject, HelperProtocol {
         }
 
         logger.error("[SapphireHelper] ERROR: No discharge control key found. Cannot execute setDischarge.")
-        return discharging ? makeError(code: .smcWriteFailed, description: "No discharge control key found.") : nil
+        return discharging ? makeError(code: .smcWriteFailed, description: "未找到放电控制键。") : nil
     }
 
     private func startDischargeWatchdog(safetyFloor: Int, rechargeOnFloor: Bool, bypassSafetyFloor: Bool) {
@@ -604,7 +604,7 @@ class Helper: NSObject, HelperProtocol {
             value = UInt8(color)
         }
         let result = smc?.writeData(ledKey, data: Data([value]))
-        reply(result == kIOReturnSuccess ? nil : makeError(code: .smcWriteFailed, description: "Failed to write MagSafe LED key."))
+        reply(result == kIOReturnSuccess ? nil : makeError(code: .smcWriteFailed, description: "写入 MagSafe 指示灯键失败。"))
     }
 
     func startCalibration(reply: @escaping (Error?) -> Void) {
@@ -1046,7 +1046,7 @@ class Helper: NSObject, HelperProtocol {
         logger.log("Step 1/2: Setting fan \(fanIndex) to FORCED mode.")
         let modeResult = smc.setFanMode(fanIndex, mode: .forced)
         if modeResult != kIOReturnSuccess {
-            logger.error("Failed to set fan mode to forced for fan \(fanIndex). Aborting. Error code: \(modeResult)"); reply(makeError(code: .smcWriteFailed, description: "Failed to set fan to manual mode.")); return
+            logger.error("Failed to set fan mode to forced for fan \(fanIndex). Aborting. Error code: \(modeResult)"); reply(makeError(code: .smcWriteFailed, description: "设置风扇为手动模式失败。")); return
         }
         logger.log("Step 2/2: Setting fan \(fanIndex) target speed to \(speed) RPM.")
         let speedResult = smc.setFanSpeed(fanIndex, speed: speed)

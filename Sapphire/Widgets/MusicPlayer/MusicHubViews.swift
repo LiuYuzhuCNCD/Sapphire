@@ -827,7 +827,7 @@ struct QueueAndPlaylistsView: View {
 
                     materialExpressiveCard(title: "接下来", systemImage: "list.bullet", accent: MaterialChartPalette.primary) {
                         if musicManager.nativeQueue.isEmpty {
-                            Text("Nothing queued — add tracks from Library or suggestions.")
+                            Text("队列为空——从资料库或推荐中添加曲目。")
                                 .font(.system(size: 11, weight: .medium, design: .rounded))
                                 .foregroundStyle(.secondary)
                                 .padding(.vertical, 6)
@@ -1049,9 +1049,9 @@ struct QueueAndPlaylistsView: View {
                             .padding(.bottom, 30)
                         }
                         .mask(LinearGradient(gradient: Gradient(stops: [.init(color: .black, location: 0), .init(color: .black, location: 0.95), .init(color: .clear, location: 1.0)]), startPoint: .top, endPoint: .bottom))
-                    } else { CustomUnavailableView(title: "接下来没有歌曲", systemImage: "music.note.list", description: "Add songs to your queue to see them here.") }
+                    } else { CustomUnavailableView(title: "接下来没有歌曲", systemImage: "music.note.list", description: "把歌曲加入队列即可在此看到。") }
                 }
-            } else { CustomUnavailableView(title: "队列不可用", systemImage: "speaker.slash.fill", description: "Start playing music with a Premium account to view your queue.") }
+            } else { CustomUnavailableView(title: "队列不可用", systemImage: "speaker.slash.fill", description: "用高级账号开始播放音乐即可查看队列。") }
         }
 
     }
@@ -1306,7 +1306,7 @@ struct QueueAndPlaylistsView: View {
                     CustomUnavailableView(
                         title: "你的主页",
                         systemImage: "house.fill",
-                        description: "Home shelves from Spotify will appear here once loaded."
+                        description: "Spotify 的主页内容载入后会显示在此。"
                     )
                 }
             }
@@ -2952,7 +2952,7 @@ fileprivate struct SpotifyNativeDeviceRow: View {
                 VStack(alignment: .leading, spacing: 2) {
                     Text(device.name).fontWeight(.medium)
                     if isControllerOnly {
-                        Text("This Mac · controls only (no audio)")
+                        Text("本机 · 仅控制（无音频）")
                             .font(.caption2)
                             .foregroundStyle(.secondary)
                     }
@@ -4032,7 +4032,7 @@ struct SpotifyAlbumDetailView: View {
                 ContentUnavailableView(
                     "Album tracks",
                     systemImage: "opticaldisc",
-                    description: Text("Play the album, or open it in Spotify for the full track list.")
+                    description: Text("播放该专辑，或在 Spotify 中打开以查看完整曲目。")
                 )
             } else {
                 ScrollView {
@@ -4132,7 +4132,7 @@ struct SpotifyMusicSearchView: View {
                     CustomUnavailableView(
                         title: "搜索 Spotify",
                         systemImage: "magnifyingglass",
-                        description: "Find tracks, artists, albums, and playlists."
+                        description: "查找曲目、歌手、专辑与播放列表。"
                     )
                 }
             } else {
@@ -4747,7 +4747,7 @@ struct LoginPromptView: View {
             Text("Please log in to Spotify via the Music section in Sapphire's settings to use this feature.")
                 .font(.subheadline).foregroundColor(.secondary).multilineTextAlignment(.center)
 
-            Text("Use the back control in the notch to return.")
+            Text("用刘海里的返回控件回去。")
                 .font(.caption)
                 .foregroundStyle(.tertiary)
         }
@@ -4771,7 +4771,7 @@ struct ApiKeysMissingView: View {
             Text("To enable Spotify integration, please add your API credentials in Sapphire's settings.")
                 .font(.subheadline).foregroundColor(.secondary).multilineTextAlignment(.center)
 
-            Text("Use the back control in the notch to return.")
+            Text("用刘海里的返回控件回去。")
                 .font(.caption)
                 .foregroundStyle(.tertiary)
         }
@@ -4795,7 +4795,7 @@ struct GeminiApiKeysMissingView: View {
             Text("To use Gemini Live, please add your Google AI Studio API key in Sapphire's settings.")
                 .font(.subheadline).foregroundColor(.secondary).multilineTextAlignment(.center)
 
-            Text("Use the back control in the notch to return.")
+            Text("用刘海里的返回控件回去。")
                 .font(.caption)
                 .foregroundStyle(.tertiary)
         }
@@ -5189,7 +5189,7 @@ struct AppleMusicSearchView: View {
                 if vm.discoverLoaded && vm.charts.isEmpty && vm.recentlyPlayed.isEmpty && vm.forYou.isEmpty && vm.replay.topSongs.isEmpty {
                     centeredPlaceholder(
                         systemImage: "music.quarternote.3",
-                        label: "Search for songs, artists or albums"
+                        label: "搜索歌曲、歌手或专辑"
                     )
                 }
 

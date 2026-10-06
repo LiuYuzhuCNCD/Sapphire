@@ -30,7 +30,7 @@ struct TimerDetailView: View {
             if timerManager.activeTimers.isEmpty
                 && timerManager.activeStopwatches.isEmpty
                 && timerManager.sapphireTimers.isEmpty {
-                Text("No Active Timers or Stopwatches")
+                Text("没有进行中的计时器或秒表")
                     .font(.headline)
                     .foregroundColor(.secondary)
                     .padding(.vertical, 8)

@@ -1240,7 +1240,7 @@ struct UpdateAvailableWidgetView: View {
             }
             .buttonStyle(.plain)
 
-            Text("Updates are installed from the About page in Sapphire's settings.")
+            Text("更新在 Sapphire 设置的「关于」页安装。")
                 .font(.caption)
                 .foregroundColor(.white.opacity(0.45))
                 .multilineTextAlignment(.center)

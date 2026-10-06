@@ -426,7 +426,7 @@ struct SystemEnhanceSettingsView: View {
         ScrollView {
             LazyVStack(alignment: .leading, spacing: 18) {
                 Text("系统").font(.largeTitle.bold())
-                Text("Desktop motion, input, and window enhancements that stay out of your way.")
+                Text("桌面动效、输入与窗口增强，安静不打扰。")
                     .font(.subheadline).foregroundStyle(.secondary)
 
                 SystemEnhanceHingeAnimationSettingsCard()
@@ -467,7 +467,7 @@ struct SystemEnhanceSettingsView: View {
                         Divider().padding(.leading, 20)
                         ToggleRow(title: "移除表情符号", description: "从粘贴文本中移除表情符号。", isOn: $settings.settings.systemEnhancePasteAsPlainStripEmojis)
                         Divider().padding(.leading, 20)
-                        ToggleRow(title: "移除列表符号", description: "Remove bullets and numbered markers such as •, -, and 1. from list items.", isOn: $settings.settings.systemEnhancePasteAsPlainStripListMarkers)
+                        ToggleRow(title: "移除列表符号", description: "移除列表项前的项目符号与编号，如 •、-、1.。", isOn: $settings.settings.systemEnhancePasteAsPlainStripListMarkers)
                     }
                 }.modifier(SettingsContainerModifier())
 
@@ -8507,7 +8507,7 @@ struct HUDSettingsView: View {
                     Divider().padding(.leading, 20)
                     ToggleRow(
                         title: "显示设备图标而非扬声器图标",
-                        description: "For devices like HomePods, show a device-specific icon in the volume HUD.",
+                        description: "HomePod 之类的设备，在音量浮层显示专属图标。",
                         isOn: $settings.settings.volumeHUDShowDeviceIcon
                     )
 
@@ -8578,7 +8578,7 @@ struct HUDSettingsView: View {
 
                     ToggleRow(
                         title: "分应用音量受系统音量上限限制",
-                        description: "When enabled, 100% app volume is capped by current system output volume.",
+                        description: "启用后，应用 100% 音量会被当前系统输出音量封顶。",
                         isOn: $settings.settings.perAppVolumeSystemDependent
                     )
                     .disabled(!settings.settings.enableVolumeHUD)
@@ -9319,7 +9319,7 @@ struct CalendarSettingsView: View {
 
                     ToggleRow(
                         title: "Open Calendar on Click",
-                        description: "Clicking the Calendar live activity will open the expanded calendar view.",
+                        description: "点击日历实时活动将打开展开的日历视图。",
                         isOn: $settings.settings.calendarOpenOnClick
                     )
                 }
@@ -10007,7 +10007,7 @@ struct BluetoothSettingsView: View {
 
                 VStack(spacing: 0) {
                     Text("实时活动").font(.headline).padding([.top, .horizontal])
-                    ToggleRow(title: "显示蓝牙实时活动", description: "Show connection, disconnection, and battery events for Bluetooth devices.", isOn: $settings.settings.bluetoothLiveActivityEnabled)
+                    ToggleRow(title: "显示蓝牙实时活动", description: "显示蓝牙设备的连接、断开与电量事件。", isOn: $settings.settings.bluetoothLiveActivityEnabled)
                     Divider().padding(.leading, 20)
                     ToggleRow(title: "Show Continuity Devices", description: "Show live activity events for Apple devices like iPhone, iPad, Mac, and Apple Watch.", isOn: $settings.settings.showBluetoothContinuityDevices)
                     Divider().padding(.leading, 20)
@@ -10537,7 +10537,7 @@ struct AboutSettingsView: View {
                     .padding([.horizontal, .top])
                 ToggleRow(
                     title: "Automatic update checks",
-                    description: "Check after launch, wake, network recovery, and on a recurring schedule.",
+                    description: "在启动、唤醒、网络恢复后以及按固定周期检查。",
                     isOn: $settingsModel.settings.automaticUpdateChecksEnabled
                 )
                 Divider().padding(.leading)

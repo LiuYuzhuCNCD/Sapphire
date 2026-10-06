@@ -165,7 +165,7 @@ struct FileActionView: View {
                         }
                         .buttonStyle(.plain)
                     }
-                    Text("Type a new name, then press Return or tap .")
+                    Text("输入新名称，然后按回车或轻点 。")
                         .font(.caption)
                         .foregroundColor(.secondary)
                 } else {

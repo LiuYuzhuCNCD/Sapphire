@@ -106,7 +106,7 @@ private struct WelcomeStepView: View {
                 .font(.system(size: 32, weight: .bold, design: .rounded))
                 .multilineTextAlignment(.center)
 
-            Text("A new way to experience your Mac's notch.\nLet's get you set up.")
+            Text("重新定义 Mac 刘海的使用方式。\n现在开始设置。")
                 .font(.title3)
                 .multilineTextAlignment(.center)
                 .foregroundColor(.secondary)
@@ -129,7 +129,7 @@ private struct PermissionsStepView: View {
                 .font(.system(size: 32, weight: .bold, design: .rounded))
                 .padding(.top, 40).padding(.bottom, 10)
 
-            Text("Sapphire needs a few permissions for its core features.")
+            Text("Sapphire 的核心功能需要几项权限。")
                 .font(.body)
                 .multilineTextAlignment(.center)
                 .foregroundColor(.secondary)
@@ -139,8 +139,8 @@ private struct PermissionsStepView: View {
             ScrollView {
                 VStack(spacing: 25) {
                     PermissionSectionView(title: "必需", permissions: permissionsManager.requiredPermissions, manager: permissionsManager)
-                    PermissionSectionView(title: "推荐", permissions: permissionsManager.recommendedPermissions, description: "These permissions enable major features like widgets and live activities.", manager: permissionsManager)
-                    PermissionSectionView(title: "可选", permissions: permissionsManager.optionalPermissions, description: "These permissions enable minor or cosmetic features.", manager: permissionsManager)
+                    PermissionSectionView(title: "推荐", permissions: permissionsManager.recommendedPermissions, description: "这些权限用于组件与实时活动等主要功能。", manager: permissionsManager)
+                    PermissionSectionView(title: "可选", permissions: permissionsManager.optionalPermissions, description: "这些权限用于次要或外观类功能。", manager: permissionsManager)
                 }.padding(.horizontal, 50)
             }
 
@@ -353,7 +353,7 @@ private struct MusicChoiceStepView: View {
             Text("Choose Your Music Service")
                 .font(.system(size: 32, weight: .bold, design: .rounded))
 
-            Text("Select your primary music player for the best integration.")
+            Text("选择主用音乐播放器以获得最佳整合。")
                 .font(.title3)
                 .multilineTextAlignment(.center)
                 .foregroundColor(.secondary)
@@ -409,7 +409,7 @@ private struct SpotifySetupStepView: View {
                     HStack(spacing: 10) { Image(systemName: "checkmark.circle.fill").font(.title).foregroundColor(.green); Text("Logged in successfully!").font(.headline) }
                 } else {
                     Text("私有 API 登录").font(.headline)
-                    Text("This method works for both Free and Premium users. Use at your own risk.").font(.caption).foregroundColor(.secondary).multilineTextAlignment(.center)
+                    Text("此方法对免费与高级用户均适用。请自行斟酌使用。").font(.caption).foregroundColor(.secondary).multilineTextAlignment(.center)
                     if isLoading {
                         VStack(spacing: 8) { ProgressView(); Text("正在登录…").font(.caption).foregroundColor(.secondary) }.frame(height: 40)
                     } else {
@@ -463,7 +463,7 @@ private struct BatterySetupStepView: View {
                 .padding(.horizontal, 50)
 
             VStack(spacing: 15) {
-                ModernOnboardingRow(iconName: "battery.100.bolt", iconColor: .green, title: "设置充电上限", description: "Prevent wear by stopping charging at a lower level. 80% is recommended.") {
+                ModernOnboardingRow(iconName: "battery.100.bolt", iconColor: .green, title: "设置充电上限", description: "在较低电量停止充电以减缓老化。推荐 80%。") {
                     Picker("", selection: chargeLimitBinding) {
                         Text("80%").tag(80)
                         Text("90%").tag(90)
@@ -474,11 +474,11 @@ private struct BatterySetupStepView: View {
                     .frame(width: 150)
                 }
 
-                ModernOnboardingRow(iconName: "sailboat.fill", iconColor: .blue, title: "启用航行模式", description: "Reduces micro-charging cycles when the limit is reached.") {
+                ModernOnboardingRow(iconName: "sailboat.fill", iconColor: .blue, title: "启用航行模式", description: "达到上限后减少反复微充。") {
                     SettingsSwitch(isOn: $settings.settings.sailingModeEnabled)
                 }
 
-                ModernOnboardingRow(iconName: "thermometer.medium", iconColor: .red, title: "Enable Heat Protection", description: "Pauses charging if the battery gets too hot.") {
+                ModernOnboardingRow(iconName: "thermometer.medium", iconColor: .red, title: "Enable Heat Protection", description: "电池过热时暂停充电。") {
                     SettingsSwitch(isOn: $settings.settings.heatProtectionEnabled)
                 }
             }
@@ -498,14 +498,14 @@ private struct CorePreferencesStepView: View {
         VStack(spacing: 20) {
             Spacer()
             Text("快速设置").font(.system(size: 32, weight: .bold, design: .rounded))
-            Text("Personalize your experience. You can change these any time in Settings.").font(.title3).multilineTextAlignment(.center).foregroundColor(.secondary).padding(.horizontal, 50)
+            Text("个性化你的体验。这些设置随时可在「设置」中更改。").font(.title3).multilineTextAlignment(.center).foregroundColor(.secondary).padding(.horizontal, 50)
             VStack(spacing: 15) {
-                ModernOnboardingRow(iconName: "sparkles.tv", iconColor: .cyan, title: "显示自定义浮层", description: "Replace default volume & brightness indicators.") { SettingsSwitch(isOn: showHudsBinding) }
-                ModernOnboardingRow(iconName: "eye.fill", iconColor: .cyan, title: "启用护眼提醒", description: "Get reminded to look away from your screen periodically.") {
+                ModernOnboardingRow(iconName: "sparkles.tv", iconColor: .cyan, title: "显示自定义浮层", description: "替换系统默认的音量与亮度提示。") { SettingsSwitch(isOn: showHudsBinding) }
+                ModernOnboardingRow(iconName: "eye.fill", iconColor: .cyan, title: "启用护眼提醒", description: "定时提醒你移开视线。") {
                     SettingsSwitch(isOn: $settings.settings.eyeBreakLiveActivityEnabled)
                 }
-                ModernOnboardingRow(iconName: "thermometer.sun.fill", iconColor: .orange, title: "温度单位", description: "Preferred unit for weather forecasts.") { Picker("", selection: $settings.settings.weatherUseCelsius) { Text("°C").tag(true); Text("°F").tag(false) }.pickerStyle(.segmented).labelsHidden().frame(width: 100) }
-                ModernOnboardingRow(iconName: "bolt.horizontal.circle.fill", iconColor: .purple, title: "登录时启动", description: "Start Sapphire automatically with your Mac.") { SettingsSwitch(isOn: $settings.settings.launchAtLogin) }
+                ModernOnboardingRow(iconName: "thermometer.sun.fill", iconColor: .orange, title: "温度单位", description: "天气预报偏好的单位。") { Picker("", selection: $settings.settings.weatherUseCelsius) { Text("°C").tag(true); Text("°F").tag(false) }.pickerStyle(.segmented).labelsHidden().frame(width: 100) }
+                ModernOnboardingRow(iconName: "bolt.horizontal.circle.fill", iconColor: .purple, title: "登录时启动", description: "随 Mac 自动启动 Sapphire。") { SettingsSwitch(isOn: $settings.settings.launchAtLogin) }
             }.padding(50)
             Spacer()
             OnboardingButton(title: "继续", action: onNext)
@@ -530,16 +530,16 @@ private struct LockScreenSetupStepView: View {
                 .padding(.horizontal, 50)
 
             VStack(spacing: 15) {
-                ModernOnboardingRow(iconName: "lock.display", iconColor: .red, title: "Enable on Lock Screen", description: "Show Sapphire's notch and features when your Mac is locked.") {
+                ModernOnboardingRow(iconName: "lock.display", iconColor: .red, title: "Enable on Lock Screen", description: "Mac 锁屏时仍显示 Sapphire 的刘海与功能。") {
                     SettingsSwitch(isOn: $settings.settings.lockScreenShowNotch)
                 }
 
                 VStack(spacing: 15) {
-                    ModernOnboardingRow(iconName: "timer", iconColor: .cyan, title: "Show Live Activities", description: "Display timers, music, and more.") {
+                    ModernOnboardingRow(iconName: "timer", iconColor: .cyan, title: "Show Live Activities", description: "显示计时器、音乐等。") {
                         SettingsSwitch(isOn: $settings.settings.lockScreenLiveActivityEnabled)
                     }
 
-                    ModernOnboardingRow(iconName: "info.circle.fill", iconColor: .blue, title: "显示信息组件", description: "Display static info like weather or battery.") {
+                    ModernOnboardingRow(iconName: "info.circle.fill", iconColor: .blue, title: "显示信息组件", description: "显示天气或电池等静态信息。") {
                         SettingsSwitch(isOn: $settings.settings.lockScreenShowInfoWidget)
                     }
                 }
@@ -633,7 +633,7 @@ private struct SubscriptionOverviewStepView: View {
             .frame(height: 390)
 
             if currentTier == .free {
-                Text("Upgrade to Basic or higher for beta updates, Gemini Live, and more.")
+                Text("升级到 Basic 及以上可获得测试版更新、Gemini Live 等。")
                     .font(.callout)
                     .foregroundStyle(.secondary)
                     .multilineTextAlignment(.center)

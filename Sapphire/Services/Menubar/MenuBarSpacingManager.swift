@@ -130,7 +130,7 @@ class MenuBarSpacingManager {
         }
 
         guard let url = app.bundleURL, let bundleIdentifier = app.bundleIdentifier else {
-            throw RelaunchError(message: "Could not get bundle info for app.")
+            throw RelaunchError(message: "无法获取应用的包信息。")
         }
 
         try await signalAppToQuit(app)

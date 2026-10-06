@@ -100,7 +100,7 @@ struct FocusRestrictedAppActivityView: View {
             Text("Unlocked in \(remaining.asMinuteSecondClock) — or when your session ends, whichever comes first.")
                 .contentTransition(.numericText(countsDown: true))
         } else {
-            Text("This app was closed because it's blocked during your focus session.")
+            Text("此应用已关闭，因为专注会话期间它被屏蔽。")
         }
     }
 

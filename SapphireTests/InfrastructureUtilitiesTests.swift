@@ -352,7 +352,7 @@ final class InfrastructureUtilitiesTests: XCTestCase {
         }
         debouncer.flush()
 
-        let settled = expectation(description: "scheduled work had time to drain")
+        let settled = expectation(description: "计划任务已有时完成")
         queue.asyncAfter(deadline: .now() + 0.15) {
             settled.fulfill()
         }

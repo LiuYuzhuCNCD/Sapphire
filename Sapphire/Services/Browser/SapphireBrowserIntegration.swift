@@ -163,7 +163,7 @@ final class SapphireBrowserIntegration {
                 options: [.deliverImmediately]
             )
             postLocalNotification(
-                title: "Sapphire Browser isn't installed",
+                title: "Sapphire 浏览器未安装",
                 body: "Install it to open \(url.host ?? "this link").",
                 category: nil,
                 userInfo: nil

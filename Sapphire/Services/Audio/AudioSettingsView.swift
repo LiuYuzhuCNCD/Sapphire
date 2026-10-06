@@ -30,7 +30,7 @@ struct AudioSettingsView: View {
 
                     CompactToggleRow(
                         title: "Multi-Audio in Notch",
-                        description: "Show the per-app mixer in the expanded notch.",
+                        description: "在展开的刘海显示分应用混音器。",
                         isOn: Binding(
                             get: { settings.settings.notchButtonOrder.contains(.multiAudio) },
                             set: { enabled in
@@ -46,7 +46,7 @@ struct AudioSettingsView: View {
                     Divider().padding(.leading, 20)
                     CompactToggleRow(
                         title: "触感反馈",
-                        description: "Subtle vibration when adjusting audio controls.",
+                        description: "调节音频控件时轻微振动。",
                         isOn: $settings.settings.hapticFeedbackEnabled
                     )
                     Divider().padding(.leading, 20)
@@ -98,7 +98,7 @@ struct AudioSettingsView: View {
 
                     AudioResetRow(
                         title: "Reset Per-App Adjustments",
-                        subtitle: "Clears custom volumes, mutes, EQ, and 8D spatial audio for all apps.",
+                        subtitle: "清空所有应用的自定义音量、静音、均衡器与 8D 空间音频。",
                         buttonTitle: "Reset Apps",
                         buttonColor: .red
                     ) {
@@ -115,7 +115,7 @@ struct AudioSettingsView: View {
 
                     AudioResetRow(
                         title: "Reset Device Settings",
-                        subtitle: "Clears master volume, balance, delay, and EQ for all devices.",
+                        subtitle: "清空所有设备的总音量、平衡、延迟与均衡器。",
                         buttonTitle: "Reset Devices",
                         buttonColor: .red
                     ) {
@@ -125,7 +125,7 @@ struct AudioSettingsView: View {
                         Button("取消", role: .cancel) { }
                         Button("重置", role: .destructive) { resetAllDeviceSettings() }
                     } message: {
-                        Text("This reverts all connected output devices to their default state.")
+                        Text("这会把所有已连接的输出设备恢复默认状态。")
                     }
                 }
                 .modifier(SettingsContainerModifier())

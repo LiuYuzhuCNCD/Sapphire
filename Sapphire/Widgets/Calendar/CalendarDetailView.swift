@@ -243,7 +243,7 @@ struct CalendarDetailView: View {
                         .foregroundColor(.green)
                     VStack {
                         Text("一切正常").font(.title3.weight(.bold))
-                        Text("You have no events or reminders scheduled.").foregroundColor(.white.opacity(0.6))
+                        Text("你没有已安排的日程或提醒。").foregroundColor(.white.opacity(0.6))
                     }
                     Spacer()
                 }

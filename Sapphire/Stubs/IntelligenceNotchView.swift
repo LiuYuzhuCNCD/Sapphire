@@ -17,7 +17,7 @@ struct IntelligenceNotchView: View {
     var body: some View {
         VStack(spacing: 8) {
             Image(systemName: "sparkles").font(.system(size: 22))
-            Text("Intelligence unavailable in this build").font(.caption)
+            Text("此构建不含智能功能").font(.caption)
         }
         .frame(width: 320)
     }

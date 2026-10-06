@@ -69,11 +69,11 @@ struct MultiAudioPermissionRequiredView: View {
             .buttonStyle(.borderedProminent)
             .tint(.orange)
 
-            Text("After enabling it, reopen this menu.")
+            Text("启用后请重新打开此菜单。")
                 .font(.caption)
                 .foregroundStyle(.tertiary)
 
-            Text("Use the back control in the notch to return.")
+            Text("用刘海里的返回控件回去。")
                 .font(.caption)
                 .foregroundStyle(.tertiary)
         }

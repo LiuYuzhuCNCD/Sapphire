@@ -32,7 +32,7 @@ final class MemorySystemManager {
 
 struct IntelligenceSettingsView: View {
     var body: some View {
-        Text("Intelligence features are not included in this build.")
+        Text("此构建不含智能功能。")
             .foregroundColor(.secondary)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
     }

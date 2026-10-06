@@ -56,7 +56,7 @@ func organizationalUnitRequirement() throws -> String {
     }
 
     let developmentTeamId = try readEnvironmentVintelligenceble(name: "DEVELOPMENT_TEAM",
-                                                        description: "development team for code signing",
+                                                        description: "用于代码签名的开发团队",
                                                         isUserDefined: false)
     guard developmentTeamId.range(of: #"^[A-Z0-9]{10}$"#, options: .regularExpression) != nil else {
         if developmentTeamId == "-" {
