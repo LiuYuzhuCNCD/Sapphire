@@ -3070,7 +3070,7 @@ enum SettingsSection: String, CaseIterable, Identifiable {
         case .lockScreen: "配置 Mac 锁屏时 Sapphire 的内容与行为。"
         case .bluetoothUnlock: "设置基于靠近的验证与可信设备行为。"
         case .shortcuts: "管理 Sapphire 中显示的快捷操作与快捷面板。"
-        case .keyboardShortcuts: "Reference page listing every keyboard shortcut in Sapphire — global hotkeys, snap zones, and in-app shortcuts."
+        case .keyboardShortcuts: "汇总 Sapphire 全部键盘快捷键的参考页——全局热键、吸附区域与应用内快捷键。"
         case .snapZones: "配置窗口吸附行为、布局与区域操作。"
         case .audio: "音频调节、均衡器与分应用音量调节。"
         case .battery: "电池组件、历史、充电偏好与电源相关控制。"
@@ -3082,11 +3082,11 @@ enum SettingsSection: String, CaseIterable, Identifiable {
         case .fileShelf: "管理临时文件存储、拖放目标与文件架行为。"
         case .notes: "快速便签组件、点击展开行为与刘海栏入口。"
         case .clipboard: "剪贴板历史、监控与刘海剪贴板快捷方式。"
-        case .emoji: "Slack-style emoji typing with :shortcode: suggestions and a full search picker."
+        case .emoji: "Slack 风格的 :短代码: 表情输入建议与完整搜索选择器。"
         case .mouse: "鼠标与触控板的滚动、加速与按键自定义。"
         case .monitoring: "菜单栏中的 CPU、内存、磁盘与网络读数与通知。"
         case .devActivity: "追踪 AI 智能体、构建与终端命令，运行期间让 Mac 保持唤醒。"
-        case .archives: "Extract ZIP, RAR, 7-Zip, TAR, and other archives — or auto-mount and install disk images (DMGs) — from anywhere."
+        case .archives: "在任意位置解压 ZIP、RAR、7-Zip、TAR 等压缩包，或自动挂载并安装磁盘映像（DMG）。"
         case .mirror: "显示实时摄像头画面的镜像组件，可展开全屏。"
         case .caffeine: "让 Mac 保持唤醒、合盖睡眠行为与按开合角度的屏幕控制。"
         case .music: "音乐组件来源、播放控制与媒体整合。"
@@ -3101,7 +3101,7 @@ enum SettingsSection: String, CaseIterable, Identifiable {
         case .dockLayouts: "把程序坞布局存为预设，一键或快捷键切换。"
         case .mediaOptimizer: "自动压缩图片与媒体，并用 OCR 提取文字。"
 
-        case .about: "App version details, Sapphire updates, release channels, credits, links, and project information."
+        case .about: "应用版本详情、Sapphire 更新、发布通道、鸣谢、链接与项目信息。"
         }
     }
 

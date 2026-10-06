@@ -62,7 +62,7 @@ enum LiquidGlassMaterial: String, Codable, CaseIterable, Identifiable, Hashable 
         case .controlCenter: return "半透明的控制中心模块玻璃。"
         case .widgets: return "桌面组件背景玻璃。"
         case .inspector: return "为检查器面板调校的侧栏玻璃。"
-        case .titlebar: return "Sidebar glass that blends into the title bar."
+        case .titlebar: return "融入标题栏的侧栏玻璃。"
         case .tooltip: return "悬停卡片所用的放大镜玻璃。"
         case .frosted: return "柔和强模糊，亮部扩散。"
         case .clearGlass: return "几乎不模糊，清透利落。"
