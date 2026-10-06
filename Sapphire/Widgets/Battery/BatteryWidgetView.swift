@@ -39,7 +39,7 @@ struct BatteryWidgetView: View {
         } label: {
             VStack(alignment: .leading, spacing: 4) {
                 MaterialMetricHeader(
-                    title: "System Power",
+                    title: "系统功耗",
                     status: power.statusLabel,
                     color: power.statusColor
                 )

@@ -34,7 +34,7 @@ public enum StatType: String, Codable, CaseIterable, Identifiable {
         case .ram: return "RAM Usage"
         case .gpu: return "GPU Usage"
         case .disk: return "Disk Activity"
-        case .systemPower: return "System Power"
+        case .systemPower: return "系统功耗"
         case .batteryPower: return "Battery Draw"
         }
     }
@@ -230,8 +230,8 @@ enum LockScreenMainWidgetType: String, Codable, CaseIterable, Identifiable {
     var id: String { self.rawValue }
     var displayName: String {
         switch self {
-        case .notes: return "Notes"
-        case .clipboard: return "Clipboard"
+        case .notes: return "便签"
+        case .clipboard: return "剪贴板"
         default: return self.rawValue.capitalized
         }
     }
@@ -249,8 +249,8 @@ enum LockScreenWidgetType: String, Codable, CaseIterable, Identifiable {
         case .caffeine: return "Caffeine"
         case .timer: return "Timer"
         case .clock: return "Clock"
-        case .notes: return "Notes"
-        case .clipboard: return "Clipboard"
+        case .notes: return "便签"
+        case .clipboard: return "剪贴板"
         case .system: return "System"
         default: return self.rawValue.capitalized
         }
@@ -268,8 +268,8 @@ enum LockScreenMiniWidgetType: String, Codable, CaseIterable, Identifiable {
         switch self {
         case .caffeine: return "Caffeine"
         case .timer: return "Timer"
-        case .clipboard: return "Clipboard"
-        case .notes: return "Notes"
+        case .clipboard: return "剪贴板"
+        case .notes: return "便签"
         case .system: return "System"
         default: return self.rawValue.capitalized
         }
@@ -419,7 +419,7 @@ enum NotchAppearanceMode: String, Codable, CaseIterable, Identifiable {
     var displayName: String {
         switch self {
         case .default: return "Default"
-        case .liquidGlass: return "Liquid Glass"
+        case .liquidGlass: return "液态玻璃"
         case .blur: return "Blur"
         case .custom: return "Custom"
         }
@@ -797,7 +797,7 @@ enum FileOperationProgressDisplay: String, Codable, CaseIterable, Identifiable {
 
     var displayName: String {
         switch self {
-        case .liveActivity: "Live Activity"
+        case .liveActivity: "实时活动"
         case .popup: "Popup Window"
         }
     }
@@ -2577,7 +2577,7 @@ enum LowPowerMode: String, Codable, CaseIterable, Identifiable {
     var displayName: String {
         switch self {
         case .alwaysOn: "Always On"
-        case .onBattery: "On Battery"
+        case .onBattery: "使用电池时"
         case .never: "Never"
         }
     }
@@ -2588,20 +2588,20 @@ enum WidgetType: String, Codable, CaseIterable, Identifiable, Equatable {
     var id: String { self.rawValue }
     var displayName: String {
         switch self {
-        case .weather: return "Weather"
-        case .calendar: return "Calendar"
-        case .shortcuts: return "Shortcuts"
-        case .music: return "Music"
-        case .sports: return "Sports"
-        case .finance: return "Finance"
-        case .shopify: return "Shopify Orders"
-        case .notes: return "Notes"
-        case .clipboard: return "Clipboard"
+        case .weather: return "天气"
+        case .calendar: return "日历"
+        case .shortcuts: return "快捷指令"
+        case .music: return "音乐"
+        case .sports: return "体育"
+        case .finance: return "财经"
+        case .shopify: return "Shopify 订单"
+        case .notes: return "便签"
+        case .clipboard: return "剪贴板"
         case .mirror: return "Mirror"
-        case .battery: return "Battery"
+        case .battery: return "电池"
         case .timer: return "Timer"
         case .focusSession: return "Focus"
-        case .storage: return "Storage"
+        case .storage: return "存储"
         case .agent: return "Agent"
         }
     }
@@ -2612,7 +2612,7 @@ enum LiveActivityType: String, Codable, CaseIterable, Identifiable, Equatable {
     var id: String { self.rawValue }
     var displayName: String {
         switch self {
-        case .music: "Music"; case .weather: "Weather"; case .calendar: "Calendar"; case .reminders: "Reminders"; case .timers: "Timers"; case .battery: "Battery"; case .eyeBreak: "Eye Break"; case .desktop: "Desktop"; case .focus: "Focus"; case .fileShelf: "File Shelf"; case .fileProgress: "File Progress"; case .stats: "Stats"; case .microphone: "Microphone"; case .devActivity: "Dev Activity"; case .sports: "Sports"; case .finance: "Finance"
+        case .music: "音乐"; case .weather: "天气"; case .calendar: "日历"; case .reminders: "Reminders"; case .timers: "Timers"; case .battery: "电池"; case .eyeBreak: "护眼"; case .desktop: "Desktop"; case .focus: "Focus"; case .fileShelf: "文件架"; case .fileProgress: "File Progress"; case .stats: "Stats"; case .microphone: "Microphone"; case .devActivity: "开发者活动"; case .sports: "体育"; case .finance: "财经"
         }
     }
 }
@@ -2863,11 +2863,11 @@ enum NotchButtonType: String, Codable, Identifiable, Equatable {
 
     var displayName: String {
         switch self {
-        case .settings: "Settings"; case .fileShelf: "File Shelf"; case .notes: "Notes"; case .clipboard: "Clipboard"
+        case .settings: "Settings"; case .fileShelf: "文件架"; case .notes: "便签"; case .clipboard: "剪贴板"
         case .intelligence: "Blip"; case .intelligenceLive: "Gemini";
         case .focusSession: "Focus";
-        case .caffeine: "Caffeinate"; case .spacer: "Spacer";
-        case .multiAudio: "Multi-Audio (Beta)"; case .battery: "Battery"; case .pin: "Pin"
+        case .caffeine: "防休眠"; case .spacer: "Spacer";
+        case .multiAudio: "Multi-Audio (Beta)"; case .battery: "电池"; case .pin: "Pin"
         }
     }
 
@@ -3172,7 +3172,7 @@ enum SettingsSection: String, CaseIterable, Identifiable {
 
     var label: String {
         switch self {
-        case .general: "General"; case .systemEnhance: "System Enhance"; case .apps: "Apps"; case .storage: "Storage"; case .widgets: "Widgets"; case .liveActivities: "Live Activities"; case .appearance: "Appearance"; case .lockScreen: "Lock Screen"; case .bluetoothUnlock: "Authentication"; case .shortcuts: "Shortcuts"; case .keyboardShortcuts: "Keyboard Shortcuts"; case .snapZones: "Snap Zones"; case .audio: "Audio"; case .battery: "Battery"; case .bluetooth: "Bluetooth"; case .hud: "HUD"; case .notifications: "Notifications"; case .neardrop: "Nearby Share"; case .continuity: "Android Continuity"; case .fileShelf: "File Shelf"; case .notes: "Notes";        case .clipboard: "Clipboard"; case .emoji: "Emoji"; case .mouse: "Mouse"; case .monitoring: "Monitoring"; case .devActivity: "Dev Activity"; case .archives: "Archives & DMG"; case .mirror: "Mirror"; case .caffeine: "Caffeinate"; case .music: "Music"; case .weather: "Weather";        case .calendar: "Calendar"; case .eyeBreak: "Eye Break"; case .focusSession: "Focus Sessions"; case .appLock: "App Lock"; case .intelligence: "Blip"; case .sports: "Sports"; case .finance: "Finance"; case .dockLayouts: "Dock"; case .mediaOptimizer: "Media Optimizer"; case .about: "About"
+        case .general: "通用"; case .systemEnhance: "系统增强"; case .apps: "应用"; case .storage: "存储"; case .widgets: "小组件"; case .liveActivities: "实时活动"; case .appearance: "外观"; case .lockScreen: "锁屏"; case .bluetoothUnlock: "身份验证"; case .shortcuts: "快捷指令"; case .keyboardShortcuts: "键盘快捷键"; case .snapZones: "窗口吸附"; case .audio: "音频"; case .battery: "电池"; case .bluetooth: "蓝牙"; case .hud: "浮层"; case .notifications: "通知"; case .neardrop: "附近共享"; case .continuity: "安卓互联"; case .fileShelf: "文件架"; case .notes: "便签";        case .clipboard: "剪贴板"; case .emoji: "表情符号"; case .mouse: "鼠标"; case .monitoring: "监控"; case .devActivity: "开发者活动"; case .archives: "压缩包与 DMG"; case .mirror: "Mirror"; case .caffeine: "防休眠"; case .music: "音乐"; case .weather: "天气";        case .calendar: "日历"; case .eyeBreak: "护眼"; case .focusSession: "专注会话"; case .appLock: "应用锁"; case .intelligence: "Blip"; case .sports: "体育"; case .finance: "财经"; case .dockLayouts: "程序坞"; case .mediaOptimizer: "媒体优化"; case .about: "关于"
         }
     }
 

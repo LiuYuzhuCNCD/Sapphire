@@ -20,7 +20,7 @@ struct LayoutEditorView: View {
     var body: some View {
         VStack(spacing: 15) {
             HStack {
-                Text("Layout Editor")
+                Text("布局编辑器")
                     .font(.title.bold())
                 Spacer()
                 Button("Done") {

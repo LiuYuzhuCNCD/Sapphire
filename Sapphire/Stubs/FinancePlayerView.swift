@@ -16,7 +16,7 @@ struct FinancePlayerView: View {
     var body: some View {
         VStack(spacing: 8) {
             Image(systemName: "dollarsign.circle.fill").font(.system(size: 22))
-            Text("Finance").font(.headline)
+            Text("财经").font(.headline)
         }
         .frame(width: 320)
     }

@@ -29,7 +29,7 @@ struct PlaneEditorView: View {
 
     var body: some View {
         VStack(spacing: 20) {
-            Text("Edit Plane")
+            Text("编辑平面")
                 .font(.title.bold())
 
             VStack(alignment: .leading, spacing: 15) {
@@ -59,7 +59,7 @@ struct PlaneEditorView: View {
                         } else if let shortcut = plane.shortcut {
                             Text("\(KeyboardShortcutHelper.description(for: shortcut.modifiers)) \(shortcut.key)")
                         } else {
-                            Text("Record Shortcut")
+                            Text("录制快捷键")
                         }
                     }
                     .buttonStyle(.bordered)
@@ -70,7 +70,7 @@ struct PlaneEditorView: View {
 
             Divider()
 
-            Text("App Assignments")
+            Text("应用指派")
                 .font(.headline)
 
             if let layout = selectedLayout {

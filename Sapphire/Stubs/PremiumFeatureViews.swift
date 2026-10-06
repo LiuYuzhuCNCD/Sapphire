@@ -38,15 +38,15 @@ private struct PremiumUnavailableView: View {
     }
 }
 
-struct KeyboardShortcutsSettingsView: View { var body: some View { PremiumUnavailableView(title: "Keyboard Shortcuts") } }
+struct KeyboardShortcutsSettingsView: View { var body: some View { PremiumUnavailableView(title: "键盘快捷键") } }
 struct ContinuitySettingsView: View { var body: some View { PremiumUnavailableView(title: "Continuity") } }
-struct EmojiSettingsView: View { var body: some View { PremiumUnavailableView(title: "Emoji") } }
-struct MouseSettingsView: View { var body: some View { PremiumUnavailableView(title: "Mouse") } }
-struct MonitoringSettingsView: View { var body: some View { PremiumUnavailableView(title: "Monitoring") } }
+struct EmojiSettingsView: View { var body: some View { PremiumUnavailableView(title: "表情符号") } }
+struct MouseSettingsView: View { var body: some View { PremiumUnavailableView(title: "鼠标") } }
+struct MonitoringSettingsView: View { var body: some View { PremiumUnavailableView(title: "监控") } }
 struct ArchivesAndDMGInstallerSettingsView: View { var body: some View { PremiumUnavailableView(title: "Archives") } }
-struct AppLockSettingsView: View { var body: some View { PremiumUnavailableView(title: "App Lock") } }
+struct AppLockSettingsView: View { var body: some View { PremiumUnavailableView(title: "应用锁") } }
 struct DockLayoutsSettingsView: View { var body: some View { PremiumUnavailableView(title: "Dock Layouts") } }
-struct MediaOptimizerSettingsView: View { var body: some View { PremiumUnavailableView(title: "Media Optimizer") } }
+struct MediaOptimizerSettingsView: View { var body: some View { PremiumUnavailableView(title: "媒体优化") } }
 
 struct StorageWorkspaceView: View {
     @ObservedObject var model: StorageViewModel
@@ -66,7 +66,7 @@ struct SurroundAudioView: View {
 }
 
 struct StorageDetailView: View {
-    var body: some View { PremiumUnavailableView(title: "Storage") }
+    var body: some View { PremiumUnavailableView(title: "存储") }
 }
 
 struct StorageWidgetView: View {

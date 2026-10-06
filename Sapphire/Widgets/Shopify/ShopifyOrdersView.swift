@@ -15,7 +15,7 @@ struct ShopifyOrdersView: View {
             HStack {
                 Image(systemName: "bag.fill")
                     .foregroundStyle(.green)
-                Text("Shopify Orders")
+                Text("Shopify 订单")
                     .font(.headline)
                 Spacer()
                 Button {

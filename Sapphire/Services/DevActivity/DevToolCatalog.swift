@@ -17,8 +17,8 @@ enum DevTaskKind: String, Codable, CaseIterable, Identifiable, Equatable {
 
     var displayName: String {
         switch self {
-        case .ai: return "AI Agents"
-        case .build: return "Builds & Tests"
+        case .ai: return "AI 代理"
+        case .build: return "构建与测试"
         case .command: return "Terminal Commands"
         }
     }

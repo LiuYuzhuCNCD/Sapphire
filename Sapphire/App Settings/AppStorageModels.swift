@@ -3240,7 +3240,7 @@ private struct StoragePresentedScan {
             await MainActor.run {
                 guard let self = owner.value, self.scanGeneration == generation else { return }
                 self.isLoading = false
-                self.updateScanPresentation(state: .idle, label: "Ready to scan")
+                self.updateScanPresentation(state: .idle, label: "准备扫描")
             }
         }
     }
@@ -3251,7 +3251,7 @@ private struct StoragePresentedScan {
         loadTask?.cancel()
         loadTask = nil
         isLoading = false
-        updateScanPresentation(state: .cancelled, label: "Scan cancelled")
+        updateScanPresentation(state: .cancelled, label: "扫描已取消")
     }
 
     func refreshCapacity() {
@@ -3513,7 +3513,7 @@ private struct StoragePresentedScan {
                     self.presentedScan = failedScan
                     self.updateScanPresentation(
                         state: .failed(error.localizedDescription),
-                        label: "Scan failed"
+                        label: "扫描失败"
                     )
                 }
             }

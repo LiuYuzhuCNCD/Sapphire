@@ -16,7 +16,7 @@ struct SportsPlayerView: View {
     var body: some View {
         VStack(spacing: 8) {
             Image(systemName: "sportscourt.fill").font(.system(size: 22))
-            Text("Sports").font(.headline)
+            Text("体育").font(.headline)
         }
         .frame(width: 320)
     }

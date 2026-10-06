@@ -50,7 +50,7 @@ struct ClipboardWidgetView: View {
 
     var body: some View {
         NotchMiniListWidget(
-            title: "Clipboard",
+            title: "剪贴板",
             systemImage: "list.clipboard",
             tint: .blue,
             gradient: [Color.blue.opacity(0.35), Color.cyan.opacity(0.16)],
@@ -108,7 +108,7 @@ struct ClipboardPlayerView: View {
 
     var body: some View {
         NotchSwipeListPanel(
-            title: "Clipboard",
+            title: "剪贴板",
             subtitle: "\(clipboardManager.recentItems.count) items",
             accent: .blue,
             searchPlaceholder: "Search clipboard",

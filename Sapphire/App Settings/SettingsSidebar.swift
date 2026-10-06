@@ -15,11 +15,11 @@ struct SettingsSidebarGroup: Identifiable {
 
 extension SettingsSection {
     static let sidebarGroups: [SettingsSidebarGroup] = [
-        .init(title: "General", sections: [.general, .keyboardShortcuts, .bluetoothUnlock, .intelligence, .neardrop, .continuity]),
-        .init(title: "Notch", sections: [.appearance, .widgets, .liveActivities, .lockScreen, .notifications, .hud]),
-        .init(title: "Widgets & Content", sections: [.music, .weather, .calendar, .sports, .finance, .battery, .audio, .bluetooth, .shortcuts, .fileShelf, .notes, .clipboard, .mirror, .caffeine]),
-        .init(title: "System & Utilities", sections: [.systemEnhance, .snapZones, .dockLayouts, .mediaOptimizer, .mouse, .monitoring, .devActivity, .emoji, .archives, .apps, .storage]),
-        .init(title: "Focus & Security", sections: [.eyeBreak, .focusSession, .appLock]),
+        .init(title: "通用", sections: [.general, .keyboardShortcuts, .bluetoothUnlock, .intelligence, .neardrop, .continuity]),
+        .init(title: "刘海", sections: [.appearance, .widgets, .liveActivities, .lockScreen, .notifications, .hud]),
+        .init(title: "组件与内容", sections: [.music, .weather, .calendar, .sports, .finance, .battery, .audio, .bluetooth, .shortcuts, .fileShelf, .notes, .clipboard, .mirror, .caffeine]),
+        .init(title: "系统与工具", sections: [.systemEnhance, .snapZones, .dockLayouts, .mediaOptimizer, .mouse, .monitoring, .devActivity, .emoji, .archives, .apps, .storage]),
+        .init(title: "专注与安全", sections: [.eyeBreak, .focusSession, .appLock]),
         .init(title: "", sections: [.about])
     ]
 }
@@ -61,7 +61,7 @@ struct SettingsSidebarView: View {
             Spacer().frame(height: 45)
 
             // MARK: 1. Search Settings (Top of Sidebar)
-            ClearableSearchField(placeholder: "Search settings", text: $searchText)
+            ClearableSearchField(placeholder: "搜索设置", text: $searchText)
             .padding(.horizontal, 12)
             .padding(.vertical, 10)
             .background(Color.white.opacity(0.06))

@@ -67,8 +67,8 @@ struct BatteryDetailView: View {
             HStack(alignment: .top, spacing: 10) {
                 powerHero
                 VStack(spacing: 10) {
-                    compactMetric(title: "Battery Health", value: "\(stats.maxCapacityPercentage)%", icon: "heart.fill", color: .pink)
-                    compactMetric(title: "Cycle Count", value: "\(stats.cycleCount)", icon: "arrow.triangle.2.circlepath", color: .purple)
+                    compactMetric(title: "电池健康", value: "\(stats.maxCapacityPercentage)%", icon: "heart.fill", color: .pink)
+                    compactMetric(title: "循环次数", value: "\(stats.cycleCount)", icon: "arrow.triangle.2.circlepath", color: .purple)
                 }
                 .frame(width: 160)
             }
@@ -226,7 +226,7 @@ struct BatteryDetailView: View {
     private var powerHero: some View {
         VStack(alignment: .leading, spacing: 7) {
             HStack(alignment: .firstTextBaseline) {
-                Text("System Power")
+                Text("系统功耗")
                     .font(.system(size: 12, weight: .semibold, design: .rounded))
                     .foregroundColor(.white.opacity(0.72))
                 Spacer()

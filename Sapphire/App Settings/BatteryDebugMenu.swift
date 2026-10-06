@@ -61,7 +61,7 @@ struct BatteryDebugMenu: View {
         HStack(spacing: 10) {
             Image(systemName: "hammer.fill")
                 .foregroundStyle(.orange)
-            Text("Debug Menu")
+            Text("调试菜单")
                 .font(.title3.bold())
             Spacer()
             Button("Refresh All") {
@@ -190,7 +190,7 @@ struct BatteryDebugMenu: View {
             .controlSize(.small)
 
             HStack(spacing: 8) {
-                Text("Limit:")
+                Text("上限：")
                 TextField("80", value: $limitInput, formatter: Self.integerFormatter)
                     .textFieldStyle(.roundedBorder)
                     .frame(width: 60)
@@ -283,7 +283,7 @@ struct BatteryDebugMenu: View {
         VStack(alignment: .leading, spacing: 8) {
             sectionTitle("Action Log", systemImage: "terminal.fill", color: .gray)
             if log.isEmpty {
-                Text("No actions yet.")
+                Text("暂无操作。")
                     .font(.caption.monospaced())
                     .foregroundStyle(.tertiary)
             } else {

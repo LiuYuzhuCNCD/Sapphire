@@ -145,14 +145,14 @@ struct DataViewerView: View {
 
                 StatCard(
                     icon: "externaldrive.fill",
-                    title: "Database Size",
+                    title: "数据库大小",
                     value: String(format: "%.2f MB", summary.databaseSizeMB),
                     color: .purple
                 )
 
                 StatCard(
                     icon: "checkmark.circle.fill",
-                    title: "Active Monitors",
+                    title: "启用的监控",
                     value: "\(summary.countsByMonitorType.count)",
                     color: .green
                 )
@@ -179,14 +179,14 @@ struct DataViewerView: View {
 
     private func dateRangeSection(_ summary: DataSummary) -> some View {
         VStack(alignment: .leading, spacing: 16) {
-            Text("Data Range")
+            Text("数据范围")
                 .font(.headline)
 
             VStack(spacing: 12) {
                 if let oldest = summary.oldestEntry {
                     DataRangeRow(
                         icon: "calendar.badge.clock",
-                        title: "Oldest Entry",
+                        title: "最旧条目",
                         date: oldest
                     )
                 }
@@ -194,7 +194,7 @@ struct DataViewerView: View {
                 if let newest = summary.newestEntry {
                     DataRangeRow(
                         icon: "calendar.badge.checkmark",
-                        title: "Newest Entry",
+                        title: "最新条目",
                         date: newest
                     )
                 }
@@ -204,7 +204,7 @@ struct DataViewerView: View {
                     HStack {
                         Image(systemName: "chart.line.uptrend.xyaxis")
                             .foregroundStyle(.blue)
-                        Text("Span:")
+                        Text("跨度：")
                             .font(.subheadline)
                             .foregroundStyle(.secondary)
                         Text("\(days) days")
@@ -222,7 +222,7 @@ struct DataViewerView: View {
 
     private func storageSection(_ summary: DataSummary) -> some View {
         VStack(alignment: .leading, spacing: 16) {
-            Text("Storage Details")
+            Text("存储详情")
                 .font(.headline)
 
             VStack(spacing: 12) {

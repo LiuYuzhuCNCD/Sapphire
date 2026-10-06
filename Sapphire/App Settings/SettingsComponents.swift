@@ -986,7 +986,7 @@ struct LiquidGlassStylePickerRow: View {
             SettingsRowLabel(title: title, description: selection.summary)
             Spacer()
             HStack(spacing: 4) {
-                stepButton(systemName: "chevron.left", help: "Previous Style", offset: -1)
+                stepButton(systemName: "chevron.left", help: "上一种样式", offset: -1)
                 Picker("", selection: $selection) {
                     ForEach(LiquidGlassMaterial.allCases) { style in
                         Text(style.displayName).tag(style)
@@ -995,7 +995,7 @@ struct LiquidGlassStylePickerRow: View {
                 .labelsHidden()
                 .pickerStyle(.menu)
                 .frame(width: 160)
-                stepButton(systemName: "chevron.right", help: "Next Style", offset: 1)
+                stepButton(systemName: "chevron.right", help: "下一种样式", offset: 1)
             }
         }
         .padding()

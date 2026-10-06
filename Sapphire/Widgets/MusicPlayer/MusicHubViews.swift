@@ -39,7 +39,7 @@ fileprivate enum MusicHubPane: Int, CaseIterable {
         case .now: return "Now"
         case .library: return "Library"
         case .discover: return "Discover"
-        case .audio: return "Audio"
+        case .audio: return "音频"
         }
     }
 
@@ -2359,7 +2359,7 @@ enum MusicAudioHubSection: Int, CaseIterable {
         switch self {
         case .spotify: return "Spotify"
         case .airplay: return "AirPlay"
-        case .apps: return "Apps"
+        case .apps: return "应用"
         case .system: return "System"
         }
     }

@@ -19,12 +19,12 @@ struct AudioSettingsView: View {
     var body: some View {
         ScrollView {
             LazyVStack(alignment: .leading, spacing: 20) {
-                Text("Audio")
+                Text("音频")
                     .font(.largeTitle.bold())
                     .padding(.bottom, 4)
 
                 VStack(alignment: .leading, spacing: 0) {
-                    Text("Notch")
+                    Text("刘海")
                         .font(.headline)
                         .padding([.top, .horizontal])
 

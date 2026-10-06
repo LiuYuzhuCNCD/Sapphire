@@ -12,7 +12,7 @@ struct NotesWidgetView: View {
 
     var body: some View {
         NotchMiniListWidget(
-            title: "Notes",
+            title: "便签",
             systemImage: "note.text",
             tint: .yellow,
             gradient: [Color.yellow.opacity(0.35), Color.orange.opacity(0.18)],
@@ -89,7 +89,7 @@ struct NotesPlayerView: View {
 
     private var listView: some View {
         NotchSwipeListPanel(
-            title: "Notes",
+            title: "便签",
             subtitle: "\(notesManager.notes.count) saved",
             accent: .yellow,
             searchPlaceholder: "Search notes",

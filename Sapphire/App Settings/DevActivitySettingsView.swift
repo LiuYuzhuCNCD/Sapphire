@@ -27,7 +27,7 @@ struct DevActivitySettingsView: View {
     var body: some View {
         ScrollView {
             LazyVStack(alignment: .leading, spacing: 20) {
-                Text("Dev Activity")
+                Text("开发者活动")
                     .font(.largeTitle.bold())
                     .padding(.bottom)
 
@@ -56,7 +56,7 @@ struct DevActivitySettingsView: View {
             Divider().padding(.leading, 20)
 
             ToggleRow(
-                title: "AI Agents",
+                title: "AI 代理",
                 description: "Claude, Codex, Cursor, Antigravity, GitHub Copilot, Devin/Windsurf, Gemini, Aider, and other coding agents.",
                 isOn: kindBinding(.ai, keyPath: \.devActivityKinds)
             )
@@ -64,7 +64,7 @@ struct DevActivitySettingsView: View {
             Divider().padding(.leading, 20)
 
             ToggleRow(
-                title: "Builds & Tests",
+                title: "构建与测试",
                 description: "Xcode, Android Studio and Gradle, Swift, cargo, Go, npm and friends, make, Docker, and test runs.",
                 isOn: kindBinding(.build, keyPath: \.devActivityKinds)
             )
@@ -278,11 +278,11 @@ struct CaffeineAutoTaskSettingsView: View {
 
                 Divider().padding(.leading, 20)
 
-                ToggleRow(title: "AI Agents", description: "", isOn: kindBinding(.ai))
+                ToggleRow(title: "AI 代理", description: "", isOn: kindBinding(.ai))
 
                 Divider().padding(.leading, 20)
 
-                ToggleRow(title: "Builds & Tests", description: "", isOn: kindBinding(.build))
+                ToggleRow(title: "构建与测试", description: "", isOn: kindBinding(.build))
 
                 Divider().padding(.leading, 20)
 
