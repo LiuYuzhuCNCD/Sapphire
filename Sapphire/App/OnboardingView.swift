@@ -284,7 +284,7 @@ private struct PrivacyStepView: View {
             Text("Your Privacy Matters")
                 .font(.system(size: 32, weight: .bold, design: .rounded))
 
-            Text("We believe in transparency. Please review our data handling practices below.")
+            Text("我们坚持透明。请阅读下方的数据处理说明。")
                 .font(.title3)
                 .multilineTextAlignment(.center)
                 .foregroundColor(.secondary)
@@ -456,7 +456,7 @@ private struct BatterySetupStepView: View {
                 .fontWeight(.bold)
                 .font(.system(size: 32, weight: .bold, design: .rounded))
 
-            Text("Protect your battery's health and extend its lifespan with these features.")
+            Text("用这些功能保护电池健康、延长使用寿命。")
                 .font(.title3)
                 .multilineTextAlignment(.center)
                 .foregroundColor(.secondary)
@@ -523,7 +523,7 @@ private struct LockScreenSetupStepView: View {
             Text("Lock Screen Features")
                 .font(.system(size: 32, weight: .bold, design: .rounded))
 
-            Text("Enhance your Mac's lock screen with live activities and widgets directly in the notch area.")
+            Text("用刘海区的实时活动与组件增强 Mac 锁屏。")
                 .font(.title3)
                 .multilineTextAlignment(.center)
                 .foregroundColor(.secondary)
@@ -570,7 +570,7 @@ private struct SubscriptionOverviewStepView: View {
             Text("你的 Sapphire 方案")
                 .font(.system(size: 32, weight: .bold, design: .rounded))
 
-            Text("Link an account anytime in Settings to sync your subscription across devices.")
+            Text("随时在设置中关联账号，即可跨设备同步订阅。")
                 .font(.title3)
                 .multilineTextAlignment(.center)
                 .foregroundColor(.secondary)

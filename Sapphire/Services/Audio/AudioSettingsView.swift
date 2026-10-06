@@ -53,7 +53,7 @@ struct AudioSettingsView: View {
                     HStack(spacing: 16) {
                         VStack(alignment: .leading, spacing: 3) {
                             Text("均衡器频段")
-                            Text("Choose the number of frequency controls shown in app and device equalizers.")
+                            Text("选择应用与设备均衡器显示的频段数。")
                                 .font(.caption)
                                 .foregroundStyle(.secondary)
                         }
@@ -108,7 +108,7 @@ struct AudioSettingsView: View {
                         Button("取消", role: .cancel) { }
                         Button("重置", role: .destructive) { resetAllAppSettings() }
                     } message: {
-                        Text("This restores default volume, flat EQ, surround, and 8D audio for every application.")
+                        Text("这会把所有应用的音量、平坦均衡器、环绕声与 8D 音效恢复默认。")
                     }
 
                     Divider().padding(.leading, 20)

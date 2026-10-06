@@ -28,7 +28,7 @@ struct ShopifyOrdersView: View {
             }
 
             if !shopify.isConfigured {
-                Text("Connect Shopify in the Shopify section of Settings to view recent orders.")
+                Text("在设置的 Shopify 区块中连接账号即可查看最近订单。")
                     .font(.caption)
                     .foregroundStyle(.secondary)
             } else if shopify.isLoading && shopify.orders.isEmpty {

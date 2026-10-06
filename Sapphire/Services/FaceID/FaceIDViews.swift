@@ -237,7 +237,7 @@ struct FaceIDRegistrationView: View {
                                 .font(.headline)
                                 .foregroundColor(.primary)
 
-                            Text("Capture more angles for better accuracy with glasses and varying lighting.")
+                            Text("采集更多角度，戴眼镜与光线变化时识别更准。")
                                 .font(.caption)
                                 .multilineTextAlignment(.center)
                                 .foregroundColor(.secondary)

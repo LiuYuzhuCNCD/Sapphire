@@ -49,7 +49,7 @@ struct DevActivitySettingsView: View {
         VStack(alignment: .leading, spacing: 0) {
             ToggleRow(
                 title: "在刘海显示正在运行的任务",
-                description: "Surface a live activity while an AI agent, a build, or a terminal command is running.",
+                description: "有 AI 智能体、构建或终端命令运行时显示实时活动。",
                 isOn: $settings.settings.devActivityEnabled
             )
 
@@ -288,7 +288,7 @@ struct CaffeineAutoTaskSettingsView: View {
 
                 ToggleRow(
                     title: "终端命令",
-                    description: "Off by default — not every long command is worth holding the display on for.",
+                    description: "默认关闭——并非每条长命令都值得让屏幕常亮。",
                     isOn: kindBinding(.command)
                 )
 

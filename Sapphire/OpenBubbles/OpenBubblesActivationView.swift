@@ -162,7 +162,7 @@ struct OpenBubblesActivationView: View {
         VStack(alignment: .leading, spacing: 12) {
             HStack {
                 Image(systemName: "exclamationmark.triangle.fill").foregroundColor(.orange)
-                Text("Do not share this code publicly. It is permanently tied to your Mac's hardware identity.").font(.caption)
+                Text("请勿公开分享此代码。它与你的 Mac 硬件标识永久绑定。").font(.caption)
             }.padding(10).background(.orange.opacity(0.15)).clipShape(RoundedRectangle(cornerRadius: 8))
             Text("你的个人代码（不限次使用）：").font(.caption)
             if let code = defaultActivationCode {
@@ -265,7 +265,7 @@ struct AppDownloadQrView: View {
     var body: some View {
         VStack(spacing: 20) {
             Text("扫码下载").font(.largeTitle.bold())
-            Text("Open the camera app on your phone and point it at this QR code to go to the download page.")
+            Text("用手机相机扫描此二维码，即可前往下载页。")
                 .font(.headline).multilineTextAlignment(.center).foregroundStyle(.secondary).padding(.horizontal)
             if let qrImage {
                 Image(qrImage, scale: 1.0, label: Text("App Download QR Code"))

@@ -670,7 +670,7 @@ struct QueueAndPlaylistsView: View {
         } else if musicManager.title != nil {
             nativeQueueBootstrappingView
         } else {
-            CustomUnavailableView(title: "未在播放", systemImage: "speaker.slash.fill", description: "Start playing music in Spotify to see artist picks, concerts, and your queue.")
+            CustomUnavailableView(title: "未在播放", systemImage: "speaker.slash.fill", description: "在 Spotify 中开始播放即可看到歌手推荐、演唱会与队列。")
         }
     }
 
@@ -2999,7 +2999,7 @@ fileprivate struct FreeUserNoticeView: View {
     var body: some View {
         HStack(spacing: 12) {
             Image(systemName: "exclamationmark.lock.fill").font(.title3).foregroundColor(.yellow)
-            Text("Switching devices requires a Spotify Premium account or a private api login.").font(.subheadline).foregroundColor(.secondary)
+            Text("切换设备需要 Spotify 高级账号或私有 API 登录。").font(.subheadline).foregroundColor(.secondary)
         }.padding().background(Color.yellow.opacity(0.1)).clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
     }
 }
@@ -3268,7 +3268,7 @@ struct PlaylistView: View {
         .alert("Spotify App Is Not Open", isPresented: $showSpotifyNotOpenAlert) {
             Button("OK", role: .cancel) {}
         } message: {
-            Text("To control playback with a free account, please open the Spotify desktop app first.")
+            Text("免费账号要控制播放，请先打开 Spotify 桌面应用。")
         }
         .onChange(of: sortOption) { _, _ in saveSortState() }
         .onChange(of: sortDirection) { _, _ in saveSortState() }
@@ -3788,7 +3788,7 @@ struct SpotifyArtistDetailView: View {
         .alert("Spotify App Is Not Open", isPresented: $showSpotifyNotOpenAlert) {
             Button("OK", role: .cancel) {}
         } message: {
-            Text("To control playback with a free account, please open the Spotify desktop app first.")
+            Text("免费账号要控制播放，请先打开 Spotify 桌面应用。")
         }
     }
 
@@ -4051,7 +4051,7 @@ struct SpotifyAlbumDetailView: View {
         .alert("Spotify App Is Not Open", isPresented: $showSpotifyNotOpenAlert) {
             Button("OK", role: .cancel) {}
         } message: {
-            Text("To control playback with a free account, please open the Spotify desktop app first.")
+            Text("免费账号要控制播放，请先打开 Spotify 桌面应用。")
         }
     }
 
@@ -4744,7 +4744,7 @@ struct LoginPromptView: View {
             Text("需要登录")
                 .font(.title2).bold()
 
-            Text("Please log in to Spotify via the Music section in Sapphire's settings to use this feature.")
+            Text("请通过 Sapphire 设置的「音乐」区块登录 Spotify 以使用此功能。")
                 .font(.subheadline).foregroundColor(.secondary).multilineTextAlignment(.center)
 
             Text("用刘海里的返回控件回去。")
@@ -4768,7 +4768,7 @@ struct ApiKeysMissingView: View {
             Text("Spotify API Keys Missing")
                 .font(.title2).bold()
 
-            Text("To enable Spotify integration, please add your API credentials in Sapphire's settings.")
+            Text("要启用 Spotify 整合，请在 Sapphire 设置中填入 API 凭据。")
                 .font(.subheadline).foregroundColor(.secondary).multilineTextAlignment(.center)
 
             Text("用刘海里的返回控件回去。")
@@ -4792,7 +4792,7 @@ struct GeminiApiKeysMissingView: View {
             Text("Gemini API Key Missing")
                 .font(.title2).bold()
 
-            Text("To use Gemini Live, please add your Google AI Studio API key in Sapphire's settings.")
+            Text("要使用 Gemini Live，请在 Sapphire 设置中填入 Google AI Studio 的 API 密钥。")
                 .font(.subheadline).foregroundColor(.secondary).multilineTextAlignment(.center)
 
             Text("用刘海里的返回控件回去。")
