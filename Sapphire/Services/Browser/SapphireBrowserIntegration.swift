@@ -95,7 +95,7 @@ final class SapphireBrowserIntegration {
         MainActor.assumeIsolated {
             FileShelfManager.shared.addFiles(from: [url])
             postLocalNotification(
-                title: "Saved to File Shelf",
+                title: "已存入文件架",
                 body: "\(url.lastPathComponent) from Sapphire Browser",
                 category: nil,
                 userInfo: nil
@@ -120,7 +120,7 @@ final class SapphireBrowserIntegration {
                     .prefix(60)
                 FileShelfManager.shared.addText(url.absoluteString, named: String(safeName))
                 postLocalNotification(
-                    title: "Saved to File Shelf",
+                    title: "已存入文件架",
                     body: title,
                     category: nil,
                     userInfo: nil

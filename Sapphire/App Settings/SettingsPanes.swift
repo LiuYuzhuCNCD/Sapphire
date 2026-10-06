@@ -1118,7 +1118,7 @@ private struct AppUninstallReviewSheet: View {
                 Divider()
                 HStack {
                     Menu("Selection") {
-                        Button("Recommended") { model.selectRecommendedArtifacts() }
+                        Button("推荐") { model.selectRecommendedArtifacts() }
                         Button("Select All Related Files") { model.selectAllArtifacts() }
                     }
                     .disabled(model.isRemoving)
@@ -1408,7 +1408,7 @@ struct StorageSettingsView: View {
         .onAppear { model.refreshFromCache() }
         .onDisappear { model.cancelScan() }
         .alert("Move item to Trash?", isPresented: $model.confirmingRemoval) {
-            Button("Move to Trash", role: .destructive) { model.removeConfirmed() }
+            Button("移到废纸篓", role: .destructive) { model.removeConfirmed() }
             Button("取消", role: .cancel) { model.cancelRemovalRequest() }
         } message: { Text(model.removalMessage) }
     }
@@ -12839,7 +12839,7 @@ struct FocusSessionSettingsView: View {
 
     private var automationSection: some View {
         VStack(alignment: .leading, spacing: 0) {
-            sectionLabel("Automation")
+            sectionLabel("自动化")
 
             Text("在任意位置按此快捷键即可开始或暂停专注会话。")
                 .font(.caption)

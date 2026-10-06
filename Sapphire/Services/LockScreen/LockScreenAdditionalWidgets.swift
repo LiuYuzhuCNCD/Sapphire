@@ -33,7 +33,7 @@ struct LockScreenCaffeineInfoView: View {
                 HStack(spacing: LockScreenConfiguration.infoWidgetGenericHSpacing) {
                     Image(systemName: "cup.and.saucer.fill")
                         .font(.system(size: LockScreenConfiguration.infoWidgetIconFontSize))
-                    Text("Caffeine On")
+                    Text("防休眠已开")
                         .fontWeight(.semibold)
                 }
                 .foregroundColor(.orange)
@@ -43,7 +43,7 @@ struct LockScreenCaffeineInfoView: View {
                 HStack(spacing: LockScreenConfiguration.infoWidgetGenericHSpacing) {
                     Image(systemName: "cup.and.saucer")
                         .font(.system(size: LockScreenConfiguration.infoWidgetIconFontSize))
-                    Text("Caffeine Off")
+                    Text("防休眠已关")
                 }
                 .foregroundColor(.secondary)
                 .modifier(TransparentEffect())
@@ -380,7 +380,7 @@ struct LockScreenBluetoothMiniWidget: View {
                         .font(.system(size: 12, weight: .medium, design: .rounded))
                         .foregroundStyle(.secondary)
                 } else {
-                    Text("No device connected")
+                    Text("未连接设备")
                         .font(.system(size: 12, weight: .medium, design: .rounded))
                         .foregroundStyle(.secondary)
                 }

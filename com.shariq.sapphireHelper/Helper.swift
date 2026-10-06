@@ -990,7 +990,7 @@ class Helper: NSObject, HelperProtocol {
         ))
     }
     func setFanMode(fanIndex: Int, mode: UInt8, reply: @escaping (Error?) -> Void) {
-        guard let smc = smc else { reply(makeError(code: .smcOpenFailed, description: "SMC not connected.")); return }
+        guard let smc = smc else { reply(makeError(code: .smcOpenFailed, description: "SMC 未连接。")); return }
         let targetMode: FanMode = mode == 0 ? .automatic : .forced
         let requestedState = AppliedFanState(mode: targetMode, speed: targetMode == .automatic ? 0 : nil)
 
@@ -1015,7 +1015,7 @@ class Helper: NSObject, HelperProtocol {
         }
     }
     func setFanTargetSpeed(fanIndex: Int, speed: Int, reply: @escaping (Error?) -> Void) {
-        guard let smc = smc else { reply(makeError(code: .smcOpenFailed, description: "SMC not connected.")); return }
+        guard let smc = smc else { reply(makeError(code: .smcOpenFailed, description: "SMC 未连接。")); return }
         fanStateLock.lock()
         let alreadyApplied = appliedFanStates[fanIndex] == AppliedFanState(mode: .forced, speed: speed)
         fanStateLock.unlock()
@@ -1034,7 +1034,7 @@ class Helper: NSObject, HelperProtocol {
     }
     func setFanToConstantRPM(fanIndex: Int, speed: Int, reply: @escaping (Error?) -> Void) {
         logger.log("Request to set fan \(fanIndex) to a constant \(speed) RPM.")
-        guard let smc = smc else { logger.error("SMC connection not available."); reply(makeError(code: .smcOpenFailed, description: "SMC not connected.")); return }
+        guard let smc = smc else { logger.error("SMC connection not available."); reply(makeError(code: .smcOpenFailed, description: "SMC 未连接。")); return }
 
         fanStateLock.lock()
         let alreadyApplied = appliedFanStates[fanIndex] == AppliedFanState(mode: .forced, speed: speed)

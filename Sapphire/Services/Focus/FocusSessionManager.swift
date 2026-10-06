@@ -434,7 +434,7 @@ final class FocusSessionManager: ObservableObject {
             syncBlocking()
             NotificationCenter.default.post(name: .focusSessionBlockCompleted, object: nil, userInfo: ["phase": "focus"])
             postCompletionNotification(
-                title: "Break over ",
+                title: "休息结束 ",
                 body: "Back to it — new focus block started."
             )
         case .sessionFinished:

@@ -606,7 +606,7 @@ struct LaunchpadView: View {
         .environmentObject(viewModel)
         .alert(viewModel.deleteAlertTitle, isPresented: $viewModel.showingDeleteConfirm, presenting: viewModel.itemToDelete) { _ in
             Button(role: .destructive) { viewModel.confirmDeleteItem() } label: {
-                if case .app = viewModel.itemToDelete { Text("Move to Trash") } else { Text("解散") }
+                if case .app = viewModel.itemToDelete { Text("移到废纸篓") } else { Text("解散") }
             }
             Button("取消", role: .cancel) { viewModel.cancelDeleteItem() }
         } message: { _ in

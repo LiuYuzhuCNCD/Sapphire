@@ -154,7 +154,7 @@ final class SystemAlertsManager {
         lastCPUAlert = Date()
         cpuHistory.removeAll()
         postAlert(
-            title: "High CPU Load",
+            title: "CPU 占用高",
             body: "CPU has been at \(Int((average * 100).rounded()))% for about a minute."
         )
     }

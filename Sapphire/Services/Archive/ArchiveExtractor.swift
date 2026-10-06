@@ -220,7 +220,7 @@ final class ArchiveExtractor: ObservableObject {
         await requestNotificationAuthorizationIfNeeded()
 
         guard FileManager.default.fileExists(atPath: url.path) else {
-            await notify(title: "Sapphire Archives", body: "\(archiveName) could not be found.")
+            await notify(title: "Sapphire 压缩包", body: "\(archiveName) could not be found.")
             return
         }
 
@@ -246,7 +246,7 @@ final class ArchiveExtractor: ObservableObject {
         do {
             try FileManager.default.createDirectory(at: destination, withIntermediateDirectories: true)
         } catch {
-            await notify(title: "Sapphire Archives", body: "Could not create \(destination.lastPathComponent) to extract \(archiveName).")
+            await notify(title: "Sapphire 压缩包", body: "Could not create \(destination.lastPathComponent) to extract \(archiveName).")
             return
         }
 
@@ -267,7 +267,7 @@ final class ArchiveExtractor: ObservableObject {
         guard result.success else {
             currentTransferTask = nil
             await notify(
-                title: "Sapphire Archives",
+                title: "Sapphire 压缩包",
                 body: "Could not extract \(archiveName). It may be damaged, unsupported, or password protected."
             )
             return
@@ -290,7 +290,7 @@ final class ArchiveExtractor: ObservableObject {
             break
         }
 
-        await notify(title: "Sapphire Archives", body: "\(archiveName) extracted successfully.")
+        await notify(title: "Sapphire 压缩包", body: "\(archiveName) extracted successfully.")
     }
 
     // MARK: - Extraction

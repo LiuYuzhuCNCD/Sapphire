@@ -39,13 +39,13 @@ private struct PremiumUnavailableView: View {
 }
 
 struct KeyboardShortcutsSettingsView: View { var body: some View { PremiumUnavailableView(title: "键盘快捷键") } }
-struct ContinuitySettingsView: View { var body: some View { PremiumUnavailableView(title: "Continuity") } }
+struct ContinuitySettingsView: View { var body: some View { PremiumUnavailableView(title: "连续互通") } }
 struct EmojiSettingsView: View { var body: some View { PremiumUnavailableView(title: "表情符号") } }
 struct MouseSettingsView: View { var body: some View { PremiumUnavailableView(title: "鼠标") } }
 struct MonitoringSettingsView: View { var body: some View { PremiumUnavailableView(title: "监控") } }
 struct ArchivesAndDMGInstallerSettingsView: View { var body: some View { PremiumUnavailableView(title: "压缩包") } }
 struct AppLockSettingsView: View { var body: some View { PremiumUnavailableView(title: "应用锁") } }
-struct DockLayoutsSettingsView: View { var body: some View { PremiumUnavailableView(title: "Dock Layouts") } }
+struct DockLayoutsSettingsView: View { var body: some View { PremiumUnavailableView(title: "程序坞布局") } }
 struct MediaOptimizerSettingsView: View { var body: some View { PremiumUnavailableView(title: "媒体优化") } }
 
 struct StorageWorkspaceView: View {
@@ -62,7 +62,7 @@ struct EightDAudioView: View {
 struct SurroundAudioView: View {
     let bundleID: String
     let appName: String
-    var body: some View { PremiumUnavailableView(title: "Surround Audio") }
+    var body: some View { PremiumUnavailableView(title: "环绕声") }
 }
 
 struct StorageDetailView: View {

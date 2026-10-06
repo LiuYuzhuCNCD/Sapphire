@@ -227,7 +227,7 @@ private struct DeviceDropZoneView: View {
                 VStack(spacing: 3) {
                     Image(systemName: "iphone.slash")
                         .font(.system(size: 20, weight: .light))
-                    Text("No paired devices")
+                    Text("没有已配对设备")
                         .font(.system(size: 10, weight: .medium, design: .rounded))
                 }
                 .foregroundStyle(.tertiary)

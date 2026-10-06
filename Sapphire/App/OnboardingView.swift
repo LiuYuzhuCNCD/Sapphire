@@ -102,7 +102,7 @@ private struct WelcomeStepView: View {
                 .frame(width: 80, height: 80)
                 .clipShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
 
-            Text("Welcome to Sapphire")
+            Text("欢迎使用 Sapphire")
                 .font(.system(size: 32, weight: .bold, design: .rounded))
                 .multilineTextAlignment(.center)
 
@@ -114,7 +114,7 @@ private struct WelcomeStepView: View {
 
             Spacer()
 
-            OnboardingButton(title: "Get Started", action: onGetStarted)
+            OnboardingButton(title: "开始使用", action: onGetStarted)
         }
     }
 }
@@ -125,7 +125,7 @@ private struct PermissionsStepView: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            Text("Permissions")
+            Text("权限")
                 .font(.system(size: 32, weight: .bold, design: .rounded))
                 .padding(.top, 40).padding(.bottom, 10)
 
@@ -139,7 +139,7 @@ private struct PermissionsStepView: View {
             ScrollView {
                 VStack(spacing: 25) {
                     PermissionSectionView(title: "必需", permissions: permissionsManager.requiredPermissions, manager: permissionsManager)
-                    PermissionSectionView(title: "Recommended", permissions: permissionsManager.recommendedPermissions, description: "These permissions enable major features like widgets and live activities.", manager: permissionsManager)
+                    PermissionSectionView(title: "推荐", permissions: permissionsManager.recommendedPermissions, description: "These permissions enable major features like widgets and live activities.", manager: permissionsManager)
                     PermissionSectionView(title: "可选", permissions: permissionsManager.optionalPermissions, description: "These permissions enable minor or cosmetic features.", manager: permissionsManager)
                 }.padding(.horizontal, 50)
             }
@@ -221,7 +221,7 @@ private struct HelperInstallationStepView: View {
                 .animation(.easeInOut, value: helperManager.isRunning)
 
             Button(action: onContinue) {
-                Text("Skip for now").font(.subheadline).foregroundColor(.secondary)
+                Text("暂时跳过").font(.subheadline).foregroundColor(.secondary)
             }
             .buttonStyle(.plain)
             .padding(.top, 8)
@@ -299,7 +299,7 @@ private struct PrivacyStepView: View {
                     )
 
                     PrivacySection(
-                        title: "What This Includes:",
+                        title: "包含内容：",
                         content: "• Feature usage frequency (e.g., how often a widget is used)\n• App version and macOS version\n• Anonymous crash reports"
                     )
 
@@ -402,7 +402,7 @@ private struct SpotifySetupStepView: View {
     var body: some View {
         VStack(spacing: 20) {
             Spacer()
-            Text("Spotify Setup").font(.system(size: 32, weight: .bold, design: .rounded))
+            Text("Spotify 设置").font(.system(size: 32, weight: .bold, design: .rounded))
             Text("Log in to enable enhanced features like liking tracks and skipping ads directly from the notch.").font(.title3).multilineTextAlignment(.center).foregroundColor(.secondary).padding(.horizontal)
             VStack(alignment: .center, spacing: 15) {
                 if musicManager.isPrivateAPIAuthenticated {
@@ -411,7 +411,7 @@ private struct SpotifySetupStepView: View {
                     Text("私有 API 登录").font(.headline)
                     Text("This method works for both Free and Premium users. Use at your own risk.").font(.caption).foregroundColor(.secondary).multilineTextAlignment(.center)
                     if isLoading {
-                        VStack(spacing: 8) { ProgressView(); Text("Logging in...").font(.caption).foregroundColor(.secondary) }.frame(height: 40)
+                        VStack(spacing: 8) { ProgressView(); Text("正在登录…").font(.caption).foregroundColor(.secondary) }.frame(height: 40)
                     } else {
                         Button("Log In with Spotify", action: handlePrivateApiLogin).buttonStyle(.borderedProminent).tint(.green).controlSize(.large).frame(height: 40)
                     }
@@ -474,7 +474,7 @@ private struct BatterySetupStepView: View {
                     .frame(width: 150)
                 }
 
-                ModernOnboardingRow(iconName: "sailboat.fill", iconColor: .blue, title: "Enable Sailing Mode", description: "Reduces micro-charging cycles when the limit is reached.") {
+                ModernOnboardingRow(iconName: "sailboat.fill", iconColor: .blue, title: "启用航行模式", description: "Reduces micro-charging cycles when the limit is reached.") {
                     SettingsSwitch(isOn: $settings.settings.sailingModeEnabled)
                 }
 
@@ -497,7 +497,7 @@ private struct CorePreferencesStepView: View {
     var body: some View {
         VStack(spacing: 20) {
             Spacer()
-            Text("Quick Setup").font(.system(size: 32, weight: .bold, design: .rounded))
+            Text("快速设置").font(.system(size: 32, weight: .bold, design: .rounded))
             Text("Personalize your experience. You can change these any time in Settings.").font(.title3).multilineTextAlignment(.center).foregroundColor(.secondary).padding(.horizontal, 50)
             VStack(spacing: 15) {
                 ModernOnboardingRow(iconName: "sparkles.tv", iconColor: .cyan, title: "显示自定义浮层", description: "Replace default volume & brightness indicators.") { SettingsSwitch(isOn: showHudsBinding) }
@@ -567,7 +567,7 @@ private struct SubscriptionOverviewStepView: View {
         VStack(spacing: 20) {
             Spacer()
 
-            Text("Your Sapphire Plan")
+            Text("你的 Sapphire 方案")
                 .font(.system(size: 32, weight: .bold, design: .rounded))
 
             Text("Link an account anytime in Settings to sync your subscription across devices.")

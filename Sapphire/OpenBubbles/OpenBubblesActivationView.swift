@@ -143,7 +143,7 @@ struct OpenBubblesActivationView: View {
         VStack {
             if let code = oneTimeActivationCode {
                 VStack(alignment: .leading) {
-                    Text("Your One-Time Code:").font(.caption)
+                    Text("你的一次性代码：").font(.caption)
                     HStack {
                         TextField("Activation Code", text: .constant(code)).textFieldStyle(.plain).disabled(true)
                         Button(action: { copyToClipboard(code) }) { Image(systemName: "doc.on.doc.fill") }.buttonStyle(.plain)

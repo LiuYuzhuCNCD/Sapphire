@@ -817,7 +817,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
                 }
             }
         }
-        networkMonitor?.start(queue: DispatchQueue(label: "NetworkMonitor", qos: .utility))
+        networkMonitor?.start(queue: DispatchQueue(label: "网络监控", qos: .utility))
     }
 
     private var hasPresentedHelperConnectionAlertThisSession = false
@@ -1250,7 +1250,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
                 let menu = NSMenu()
                 menu.addItem(NSMenuItem(title: "显示启动台", action: #selector(showLaunchpadAction), keyEquivalent: ""))
                 menu.addItem(.separator())
-                menu.addItem(NSMenuItem(title: "Quit Sapphire", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
+                menu.addItem(NSMenuItem(title: "退出 Sapphire", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
                 for item in menu.items { item.target = self }
                 statusItem?.menu = menu
             }

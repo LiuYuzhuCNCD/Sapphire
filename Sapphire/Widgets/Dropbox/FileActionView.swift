@@ -187,7 +187,7 @@ struct FileActionView: View {
             DetailButton(title: "打开", systemImage: "play.fill", isProminent: true) {
                 NSWorkspace.shared.open(liveItem.storedAt)
             }
-            DetailButton(title: "In Finder", systemImage: "folder.fill", isProminent: false, tint: .primary) {
+            DetailButton(title: "在访达中", systemImage: "folder.fill", isProminent: false, tint: .primary) {
                 NSWorkspace.shared.activateFileViewerSelecting([liveItem.storedAt])
             }
         }
@@ -198,10 +198,10 @@ struct FileActionView: View {
             QuickIconAction(systemImage: "square.and.arrow.up", title: "共享") {
                 presentSharePicker()
             }
-            QuickIconAction(systemImage: "plus.square.on.square", title: "Duplicate") {
+            QuickIconAction(systemImage: "plus.square.on.square", title: "制作副本") {
                 manager.duplicateFile(item)
             }
-            QuickIconAction(systemImage: "doc.on.clipboard", title: "Copy Path") {
+            QuickIconAction(systemImage: "doc.on.clipboard", title: "拷贝路径") {
                 copyPath()
             }
         }
@@ -225,7 +225,7 @@ struct FileActionView: View {
     private var convertSection: some View {
         if !availableFormats.isEmpty {
             VStack(alignment: .leading, spacing: 6) {
-                Text("Convert To")
+                Text("转换为")
                     .font(.caption)
                     .foregroundColor(.secondary)
                     .textCase(.uppercase)

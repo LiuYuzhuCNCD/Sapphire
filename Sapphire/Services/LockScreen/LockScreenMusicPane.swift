@@ -333,7 +333,7 @@ struct LockScreenFullScreenMusicPane: View {
 
                     HStack(spacing: 8) {
                         if let popularity = musicManager.popularity ?? musicManager.fetchedSpotifyPopularity {
-                            statPill(icon: "chart.bar.fill", label: "Popularity", value: "\(popularity)/100", color: musicManager.accentColor)
+                            statPill(icon: "chart.bar.fill", label: "热度", value: "\(popularity)/100", color: musicManager.accentColor)
                         }
                         if musicManager.totalDuration > 0 {
                             let mins = Int(musicManager.totalDuration) / 60
@@ -510,7 +510,7 @@ struct LockScreenFullScreenMusicPane: View {
                         }
 
                         if !concerts.isEmpty {
-                            overviewSection(title: "Upcoming Concerts", icon: "ticket.fill", accent: .pink) {
+                            overviewSection(title: "即将开始的演唱会", icon: "ticket.fill", accent: .pink) {
                                 VStack(spacing: 6) {
                                     ForEach(concerts.prefix(4)) { concert in
                                         VStack(alignment: .leading, spacing: 4) {

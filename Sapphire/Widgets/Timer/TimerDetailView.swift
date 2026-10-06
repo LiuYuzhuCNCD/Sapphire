@@ -47,7 +47,7 @@ struct TimerDetailView: View {
 
     private var quickStartSection: some View {
         VStack(alignment: .leading, spacing: 10) {
-            Text("Quick Timer")
+            Text("快速计时")
                 .font(.title3.bold())
                 .foregroundColor(.orange)
 
@@ -255,7 +255,7 @@ struct TimerDetailView: View {
     private var systemStopwatchesSection: some View {
         if !timerManager.activeStopwatches.isEmpty {
             VStack(alignment: .leading, spacing: 8) {
-                Text("Stopwatches")
+                Text("秒表")
                     .font(.title3.bold())
                     .foregroundColor(.green)
                 ForEach(timerManager.activeStopwatches) { stopwatch in

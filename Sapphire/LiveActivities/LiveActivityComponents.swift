@@ -973,7 +973,7 @@ struct BluetoothDisconnectedView {
                 .font(.system(size: 13, weight: .semibold))
                 .foregroundColor(.white.opacity(0.9))
                 .lineLimit(1)
-            Text("Disconnected")
+            Text("已断开")
                 .font(.system(size: 11))
                 .foregroundColor(.white.opacity(0.6))
         }
@@ -996,7 +996,7 @@ struct BluetoothBatteryLowView {
                     .font(.system(size: 13, weight: .semibold, design: .rounded))
                     .foregroundColor(.red)
             } else {
-                Text("Low Battery")
+                Text("电量低")
                     .font(.system(size: 13, weight: .semibold))
                     .foregroundColor(.red)
             }
@@ -1214,7 +1214,7 @@ struct UpdateAvailableWidgetView: View {
             }
 
             VStack(alignment: .leading, spacing: 10) {
-                Text("How to update")
+                Text("如何更新")
                     .font(.subheadline.weight(.semibold))
                     .foregroundColor(.white.opacity(0.9))
                 stepRow(number: 1, text: "Open the About page in Settings")
@@ -1946,7 +1946,7 @@ struct OTPLiveActivityView: View {
                 }
 
                 VStack(alignment: .leading, spacing: 1) {
-                    Text("Verification code")
+                    Text("验证码")
                         .font(.system(size: 11, weight: .bold, design: .rounded))
                         .foregroundStyle(.secondary)
                     Text(event.title.isEmpty ? event.source : event.title)

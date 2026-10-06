@@ -1051,7 +1051,7 @@ struct QueueAndPlaylistsView: View {
                         .mask(LinearGradient(gradient: Gradient(stops: [.init(color: .black, location: 0), .init(color: .black, location: 0.95), .init(color: .clear, location: 1.0)]), startPoint: .top, endPoint: .bottom))
                     } else { CustomUnavailableView(title: "接下来没有歌曲", systemImage: "music.note.list", description: "Add songs to your queue to see them here.") }
                 }
-            } else { CustomUnavailableView(title: "Queue Unavailable", systemImage: "speaker.slash.fill", description: "Start playing music with a Premium account to view your queue.") }
+            } else { CustomUnavailableView(title: "队列不可用", systemImage: "speaker.slash.fill", description: "Start playing music with a Premium account to view your queue.") }
         }
 
     }
@@ -1127,7 +1127,7 @@ struct QueueAndPlaylistsView: View {
                 VStack(alignment: .leading, spacing: 14) {
                     if currentPlaylists.isEmpty {
                         CustomUnavailableView(
-                            title: "No Playlists Found",
+                            title: "未找到播放列表",
                             systemImage: "music.mic",
                             description: isAppleMusic ? "Add playlists in Apple Music to see them here." : nil
                         )
@@ -1287,7 +1287,7 @@ struct QueueAndPlaylistsView: View {
                     }
 
                     if !musicManager.spotifyPrivateAPI.playlistRecommendations.isEmpty {
-                        SectionHeader(title: "Made For You")
+                        SectionHeader(title: "为你推荐")
                         LazyVStack(spacing: 8) {
                             ForEach(musicManager.spotifyPrivateAPI.playlistRecommendations) { track in
                                 RecommendedTrackRow(track: track) { result in
@@ -1304,7 +1304,7 @@ struct QueueAndPlaylistsView: View {
                     && musicManager.spotifyPrivateAPI.popularReleases.isEmpty
                     && musicManager.spotifyPrivateAPI.playlistRecommendations.isEmpty {
                     CustomUnavailableView(
-                        title: "Your Home",
+                        title: "你的主页",
                         systemImage: "house.fill",
                         description: "Home shelves from Spotify will appear here once loaded."
                     )
@@ -3236,7 +3236,7 @@ struct PlaylistView: View {
                             }
 
                             if !spotifyPrivateAPI.playlistRecommendations.isEmpty {
-                                Text("Recommended")
+                                Text("推荐")
                                     .font(.system(size: 13, weight: .bold, design: .rounded))
                                     .foregroundStyle(.secondary)
                                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -4139,7 +4139,7 @@ struct SpotifyMusicSearchView: View {
                 ScrollView {
                     LazyVStack(alignment: .leading, spacing: 14) {
                         if !suggestions.isEmpty {
-                            Text("Suggestions")
+                            Text("建议")
                                 .font(.system(size: 12, weight: .bold, design: .rounded))
                                 .foregroundStyle(.secondary)
                             FlowWrap(items: suggestions.prefix(8).map(\.text)) { text in
@@ -4971,7 +4971,7 @@ struct AppleMusicSearchView: View {
                 if let error = vm.errorMessage {
                     centeredPlaceholder(systemImage: "wifi.exclamationmark", label: error)
                 } else if vm.isSearching && vm.results.isEmpty {
-                    centeredPlaceholder(systemImage: "magnifyingglass", label: "Searching…")
+                    centeredPlaceholder(systemImage: "magnifyingglass", label: "搜索中…")
                 } else if vm.results.isEmpty && vm.hasSearched {
                     centeredPlaceholder(systemImage: "music.note", label: "No results for \"\(vm.query)\"")
                 } else if !vm.suggestions.isEmpty && vm.query.count >= 2 && vm.results.isEmpty && !vm.hasSearched {
@@ -5098,7 +5098,7 @@ struct AppleMusicSearchView: View {
         ScrollView(showsIndicators: false) {
             LazyVStack(alignment: .leading, spacing: 14) {
                 if !vm.forYou.isEmpty {
-                    discoverSection(title: "Made for You", systemImage: "sparkles") {
+                    discoverSection(title: "为你推荐", systemImage: "sparkles") {
                         ForEach(vm.forYou.prefix(5)) { playlist in
                             AppleMusicPlaylistRow(playlist: playlist) {
                                 Task { _ = await musicManager.appleMusic.playCatalogPlaylist(playlistID: playlist.id) }
@@ -5107,7 +5107,7 @@ struct AppleMusicSearchView: View {
                     }
                 }
                 if !vm.replay.topSongs.isEmpty {
-                    discoverSection(title: "Your Replay", systemImage: "arrow.clockwise.circle.fill") {
+                    discoverSection(title: "你的回顾", systemImage: "arrow.clockwise.circle.fill") {
                         ForEach(vm.replay.topSongs.prefix(6)) { track in
                             SuggestedAppleTrackRow(track: track) {
                                 Task { _ = musicManager.appleMusic.playTrack(persistentID: track.id) }
@@ -5116,7 +5116,7 @@ struct AppleMusicSearchView: View {
                     }
                 }
                 if !vm.charts.isEmpty {
-                    discoverSection(title: "Top Charts", systemImage: "chart.bar.fill") {
+                    discoverSection(title: "热门榜单", systemImage: "chart.bar.fill") {
                         ForEach(vm.charts.prefix(8)) { track in
                             SuggestedAppleTrackRow(track: track) {
                                 Task { _ = musicManager.appleMusic.playTrack(persistentID: track.id) }
@@ -5125,7 +5125,7 @@ struct AppleMusicSearchView: View {
                     }
                 }
                 if !vm.albumCharts.isEmpty {
-                    discoverSection(title: "Top Albums", systemImage: "square.stack.fill") {
+                    discoverSection(title: "热门专辑", systemImage: "square.stack.fill") {
                         ForEach(vm.albumCharts.prefix(6)) { album in
                             AppleMusicAlbumRow(album: album) {
                                 Task { _ = await musicManager.appleMusic.playAlbum(albumID: album.id) }

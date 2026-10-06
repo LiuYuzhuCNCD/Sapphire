@@ -257,7 +257,7 @@ private struct InNotchNoteEditor: View {
                     systemName: "trash",
                     isActive: true,
                     activeTint: .red,
-                    help: "Delete note",
+                    help: "删除便签",
                     action: onDelete
                 )
 

@@ -140,7 +140,7 @@ struct FocusSessionDetailView: View {
                     HStack(spacing: 6) {
                         Image(systemName: "play.fill")
                             .font(.system(size: 11, weight: .bold))
-                        Text("Begin Focus")
+                        Text("开始专注")
                             .font(.system(size: 13, weight: .semibold))
                     }
                     .foregroundColor(Color(red: 0.05, green: 0.07, blue: 0.06))
@@ -173,7 +173,7 @@ struct FocusSessionDetailView: View {
                             HStack(spacing: 5) {
                                 Image(systemName: "clock.arrow.circlepath")
                                     .font(.system(size: 11, weight: .semibold))
-                                Text("+5m Postpone")
+                                Text("+5 分钟推迟")
                                     .font(.system(size: 12, weight: .semibold))
                             }
                             .foregroundColor(.white.opacity(0.9))
@@ -398,7 +398,7 @@ struct FocusSessionDetailView: View {
     private var environmentQuickToggles: some View {
         VStack(alignment: .leading, spacing: 8) {
             HStack {
-                Text("Environment Control")
+                Text("环境控制")
                 Spacer()
                 Image(systemName: "slider.horizontal.3")
                     .font(.system(size: 10, weight: .semibold))
@@ -414,17 +414,17 @@ struct FocusSessionDetailView: View {
                     isOn: $settings.settings.focusDimInactiveApps
                 )
                 quickToggleChip(
-                    title: "Mission Ctl",
+                    title: "调度中心",
                     icon: "rectangle.inset.filled",
                     isOn: $settings.settings.focusDisableDimInMissionControl
                 )
                 quickToggleChip(
-                    title: "Hide Wall",
+                    title: "隐藏墙体",
                     icon: "photo.fill",
                     isOn: $settings.settings.focusHideWallpaper
                 )
                 quickToggleChip(
-                    title: "App Limit",
+                    title: "应用上限",
                     icon: "shield.fill",
                     isOn: $settings.settings.focusAppLimitEnabled
                 )
@@ -516,7 +516,7 @@ private struct FocusSessionTimerRing: View {
                         .contentTransition(.numericText())
                         .animation(.smooth(duration: 0.2), value: Int(progress * 100))
                 } else {
-                    Text("TAP START TO BEGIN")
+                    Text("点「开始」即可启程")
                         .font(.system(size: 9, weight: .bold))
                         .tracking(1.2)
                         .foregroundColor(.white.opacity(0.35))

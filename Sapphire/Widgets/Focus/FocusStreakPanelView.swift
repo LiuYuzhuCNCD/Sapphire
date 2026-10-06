@@ -76,7 +76,7 @@ struct FocusStreakPanelView: View {
                         .font(.system(size: 13, weight: .semibold))
                         .foregroundColor(.white.opacity(0.55))
                 }
-                Text("Focus streak")
+                Text("专注连续")
                     .font(.system(size: 11, weight: .medium))
                     .foregroundColor(.white.opacity(0.5))
             }
@@ -113,7 +113,7 @@ struct FocusStreakPanelView: View {
                 Image(systemName: "ticket.fill")
                     .font(.system(size: 13))
                     .foregroundColor(.purple)
-                Text("Streak Passes")
+                Text("连续豁免")
                     .font(.system(size: 12, weight: .semibold))
                     .foregroundColor(.white.opacity(0.85))
                 Spacer()
@@ -151,7 +151,7 @@ struct FocusStreakPanelView: View {
                     .font(.system(size: 13))
                     .foregroundColor(.orange)
                 VStack(alignment: .leading, spacing: 2) {
-                    Text("Your streak broke")
+                    Text("连续记录中断了")
                         .font(.system(size: 12, weight: .semibold))
                         .foregroundColor(.white)
                     Text(brokenDayText)
@@ -199,11 +199,11 @@ struct FocusStreakPanelView: View {
                 Image(systemName: "shield.lefthalf.fill")
                     .font(.system(size: 13))
                     .foregroundColor(.teal)
-                Text("Immunity Days")
+                Text("豁免天数")
                     .font(.system(size: 12, weight: .semibold))
                     .foregroundColor(.white.opacity(0.85))
                 Spacer()
-                Text("Unlimited")
+                Text("无限制")
                     .font(.system(size: 10, weight: .semibold))
                     .foregroundColor(.teal)
             }

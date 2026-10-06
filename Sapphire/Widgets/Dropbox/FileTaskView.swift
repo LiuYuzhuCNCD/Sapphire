@@ -388,7 +388,7 @@ private struct HeaderView: View {
                 .font(.system(size: 20, weight: .semibold))
                 .foregroundColor(.primary)
 
-            Text("File Drops")
+            Text("文件投放")
                 .font(.headline)
                 .fontWeight(.bold)
 

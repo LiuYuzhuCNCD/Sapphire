@@ -99,7 +99,7 @@ struct DeviceAdjustView: View {
 
                     if !appStore.runningApps.isEmpty {
                         VStack(alignment: .leading, spacing: 10) {
-                            Text("APP MIXER").font(.system(size: 9, weight: .bold)).foregroundStyle(.white.opacity(0.4)).tracking(1)
+                            Text("应用混音器").font(.system(size: 9, weight: .bold)).foregroundStyle(.white.opacity(0.4)).tracking(1)
                             VStack(spacing: 8) {
                                 ForEach(appStore.runningApps.prefix(3)) { app in
                                     AppMixRow(app: app, volume: appStore.volume(for: app.bundleID), onVolumeChange: { appStore.setVolume($0, for: app.bundleID) })
@@ -125,7 +125,7 @@ struct DeviceAdjustView: View {
             VStack(spacing: 12) {
                 VStack(alignment: .leading, spacing: 12) {
                     Text("电平").font(.system(size: 9, weight: .bold)).foregroundStyle(.white.opacity(0.4)).tracking(1)
-                    ModernDarkSlider(label: "Input Gain", value: Binding(get: { micGain }, set: { micGain = $0; audioManager.setInputVolume(Float($0), for: device.id) }), range: 0...1.0, formatDisplay: { "\(Int($0 * 100))%" })
+                    ModernDarkSlider(label: "输入增益", value: Binding(get: { micGain }, set: { micGain = $0; audioManager.setInputVolume(Float($0), for: device.id) }), range: 0...1.0, formatDisplay: { "\(Int($0 * 100))%" })
 
                     HStack {
                         Label("Hardware Mute", systemImage: isMicMuted ? "mic.slash.fill" : "mic.fill")
@@ -161,12 +161,12 @@ struct DeviceAdjustView: View {
                 Text("规格参数").font(.system(size: 9, weight: .bold)).foregroundStyle(.white.opacity(0.4)).tracking(1)
 
                 VStack(spacing: 12) {
-                    specRow(label: "Stream Format", value: streamFormat)
+                    specRow(label: "流格式", value: streamFormat)
 
                     Divider().background(Color.white.opacity(0.1))
 
                     HStack {
-                        Text("Sample Rate").font(.caption).foregroundStyle(.secondary)
+                        Text("采样率").font(.caption).foregroundStyle(.secondary)
                         Spacer()
                         Picker("", selection: Binding(get: { sampleRate }, set: { sampleRate = $0; audioManager.setNominalSampleRate($0, for: device.id) })) {
                             ForEach(availableRates, id: \.self) { rate in

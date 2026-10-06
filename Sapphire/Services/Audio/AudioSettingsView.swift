@@ -76,7 +76,7 @@ struct AudioSettingsView: View {
 
                 VStack(alignment: .leading, spacing: 10) {
                     VStack(alignment: .leading, spacing: 3) {
-                        Text("App & Device Mixer")
+                        Text("应用与设备混音器")
                             .font(.headline)
                         Text("The same volume, routing, EQ, 8D, surround, balance, and delay controls available in the notch.")
                             .font(.caption)
@@ -262,7 +262,7 @@ private struct MicrophoneAmplifierSettingsView: View {
                 .padding([.top, .horizontal])
 
             CompactToggleRow(
-                title: "Preview gain",
+                title: "预览增益",
                 description: "Applies gain to Sapphire's live level meter so you can check clipping. Other apps still receive the original microphone signal.",
                 isOn: $mic.amplifierEnabled
             )
@@ -271,7 +271,7 @@ private struct MicrophoneAmplifierSettingsView: View {
 
             VStack(alignment: .leading, spacing: 8) {
                 HStack {
-                    Text("Preview gain")
+                    Text("预览增益")
                     Spacer()
                     Text("×\(mic.amplifierGain, specifier: "%.1f")")
                         .font(.caption.monospacedDigit())

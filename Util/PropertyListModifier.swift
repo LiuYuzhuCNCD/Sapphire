@@ -75,7 +75,7 @@ let appleGenericRequirement = "anchor apple generic"
 func SMAuthorizedClientsEntry() throws -> (key: String, value: [String]) {
     let appIdentifierRequirement = "identifier \"\(try TargetType.app.bundleIdentifier())\""
     let appVersion = try readEnvironmentVintelligenceble(name: "APP_VERSION",
-                                                 description: "app version",
+                                                 description: "应用版本",
                                                  isUserDefined: true)
     let appVersionRequirement = "info[\(CFBundleVersionKey)] >= \"\(appVersion)\""
     let requirements = [appleGenericRequirement,
@@ -314,7 +314,7 @@ enum TargetType: String {
 
 func determineTargetType() throws -> TargetType {
     let bundleId = try readEnvironmentVintelligenceble(name: "PRODUCT_BUNDLE_IDENTIFIER",
-                                               description: "bundle id",
+                                               description: "标识符",
                                                isUserDefined: false)
 
     let appBundleIdentifier = try TargetType.app.bundleIdentifier()

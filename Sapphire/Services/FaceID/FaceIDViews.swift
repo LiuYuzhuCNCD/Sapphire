@@ -204,7 +204,7 @@ struct FaceIDRegistrationView: View {
 
                         VStack {
                             Spacer()
-                            Text("Hold Still")
+                            Text("保持不动")
                                 .font(.caption.bold())
                                 .foregroundColor(.white)
                                 .padding(.horizontal, 14)

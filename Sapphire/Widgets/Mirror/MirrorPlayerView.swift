@@ -98,19 +98,19 @@ struct MirrorPlayerView: View {
             Spacer(minLength: 8)
 
             if camera.isLive {
-                iconButton(systemName: "arrow.left.arrow.right", help: "Flip horizontally") {
+                iconButton(systemName: "arrow.left.arrow.right", help: "水平翻转") {
                     settings.settings.mirrorFlipHorizontally.toggle()
                     camera.updateMirroring(flipHorizontally: settings.settings.mirrorFlipHorizontally)
                 }
 
-                iconButton(systemName: "rotate.right", help: "Rotate camera") {
+                iconButton(systemName: "rotate.right", help: "旋转摄像头") {
                     settings.settings.mirrorRotationMode = settings.settings.mirrorRotationMode.next
                 }
 
                 stopButton
             }
 
-            iconButton(systemName: "arrow.up.left.and.arrow.down.right", help: "Fullscreen") {
+            iconButton(systemName: "arrow.up.left.and.arrow.down.right", help: "全屏") {
                 MirrorFullscreenWindowController.shared.present()
             }
 
