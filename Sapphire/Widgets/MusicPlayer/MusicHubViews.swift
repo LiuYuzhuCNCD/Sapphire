@@ -2696,7 +2696,7 @@ struct DevicesView: View {
             if musicManager.isPrivateAPIAuthenticated,
                sortedNativeDevices.filter({ $0.deviceId != musicManager.spotifyPrivateAPI.controllerDeviceID }).isEmpty,
                sortedOfficialDevices.isEmpty {
-                Text("No Spotify speakers online. Open the Spotify desktop app (or another Connect device) to play audio — Sapphire only controls playback.")
+                Text("没有在线的 Spotify 扬声器。请打开 Spotify 桌面应用（或其他 Connect 设备）来播放——Sapphire 只负责控制播放。")
                     .font(.system(size: 11, weight: .medium, design: .rounded))
                     .foregroundStyle(.secondary)
                     .padding(12)
@@ -4088,7 +4088,7 @@ struct SpotifyMusicSearchView: View {
                 Image(systemName: "magnifyingglass")
                     .foregroundStyle(.secondary)
                 NotchSearchField(
-                    placeholder: "Search songs, artists, albums…",
+                    placeholder: "搜索歌曲、歌手、专辑…",
                     text: $query,
                     autofocus: autofocusSearch
                 )

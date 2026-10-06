@@ -28,7 +28,7 @@ internal struct LoginWebView: View {
     var body: some View {
         VStack {
             Text("完成登录").font(.title).padding()
-            Text("Your credentials will be auto-filled. Please click 'Log In' and complete any required steps (like entering a 2FA code).")
+            Text("你的凭据会自动填入。请点「登录」并完成必要步骤（例如输入两步验证码）。")
                 .font(.subheadline).foregroundColor(.secondary).multilineTextAlignment(.center).padding(.horizontal).padding(.bottom)
 
             LoginWebViewRepresentable(onComplete: onComplete)

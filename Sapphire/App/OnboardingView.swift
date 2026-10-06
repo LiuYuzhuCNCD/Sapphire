@@ -170,7 +170,7 @@ private struct HelperInstallationStepView: View {
                 .font(.system(size: 32, weight: .bold, design: .rounded))
                 .padding(.top, 40).padding(.bottom, 10)
 
-            Text("Sapphire needs a privileged helper for battery management and system integrations. macOS will ask you to allow it under Login Items → Background Activity.")
+            Text("Sapphire 需要特权助手来实现电池管理与系统整合。macOS 会在「登录项 → 后台活动」中请你允许。")
                 .font(.body)
                 .multilineTextAlignment(.center)
                 .foregroundColor(.secondary)
@@ -324,7 +324,7 @@ private struct PrivacyStepView: View {
             .padding(.top, 20)
 
             Toggle(isOn: $settings.settings.googleAnalyticsEnabled) {
-                Text("Share anonymous usage data with Google Analytics to help improve Sapphire. You can change this anytime in Settings > General.")
+                Text("与 Google Analytics 分享匿名使用数据以帮助改进 Sapphire。随时可在 设置 > 通用 中更改。")
                     .font(.callout)
             }
             .padding(.horizontal, 50)
@@ -403,7 +403,7 @@ private struct SpotifySetupStepView: View {
         VStack(spacing: 20) {
             Spacer()
             Text("Spotify 设置").font(.system(size: 32, weight: .bold, design: .rounded))
-            Text("Log in to enable enhanced features like liking tracks and skipping ads directly from the notch.").font(.title3).multilineTextAlignment(.center).foregroundColor(.secondary).padding(.horizontal)
+            Text("登录即可在刘海直接收藏曲目、跳过广告等增强功能。").font(.title3).multilineTextAlignment(.center).foregroundColor(.secondary).padding(.horizontal)
             VStack(alignment: .center, spacing: 15) {
                 if musicManager.isPrivateAPIAuthenticated {
                     HStack(spacing: 10) { Image(systemName: "checkmark.circle.fill").font(.title).foregroundColor(.green); Text("登录成功！").font(.headline) }

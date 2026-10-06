@@ -50,7 +50,7 @@ struct MultiAudioPermissionRequiredView: View {
             Text("需要屏幕录制权限")
                 .font(.title2).bold()
 
-            Text("Multi-audio won't work without Screen Recording permission. Sapphire needs it to adjust app volumes, eqs and more.")
+            Text("没有屏幕录制权限，多音频无法工作。Sapphire 需要它来调节应用音量、均衡器等。")
                 .font(.subheadline)
                 .foregroundColor(.secondary)
                 .multilineTextAlignment(.center)

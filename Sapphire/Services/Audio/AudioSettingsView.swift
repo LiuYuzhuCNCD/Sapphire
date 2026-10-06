@@ -78,7 +78,7 @@ struct AudioSettingsView: View {
                     VStack(alignment: .leading, spacing: 3) {
                         Text("应用与设备混音器")
                             .font(.headline)
-                        Text("The same volume, routing, EQ, 8D, surround, balance, and delay controls available in the notch.")
+                        Text("刘海里提供同样的音量、路由、均衡器、8D、环绕、平衡与延迟控制。")
                             .font(.caption)
                             .foregroundStyle(.secondary)
                     }
@@ -263,7 +263,7 @@ private struct MicrophoneAmplifierSettingsView: View {
 
             CompactToggleRow(
                 title: "预览增益",
-                description: "Applies gain to Sapphire's live level meter so you can check clipping. Other apps still receive the original microphone signal.",
+                description: "为 Sapphire 的实时电平表施加增益，便于检查削波。其他应用仍收到原始麦克风信号。",
                 isOn: $mic.amplifierEnabled
             )
 

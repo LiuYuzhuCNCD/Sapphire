@@ -207,7 +207,7 @@ struct FocusStreakPanelView: View {
                     .font(.system(size: 10, weight: .semibold))
                     .foregroundColor(.teal)
             }
-            Text("Report days you can’t focus — at least 3 days in advance — and they won’t break your streak. Unlimited.")
+            Text("提前至少 3 天申报无法专注的日子，就不会中断连续记录。次数不限。")
                 .font(.system(size: 10))
                 .foregroundColor(.white.opacity(0.45))
 

@@ -435,7 +435,7 @@ struct SystemEnhanceSettingsView: View {
                     PremiumFeatureView(feature: .windowsPreview) {
                         VStack(alignment: .leading, spacing: 0) {
                             Text("应用切换").font(.headline).padding([.top, .horizontal])
-                            ToggleRow(title: "窗口切换器", description: "Replace the switcher with a keyboard-driven, window-aware overlay. Hold the shortcut and press Tab to cycle, arrows to move, Q to quit an app, W to close a window.", isOn: $settings.settings.systemEnhanceAltTabEnabled)
+                            ToggleRow(title: "窗口切换器", description: "用键盘驱动、识别窗口的浮层替换切换器。按住快捷键后按 Tab 循环、方向键移动、Q 退出应用、W 关闭窗口。", isOn: $settings.settings.systemEnhanceAltTabEnabled)
                             if settings.settings.systemEnhanceAltTabEnabled {
                                 Divider().padding(.leading, 20)
                                 HStack { Text("激活方式"); Spacer(); Picker("", selection: Binding(
@@ -478,7 +478,7 @@ struct SystemEnhanceSettingsView: View {
 
                 VStack(alignment: .leading, spacing: 0) {
                     Text("关闭时退出").font(.headline).padding([.top, .horizontal])
-                    ToggleRow(title: "最后一个窗口关闭时退出应用", description: "Apps quit themselves once they have no windows left, after a short grace period. Enabled for every app by default.", isOn: $settings.settings.systemEnhanceAutoQuitEnabled)
+                    ToggleRow(title: "最后一个窗口关闭时退出应用", description: "应用在无窗口后经过短暂宽限期自动退出。默认对所有应用启用。", isOn: $settings.settings.systemEnhanceAutoQuitEnabled)
                     if settings.settings.systemEnhanceAutoQuitEnabled {
                         Divider().padding(.leading, 20)
                         Text("无窗口时退出的应用：")
@@ -496,7 +496,7 @@ struct SystemEnhanceSettingsView: View {
 
                 VStack(alignment: .leading, spacing: 0) {
                     Text("退出与关闭保护").font(.headline).padding([.top, .horizontal])
-                    ToggleRow(title: "保护退出与关闭快捷键", description: "Require a hold, a double press, or an extra modifier for ⌘Q and ⌘W. Enabled for every app by default.", isOn: $settings.settings.systemEnhanceQuitProtectionEnabled)
+                    ToggleRow(title: "保护退出与关闭快捷键", description: "对 ⌘Q 与 ⌘W 要求长按、双击或附加修饰键。默认对所有应用启用。", isOn: $settings.settings.systemEnhanceQuitProtectionEnabled)
                     if settings.settings.systemEnhanceQuitProtectionEnabled {
                         Divider().padding(.leading, 20)
                         ToggleRow(title: "保护 ⌘Q（退出）", description: "退出应用前需要确认。", isOn: $settings.settings.systemEnhanceQuitProtectionProtectQuit)
@@ -546,7 +546,7 @@ struct SystemEnhanceSettingsView: View {
 
                 VStack(alignment: .leading, spacing: 0) {
                     Text("绿灯按钮最大化").font(.headline).padding([.top, .horizontal])
-                    ToggleRow(title: "在当前空间最大化", description: "The green traffic-light button fills the screen without creating a new Space; clicking it again restores the window.", isOn: $settings.settings.systemEnhanceGreenMaximizeEnabled)
+                    ToggleRow(title: "在当前空间最大化", description: "绿色交通灯按钮会铺满屏幕而不新建空间；再点一次即还原窗口。", isOn: $settings.settings.systemEnhanceGreenMaximizeEnabled)
                 }.modifier(SettingsContainerModifier())
             }.padding(25)
         }
@@ -848,7 +848,7 @@ struct AppsSettingsView: View {
                 VStack(alignment: .leading, spacing: 3) {
                     Text("已检查的应用清理")
                         .font(.headline)
-                    Text("The app is selected automatically. Related files stay unchecked whenever exclusive ownership cannot be proven.")
+                    Text("应用会自动勾选。凡是无法证明独占归属的关联文件，一律保持不勾选。")
                         .font(.caption)
                         .foregroundStyle(.secondary)
                 }
@@ -1031,7 +1031,7 @@ private struct AppUninstallReviewSheet: View {
                 CachedAppIconView(url: app.url, size: 48, cornerRadius: 10)
                 VStack(alignment: .leading, spacing: 3) {
                     Text("Uninstall \(app.name)").font(.title2.bold())
-                    Text("The app is selected. Identifier-linked, shared, and name-based data requires review unless ownership is verified.")
+                    Text("应用已勾选。与标识符关联、共享以及按名称匹配的数据，在归属未经验证前需人工检查。")
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
                 }
@@ -1396,7 +1396,7 @@ struct StorageSettingsView: View {
                     HStack(alignment: .top, spacing: 8) {
                         Image(systemName: "checkmark.shield.fill")
                             .foregroundStyle(MaterialChartPalette.tertiary)
-                        Text("Protected system locations are inspection-only. Every cleanup is reviewed and moved to Trash before space is reclaimed.")
+                        Text("受保护的系统位置仅供查看。每次清理都先经检查并移到废纸篓，然后才回收空间。")
                             .font(.caption)
                             .foregroundStyle(.secondary)
                     }
@@ -1607,12 +1607,12 @@ struct GeneralSettingsView: View {
                     ToggleRow(title: "共享屏幕时隐藏", description: "屏幕共享、截图或录屏时绝不包含 Sapphire。", isOn: $settings.settings.hideFromScreenSharing)
                     Divider().padding(.leading, 20)
 
-                    ToggleRow(title: "谷歌匿名统计", description: "Send anonymous usage events to Google to help improve Sapphire. Disable this to opt out of analytics collection.", isOn: $settings.settings.googleAnalyticsEnabled)
+                    ToggleRow(title: "谷歌匿名统计", description: "向谷歌发送匿名使用事件以帮助改进 Sapphire。关闭即退出统计收集。", isOn: $settings.settings.googleAnalyticsEnabled)
                     Divider().padding(.leading, 20)
 
                     ToggleRow(
                         title: "上滑隐藏刘海",
-                        description: "When the notch is collapsed, swipe up over it to hide it completely. Swipe down near the notch area to bring it back.",
+                        description: "刘海收起时，在其上方向上滑可完全隐藏。在刘海附近向下滑即可唤回。",
                         isOn: $settings.settings.swipeToHideNotch
                     )
                     Divider().padding(.leading, 20)
@@ -1644,7 +1644,7 @@ struct GeneralSettingsView: View {
 
                     ToggleRow(
                         title: "无刘海机型上的悬浮胶囊",
-                        description: "Use a rounded island separated from the top edge on Macs and displays without a hardware notch.",
+                        description: "在没有硬件刘海的 Mac 与显示器上，使用一枚与顶边分离的圆角胶囊。",
                         isOn: $settings.settings.floatingIslandOnNotchlessDisplays
                     )
 
@@ -1727,7 +1727,7 @@ struct GeneralSettingsView: View {
                                 .help("Reset all custom animation values to the 'Snappy' defaults.")
                             }
 
-                            Text("Response: How long the animation takes (lower is faster).\nDamping: How much bounce (1.0 is no bounce).")
+                            Text("响应：动画耗时（越小越快）。\n阻尼：回弹程度（1.0 为不回弹）。")
                                 .font(.caption)
                                 .foregroundColor(.secondary)
                                 .padding(.bottom, 5)
@@ -2238,7 +2238,7 @@ struct ClipboardSettingsView: View {
         VStack(alignment: .leading, spacing: 0) {
             PremiumFeatureView(feature: .clipboardPicker) {
                 VStack(alignment: .leading, spacing: 0) {
-                    SettingsSectionHeader(title: "快速选择器", description: "Open the unified Sapphire picker right where you're typing with a global shortcut. Selecting a clipboard item copies it and pastes it at the cursor; the Emoji tab types emoji directly. (The emoji shortcut opens the same panel on its Emoji tab.)")
+                    SettingsSectionHeader(title: "快速选择器", description: "用全局快捷键在输入处直接唤出 Sapphire 统一选择器。选中剪贴板条目即复制并粘贴到光标处；「表情」标签页会直接输入表情符号。（表情快捷键会在「表情」标签页打开同一面板。）")
 
                     ToggleRow(
                         title: "启用快速选择器",
@@ -2418,7 +2418,7 @@ struct ClipboardSettingsView: View {
                 }
                 .modifier(SettingsContainerModifier())
 
-                SettingsCard(title: "滑动操作", description: "Customize what happens when you swipe a clipboard row left or right in the full clipboard view.") {
+                SettingsCard(title: "滑动操作", description: "自定义在完整剪贴板视图中左右滑动条目时的行为。") {
 
                     SwipeActionPickerRow(
                         title: "右滑",
@@ -2442,7 +2442,7 @@ struct ClipboardSettingsView: View {
                 VStack(alignment: .leading, spacing: 0) {
                     PremiumFeatureView(feature: .clipboardAdvancedTools) {
                         VStack(alignment: .leading, spacing: 0) {
-                            SettingsSectionHeader(title: "自动清空剪贴板", description: "Empty the system clipboard a set time after copying, or when the Mac sleeps or the screen locks. Saved history items are never touched.")
+                            SettingsSectionHeader(title: "自动清空剪贴板", description: "复制后经过设定时间，或 Mac 睡眠、锁屏时清空系统剪贴板。已保存的历史条目不受影响。")
 
                             ToggleRow(
                                 title: "启用自动清空",
@@ -2501,7 +2501,7 @@ struct ClipboardSettingsView: View {
                 VStack(alignment: .leading, spacing: 0) {
                     PremiumFeatureView(feature: .clipboardAdvancedTools) {
                         VStack(alignment: .leading, spacing: 0) {
-                            SettingsSectionHeader(title: "清理链接", description: "Strip tracking parameters (utm_*, fbclid, gclid, …) from copied links automatically. Images, files and rich text pass through untouched.")
+                            SettingsSectionHeader(title: "清理链接", description: "自动去除复制链接中的跟踪参数（utm_*、fbclid、gclid 等）。图片、文件与富文本原样通过。")
 
                             ToggleRow(
                                 title: "清理复制的链接",
@@ -2525,7 +2525,7 @@ struct ClipboardSettingsView: View {
                 VStack(alignment: .leading, spacing: 0) {
                     PremiumFeatureView(feature: .clipboardAdvancedTools) {
                         VStack(alignment: .leading, spacing: 0) {
-                            SettingsSectionHeader(title: "访达剪切与粘贴", description: "⌘X then ⌘V moves copied files instead of copying them, ⌘V pastes copied images as PNG files into the front Finder folder, and F2 renames the selected item.")
+                            SettingsSectionHeader(title: "访达剪切与粘贴", description: "⌘X 后再按 ⌘V 将「移动」而非复制文件；⌘V 把复制的图片以 PNG 存入当前访达文件夹；F2 重命名所选项目。")
 
                             ToggleRow(
                                 title: "启用访达快捷键",
@@ -2556,7 +2556,7 @@ struct ClipboardSettingsView: View {
                 VStack(alignment: .leading, spacing: 0) {
                     PremiumFeatureView(feature: .clipboardAdvancedTools) {
                         VStack(alignment: .leading, spacing: 0) {
-                            SettingsSectionHeader(title: "文本片段", description: "Type a short trigger anywhere and it becomes your text. Use \"{{date}}\", \"{{time}}\", \"{{date:MMMM d}}\" or \"{{clipboard}}\" in the replacement. Sapphire never expands while you type inside Sapphire itself.")
+                            SettingsSectionHeader(title: "文本片段", description: "在任意位置输入一个短触发词，它就会变成你的文本。替换内容可用 \"{{date}}\"、\"{{time}}\"、\"{{date:MMMM d}}\" 或 \"{{clipboard}}\"。在 Sapphire 内部输入时绝不展开。")
 
                             ToggleRow(
                                 title: "启用文本片段",
@@ -2681,7 +2681,7 @@ struct MirrorSettingsView: View {
                     }
                     .padding()
 
-                    Text("Automatically matches the orientation reported by the camera. If an external camera feed appears rotated, choose a fixed angle to display it upright.")
+                    Text("自动匹配摄像头报告的方向。若外接摄像头画面呈旋转状态，请选择固定角度使其摆正。")
                         .font(.caption)
                         .foregroundColor(.secondary)
                         .padding(.horizontal)
@@ -2724,7 +2724,7 @@ struct CaffeineSettingsView: View {
 
                     ToggleRow(
                         title: "合盖后继续保持防休眠",
-                        description: "Continue preventing sleep after leaving clamshell mode instead of turning caffeinate off automatically.",
+                        description: "退出合盖模式后继续保持防休眠，而非自动关闭。",
                         isOn: $settings.settings.persistentCaffeinateAfterClamshell
                     )
 
@@ -2801,7 +2801,7 @@ struct WidgetsSettingsView: View {
                     ToggleRow(title: "在组件之间显示分割线", description: "在组件之间显示一条细分割线。", isOn: $settings.settings.showDividersBetweenWidgets)
                     ToggleRow(
                         title: "忽略组件数量上限",
-                        description: "Allow any widget to be enabled even when Sapphire estimates there is not enough notch space.",
+                        description: "即使 Sapphire 判断刘海空间不足，也允许启用任意组件。",
                         isOn: $settings.settings.bypassWidgetSpaceLimit
                     )
                 }
@@ -2810,17 +2810,17 @@ struct WidgetsSettingsView: View {
                 if settings.settings.shopifyWidgetEnabled {
                     VStack(alignment: .leading, spacing: 10) {
                         Text("Shopify 订单").font(.headline).padding([.horizontal, .top])
-                        Text("Connect a Shopify custom app with read_orders access. The Admin API token is stored in the macOS Keychain.").font(.caption).foregroundColor(.secondary).padding(.horizontal)
+                        Text("连接具有 read_orders 权限的 Shopify 自定义应用。Admin API 令牌存放在 macOS 钥匙串。").font(.caption).foregroundColor(.secondary).padding(.horizontal)
                         TextField("Store domain (example.myshopify.com)", text: Binding(get: { APIKeyManager.shared.shopifyStoreDomain }, set: { APIKeyManager.shared.shopifyStoreDomain = $0 })).textFieldStyle(.roundedBorder).padding(.horizontal)
                         SecureField("Admin API access token", text: Binding(get: { APIKeyManager.shared.shopifyAdminToken }, set: { APIKeyManager.shared.shopifyAdminToken = $0 })).textFieldStyle(.roundedBorder).padding(.horizontal)
-                        Text("Create it in Shopify Admin → Settings → Apps and sales channels → Develop apps, with read_orders permission.").font(.caption2).foregroundColor(.secondary).padding(.horizontal).padding(.bottom)
+                        Text("在 Shopify 后台 → 设置 → 应用与销售渠道 → 开发应用 中创建，并授予 read_orders 权限。").font(.caption2).foregroundColor(.secondary).padding(.horizontal).padding(.bottom)
                     }
                     .modifier(SettingsContainerModifier())
                 }
 
                 VStack(alignment: .leading, spacing: 10) {
                     Text("组件可见性与排序").font(.headline).padding([.horizontal, .top])
-                    Text("Enable, disable, and reorder the widgets that appear in the notch. Space is limited by your display width.")
+                    Text("启用、停用并排序刘海中的组件。空间受显示器宽度限制。")
                         .font(.caption).foregroundColor(.secondary).padding(.horizontal).padding(.bottom, 5)
                     ReorderableVStack(items: $settings.settings.widgetOrder) { widget in
                         if widget != .agent {
@@ -3774,7 +3774,7 @@ struct LockScreenSettingsView: View {
 
                     ToggleRow(
                         title: "自定义锁屏壁纸",
-                        description: "Show your own image or video behind the clock, sign-in controls, and Sapphire widgets on the lock screen.",
+                        description: "在锁屏的时钟、登录控件与 Sapphire 组件后面显示你自己的图片或视频。",
                         isOn: $settings.settings.lockScreenCustomWallpaperEnabled
                     )
 
@@ -3791,7 +3791,7 @@ struct LockScreenSettingsView: View {
 
                         ToggleRow(
                             title: "用于桌面",
-                            description: "Also show the lock screen wallpaper (live video included) on your desktop, unless a separate desktop wallpaper is set below.",
+                            description: "把锁屏壁纸（含动态视频）也显示在桌面上，除非在下方另设了桌面壁纸。",
                             isOn: $settings.settings.lockScreenKeepWallpaperAfterUnlock
                         )
                     }
@@ -3800,7 +3800,7 @@ struct LockScreenSettingsView: View {
 
                     ToggleRow(
                         title: "自定义桌面壁纸",
-                        description: "Use your own image or video on the desktop. A video plays behind your desktop icons and pauses whenever the desktop is covered. The lock screen shows it too unless it has its own wallpaper.",
+                        description: "在桌面使用你自己的图片或视频。视频会在桌面图标后播放，桌面被遮挡时暂停。锁屏也会显示它，除非锁屏另设了壁纸。",
                         isOn: $settings.settings.desktopWallpaperEnabled
                     )
 
@@ -4207,7 +4207,7 @@ struct SnapZonesSettingsView: View {
                                     .foregroundStyle(.secondary)
                             }
                             Slider(value: draft, in: 0.1...1.0, step: 0.05, onEditingChanged: onEditingChanged)
-                            Text("Wait this long in the activation zone before opening Snap Zones. Helps avoid accidental triggers.")
+                            Text("在激活区内停留这么久才打开吸附区，可避免误触。")
                                 .font(.caption)
                                 .foregroundStyle(.secondary)
                         }
@@ -4314,7 +4314,7 @@ struct SnapZonesSettingsView: View {
             VStack(alignment: .leading, spacing: 0) {
                 PremiumFeatureView(feature: .snapZonesKeyboardShortcuts) {
                     VStack(alignment: .leading, spacing: 0) {
-                        Text("Assign a shortcut to a zone to snap the currently focused window there. Recording a shortcut already used by another zone moves it to this zone.")
+                        Text("给某个区域分配快捷键，即可把当前窗口吸附过去。录制已被其他区域占用的快捷键，会把它移到本区域。")
                             .font(.caption)
                             .foregroundStyle(.secondary)
                             .fixedSize(horizontal: false, vertical: true)
@@ -5409,7 +5409,7 @@ struct ProximityUnlockSettingsView: View {
             .padding(.horizontal)
 
             if settings.settings.faceIDLocationPolicy == .selectedWiFiNetworks {
-                Text("Use trusted Wi-Fi networks as locations. Face ID will not start on other networks or when the network name is unavailable.")
+                Text("用可信 Wi-Fi 网络作为位置。在其他网络或网络名不可用时，面容 ID 不会启动。")
                     .font(.caption)
                     .foregroundColor(.secondary)
                     .padding(.horizontal)
@@ -5506,7 +5506,7 @@ struct ProximityUnlockSettingsView: View {
                 range: 1...15,
                 specifier: "%.0f sec"
             )
-            Text("Locks Face ID and requires your password after this much sustained clear spoof detection (not borderline frames).")
+            Text("持续判定为明显伪造（不含临界帧）达到此时长后，锁定面容 ID 并要求输入密码。")
                 .font(.caption).foregroundColor(.secondary).padding(.horizontal).padding(.bottom, 4)
             Divider().padding(.leading, 20)
             CustomSliderRowView(
@@ -5909,7 +5909,7 @@ fileprivate struct CalibrateRSSIView: View {
     private var step1Near: some View {
         Image(systemName: "arrow.down.to.line.compact").font(.system(size: 40)).foregroundColor(.accentColor)
         Text("第 1 步：校准「近」距离").font(.title2)
-        Text("Hold your device where you would normally use it when your Mac is unlocked (e.g., next to the trackpad).").multilineTextAlignment(.center).foregroundColor(.secondary)
+        Text("把设备放在 Mac 解锁时你惯常使用的位置（例如触控板旁）。").multilineTextAlignment(.center).foregroundColor(.secondary)
 
         let rssiString = currentDeviceRSSI.map { "\($0) dBm" } ?? "Waiting for signal..."
 
@@ -6063,7 +6063,7 @@ struct FanControlSectionView: View {
                 VStack(alignment: .leading, spacing: 8) {
                     Text("本机未检测到风扇。")
                         .foregroundColor(.secondary)
-                    Text("Fanless Macs (some MacBook Air models) will show this permanently. Otherwise, ensure the Sapphire helper is installed and retry.")
+                    Text("无风扇机型（部分 MacBook Air）会一直显示此项。否则请确认已安装 Sapphire 助手后重试。")
                         .font(.caption)
                         .foregroundColor(.secondary)
                     Button("Retry Detection") {
@@ -6392,7 +6392,7 @@ struct CalibrationView: View {
                                 .foregroundColor(.red)
                         }
 
-                        Text("Ensure your Mac is plugged in before starting. Do not unplug or put your Mac to sleep during the process.")
+                        Text("开始前请确保 Mac 已接电源。过程中请勿拔电或让 Mac 睡眠。")
                             .font(.caption)
                             .foregroundColor(.secondary)
 
@@ -6432,7 +6432,7 @@ struct LidAngleCaffeineSettingsView: View {
         VStack(alignment: .leading, spacing: 0) {
             ToggleRow(
                 title: "按开合角度熄灭屏幕",
-                description: "While caffeinated, set brightness to zero when the lid reaches the trigger angle. This does not put the display to sleep.",
+                description: "防休眠期间，合盖到触发角度时把亮度降为零。这不会让显示器休眠。",
                 isOn: $settings.settings.caffeinateTurnOffScreenUsingLidAngle
             )
 
@@ -6499,7 +6499,7 @@ struct LidAngleCaffeineSettingsView: View {
             Divider().padding(.leading, 20)
             ToggleRow(
                 title: "快合上时让显示器休眠",
-                description: "Put the display into real macOS display sleep when the lid drops below the chosen angle, then wake it again when reopened. This will attempt to keep caffinate activated while the display is sleeping.",
+                description: "合盖到选定角度以下时，让显示器进入真正的 macOS 显示器休眠，开盖后再唤醒。显示器休眠期间会尽量保持防休眠开启。",
                 isOn: $settings.settings.lidAngleSleepDisplayEnabled
             )
 
@@ -6516,7 +6516,7 @@ struct LidAngleCaffeineSettingsView: View {
             Divider().padding(.leading, 20)
             ToggleRow(
                 title: "合盖时开启低电量模式",
-                description: "Force Low Power Mode while the lid is partially closed and restore the previous state when reopened.",
+                description: "半合盖时强制开启低电量模式，开盖后恢复先前状态。",
                 isOn: $settings.settings.lidAngleLowPowerModeEnabled
             )
 
@@ -8065,7 +8065,7 @@ struct BatteryConfigurationView: View {
             Divider().padding(.leading, 20)
             ToggleRow(title: "提示开启低电量模式", description: "电量低时显示一键开启低电量模式的按钮。", isOn: $settings.settings.promptForLowPowerMode)
             Divider().padding(.leading, 20)
-            ToggleRow(title: "显示预计剩余时间", description: "Display the estimated time to full (when charging) or time to empty (when on battery) in the live activity.", isOn: $settings.settings.showEstimatedBatteryTime)
+            ToggleRow(title: "显示预计剩余时间", description: "在实时活动中显示预计充满时间（充电时）或预计耗尽时间（用电池时）。", isOn: $settings.settings.showEstimatedBatteryTime)
         }.modifier(SettingsContainerModifier())
     }
 
@@ -8074,12 +8074,12 @@ struct BatteryConfigurationView: View {
             Text("电池管理功能").font(.headline).padding([.top, .horizontal])
             CustomSliderRowView(label: "充电上限", value: Binding(get: { Double(settings.settings.batteryChargeLimit) }, set: { settings.settings.batteryChargeLimit = Int($0) }), range: 50...100, specifier: "%.0f %%")
             Divider().padding(.leading, 20)
-            ToggleRow(title: "航行模式", description: "Prevents battery wear from constant micro-charging cycles when plugged in for long periods. Charging will pause at the limit and only resume when the battery drops by a set amount.", isOn: $settings.settings.sailingModeEnabled)
+            ToggleRow(title: "航行模式", description: "避免长期插电时的反复微充造成电池损耗。达到上限即暂停充电，只有电量下降一定幅度后才恢复。", isOn: $settings.settings.sailingModeEnabled)
             if settings.settings.sailingModeEnabled {
                  CustomSliderRowView(label: "低于此电量恢复充电", value: Binding(get: { Double(settings.settings.sailingModeLowerLimit) }, set: { settings.settings.sailingModeLowerLimit = Int($0) }), range: 5...20, specifier: "%.0f%% below limit")
             }
             Divider().padding(.leading, 20)
-            ToggleRow(title: "高温保护", description: "Automatically pauses charging if the battery temperature gets too high to prevent heat-related damage and extend its lifespan.", isOn: $settings.settings.heatProtectionEnabled)
+            ToggleRow(title: "高温保护", description: "电池温度过高时自动暂停充电，避免高温损伤并延长寿命。", isOn: $settings.settings.heatProtectionEnabled)
             if settings.settings.heatProtectionEnabled {
                  CustomSliderRowView(label: "超过此温度暂停充电", value: $settings.settings.heatProtectionThreshold, range: 35...50, specifier: "%.0f °C")
             }
@@ -8092,7 +8092,7 @@ struct BatteryConfigurationView: View {
             Text("自动放电").font(.headline).padding([.top, .horizontal])
             ToggleRow(
                 title: "启用自动放电",
-                description: "When enabled, your Mac will stop using AC power and run from its battery until the battery limit is reached.",
+                description: "启用后，Mac 会停止使用交流电、改用电池运行，直到达到设定的电量上限。",
                 isOn: $settings.settings.dischargeToLimitEnabled
             )
         }.modifier(SettingsContainerModifier())
@@ -8102,16 +8102,16 @@ struct BatteryConfigurationView: View {
         VStack(alignment: .leading, spacing: 0) {
             Text("充电与睡眠").font(.headline).padding([.top, .horizontal])
             InfoContainer(text: "Although functionality is in place to keep the battery management functinal even when the device is sleeping it may not always work. Use these settings if you want to be certain of the behaviour when the device is sleeping.", iconName: "info.circle", color: .yellow).padding()
-            ToggleRow(title: "睡眠时停止充电", description: "Prevents your Mac from sitting at 100% charge overnight, which can degrade the battery over time. Charging resumes on wake.", isOn: $settings.settings.stopChargingWhenSleeping)
+            ToggleRow(title: "睡眠时停止充电", description: "避免 Mac 整夜停在 100% 充电而长期损伤电池。唤醒后恢复充电。", isOn: $settings.settings.stopChargingWhenSleeping)
             Divider().padding(.leading, 20)
-            ToggleRow(title: "睡眠期间记录电池", description: "Wakes the Mac briefly (display stays off) at a set interval to record battery state and re-assert your charge limit overnight. Sleep is never disabled.", isOn: $settings.settings.logBatteryDuringSleep)
+            ToggleRow(title: "睡眠期间记录电池", description: "按设定间隔短暂唤醒 Mac（显示器保持关闭），以记录电池状态并在夜间重申充电上限。绝不禁止睡眠。", isOn: $settings.settings.logBatteryDuringSleep)
             if settings.settings.logBatteryDuringSleep {
                 CustomSliderRowView(label: "记录间隔", value: Binding(get: { Double(settings.settings.sleepLoggingIntervalMinutes) }, set: { settings.settings.sleepLoggingIntervalMinutes = Int($0) }), range: 15...120, specifier: "%.0f min")
             }
             Divider().padding(.leading, 20)
-            ToggleRow(title: "应用关闭时停止充电", description: "The helper tool ensures your charging rules are still applied even if the Sapphire app isn't running.", isOn: .constant(true)).disabled(true)
+            ToggleRow(title: "应用关闭时停止充电", description: "即使 Sapphire 应用未运行，助手工具也会确保充电规则继续生效。", isOn: .constant(true)).disabled(true)
             Divider().padding(.leading, 20)
-            ToggleRow(title: "充电到上限前禁止睡眠", description: "Keeps your Mac awake to ensure it reaches the charge limit, useful for 'top-up' schedules before you need to leave.", isOn: $settings.settings.disableSleepUntilChargeLimit)
+            ToggleRow(title: "充电到上限前禁止睡眠", description: "让 Mac 保持唤醒以确保充到上限，适合出门前的「补电」安排。", isOn: $settings.settings.disableSleepUntilChargeLimit)
         }.modifier(SettingsContainerModifier())
     }
 
@@ -8131,7 +8131,7 @@ struct BatteryConfigurationView: View {
     @ViewBuilder private var advancedSection: some View {
         VStack(alignment: .leading, spacing: 0) {
             Text("高级").font(.headline).padding([.top, .horizontal])
-            ToggleRow(title: "使用硬件电池百分比", description: "Reads the 'true' charge from the battery controller, which can be more accurate but may differ from what macOS shows.", isOn: $settings.settings.useHardwareBatteryPercentage)
+            ToggleRow(title: "使用硬件电池百分比", description: "从电池控制器读取「真实」电量，可能更准，但与 macOS 显示的可能不同。", isOn: $settings.settings.useHardwareBatteryPercentage)
         }.modifier(SettingsContainerModifier())
     }
 }
@@ -8485,20 +8485,20 @@ struct HUDSettingsView: View {
 
                     ToggleRow(
                         title: "在浮层中显示 Spotify 设备",
-                        description: "Display a special HUD with the active device name when changing volume while Spotify is active.",
+                        description: "Spotify 活动时调节音量，会显示带当前设备名称的专用浮层。",
                         isOn: $settings.settings.showSpotifyVolumeHUD
                     )
                     Divider().padding(.leading, 20)
                     ToggleRow(
                         title: "在浮层显示应用音量",
-                        description: "Press Option + Volume keys to adjust volume for the active app (excludes Spotify and Apple Music).",
+                        description: "按 Option + 音量键可调节当前应用的音量（不含 Spotify 与 Apple Music）。",
                         isOn: $settings.settings.showAppVolumeHUD
                     )
 
                     if settings.settings.showAppVolumeHUD {
                         ToggleRow(
                             title: "在普通音量浮层中显示",
-                            description: "Display app volume in the normal volume HUD (like Spotify). When disabled, only shows with Option + Volume keys.",
+                            description: "在普通音量浮层中显示应用音量（类似 Spotify）。关闭后仅在按 Option + 音量键时显示。",
                             isOn: $settings.settings.showAppVolumeInNormalHUD
                         )
                         .padding(.leading, 20)
@@ -8715,10 +8715,10 @@ struct HUDSettingsView: View {
                                 .foregroundColor(.yellow)
                                 .padding(.top, 4)
                             VStack(alignment: .leading, spacing: 5) {
-                                Text("Apple limits brightness to preserve battery life. While this feature is system-controlled and there are no known side-effects, you should use this feature at your own risk.")
+                                Text("苹果为延长续航限制了亮度。虽然此功能由系统控制且目前未见已知副作用，使用风险仍请自行承担。")
                                     .font(.caption)
                                     .foregroundColor(.secondary)
-                                Text("This feature works best on devices with XDR displays (14in and 16in Macbook Pro's and Pro Display XDR). M4 Macbook Pro's already display this behaviour in bright environments like in direct sunlight, this feature will allow you to do it in any type of environment.")
+                                Text("此功能在配备 XDR 屏幕的设备上效果最佳（14 英寸与 16 英寸 MacBook Pro 及 Pro Display XDR）。M4 MacBook Pro 在直射阳光等明亮环境下已具备该表现；此功能让你在任何环境下都能实现。")
                                     .font(.caption)
                                     .foregroundColor(.secondary)
                             }
@@ -8782,7 +8782,7 @@ struct MusicSettingsView: View {
                 if settings.settings.mediaSource == .system {
                     VStack(alignment: .leading, spacing: 10) {
                         Text("显示「正在播放」来源").font(.headline).padding([.horizontal, .top])
-                        Text("Choose which apps can appear in the music widget and media switcher. All apps, including browsers, are on by default.")
+                        Text("选择哪些应用可以出现在音乐组件与媒体切换器中。默认包含浏览器在内的所有应用。")
                             .font(.caption)
                             .foregroundStyle(.secondary)
                             .padding(.horizontal)
@@ -8808,7 +8808,7 @@ struct MusicSettingsView: View {
                     Text("长按操作").font(.headline).padding([.top, .horizontal])
                     ToggleRow(
                         title: "启用长按操作",
-                        description: "Press and hold secondary player buttons (Queue, Devices, Like, Shuffle, Repeat) for an alternate action. Previous / Next / Play are tap-only unless you assign a hold action below. When this is off, Previous/Next still seek while held.",
+                        description: "长按次要播放按钮（队列、设备、收藏、随机、循环）可触发备用操作。上一首／下一首／播放仅支持点按，除非在下方为它们指定长按操作。关闭此项时，长按上一首／下一首仍会快进快退。",
                         isOn: $settings.settings.musicLongPressActionsEnabled
                     )
                     if settings.settings.musicLongPressActionsEnabled {
@@ -8870,7 +8870,7 @@ struct MusicSettingsView: View {
 
                 VStack(alignment: .leading, spacing: 10) {
                     Text("自定义播放器按钮").font(.headline).padding([.horizontal, .top])
-                    Text("Enable and reorder the buttons that appear in the music player. The first two enabled buttons will appear in the main control bar.").font(.caption).foregroundColor(.secondary).padding(.horizontal).padding(.bottom, 5)
+                    Text("启用并排序音乐播放器中的按钮。前两个启用项会出现在主控制条上。").font(.caption).foregroundColor(.secondary).padding(.horizontal).padding(.bottom, 5)
                     ReorderableVStack(items: $settings.settings.musicPlayerButtonOrder) { buttonType in PlayerButtonSettingsRow(buttonType: buttonType) }
                 }
                 .modifier(SettingsContainerModifier())
@@ -8901,14 +8901,14 @@ struct MusicSettingsView: View {
 
                             Divider().padding(.leading, 20)
 
-                            ToggleRow(title: "跳过广告", description: "When Spotify desktop on this Mac plays an ad, relaunch it in the background, then resume via Spotify Connect.", isOn: $settings.settings.skipSpotifyAd)
-                            ToggleRow(title: "显示 Spotify 标签页", description: "When another app is playing, show a Spotify source tab so you can switch medias. Hidden while Spotify itself is the main media source.", isOn: $settings.settings.showSpotifySourceTab)
+                            ToggleRow(title: "跳过广告", description: "当本机 Spotify 桌面版播放广告时，后台重启它，再通过 Spotify Connect 恢复播放。", isOn: $settings.settings.skipSpotifyAd)
+                            ToggleRow(title: "显示 Spotify 标签页", description: "其他应用在播放时，显示一个 Spotify 来源标签以便切换媒体。Spotify 本身是主来源时隐藏。", isOn: $settings.settings.showSpotifySourceTab)
                                 .disabled(!isPrivateAuth)
-                            ToggleRow(title: "实时画布视频", description: "Show looping Spotify Canvas video behind the artwork when available. Turn off to always use the album thumbnail.", isOn: $settings.settings.spotifyCanvasLiveVideo)
+                            ToggleRow(title: "实时画布视频", description: "有 Spotify Canvas 视频时在封面后循环播放。关闭则始终使用专辑缩略图。", isOn: $settings.settings.spotifyCanvasLiveVideo)
                                 .disabled(!isPrivateAuth)
                             ToggleRow(title: "歌手主页", description: "显示歌手头像、认证标识与月听众数，而非纯文字。", isOn: $settings.settings.spotifyShowArtistProfile)
                                 .disabled(!isPrivateAuth)
-                            ToggleRow(title: "下一首", description: "Show the upcoming track from the queue under the now-playing title during the last 10 seconds of the song.", isOn: $settings.settings.spotifyShowNextSong)
+                            ToggleRow(title: "下一首", description: "歌曲最后 10 秒时，在正在播放标题下方显示队列中的下一首。", isOn: $settings.settings.spotifyShowNextSong)
                                 .disabled(!isPrivateAuth)
                             ToggleRow(title: "下一首专辑封面", description: "在实时活动中于下一首曲目旁显示专辑封面。", isOn: $settings.settings.spotifyShowNextSongAlbumArt)
                                 .disabled(!isPrivateAuth || !settings.settings.spotifyShowNextSong)
@@ -8940,7 +8940,7 @@ struct MusicSettingsView: View {
                     Text("Spotify（官方 API）").font(.headline).padding([.horizontal, .top])
 VStack(alignment: .leading, spacing: 8) {
                         Text("Spotify API 凭据").font(.system(size: 14, weight: .medium))
-                        Text("Register your app at developer.spotify.com and copy these values here. The redirect URI is: sapphire://callback").font(.caption).foregroundColor(.secondary).padding(.bottom, 4)
+                        Text("在 developer.spotify.com 注册应用，把相应值填到此处。重定向 URI 为：sapphire://callback").font(.caption).foregroundColor(.secondary).padding(.bottom, 4)
                         Text("客户端 ID").font(.system(size: 13, weight: .medium)).foregroundStyle(.white.opacity(0.8))
                         SecureField("Enter your Client ID", text: Binding(
                             get: { APIKeyManager.shared.spotifyClientId },
@@ -8952,7 +8952,7 @@ VStack(alignment: .leading, spacing: 8) {
                             set: { APIKeyManager.shared.spotifyClientSecret = $0 }
                         )).textFieldStyle(.plain).padding(8).background(Color.black.opacity(0.2)).clipShape(RoundedRectangle(cornerRadius: 8)).overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.white.opacity(0.2)))
                     }.padding().padding(.top, 5)
-                    Text("Log in here to enable official features like device switching for Premium users. This is the standard, recommended login method.").font(.caption).foregroundColor(.secondary).padding(.horizontal)
+                    Text("在此登录即可启用官方功能，例如高级用户的设备切换。这是标准且推荐的登录方式。").font(.caption).foregroundColor(.secondary).padding(.horizontal)
                     Divider().padding(.horizontal, 20)
                     HStack {
                         if isOfficialAuth, let name = officialDisplayName {
@@ -8973,7 +8973,7 @@ VStack(alignment: .leading, spacing: 8) {
                     Text("TIDAL").font(.headline).padding([.horizontal, .top])
                     VStack(alignment: .leading, spacing: 8) {
                         Text("TIDAL API 凭据").font(.system(size: 14, weight: .medium))
-                        Text("Create an app at developer.tidal.com, enable the user.read, search.read, collection.read/write, and playlists.read/write scopes, and set the redirect URI exactly to sapphire://callback.").font(.caption).foregroundColor(.secondary).padding(.bottom, 4)
+                        Text("在 developer.tidal.com 创建应用，启用 user.read、search.read、collection.read/write 与 playlists.read/write 权限范围，并把重定向 URI 精确设为 sapphire://callback。").font(.caption).foregroundColor(.secondary).padding(.bottom, 4)
                         Text("客户端 ID").font(.system(size: 13, weight: .medium)).foregroundStyle(.white.opacity(0.8))
                         SecureField("Enter your Client ID", text: Binding(
                             get: { APIKeyManager.shared.tidalClientId },
@@ -8985,7 +8985,7 @@ VStack(alignment: .leading, spacing: 8) {
                             set: { APIKeyManager.shared.tidalClientSecret = $0 }
                         )).textFieldStyle(.plain).padding(8).background(Color.black.opacity(0.2)).clipShape(RoundedRectangle(cornerRadius: 8)).overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.white.opacity(0.2)))
                     }.padding().padding(.top, 5)
-                    Text("Log in here to enable TIDAL features like catalog search and syncing liked tracks and playlists. Requires a TIDAL developer account (third-party access tier).").font(.caption).foregroundColor(.secondary).padding(.horizontal)
+                    Text("在此登录即可启用 TIDAL 功能，如曲库搜索、同步收藏曲目与播放列表。需要 TIDAL 开发者账号（第三方访问层级）。").font(.caption).foregroundColor(.secondary).padding(.horizontal)
                     Divider().padding(.horizontal, 20)
                     HStack {
                         if isTidalAuth, let name = tidalDisplayName {
@@ -9042,7 +9042,7 @@ VStack(alignment: .leading, spacing: 8) {
                             Divider().padding(.leading, 20)
                             ToggleRow(
                                 title: "生成逐字时间轴",
-                                description: "When a song only has line timing, listen to the music app's audio on this Mac to time each word, and share good results. Asks for audio access and downloads Apple's speech model once.",
+                                description: "当歌曲只有整行时间轴时，在本机监听音乐应用的音频来为每个字对齐时间，并分享效果好的结果。需音频访问权限，并会下载一次苹果的语音模型。",
                                 isOn: $settings.settings.generateWordTimedLyrics
                             )
                         }
@@ -9355,35 +9355,35 @@ struct EyeBreakRecommendationsView: View {
                 LazyVStack(alignment: .center, spacing: 20) {
                     recommendationCard(
                         title: "20-20-20 法则",
-                        description: "Every 20 minutes, take a 20-second break to look at something 20 feet away. This helps reduce eye strain and gives eye muscles a break.",
+                        description: "每 20 分钟，用 20 秒注视 20 英尺外的东西。这有助于减轻眼疲劳，让眼部肌肉得到放松。",
                         icon: "eyes",
                         color: .blue
                     )
 
                     recommendationCard(
                         title: "调整你的屏幕",
-                        description: "Position your monitor about an arm's length away and adjust the angle of the screen so that the top it is at or slightly below eye level. This reduces strain on your neck and eyes.",
+                        description: "把显示器放在约一臂距离，并调整屏幕角度，使其顶部与视线齐平或略低。这能减轻颈部与眼睛的负担。",
                         icon: "display",
                         color: .green
                     )
 
                     recommendationCard(
                         title: "减少蓝光",
-                        description: "Use Night Shift on your mac to reduce exposure to blue light, especially in dark environments or during late hours when it can interfere with sleep.",
+                        description: "在 Mac 上使用「夜览」以减少蓝光暴露，尤其是在暗环境或可能影响睡眠的深夜时段。",
                         icon: "moon.stars.fill",
                         color: .orange
                     )
 
                     recommendationCard(
                         title: "优化照明",
-                        description: "Ensure your workspace has adequate lighting that doesn't cause glare on your screen. Avoid working in a dark room with just the screen light.",
+                        description: "确保工作环境光线充足且不在屏幕上产生反光。避免只靠屏幕照明在暗室中工作。",
                         icon: "lightbulb.fill",
                         color: .yellow
                     )
 
                     recommendationCard(
                         title: "喝水提醒",
-                        description: "Drink plenty of water throughout the day. Dehydration can contribute to dry eyes and eye strain.",
+                        description: "全天多喝水。缺水会加重眼干与眼疲劳。",
                         icon: "drop.fill",
                         color: .cyan
                     )
@@ -10122,7 +10122,7 @@ struct NeardropSettingsView: View {
                     .modifier(SettingsContainerModifier())
                     .animation(.easeInOut, value: settings.settings.neardropEnabled)
 
-                    SettingsCard(title: "滑动操作", description: "Customize what happens when you swipe a file drop row left or right. Share only applies to File Shelf items.") {
+                    SettingsCard(title: "滑动操作", description: "自定义左右滑动文件投放条目时的行为。「共享」仅适用于文件架项目。") {
 
                         SwipeActionPickerRow(
                             title: "右滑",
@@ -11004,7 +11004,7 @@ struct PerDisplayNotchSettingsView: View {
         VStack(alignment: .leading, spacing: 20) {
             VStack(alignment: .leading, spacing: 4) {
                 Text("分显示器覆盖").font(.title2.bold())
-                Text("Customize notch size and inactive-hiding for each display individually. Changes here override the global settings for the selected display.").font(.caption).foregroundColor(.secondary)
+                Text("为每块显示器单独自定义刘海尺寸与非活动隐藏。此处的更改会覆盖所选显示器的全局设置。").font(.caption).foregroundColor(.secondary)
             }
 
             if connectedScreens.isEmpty {
@@ -11260,7 +11260,7 @@ struct MenuBarProfilesSettingsView: View {
         VStack(alignment: .leading, spacing: 20) {
             VStack(alignment: .leading, spacing: 4) {
                 Text("菜单栏配置").font(.title2.bold())
-                Text("Reveal hidden menu bar items when a condition is met — battery level, active Focus, Wi-Fi network, or a script's exit code — and bind profiles to displays, Spaces, or Focus filters.").font(.caption).foregroundColor(.secondary)
+                Text("满足条件时显示隐藏的菜单栏项目——电量、生效的专注模式、Wi-Fi 网络或脚本退出码——并可把配置绑定到显示器、空间或专注筛选器。").font(.caption).foregroundColor(.secondary)
             }
 
             VStack(spacing: 0) {
@@ -11997,7 +11997,7 @@ struct MenuBarSpacingSettingsView: View {
         VStack(alignment: .leading, spacing: 20) {
             VStack(alignment: .leading, spacing: 4) {
                 Text("菜单栏间距（测试版）").font(.title2.bold())
-                Text("Fine-tune the spacing and padding between all menu bar items. Changes require a menu bar refresh to apply.").font(.caption).foregroundColor(.secondary)
+                Text("微调所有菜单栏项目之间的间距与留白。更改后需刷新菜单栏才生效。").font(.caption).foregroundColor(.secondary)
             }
 
             VStack(alignment: .leading, spacing: 0) {
@@ -12421,7 +12421,7 @@ struct FocusSessionSettingsView: View {
     private var streakSection: some View {
         VStack(alignment: .leading, spacing: 0) {
             sectionLabel("Streaks")
-            Text("Miss a day without breaking your streak by reporting immunity days at least 3 days in advance (unlimited). If a streak still breaks, spend a streak pass to revive it — everyone gets a few free every month by plan.")
+            Text("提前至少 3 天申报豁免日（次数不限），就不会中断连续记录。若连续记录仍然中断，可消耗一张「连续复活券」复活——按套餐每人每月都有几张免费额度。")
                 .font(.caption)
                 .foregroundColor(.secondary)
                 .padding(.horizontal, 16)
@@ -12439,7 +12439,7 @@ struct FocusSessionSettingsView: View {
     private var schedulingSection: some View {
         VStack(alignment: .leading, spacing: 0) {
             sectionLabel("计划安排")
-            Text("Auto-start a focus session at a set time of day — daily, on specific days of the week, weekly, monthly, or once.")
+            Text("在设定的时间自动开始专注会话——每天、指定星期几、每周、每月或仅一次。")
                 .font(.caption)
                 .foregroundColor(.secondary)
                 .padding(.horizontal, 16)
@@ -12494,7 +12494,7 @@ struct FocusSessionSettingsView: View {
             Divider().opacity(0.3).padding(.horizontal, 16)
             ToggleRow(
                 title: "休息与会话通知",
-                description: "Get a notification when a focus block ends and a break starts, when a break ends, and when the session finishes.",
+                description: "在专注时段结束进入休息、休息结束、以及整场会话结束时收到通知。",
                 isOn: $settings.settings.focusNotificationsEnabled
             )
             Divider().opacity(0.3).padding(.horizontal, 16)
@@ -12771,14 +12771,14 @@ struct FocusSessionSettingsView: View {
                 .padding(.horizontal, 16).padding(.vertical, 10)
 
                 Divider().opacity(0.3).padding(.horizontal, 16)
-                ToggleRow(title: "调度中心中暂停", description: "Temporarily remove the dim layer while Mission Control is open so you can actually see the apps in the Exposé grid.", isOn: $settings.settings.focusDisableDimInMissionControl)
+                ToggleRow(title: "调度中心中暂停", description: "打开调度中心时暂时移除变暗层，让你能看清 Exposé 网格中的应用。", isOn: $settings.settings.focusDisableDimInMissionControl)
             }
 
             Divider().opacity(0.3).padding(.horizontal, 16)
             ToggleRow(title: "隐藏壁纸", description: "会话期间用黑色遮住桌面壁纸与图标。", isOn: $settings.settings.focusHideWallpaper)
 
             Divider().opacity(0.3).padding(.horizontal, 16)
-            ToggleRow(title: "限制可见应用数", description: "Keep only a few apps on screen; switching to another tucks the oldest one away (restored when the session ends).", isOn: $settings.settings.focusAppLimitEnabled)
+            ToggleRow(title: "限制可见应用数", description: "屏幕上只留少数应用；切换到另一个时，最早的那个会被收起（会话结束时恢复）。", isOn: $settings.settings.focusAppLimitEnabled)
             if settings.settings.focusAppLimitEnabled {
                 Divider().opacity(0.3).padding(.horizontal, 16)
                 HStack {
@@ -12794,7 +12794,7 @@ struct FocusSessionSettingsView: View {
             }
 
             Divider().opacity(0.3).padding(.horizontal, 16)
-            ToggleRow(title: "环境音", description: "Play generated white/pink/brown noise or rain to mask noisy surroundings. Starts automatically with each session.", isOn: $settings.settings.focusAmbientSoundEnabled)
+            ToggleRow(title: "环境音", description: "播放生成的白噪音／粉噪音／棕噪音或雨声以掩盖环境噪声。每次会话自动开始。", isOn: $settings.settings.focusAmbientSoundEnabled)
             if settings.settings.focusAmbientSoundEnabled {
                 Divider().opacity(0.3).padding(.horizontal, 16)
                 Picker("Sound", selection: $settings.settings.focusAmbientSoundType) {
@@ -12891,7 +12891,7 @@ struct FocusSessionSettingsView: View {
                     .font(.system(size: 12, weight: .semibold))
             }
             .padding(.top, 10).padding(.horizontal, 16).padding(.bottom, 6)
-            Text("Sapphire automatically uses Apple's standard Clock shortcut names (\"Start Timer\", \"Start Stopwatch\", etc.). If iCloud sync is enabled and those Clock shortcuts are present on this Mac, they run automatically during sessions.")
+            Text("Sapphire 会自动使用苹果「时钟」的标准快捷指令名称（\"Start Timer\"、\"Start Stopwatch\" 等）。若已启用 iCloud 同步且本机存在这些时钟快捷指令，会话期间会自动运行。")
                 .font(.caption)
                 .foregroundColor(.secondary)
                 .padding(.horizontal, 16).padding(.top, 2).padding(.bottom, 8)
@@ -13188,7 +13188,7 @@ private struct AddFocusScheduleView: View {
                         .foregroundColor(.secondary)
                 }
 
-                Text("Scheduled sessions respect your blocking, environment, and ambient-sound settings — they behave exactly like sessions you start manually.")
+                Text("计划会话会遵循你的屏蔽、环境与环境音设置——行为与手动开始的会话完全一致。")
                     .font(.caption2)
                     .foregroundColor(.secondary)
                     .fixedSize(horizontal: false, vertical: true)

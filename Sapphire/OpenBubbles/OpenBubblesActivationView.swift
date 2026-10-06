@@ -68,7 +68,7 @@ struct OpenBubblesActivationView: View {
                         .font(.title).foregroundStyle(.blue)
                     Text("什么是 OpenBubbles？").font(.headline)
                 }
-                Text("OpenBubbles is a free, open-source project that brings iMessage, FaceTime, and other Apple services to Android, Windows, and Linux. This tool generates a registration code using your Mac's hardware identifiers, allowing other devices to connect directly to Apple's services.")
+                Text("OpenBubbles 是一个免费开源项目，把 iMessage、FaceTime 等苹果服务带到安卓、Windows 与 Linux。此工具用你 Mac 的硬件标识生成注册码，让其他设备直接连接苹果服务。")
                     .font(.subheadline).foregroundStyle(.secondary)
 
                 Divider().padding(.vertical, 5)
@@ -116,7 +116,7 @@ struct OpenBubblesActivationView: View {
                 .clipShape(RoundedRectangle(cornerRadius: 12))
 
                 VStack(alignment: .leading, spacing: 15) {
-                    Text("This QR code contains your Mac's unique hardware data. **Scan it with the OpenBubbles app** on your other devices to register them for iMessage.")
+                    Text("此二维码包含你 Mac 的唯一硬件数据。**用其他设备上的 OpenBubbles 应用扫描它**，即可为 iMessage 注册这些设备。")
                         .font(.caption).foregroundStyle(.secondary)
 
                     Toggle("Generate a shareable, single-use code", isOn: $preventSharing)

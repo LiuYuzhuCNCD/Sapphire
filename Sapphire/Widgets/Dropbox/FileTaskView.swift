@@ -412,7 +412,7 @@ private struct EmptyStateView: View {
             Image(systemName: "tray")
                 .font(.system(size: 40, weight: .light))
                 .foregroundColor(.secondary)
-            Text("No Active Files or Shelf Items")
+            Text("没有活动文件或文件架项目")
                 .font(.headline)
                 .foregroundColor(.secondary)
         }

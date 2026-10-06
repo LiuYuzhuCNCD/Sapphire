@@ -83,7 +83,7 @@ class PermissionsManager: NSObject, ObservableObject, @MainActor CLLocationManag
     public let allPermissions: [PermissionItem] = [
         .init(type: .accessibility, title: "辅助功能", description: "媒体键、窗口吸附与浮层需要它。", iconName: "figure.wave.circle.fill", iconColor: .purple, category: .required),
         .init(type: .fullDiskAccess, title: "完整磁盘访问", description: "用于文件架、智能文件访问与更深层的系统整合。", iconName: "folder.badge.gearshape", iconColor: .gray, category: .recommended),
-        .init(type: .screenRecording, title: "屏幕录制", description: "Required for Gemini Live screen sharing, per-app audio capture, live window previews, and the hinge-driven desktop animation.", iconName: "record.circle", iconColor: .orange, category: .recommended),
+        .init(type: .screenRecording, title: "屏幕录制", description: "用于 Gemini Live 屏幕共享、分应用音频采集、实时窗口预览与合盖驱动的桌面动画。", iconName: "record.circle", iconColor: .orange, category: .recommended),
         .init(type: .localNetwork, title: "本地网络", description: "用于发现并控制网络内受支持的媒体播放器。", iconName: "network", iconColor: .cyan, category: .recommended),
         .init(type: .automation, title: "自动化", description: "用于控制播放并获取 Spotify 与「音乐」的曲目信息。", iconName: "play.display", iconColor: .green, category: .recommended),
         .init(type: .notifications, title: "通知", description: "用于显示消息与系统事件的自定义提醒。", iconName: "bell.badge.fill", iconColor: .red, category: .recommended),
