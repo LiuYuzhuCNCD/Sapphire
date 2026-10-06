@@ -45,10 +45,10 @@ enum AppArtifactConfidence: String {
 
     var explanation: String {
         switch self {
-        case .exact: return "Exact app identifier match"
+        case .exact: return "精确匹配应用标识符"
         case .shared: return "Shared app-group container — review before removing"
         case .ambiguous: return "This identifier may be shared or could not be verified — review before removing"
-        case .nameMatch: return "App-name match — review before removing"
+        case .nameMatch: return "按应用名匹配——删除前请检查"
         }
     }
 }

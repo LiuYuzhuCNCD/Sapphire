@@ -317,10 +317,10 @@ struct FileProgressLiveActivityView {
             fileName = transferTask.fileName
             let verb: String
             switch transferTask.sourceType {
-            case .finder: verb = "Copying..."
+            case .finder: verb = "正在复制…"
             case .archiveExtraction: verb = "Extracting..."
             case .dmgInstall: verb = "Installing..."
-            case .browserDownload, .manual: verb = "Downloading..."
+            case .browserDownload, .manual: verb = "正在下载…"
             }
             if transferTask.sourceType == .finder {
                 statusText = transferTask.speed > 0 ? TransferMetricsFormatter.speed(transferTask.speed) : verb

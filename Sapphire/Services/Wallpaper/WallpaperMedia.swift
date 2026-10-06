@@ -105,8 +105,8 @@ enum LiveWallpaperPlaybackMode: String, Codable, CaseIterable, Identifiable {
 
     var displayName: String {
         switch self {
-        case .always: return "Always Playing"
-        case .adaptive: return "Adaptive"
+        case .always: return "持续播放"
+        case .adaptive: return "自适应"
         case .never: return "Never Playing"
         }
     }

@@ -2334,7 +2334,7 @@ class LiveActivityManager: ObservableObject {
             let errorString: String
             if let nearbyError = error as? NearbyError, case .canceled(let reason) = nearbyError {
                 errorString = switch reason {
-                case .userRejected: "Declined"; case .userCanceled: "Canceled"; case .notEnoughSpace: "Not enough space"; case .unsupportedType: "Unsupported type"; case .timedOut: "Timed out"
+                case .userRejected: "已拒绝"; case .userCanceled: "已取消"; case .notEnoughSpace: "Not enough space"; case .unsupportedType: "Unsupported type"; case .timedOut: "Timed out"
                 }
             } else { errorString = error.localizedDescription }
             payload.state =

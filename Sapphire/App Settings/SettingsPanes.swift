@@ -6101,7 +6101,7 @@ struct FanRowView: View {
 
     private var modeString: String {
         switch fanManager.fanModes[fan.id] {
-        case .auto: return "Auto"
+        case .auto: return "自动"
         case .constant(let rpm): return "Constant \(rpm) RPM"
         case .sensor(let key, _, _):
             return "Sensor: \(SensorNameMap.name(for: key))"

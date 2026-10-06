@@ -426,10 +426,10 @@ private struct UniversalTransferRowView: View {
 
     private var verb: String {
         switch task.sourceType {
-        case .finder: return "Copying"
-        case .archiveExtraction: return "Extracting"
+        case .finder: return "正在复制"
+        case .archiveExtraction: return "正在解压"
         case .dmgInstall: return "Installing"
-        case .browserDownload, .manual: return "Downloading"
+        case .browserDownload, .manual: return "正在下载"
         }
     }
 

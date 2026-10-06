@@ -41,13 +41,13 @@ enum InstalledAppUpdateSource: Equatable {
         case .homebrew: return "Homebrew"
         case .mozilla(.firefox): return "Mozilla"
         case .mozilla(.thunderbird): return "Mozilla"
-        case .jsonManifest: return "App update manifest"
+        case .jsonManifest: return "应用更新清单"
         case .visualStudioCode: return "Visual Studio Code Update"
-        case .androidStudio: return "Android Studio Update"
+        case .androidStudio: return "Android Studio 更新"
         case .jetBrains: return "JetBrains Update"
         case .microsoftEdge: return "Microsoft Edge Update"
         case .github: return "GitHub Releases"
-        case .blender: return "Blender Releases"
+        case .blender: return "Blender 发行版"
         case .selfUpdating: return "Self-updating"
         }
     }

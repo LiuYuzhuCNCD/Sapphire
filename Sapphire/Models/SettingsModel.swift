@@ -30,12 +30,12 @@ public enum StatType: String, Codable, CaseIterable, Identifiable {
 
     var displayName: String {
         switch self {
-        case .cpu: return "CPU Usage"
+        case .cpu: return "CPU 占用"
         case .ram: return "RAM Usage"
         case .gpu: return "GPU Usage"
-        case .disk: return "Disk Activity"
+        case .disk: return "磁盘活动"
         case .systemPower: return "系统功耗"
-        case .batteryPower: return "Battery Draw"
+        case .batteryPower: return "电池放电"
         }
     }
 
@@ -59,8 +59,8 @@ enum AnimationProfile: String, Codable, CaseIterable, Identifiable {
     var displayName: String {
         switch self {
         case .snappy: "Snappy"
-        case .bouncy: "Bouncy"
-        case .calm: "Calm"
+        case .bouncy: "弹性"
+        case .calm: "舒缓"
         case .custom: "自定义"
         }
     }
@@ -80,7 +80,7 @@ enum WidgetSwitchTransition: String, Codable, CaseIterable, Identifiable {
         switch self {
         case .slide: "Slide"
         case .fade: "Fade"
-        case .blurAndFade: "Blur & Fade"
+        case .blurAndFade: "模糊渐隐"
         }
     }
 }
@@ -192,8 +192,8 @@ enum WeatherInfoType: String, Codable, CaseIterable, Identifiable {
 
     var displayName: String {
         switch self {
-        case .temperature: "Current Temperature"
-        case .condition: "Condition Icon"
+        case .temperature: "当前温度"
+        case .condition: "天气状况图标"
         case .wind: "Wind"
         case .humidity: "Humidity"
         case .feelsLike: "Feels Like"
@@ -204,7 +204,7 @@ enum WeatherInfoType: String, Codable, CaseIterable, Identifiable {
         case .visibility: "Visibility"
         case .pressure: "Pressure"
         case .locationName: "Location Name"
-        case .conditionDescription: "Condition Description"
+        case .conditionDescription: "天气状况描述"
         case .highLowTemp: "High / Low Temperature"
         }
     }
@@ -248,7 +248,7 @@ enum LockScreenWidgetType: String, Codable, CaseIterable, Identifiable {
         switch self {
         case .caffeine: return "防休眠"
         case .timer: return "计时器"
-        case .clock: return "Clock"
+        case .clock: return "时钟"
         case .notes: return "便签"
         case .clipboard: return "剪贴板"
         case .system: return "系统"
@@ -289,8 +289,8 @@ enum BatteryInfoType: String, Codable, CaseIterable, Identifiable {
         case .percentage: "Percentage"
         case .statusIcon: "Status Icon"
         case .statusText: "Status Text"
-        case .batteryIcon: "Battery Icon"
-        case .estimatedTime: "Estimated Time"
+        case .batteryIcon: "电池图标"
+        case .estimatedTime: "预计时间"
         }
     }
 }
@@ -322,7 +322,7 @@ enum FaceIDLocationPolicy: String, Codable, CaseIterable, Identifiable {
 
     var displayName: String {
         switch self {
-        case .everywhere: return "Everywhere"
+        case .everywhere: return "所有位置"
         case .selectedWiFiNetworks: return "Selected Wi-Fi Networks"
         }
     }
@@ -418,9 +418,9 @@ enum NotchAppearanceMode: String, Codable, CaseIterable, Identifiable {
     var id: String { rawValue }
     var displayName: String {
         switch self {
-        case .default: return "Default"
+        case .default: return "默认"
         case .liquidGlass: return "液态玻璃"
-        case .blur: return "Blur"
+        case .blur: return "模糊"
         case .custom: return "自定义"
         }
     }
@@ -523,7 +523,7 @@ enum NotchDisplayTarget: String, Codable, CaseIterable, Identifiable {
         switch self {
         case .macbookDisplay: "MacBook Display Only"
         case .mainDisplay: "Main Display Only"
-        case .allDisplays: "All Displays"
+        case .allDisplays: "所有显示器"
         }
     }
 }
@@ -545,11 +545,11 @@ enum MusicPlayerButtonType: String, Codable, CaseIterable, Identifiable, Equatab
 
     var displayName: String {
         switch self {
-        case .like: "Like"
-        case .shuffle: "Shuffle"
-        case .repeat: "Repeat"
-        case .playlists: "Queue & Playlists"
-        case .devices: "Devices"
+        case .like: "收藏"
+        case .shuffle: "随机"
+        case .repeat: "循环"
+        case .playlists: "队列与播放列表"
+        case .devices: "设备"
         }
     }
 
@@ -582,10 +582,10 @@ enum MusicLongPressAction: String, Codable, CaseIterable, Identifiable, Equatabl
         switch self {
         case .none: return "None (tap only)"
         case .seek: return "Seek"
-        case .shuffle: return "Shuffle"
-        case .repeatMode: return "Repeat"
-        case .like: return "Like"
-        case .playPause: return "Play / Pause"
+        case .shuffle: return "随机"
+        case .repeatMode: return "循环"
+        case .like: return "收藏"
+        case .playPause: return "播放 / 暂停"
         case .nextTrack: return "Next Track"
         case .previousTrack: return "Previous Track"
         case .openQueue: return "Open Queue"
@@ -618,12 +618,12 @@ enum MusicLongPressTarget: String, CaseIterable, Identifiable {
         switch self {
         case .previous: return "上一个"
         case .next: return "下一个"
-        case .playPause: return "Play / Pause"
-        case .playlists: return "Queue"
-        case .devices: return "Devices"
-        case .like: return "Like"
-        case .shuffle: return "Shuffle"
-        case .repeatMode: return "Repeat"
+        case .playPause: return "播放 / 暂停"
+        case .playlists: return "队列"
+        case .devices: return "设备"
+        case .like: return "收藏"
+        case .shuffle: return "随机"
+        case .repeatMode: return "循环"
         }
     }
 
@@ -701,7 +701,7 @@ enum NotesSwipeAction: String, Codable, CaseIterable, Identifiable {
     var displayName: String {
         switch self {
         case .toggleDone: return "Toggle Done"
-        case .copy: return "Copy"
+        case .copy: return "复制"
         case .delete: return "删除"
         case .none: return "无"
         }
@@ -714,7 +714,7 @@ enum ClipboardSwipeAction: String, Codable, CaseIterable, Identifiable {
     var displayName: String {
         switch self {
         case .share: return "共享"
-        case .copy: return "Copy"
+        case .copy: return "复制"
         case .delete: return "删除"
         case .none: return "无"
         }
@@ -760,7 +760,7 @@ enum DMGInstallLocation: String, Codable, CaseIterable, Identifiable {
     var url: URL {
         switch self {
         case .systemApplications: URL(fileURLWithPath: "/Applications", isDirectory: true)
-        case .homeApplications: FileManager.default.homeDirectoryForCurrentUser.appendingPathComponent("Applications", isDirectory: true)
+        case .homeApplications: FileManager.default.homeDirectoryForCurrentUser.appendingPathComponent("应用程序", isDirectory: true)
         }
     }
 }
@@ -775,8 +775,8 @@ enum DMGPostInstallAction: String, Codable, CaseIterable, Identifiable {
     var displayName: String {
         switch self {
         case .open: "Open the app"
-        case .revealInFinder: "Reveal in Finder"
-        case .none: "Do nothing"
+        case .revealInFinder: "在访达中显示"
+        case .none: "不执行任何操作"
         }
     }
 
@@ -1748,14 +1748,14 @@ enum ControlItemIconStyle: String, Codable, CaseIterable, Identifiable {
 
     var displayName: String {
         switch self {
-        case .chevron: return "Chevron"
-        case .arrow: return "Arrow"
-        case .dot: return "Dot"
+        case .chevron: return "尖角"
+        case .arrow: return "箭头"
+        case .dot: return "圆点"
         case .line: return "Line"
-        case .bracket: return "Bracket"
-        case .circle: return "Circle"
+        case .bracket: return "方括号"
+        case .circle: return "圆形"
         case .triangle: return "Triangle"
-        case .diamond: return "Diamond"
+        case .diamond: return "菱形"
         case .squareFilled: return "Square"
         case .ellipsis: return "ellipsis"
         }
@@ -2565,8 +2565,8 @@ enum MagSafeLEDSetting: String, Codable, CaseIterable, Identifiable {
     var id: String { self.rawValue }
     var displayName: String {
         switch self {
-        case .alwaysOn: "Always On"
-        case .off: "Always Off"
+        case .alwaysOn: "常开"
+        case .off: "始终关闭"
         }
     }
 }
@@ -2576,7 +2576,7 @@ enum LowPowerMode: String, Codable, CaseIterable, Identifiable {
     var id: String { self.rawValue }
     var displayName: String {
         switch self {
-        case .alwaysOn: "Always On"
+        case .alwaysOn: "常开"
         case .onBattery: "使用电池时"
         case .never: "从不"
         }
@@ -2602,7 +2602,7 @@ enum WidgetType: String, Codable, CaseIterable, Identifiable, Equatable {
         case .timer: return "计时器"
         case .focusSession: return "专注"
         case .storage: return "存储"
-        case .agent: return "Agent"
+        case .agent: return "智能体"
         }
     }
 }
@@ -2612,7 +2612,7 @@ enum LiveActivityType: String, Codable, CaseIterable, Identifiable, Equatable {
     var id: String { self.rawValue }
     var displayName: String {
         switch self {
-        case .music: "音乐"; case .weather: "天气"; case .calendar: "日历"; case .reminders: "提醒事项"; case .timers: "计时器"; case .battery: "电池"; case .eyeBreak: "护眼"; case .desktop: "Desktop"; case .focus: "专注"; case .fileShelf: "文件架"; case .fileProgress: "File Progress"; case .stats: "Stats"; case .microphone: "Microphone"; case .devActivity: "开发者活动"; case .sports: "体育"; case .finance: "财经"
+        case .music: "音乐"; case .weather: "天气"; case .calendar: "日历"; case .reminders: "提醒事项"; case .timers: "计时器"; case .battery: "电池"; case .eyeBreak: "护眼"; case .desktop: "桌面"; case .focus: "专注"; case .fileShelf: "文件架"; case .fileProgress: "File Progress"; case .stats: "Stats"; case .microphone: "Microphone"; case .devActivity: "开发者活动"; case .sports: "体育"; case .finance: "财经"
         }
     }
 }
@@ -2747,8 +2747,8 @@ enum FocusBlockingMode: String, Codable, CaseIterable, Identifiable {
 
     var displayName: String {
         switch self {
-        case .blocklist: return "Block selected apps"
-        case .allowlist: return "Allow only selected apps"
+        case .blocklist: return "屏蔽选定的应用"
+        case .allowlist: return "仅允许选定的应用"
         }
     }
 
@@ -2774,7 +2774,7 @@ enum FocusAmbientSoundType: String, Codable, CaseIterable, Identifiable {
         switch self {
         case .whiteNoise: return "White Noise"
         case .pinkNoise: return "Pink Noise"
-        case .brownNoise: return "Brown Noise"
+        case .brownNoise: return "棕噪音"
         case .rain: return "Rain"
         }
     }
@@ -2830,7 +2830,7 @@ enum GeneralSettingType: String, CaseIterable, Identifiable, Equatable {
         switch self {
         case .expandOnHover: "Expand on Hover"
         case .swipeToSwitchWidgets: "Swipe to Switch Widgets"
-        case .enableOpeningBounce: "Bounce when Opening Widgets"
+        case .enableOpeningBounce: "打开组件时弹跳"
         case .capsLockHorizontalLock: "Lock Cursor Horizontally with Caps Lock"
         }
     }
@@ -3072,7 +3072,7 @@ enum SettingsSection: String, CaseIterable, Identifiable {
         case .shortcuts: "Manage quick actions and shortcut surfaces shown in Sapphire."
         case .keyboardShortcuts: "Reference page listing every keyboard shortcut in Sapphire — global hotkeys, snap zones, and in-app shortcuts."
         case .snapZones: "Configure window snapping behavior, layouts, and zone actions."
-        case .audio: "Audio adjustments, EQ, and per-app volume adjustments."
+        case .audio: "音频调节、均衡器与分应用音量调节。"
         case .battery: "Battery widgets, history, charging preferences, and power-related controls."
         case .bluetooth: "Bluetooth device integrations, visibility, and connection behavior."
         case .hud: "Heads-up display overlays for volume, brightness, keyboard, and media feedback."
@@ -3109,7 +3109,7 @@ enum SettingsSection: String, CaseIterable, Identifiable {
         switch self {
         case .general: ["startup", "login", "animation", "notch", "system", "behavior", "analytics", "google", "privacy", "tracking", "telemetry", "swipe", "hide", "lock"]
         case .systemEnhance: ["dock", "preview", "previews", "alt tab", "cmd tab", "window", "switcher", "calendar", "compact", "layout", "lock dock", "monitor", "paste", "plain text", "formatting", "running apps", "hide apps", "static only", "hinge", "lid", "angle", "fold", "folding", "animation", "iphone duo"]
-        case .apps: ["apps", "applications", "uninstall", "cleaner", "appcleaner", "bundle", "extensions", "startup", "update", "updates", "check for updates", "upgrade", "version", "new version", "auto update", "release"]
+        case .apps: ["apps", "applications", "uninstall", "cleaner", "appcleaner", "bundle", "extensions", "startup", "update", "updates", "检查更新", "upgrade", "version", "new version", "auto update", "release"]
         case .storage: ["storage", "disk", "space", "large files", "cache", "cleanup", "daisy disk", "scanner"]
         case .widgets: ["widget", "widgets", "reorder", "layout"]
         case .liveActivities: ["live", "activity", "activities", "dynamic", "focus"]
@@ -3119,7 +3119,7 @@ enum SettingsSection: String, CaseIterable, Identifiable {
         case .shortcuts: ["shortcut", "action", "launcher"]
         case .keyboardShortcuts: ["shortcut", "keyboard", "hotkey", "key", "keys", "reference", "cheat sheet", "list", "global", "command", "modifier"]
         case .snapZones: ["snap", "zones", "window", "tiling", "layout", "shortcut", "keyboard", "hotkey"]
-        case .audio: ["audio", "EQ", "volume", "app", "devices"]
+        case .audio: ["audio", "均衡器", "volume", "app", "devices"]
         case .battery: ["battery", "charging", "power", "history"]
         case .bluetooth: ["bluetooth", "devices", "connections"]
         case .hud: ["hud", "overlay", "volume", "brightness", "media", "pill", "position", "edge", "side"]
@@ -3148,7 +3148,7 @@ enum SettingsSection: String, CaseIterable, Identifiable {
         case .dockLayouts: ["dock", "layout", "preset", "preset switch", "hotkey", "apps"]
         case .mediaOptimizer: ["image", "video", "audio", "compress", "shrink", "optimize", "ocr", "clipboard", "file shelf"]
 
-        case .about: ["about", "version", "credits", "support", "sapphire update", "check for updates", "release channel", "beta", "automatic updates"]
+        case .about: ["about", "version", "credits", "support", "sapphire update", "检查更新", "release channel", "beta", "automatic updates"]
         }
     }
 

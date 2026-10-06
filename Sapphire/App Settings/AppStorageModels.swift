@@ -2838,7 +2838,7 @@ enum StorageCategory: String, Codable, CaseIterable, Sendable {
         switch self {
         case .caches: return "Safe"
         case .trash, .duplicates, .largeFiles: return "Review"
-        case .downloads, .oldFiles, .languagePacks: return "Caution"
+        case .downloads, .oldFiles, .languagePacks: return "注意"
         case .appSupport: return "Risky"
         case .other: return "Unknown"
         }

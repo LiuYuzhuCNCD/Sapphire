@@ -38,7 +38,7 @@ fileprivate enum MusicHubPane: Int, CaseIterable {
         switch self {
         case .now: return "Now"
         case .library: return "资料库"
-        case .discover: return "Discover"
+        case .discover: return "发现"
         case .audio: return "音频"
         }
     }
@@ -3324,7 +3324,7 @@ struct PlaylistView: View {
                             }
                         }
                     }
-                    tonalButton("Shuffle", systemImage: "shuffle") {
+                    tonalButton("随机", systemImage: "shuffle") {
                         Task {
                             if !playlist.uri.hasPrefix("spotify:"),
                                musicManager.lastKnownBundleID == "com.apple.Music" {

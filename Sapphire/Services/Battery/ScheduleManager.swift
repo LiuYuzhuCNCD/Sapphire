@@ -20,7 +20,7 @@ enum TaskAction: String, Codable, CaseIterable, Identifiable {
         switch self {
         case .setChargeLimit: "设置充电上限"
         case .topUp: "Top Up (Charge to 100%)"
-        case .dischargeTo: "Discharge To"
+        case .dischargeTo: "放电至"
         case .startCalibration: "开始校准"
         case .setFanAuto: "Set Fans to Automatic"
         case .setFanConstant: "Set Fans to Constant RPM"

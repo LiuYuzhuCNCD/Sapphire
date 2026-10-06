@@ -18,7 +18,7 @@ enum FocusScheduleRepeat: String, Codable, CaseIterable, Identifiable {
     var displayName: String {
         switch self {
         case .once: return "Once"
-        case .daily: return "Daily"
+        case .daily: return "每天"
         case .weekdays: return "Weekdays"
         case .weekly: return "Weekly"
         case .custom: return "Specific days"

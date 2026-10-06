@@ -27,8 +27,8 @@ enum LockScreenMusicTab: String, CaseIterable, Identifiable {
         case .nowPlaying: "概览"
         case .artist: "歌手"
         case .playlists: "Playlists"
-        case .queue: "Queue"
-        case .devices: "Devices"
+        case .queue: "队列"
+        case .devices: "设备"
         case .lyrics: "歌词"
         }
     }
@@ -1278,7 +1278,7 @@ struct LockScreenFullScreenMusicPane: View {
     private func overlayTitle(for overlay: LockScreenMusicPaneOverlay) -> String {
         switch overlay {
         case .playlistDetail(let p): p.name
-        case .loginPrompt: "Connect Spotify"
+        case .loginPrompt: "连接 Spotify"
         }
     }
 

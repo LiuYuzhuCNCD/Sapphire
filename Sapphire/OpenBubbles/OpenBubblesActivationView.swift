@@ -43,7 +43,7 @@ struct OpenBubblesActivationView: View {
         case .idle: return "Generate One-Time Activation Code"
         case .processing: return "Generating..."
         case .success: return "Succeeded!"
-        case .error: return "An Error Occurred"
+        case .error: return "发生错误"
         }
     }
 

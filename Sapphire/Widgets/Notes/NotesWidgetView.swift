@@ -166,7 +166,7 @@ struct NotesPlayerView: View {
                 notesManager.toggleNoteDone(id: note.id)
             }
             Button("编辑") { editorGate.editingNoteID = note.id }
-            Button("Copy") {
+            Button("复制") {
                 NSPasteboard.general.copyString("\(note.title)\n\(note.body)")
             }
             Divider()

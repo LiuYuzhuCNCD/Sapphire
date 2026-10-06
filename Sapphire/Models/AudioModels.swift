@@ -113,16 +113,16 @@ enum EQPreset: String, CaseIterable, Identifiable {
 
     var displayName: String {
         switch self {
-        case .flat: "Flat"
-        case .bassBoost: "Bass Booster"
+        case .flat: "平坦"
+        case .bassBoost: "低音增强器"
         case .trebleBoost: "Treble Booster"
         case .vocalBoost: "Vocal Booster"
-        case .acoustic: "Acoustic"
-        case .rock: "Rock"
-        case .electronic: "Electronic"
-        case .hipHop: "Hip-Hop"
-        case .podcast: "Podcast"
-        case .loudness: "Loudness"
+        case .acoustic: "原声"
+        case .rock: "摇滚"
+        case .electronic: "电子"
+        case .hipHop: "嘻哈"
+        case .podcast: "播客"
+        case .loudness: "响度"
         case .custom: "自定义"
         }
     }

@@ -121,7 +121,7 @@ struct SystemAudioPanel: View {
             VStack(spacing: 0) {
                 HStack(spacing: 4) {
                     tabButton("应用", icon: "square.grid.2x2", tab: .apps)
-                    tabButton("Devices", icon: "tv.and.hifispeaker.fill", tab: .devices)
+                    tabButton("设备", icon: "tv.and.hifispeaker.fill", tab: .devices)
                     Spacer()
                 }
                 .padding(.horizontal, 12)

@@ -67,7 +67,7 @@ enum EmojiSkinTone: String, Codable, CaseIterable, Identifiable {
 
     var displayName: String {
         switch self {
-        case .none: "Default"
+        case .none: "默认"
         case .light: "浅色"
         case .mediumLight: "Medium Light"
         case .medium: "Medium"
@@ -209,11 +209,11 @@ enum MenuBarRevealConditionKind: String, Codable, CaseIterable, Identifiable {
 
     var displayName: String {
         switch self {
-        case .batteryBelow: "Battery Level Below"
-        case .batteryAbove: "Battery Level Above"
+        case .batteryBelow: "电量低于"
+        case .batteryAbove: "电量高于"
         case .charging: "充电中"
         case .onBatteryPower: "On Battery Power"
-        case .focusActive: "Any Focus Active"
+        case .focusActive: "任意专注模式生效时"
         case .focusIdentifier: "Focus Mode Is"
         case .wifiEquals: "Wi-Fi Network Is"
         case .wifiConnected: "Wi-Fi Connected"

@@ -181,7 +181,7 @@ struct ClipboardPlayerView: View {
             performCopy(item, via: clipboardManager)
         }
         .contextMenu {
-            Button("Copy") { performCopy(item, via: clipboardManager) }
+            Button("复制") { performCopy(item, via: clipboardManager) }
             Button("Share…") { performShare(item, via: clipboardManager) }
             Button("删除", role: .destructive) { clipboardManager.removeItem(id: item.id) }
         }

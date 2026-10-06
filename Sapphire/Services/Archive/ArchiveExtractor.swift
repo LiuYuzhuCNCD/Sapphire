@@ -20,7 +20,7 @@ enum ArchiveExtractionMode: String, Codable, CaseIterable, Identifiable {
     var displayName: String {
         switch self {
         case .smart: "Smart"
-        case .folder: "Always into a Folder"
+        case .folder: "始终存入同一文件夹"
         case .inPlace: "In Place"
         }
     }
@@ -33,7 +33,7 @@ enum ArchivePostExtractAction: String, Codable, CaseIterable, Identifiable {
 
     var displayName: String {
         switch self {
-        case .reveal: "Reveal in Finder"
+        case .reveal: "在访达中显示"
         case .open: "Open Folder"
         case .none: "Nothing"
         }

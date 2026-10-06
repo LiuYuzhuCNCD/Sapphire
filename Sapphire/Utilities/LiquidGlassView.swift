@@ -39,14 +39,14 @@ enum LiquidGlassMaterial: String, Codable, CaseIterable, Identifiable, Hashable 
         case .popover: return "Popover"
         case .menu: return "Menu"
         case .fullscreenUI: return "Fullscreen UI"
-        case .controlCenter: return "Control Center"
+        case .controlCenter: return "控制中心"
         case .widgets: return "小组件"
         case .inspector: return "Inspector"
         case .titlebar: return "Titlebar"
         case .tooltip: return "Tooltip"
         case .frosted: return "Frosted"
-        case .clearGlass: return "Clear Glass"
-        case .chromatic: return "Chromatic"
+        case .clearGlass: return "透明玻璃"
+        case .chromatic: return "彩色的"
         }
     }
 
@@ -54,18 +54,18 @@ enum LiquidGlassMaterial: String, Codable, CaseIterable, Identifiable, Hashable 
         switch self {
         case .sidebar: return "Thick, vibrant blur like a macOS sidebar."
         case .sheet: return "The standard glass used by modal sheets."
-        case .hud: return "Dark, satiny glass like the Dock."
+        case .hud: return "深色缎面玻璃，与程序坞同质感。"
         case .windowBackground: return "Subtle, lightly blurred glass."
         case .popover: return "Modern popover glass."
         case .menu: return "Notification Center-style glass."
-        case .fullscreenUI: return "Deep blur used by fullscreen media controls."
+        case .fullscreenUI: return "全屏媒体控件所用的深度模糊。"
         case .controlCenter: return "Translucent Control Center module glass."
-        case .widgets: return "Desktop widget background glass."
+        case .widgets: return "桌面组件背景玻璃。"
         case .inspector: return "Sidebar glass tuned for inspector panels."
         case .titlebar: return "Sidebar glass that blends into the title bar."
         case .tooltip: return "Loupe glass used by hover cards."
         case .frosted: return "Soft, strong blur with bright diffusion."
-        case .clearGlass: return "Almost no blur, crisp and transparent."
+        case .clearGlass: return "几乎不模糊，清透利落。"
         case .chromatic: return "Frosted glass with chromatic aberration."
         }
     }

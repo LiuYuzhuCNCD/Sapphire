@@ -407,7 +407,7 @@ enum WeatherServiceError: LocalizedError {
         case .locationDisabled: return "Location services are disabled system-wide."
         case .locationDenied: return "Location access was denied. Please enable it in System Settings."
         case .locationNotDetermined: return "Grant Location access in Sapphire's Permissions settings to show weather."
-        case .locationUnavailable: return "Could not determine your location."
+        case .locationUnavailable: return "无法确定你的位置。"
         case .unknownAuthorization: return "Unknown location authorization status."
         case .invalidURL: return "Invalid weather API URL."
         case .unavailableData: return "Weather data is temporarily unavailable."
