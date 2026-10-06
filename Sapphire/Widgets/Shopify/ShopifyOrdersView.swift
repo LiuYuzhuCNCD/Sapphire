@@ -38,7 +38,7 @@ struct ShopifyOrdersView: View {
                     .font(.caption)
                     .foregroundStyle(.orange)
             } else if shopify.orders.isEmpty {
-                Text("No orders found.")
+                Text("未找到订单。")
                     .font(.caption)
                     .foregroundStyle(.secondary)
             } else {

@@ -277,7 +277,7 @@ private struct LockScreenMusicInfoSlot: View {
                 HStack(spacing: LockScreenConfiguration.infoWidgetGenericHSpacing) {
                     Image(systemName: "music.note")
                         .font(.callout)
-                    Text("Nothing Playing")
+                    Text("未在播放")
                 }
                 .foregroundColor(.secondary)
                 .modifier(TransparentEffect())

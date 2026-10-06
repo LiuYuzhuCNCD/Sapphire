@@ -488,7 +488,7 @@ struct LyricsView: View {
             Button(action: openLyricsWindow) {
                 HStack(spacing: 4) {
                     Image(systemName: "macwindow")
-                    Text("Open in Window")
+                    Text("在窗口中打开")
                 }
                 .font(.system(size: 8, weight: .semibold))
             }

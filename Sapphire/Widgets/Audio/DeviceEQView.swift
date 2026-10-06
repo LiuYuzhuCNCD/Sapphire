@@ -72,7 +72,7 @@ struct DeviceEQView: View {
         VStack(spacing: 0) {
             HStack {
                 VStack(alignment: .leading, spacing: 2) {
-                    Text("Master Equalizer")
+                    Text("总均衡器")
                         .font(.system(size: 12, weight: .bold))
                         .foregroundStyle(.secondary)
                     Text(device.name)
@@ -103,7 +103,7 @@ struct DeviceEQView: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 8) {
                     if applicableAppEQs.isEmpty {
-                        ModernChip(title: "No App Overrides", isSelected: false) {}
+                        ModernChip(title: "无应用覆盖项", isSelected: false) {}
                             .disabled(true)
                             .opacity(0.5)
                     } else {

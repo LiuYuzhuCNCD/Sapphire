@@ -276,11 +276,11 @@ struct FocusSessionDetailView: View {
 
     private var railHeader: some View {
         VStack(alignment: .leading, spacing: 4) {
-            Text("SESSION CONTROL")
+            Text("会话控制")
                 .font(.system(size: 9, weight: .bold))
                 .tracking(1.4)
                 .foregroundColor(accent)
-            Text("Stay in the zone")
+            Text("保持在状态下")
                 .font(.system(size: 21, weight: .semibold, design: .rounded))
                 .foregroundColor(.white)
         }

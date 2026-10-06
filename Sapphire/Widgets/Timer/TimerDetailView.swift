@@ -82,7 +82,7 @@ struct TimerDetailView: View {
                 }
                 .padding(.top, 8)
             } label: {
-                Text("Custom Duration")
+                Text("自定义时长")
                     .font(.system(size: 13, weight: .medium))
                     .foregroundColor(.white.opacity(0.85))
             }
@@ -138,7 +138,7 @@ struct TimerDetailView: View {
         if !timers.isEmpty {
             VStack(alignment: .leading, spacing: 8) {
                 HStack {
-                    Text("Sapphire Timers")
+                    Text("Sapphire 计时器")
                         .font(.title3.bold())
                         .foregroundColor(.orange)
                     Spacer()

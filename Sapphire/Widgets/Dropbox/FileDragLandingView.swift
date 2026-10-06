@@ -217,7 +217,7 @@ private struct DeviceDropZoneView: View {
         VStack(spacing: 7) {
             HStack(spacing: 6) {
                 Image(systemName: "rectangle.connected.to.line.below")
-                Text("Share to Devices")
+                Text("共享到设备")
                     .lineLimit(1)
             }
             .font(.system(size: 12, weight: .semibold, design: .rounded))

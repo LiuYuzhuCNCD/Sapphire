@@ -18,7 +18,7 @@ struct AndroidWidgetChoice: AppEntity, Identifiable {
     let provider: String
 
     var displayRepresentation: DisplayRepresentation {
-        DisplayRepresentation(title: "\(label)", subtitle: "Android widget")
+        DisplayRepresentation(title: "\(label)", subtitle: "安卓小组件")
     }
 
     init(snapshot: AndroidWidgetSnapshotRecord) {

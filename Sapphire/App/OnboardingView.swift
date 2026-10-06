@@ -408,7 +408,7 @@ private struct SpotifySetupStepView: View {
                 if musicManager.isPrivateAPIAuthenticated {
                     HStack(spacing: 10) { Image(systemName: "checkmark.circle.fill").font(.title).foregroundColor(.green); Text("Logged in successfully!").font(.headline) }
                 } else {
-                    Text("Private API Login").font(.headline)
+                    Text("私有 API 登录").font(.headline)
                     Text("This method works for both Free and Premium users. Use at your own risk.").font(.caption).foregroundColor(.secondary).multilineTextAlignment(.center)
                     if isLoading {
                         VStack(spacing: 8) { ProgressView(); Text("Logging in...").font(.caption).foregroundColor(.secondary) }.frame(height: 40)
@@ -463,7 +463,7 @@ private struct BatterySetupStepView: View {
                 .padding(.horizontal, 50)
 
             VStack(spacing: 15) {
-                ModernOnboardingRow(iconName: "battery.100.bolt", iconColor: .green, title: "Set Charge Limit", description: "Prevent wear by stopping charging at a lower level. 80% is recommended.") {
+                ModernOnboardingRow(iconName: "battery.100.bolt", iconColor: .green, title: "设置充电上限", description: "Prevent wear by stopping charging at a lower level. 80% is recommended.") {
                     Picker("", selection: chargeLimitBinding) {
                         Text("80%").tag(80)
                         Text("90%").tag(90)
@@ -500,12 +500,12 @@ private struct CorePreferencesStepView: View {
             Text("Quick Setup").font(.system(size: 32, weight: .bold, design: .rounded))
             Text("Personalize your experience. You can change these any time in Settings.").font(.title3).multilineTextAlignment(.center).foregroundColor(.secondary).padding(.horizontal, 50)
             VStack(spacing: 15) {
-                ModernOnboardingRow(iconName: "sparkles.tv", iconColor: .cyan, title: "Show Custom HUDs", description: "Replace default volume & brightness indicators.") { SettingsSwitch(isOn: showHudsBinding) }
+                ModernOnboardingRow(iconName: "sparkles.tv", iconColor: .cyan, title: "显示自定义浮层", description: "Replace default volume & brightness indicators.") { SettingsSwitch(isOn: showHudsBinding) }
                 ModernOnboardingRow(iconName: "eye.fill", iconColor: .cyan, title: "Enable Eye Break Reminders", description: "Get reminded to look away from your screen periodically.") {
                     SettingsSwitch(isOn: $settings.settings.eyeBreakLiveActivityEnabled)
                 }
-                ModernOnboardingRow(iconName: "thermometer.sun.fill", iconColor: .orange, title: "Temperature Unit", description: "Preferred unit for weather forecasts.") { Picker("", selection: $settings.settings.weatherUseCelsius) { Text("°C").tag(true); Text("°F").tag(false) }.pickerStyle(.segmented).labelsHidden().frame(width: 100) }
-                ModernOnboardingRow(iconName: "bolt.horizontal.circle.fill", iconColor: .purple, title: "Launch at Login", description: "Start Sapphire automatically with your Mac.") { SettingsSwitch(isOn: $settings.settings.launchAtLogin) }
+                ModernOnboardingRow(iconName: "thermometer.sun.fill", iconColor: .orange, title: "温度单位", description: "Preferred unit for weather forecasts.") { Picker("", selection: $settings.settings.weatherUseCelsius) { Text("°C").tag(true); Text("°F").tag(false) }.pickerStyle(.segmented).labelsHidden().frame(width: 100) }
+                ModernOnboardingRow(iconName: "bolt.horizontal.circle.fill", iconColor: .purple, title: "登录时启动", description: "Start Sapphire automatically with your Mac.") { SettingsSwitch(isOn: $settings.settings.launchAtLogin) }
             }.padding(50)
             Spacer()
             OnboardingButton(title: "继续", action: onNext)
@@ -539,7 +539,7 @@ private struct LockScreenSetupStepView: View {
                         SettingsSwitch(isOn: $settings.settings.lockScreenLiveActivityEnabled)
                     }
 
-                    ModernOnboardingRow(iconName: "info.circle.fill", iconColor: .blue, title: "Show Info Widgets", description: "Display static info like weather or battery.") {
+                    ModernOnboardingRow(iconName: "info.circle.fill", iconColor: .blue, title: "显示信息组件", description: "Display static info like weather or battery.") {
                         SettingsSwitch(isOn: $settings.settings.lockScreenShowInfoWidget)
                     }
                 }
@@ -845,7 +845,7 @@ private struct FinishStepView: View {
                 .frame(width: 96, height: 96)
                 .clipShape(RoundedRectangle(cornerRadius: 22, style: .continuous))
 
-            Text("You're All Set!")
+            Text("全部就绪！")
                 .font(.system(size: 32, weight: .bold, design: .rounded))
 
             Text("Version \(currentAppVersion)")
@@ -869,7 +869,7 @@ private struct FinishStepView: View {
                 .padding(.top)
 
             Spacer()
-            OnboardingButton(title: "Explore Sapphire", action: onComplete)
+            OnboardingButton(title: "探索 Sapphire", action: onComplete)
 
             Text("© 2025 Shariq Charolia. All rights reserved.")
                 .font(.caption).foregroundStyle(.tertiary).padding(.bottom, 20)

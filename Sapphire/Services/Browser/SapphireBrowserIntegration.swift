@@ -176,7 +176,7 @@ final class SapphireBrowserIntegration {
     private func registerNotificationCategory() {
         let openAction = UNNotificationAction(
             identifier: "OPEN_IN_BROWSER",
-            title: "Open in Browser",
+            title: "在浏览器中打开",
             options: [.foreground]
         )
         let category = UNNotificationCategory(

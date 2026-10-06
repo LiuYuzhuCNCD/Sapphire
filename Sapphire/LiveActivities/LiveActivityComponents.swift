@@ -1071,7 +1071,7 @@ struct EyeBreakFullActivityView: View {
                     Text("看向远处")
                         .font(.system(size: 22, weight: .bold, design: .rounded))
 
-                    Text("Focus 20ft away.")
+                    Text("注视 20 英尺外。")
                         .font(.callout)
                         .foregroundColor(.secondary)
                 }
@@ -1176,7 +1176,7 @@ struct UpdateAvailableActivityView {
 
     static func right(version: String) -> some View {
         VStack(alignment: .leading, spacing: 1) {
-            Text("Update Available")
+            Text("有可用更新")
                 .font(.system(size: 13, weight: .semibold))
                 .foregroundColor(.white.opacity(0.9))
             Text("Version \(version)")
@@ -1203,7 +1203,7 @@ struct UpdateAvailableWidgetView: View {
                 .foregroundStyle(.cyan)
 
             VStack(spacing: 3) {
-                Text("Update Available")
+                Text("有可用更新")
                     .font(.title3.bold())
                     .foregroundColor(.white.opacity(0.95))
                 if let availableVersion {

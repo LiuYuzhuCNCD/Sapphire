@@ -45,20 +45,20 @@ struct AudioSettingsView: View {
                     .disabled(permissionsManager.screenRecordingStatus != .granted)
                     Divider().padding(.leading, 20)
                     CompactToggleRow(
-                        title: "Haptic Feedback",
+                        title: "触感反馈",
                         description: "Subtle vibration when adjusting audio controls.",
                         isOn: $settings.settings.hapticFeedbackEnabled
                     )
                     Divider().padding(.leading, 20)
                     HStack(spacing: 16) {
                         VStack(alignment: .leading, spacing: 3) {
-                            Text("Equalizer Bands")
+                            Text("均衡器频段")
                             Text("Choose the number of frequency controls shown in app and device equalizers.")
                                 .font(.caption)
                                 .foregroundStyle(.secondary)
                         }
                         Spacer()
-                        Picker("Equalizer Bands", selection: $displayedBandCount) {
+                        Picker("均衡器频段", selection: $displayedBandCount) {
                             ForEach(AudioEQBandLayout.allCases) { layout in
                                 Text(layout.displayName).tag(layout.rawValue)
                             }
@@ -216,7 +216,7 @@ private struct AudioSettingsAdjustmentSheet: View {
     var body: some View {
         VStack(spacing: 0) {
             HStack {
-                Text("Audio Adjustment")
+                Text("音频调节")
                     .font(.headline)
                 Spacer()
                 Button("完成") { dismiss() }

@@ -200,7 +200,7 @@ private struct ShelfEmptyStateView: View {
             Image(systemName: "tray")
                 .font(.system(size: 36, weight: .light))
                 .foregroundColor(.white.opacity(0.6))
-            Text("Shelf is Empty")
+            Text("文件架是空的")
                 .font(.system(size: 14, weight: .semibold))
                 .foregroundColor(.white.opacity(0.8))
             Text("Drag files here to add them.")

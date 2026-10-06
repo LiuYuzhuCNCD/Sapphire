@@ -194,7 +194,7 @@ struct BatteryDebugMenu: View {
                 TextField("80", value: $limitInput, formatter: Self.integerFormatter)
                     .textFieldStyle(.roundedBorder)
                     .frame(width: 60)
-                Button("Set Charge Limit") {
+                Button("设置充电上限") {
                     BatteryManager.shared.setChargeLimit(limitInput)
                     appendLog("setChargeLimit(\(limitInput))")
                 }

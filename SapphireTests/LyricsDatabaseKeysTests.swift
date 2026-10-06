@@ -12,7 +12,7 @@ struct LyricsDatabaseKeysTests {
     @Test("Hashes exactly like the importer")
     func sharedVectors() {
         #expect(
-            LyricsDatabaseKeys.metadataKey(title: "Placeholder Song", artist: "Placeholder Artist")
+            LyricsDatabaseKeys.metadataKey(title: "占位曲目", artist: "Placeholder Artist")
                 == "meta:ed56ea04ec93c46f5440e67fa1c5cf99"
         )
         #expect(

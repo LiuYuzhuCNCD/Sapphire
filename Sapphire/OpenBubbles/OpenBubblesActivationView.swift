@@ -57,7 +57,7 @@ struct OpenBubblesActivationView: View {
             VStack(alignment: .leading) {
                 Text("iMessage Registration")
                     .font(.largeTitle.bold())
-                Text("For OpenBubbles")
+                Text("用于 OpenBubbles")
                     .font(.title2)
                     .foregroundStyle(.secondary)
             }
@@ -264,7 +264,7 @@ struct AppDownloadQrView: View {
     @Environment(\.dismiss) private var dismiss
     var body: some View {
         VStack(spacing: 20) {
-            Text("Scan to Download").font(.largeTitle.bold())
+            Text("扫码下载").font(.largeTitle.bold())
             Text("Open the camera app on your phone and point it at this QR code to go to the download page.")
                 .font(.headline).multilineTextAlignment(.center).foregroundStyle(.secondary).padding(.horizontal)
             if let qrImage {

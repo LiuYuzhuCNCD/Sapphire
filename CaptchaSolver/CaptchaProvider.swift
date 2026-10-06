@@ -27,7 +27,7 @@ internal struct LoginWebView: View {
 
     var body: some View {
         VStack {
-            Text("Complete Login").font(.title).padding()
+            Text("完成登录").font(.title).padding()
             Text("Your credentials will be auto-filled. Please click 'Log In' and complete any required steps (like entering a 2FA code).")
                 .font(.subheadline).foregroundColor(.secondary).multilineTextAlignment(.center).padding(.horizontal).padding(.bottom)
 

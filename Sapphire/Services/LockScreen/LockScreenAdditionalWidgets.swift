@@ -178,7 +178,7 @@ struct LockScreenClipboardInfoView: View {
             HStack(spacing: LockScreenConfiguration.infoWidgetGenericHSpacing) {
                 Image(systemName: "list.clipboard")
                     .font(.system(size: LockScreenConfiguration.infoWidgetIconFontSize))
-                Text("Clipboard Empty")
+                Text("剪贴板为空")
             }
             .foregroundColor(.secondary)
             .modifier(TransparentEffect())
@@ -277,7 +277,7 @@ struct LockScreenTimerMiniWidget: View {
                     LockScreenTimerClockText(timerManager: timerManager, fontSize: 18)
                         .foregroundStyle(.white)
                 } else {
-                    Text("No active timer")
+                    Text("没有进行中的计时器")
                         .font(.system(size: 18, weight: .bold, design: .rounded))
                         .foregroundStyle(.secondary)
                 }

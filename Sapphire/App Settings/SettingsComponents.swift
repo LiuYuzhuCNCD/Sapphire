@@ -506,7 +506,7 @@ struct AppTogglesListView: View {
                     .frame(maxWidth: .infinity)
                     .padding(.vertical, 24)
             } else if sections.isEmpty {
-                Text("No matching apps")
+                Text("没有匹配的应用")
                     .font(.caption)
                     .foregroundStyle(.secondary)
                     .frame(maxWidth: .infinity)

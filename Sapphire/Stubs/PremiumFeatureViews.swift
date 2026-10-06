@@ -50,7 +50,7 @@ struct MediaOptimizerSettingsView: View { var body: some View { PremiumUnavailab
 
 struct StorageWorkspaceView: View {
     @ObservedObject var model: StorageViewModel
-    var body: some View { PremiumUnavailableView(title: "Storage Workspace") }
+    var body: some View { PremiumUnavailableView(title: "存储工作区") }
 }
 
 struct EightDAudioView: View {

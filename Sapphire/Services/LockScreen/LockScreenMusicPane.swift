@@ -392,7 +392,7 @@ struct LockScreenFullScreenMusicPane: View {
                         }
 
                         if !relatedTracks.isEmpty {
-                            overviewSection(title: "Related Tracks", icon: "sparkles", accent: .orange) {
+                            overviewSection(title: "相关曲目", icon: "sparkles", accent: .orange) {
                                 VStack(spacing: 6) {
                                     ForEach(relatedTracks.prefix(5)) { track in
                                         Button {
@@ -424,7 +424,7 @@ struct LockScreenFullScreenMusicPane: View {
                         }
 
                         if !similarAlbums.isEmpty {
-                            overviewSection(title: "Similar Albums", icon: "square.stack.fill", accent: .purple) {
+                            overviewSection(title: "相似专辑", icon: "square.stack.fill", accent: .purple) {
                                 ScrollView(.horizontal, showsIndicators: false) {
                                     LazyHStack(spacing: 12) {
                                         ForEach(similarAlbums.prefix(6)) { album in
@@ -454,7 +454,7 @@ struct LockScreenFullScreenMusicPane: View {
                     VStack(alignment: .leading, spacing: 24) {
                         overviewSection(title: "接下来", icon: "text.line.first.and.arrowtriangle.forward", accent: .green) {
                             if queue.isEmpty && musicManager.nativeQueue.isEmpty {
-                                Text("Nothing queued")
+                                Text("队列为空")
                                     .font(.system(size: 13, weight: .medium, design: .rounded))
                                     .foregroundStyle(.white.opacity(0.35))
                                     .padding(.vertical, 8)
@@ -538,7 +538,7 @@ struct LockScreenFullScreenMusicPane: View {
                         }
 
                         if !nativePlaylists.isEmpty {
-                            overviewSection(title: "Your Playlists", icon: "list.bullet.rectangle", accent: .cyan) {
+                            overviewSection(title: "你的播放列表", icon: "list.bullet.rectangle", accent: .cyan) {
                                 LazyVGrid(
                                     columns: [GridItem(.adaptive(minimum: 120, maximum: 140), spacing: 10)],
                                     spacing: 10

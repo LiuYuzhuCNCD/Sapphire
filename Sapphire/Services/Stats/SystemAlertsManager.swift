@@ -113,9 +113,9 @@ final class SystemAlertsManager {
                 guard Date().timeIntervalSince(self.lastPressureAlert) > 1800 else { return }
                 self.lastPressureAlert = Date()
                 if pressure.contains(.critical) {
-                    self.postAlert(title: "Memory Pressure", body: "Memory pressure is critical — consider closing some apps.")
+                    self.postAlert(title: "内存压力", body: "Memory pressure is critical — consider closing some apps.")
                 } else {
-                    self.postAlert(title: "Memory Pressure", body: "Memory pressure is high — consider closing some apps.")
+                    self.postAlert(title: "内存压力", body: "Memory pressure is high — consider closing some apps.")
                 }
             }
         }
@@ -171,7 +171,7 @@ final class SystemAlertsManager {
               Date().timeIntervalSince(lastDiskAlert) > 3600 else { return }
         lastDiskAlert = Date()
         postAlert(
-            title: "Low Disk Space",
+            title: "磁盘空间不足",
             body: "Only \(String(format: "%.1f", freeGB)) GB free on your startup disk."
         )
     }

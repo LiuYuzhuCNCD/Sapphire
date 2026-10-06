@@ -96,7 +96,7 @@ struct BatteryDetailView: View {
                 .font(.system(size: 10, weight: .bold))
                 .tracking(1.5)
                 .foregroundColor(levelColor)
-            Text("Power overview")
+            Text("电源概览")
                 .font(.system(size: 23, weight: .semibold, design: .rounded))
                 .foregroundColor(.white)
         }

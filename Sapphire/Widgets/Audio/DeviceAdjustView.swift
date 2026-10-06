@@ -158,7 +158,7 @@ struct DeviceAdjustView: View {
             .frame(width: 360)
 
             VStack(alignment: .leading, spacing: 12) {
-                Text("SPECIFICATIONS").font(.system(size: 9, weight: .bold)).foregroundStyle(.white.opacity(0.4)).tracking(1)
+                Text("规格参数").font(.system(size: 9, weight: .bold)).foregroundStyle(.white.opacity(0.4)).tracking(1)
 
                 VStack(spacing: 12) {
                     specRow(label: "Stream Format", value: streamFormat)

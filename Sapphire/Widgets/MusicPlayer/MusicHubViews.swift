@@ -595,7 +595,7 @@ struct QueueAndPlaylistsView: View {
                 ActionButtonsView(onAction: refreshData, longPressNavigation: hubLongPressNavigation)
 
                 if !musicManager.appleSuggestedTracks.isEmpty {
-                    materialExpressiveCard(title: "More Like This", systemImage: "sparkles", accent: MaterialChartPalette.secondary) {
+                    materialExpressiveCard(title: "更多类似内容", systemImage: "sparkles", accent: MaterialChartPalette.secondary) {
                         LazyVStack(spacing: 4) {
                             ForEach(musicManager.appleSuggestedTracks.prefix(5)) { track in
                                 SuggestedAppleTrackRow(track: track) {
@@ -670,7 +670,7 @@ struct QueueAndPlaylistsView: View {
         } else if musicManager.title != nil {
             nativeQueueBootstrappingView
         } else {
-            CustomUnavailableView(title: "Nothing Playing", systemImage: "speaker.slash.fill", description: "Start playing music in Spotify to see artist picks, concerts, and your queue.")
+            CustomUnavailableView(title: "未在播放", systemImage: "speaker.slash.fill", description: "Start playing music in Spotify to see artist picks, concerts, and your queue.")
         }
     }
 
@@ -729,7 +729,7 @@ struct QueueAndPlaylistsView: View {
                                 nowPlayingHeroCard(nowPlaying)
 
                                 if !musicManager.spotifyPrivateAPI.similarAlbums.isEmpty {
-                                    materialExpressiveCard(title: "Similar Albums", systemImage: "square.stack", accent: MaterialChartPalette.tertiary) {
+                                    materialExpressiveCard(title: "相似专辑", systemImage: "square.stack", accent: MaterialChartPalette.tertiary) {
                                         ScrollView(.horizontal, showsIndicators: false) {
                                             LazyHStack(spacing: 12) {
                                                 ForEach(musicManager.spotifyPrivateAPI.similarAlbums.prefix(10)) { album in
@@ -743,7 +743,7 @@ struct QueueAndPlaylistsView: View {
                                 }
 
                                 if !musicManager.spotifyPrivateAPI.relatedTracks.isEmpty {
-                                    materialExpressiveCard(title: "More Like This", systemImage: "sparkles", accent: MaterialChartPalette.secondary) {
+                                    materialExpressiveCard(title: "更多类似内容", systemImage: "sparkles", accent: MaterialChartPalette.secondary) {
                                         LazyVStack(spacing: 4) {
                                             ForEach(musicManager.spotifyPrivateAPI.relatedTracks.prefix(6)) { track in
                                                 RecommendedTrackRow(track: track, onPlay: handlePlaybackResult)
@@ -753,7 +753,7 @@ struct QueueAndPlaylistsView: View {
                                 }
 
                                 if !musicManager.spotifyPrivateAPI.artistConcerts.isEmpty {
-                                    materialExpressiveCard(title: "Nearby Concerts", systemImage: "ticket.fill", accent: MaterialChartPalette.error) {
+                                    materialExpressiveCard(title: "附近演唱会", systemImage: "ticket.fill", accent: MaterialChartPalette.error) {
                                         ScrollView(.horizontal, showsIndicators: false) {
                                             LazyHStack(spacing: 12) {
                                                 ForEach(musicManager.spotifyPrivateAPI.artistConcerts.prefix(8)) { concert in
@@ -1049,7 +1049,7 @@ struct QueueAndPlaylistsView: View {
                             .padding(.bottom, 30)
                         }
                         .mask(LinearGradient(gradient: Gradient(stops: [.init(color: .black, location: 0), .init(color: .black, location: 0.95), .init(color: .clear, location: 1.0)]), startPoint: .top, endPoint: .bottom))
-                    } else { CustomUnavailableView(title: "No Songs Up Next", systemImage: "music.note.list", description: "Add songs to your queue to see them here.") }
+                    } else { CustomUnavailableView(title: "接下来没有歌曲", systemImage: "music.note.list", description: "Add songs to your queue to see them here.") }
                 }
             } else { CustomUnavailableView(title: "Queue Unavailable", systemImage: "speaker.slash.fill", description: "Start playing music with a Premium account to view your queue.") }
         }
@@ -1257,7 +1257,7 @@ struct QueueAndPlaylistsView: View {
                     }
                 } else {
                     if !musicManager.spotifyPrivateAPI.recentlyPlayedItems.isEmpty {
-                        SectionHeader(title: "Recently Played")
+                        SectionHeader(title: "最近播放")
                         ScrollView(.horizontal, showsIndicators: false) {
                             LazyHStack(spacing: 12) {
                                 ForEach(musicManager.spotifyPrivateAPI.recentlyPlayedItems) { item in
@@ -1273,7 +1273,7 @@ struct QueueAndPlaylistsView: View {
                     }
 
                     if !musicManager.spotifyPrivateAPI.popularReleases.isEmpty {
-                        SectionHeader(title: "Popular Releases")
+                        SectionHeader(title: "热门发行")
                         ScrollView(.horizontal, showsIndicators: false) {
                             LazyHStack(spacing: 12) {
                                 ForEach(musicManager.spotifyPrivateAPI.popularReleases) { release in
@@ -1688,7 +1688,7 @@ struct AddToPlaylistMenuView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            Text("Add to Playlist")
+            Text("加入播放列表")
                 .font(.system(size: 12, weight: .bold, design: .rounded))
                 .foregroundStyle(.secondary)
                 .padding(.horizontal, 12)
@@ -3229,7 +3229,7 @@ struct PlaylistView: View {
                                 ProgressView()
                                     .padding(.vertical, 12)
                             } else if spotifyPrivateAPI.playlistHasMore {
-                                Text("Scroll for more")
+                                Text("滚动查看更多")
                                     .font(.caption)
                                     .foregroundStyle(.tertiary)
                                     .padding(.vertical, 8)
@@ -4130,7 +4130,7 @@ struct SpotifyMusicSearchView: View {
                     emptyReplacement()
                 } else {
                     CustomUnavailableView(
-                        title: "Search Spotify",
+                        title: "搜索 Spotify",
                         systemImage: "magnifyingglass",
                         description: "Find tracks, artists, albums, and playlists."
                     )
@@ -4741,7 +4741,7 @@ struct LoginPromptView: View {
                 .font(.system(size: 40))
                 .foregroundColor(.yellow)
 
-            Text("Login Required")
+            Text("需要登录")
                 .font(.title2).bold()
 
             Text("Please log in to Spotify via the Music section in Sapphire's settings to use this feature.")
@@ -5134,7 +5134,7 @@ struct AppleMusicSearchView: View {
                     }
                 }
                 if !vm.recentlyPlayed.isEmpty {
-                    discoverSection(title: "Recently Played", systemImage: "clock.fill") {
+                    discoverSection(title: "最近播放", systemImage: "clock.fill") {
                         ForEach(vm.recentlyPlayed.prefix(6)) { track in
                             SuggestedAppleTrackRow(track: track) {
                                 Task { _ = musicManager.appleMusic.playTrack(persistentID: track.id) }
@@ -5143,7 +5143,7 @@ struct AppleMusicSearchView: View {
                     }
                 }
                 if !vm.recentlyAdded.isEmpty {
-                    discoverSection(title: "Recently Added", systemImage: "plus.circle.fill") {
+                    discoverSection(title: "最近添加", systemImage: "plus.circle.fill") {
                         ForEach(vm.recentlyAdded.prefix(6)) { track in
                             SuggestedAppleTrackRow(track: track) {
                                 Task { _ = musicManager.appleMusic.playTrack(persistentID: track.id) }
@@ -5152,7 +5152,7 @@ struct AppleMusicSearchView: View {
                     }
                 }
                 if !vm.heavyRotation.isEmpty {
-                    discoverSection(title: "Heavy Rotation", systemImage: "repeat") {
+                    discoverSection(title: "高频播放", systemImage: "repeat") {
                         ScrollView(.horizontal, showsIndicators: false) {
                             LazyHStack(spacing: 10) {
                                 ForEach(vm.heavyRotation.prefix(8)) { album in
