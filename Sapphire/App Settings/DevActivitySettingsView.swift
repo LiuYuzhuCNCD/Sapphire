@@ -48,7 +48,7 @@ struct DevActivitySettingsView: View {
     private var detectionSection: some View {
         VStack(alignment: .leading, spacing: 0) {
             ToggleRow(
-                title: "Show Running Work in the Notch",
+                title: "在刘海显示正在运行的任务",
                 description: "Surface a live activity while an AI agent, a build, or a terminal command is running.",
                 isOn: $settings.settings.devActivityEnabled
             )
@@ -124,7 +124,7 @@ struct DevActivitySettingsView: View {
     private var accuracySection: some View {
         VStack(alignment: .leading, spacing: 0) {
             ToggleRow(
-                title: "Detect Agents Inside Editors",
+                title: "检测编辑器内的智能体",
                 description: "Cursor, Antigravity, Devin, VS Code and Zed keep their agent in the editor process, so activity there is inferred from how hard it is working. Turn this off if idle typing registers as a running agent.",
                 isOn: $settings.settings.devActivityDetectIDEAgents
             )
@@ -254,7 +254,7 @@ struct CaffeineAutoTaskSettingsView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             ToggleRow(
-                title: "Keep Awake While a Task Runs",
+                title: "任务运行期间保持唤醒",
                 description: "Automatically turn caffeinate on when an AI agent, build, or terminal command starts, and off again once everything finishes. Caffeinate you switched on yourself is never turned off by this.",
                 isOn: $settings.settings.caffeinateAutoDuringTasks
             )
@@ -296,7 +296,7 @@ struct CaffeineAutoTaskSettingsView: View {
 
                 VStack(alignment: .leading, spacing: 4) {
                     CustomSliderRowView(
-                        label: "Keep Awake After Finishing",
+                        label: "完成后保持唤醒",
                         value: $settings.settings.caffeinateAutoTaskGrace,
                         range: 0...600,
                         specifier: "%.0fs"

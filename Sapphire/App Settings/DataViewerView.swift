@@ -101,7 +101,7 @@ struct DataViewerView: View {
             Text("No Data Collected Yet")
                 .font(.title2.bold())
 
-            Text("Enable monitoring to start collecting profiling data")
+            Text("启用监控以开始采集性能数据")
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
                 .multilineTextAlignment(.center)
@@ -163,7 +163,7 @@ struct DataViewerView: View {
 
     private func byMonitorTypeSection(_ summary: DataSummary) -> some View {
         VStack(alignment: .leading, spacing: 16) {
-            Text("Data Points by Monitor Type")
+            Text("按监控类型划分数据点")
                 .font(.headline)
 
             LazyVStack(spacing: 12) {
@@ -229,7 +229,7 @@ struct DataViewerView: View {
                 HStack {
                     Image(systemName: "lock.shield.fill")
                         .foregroundStyle(.purple)
-                    Text("All data is AES-256 encrypted")
+                    Text("所有数据以 AES-256 加密")
                         .font(.subheadline)
                     Spacer()
                 }
@@ -240,7 +240,7 @@ struct DataViewerView: View {
                 HStack {
                     Image(systemName: "externaldrive.badge.checkmark")
                         .foregroundStyle(.green)
-                    Text("Stored locally on your device")
+                    Text("存储在你本机")
                         .font(.subheadline)
                     Spacer()
                 }

@@ -54,7 +54,7 @@ struct PlaneEditorView: View {
                         }
                     }) {
                         if shortcutRecorder.isRecording {
-                            Text("Recording... (Esc to cancel)")
+                            Text("录制中…（按 Esc 取消）")
                                 .foregroundColor(.accentColor)
                         } else if let shortcut = plane.shortcut {
                             Text("\(KeyboardShortcutHelper.description(for: shortcut.modifiers)) \(shortcut.key)")

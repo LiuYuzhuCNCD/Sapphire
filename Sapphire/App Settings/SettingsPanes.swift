@@ -336,7 +336,7 @@ struct NotchAppearanceEditorView: View {
 
             if appearance.mode == .blur || (appearance.mode == .custom && !appearance.liquidGlassLook) {
                 Divider().padding(.leading, 20)
-                ToggleRow(title: "Enable Transparency Blur", description: "Apply a frosted glass effect to the notch background.", isOn: $appearance.enableTransparencyBlur)
+                ToggleRow(title: "Enable Transparency Blur", description: "为刘海背景应用毛玻璃效果。", isOn: $appearance.enableTransparencyBlur)
             }
         }
         .modifier(SettingsContainerModifier())
@@ -481,7 +481,7 @@ struct SystemEnhanceSettingsView: View {
                     ToggleRow(title: "最后一个窗口关闭时退出应用", description: "Apps quit themselves once they have no windows left, after a short grace period. Enabled for every app by default.", isOn: $settings.settings.systemEnhanceAutoQuitEnabled)
                     if settings.settings.systemEnhanceAutoQuitEnabled {
                         Divider().padding(.leading, 20)
-                        Text("Apps to quit when window-less:")
+                        Text("无窗口时退出的应用：")
                             .font(.subheadline)
                             .foregroundStyle(.secondary)
                             .padding(.horizontal)
@@ -531,7 +531,7 @@ struct SystemEnhanceSettingsView: View {
                             }.labelsHidden().frame(width: 140) }.padding()
                         }
                         Divider().padding(.leading, 20)
-                        Text("Apps with protected ⌘Q/⌘W:")
+                        Text("受 ⌘Q/⌘W 保护的应用：")
                             .font(.subheadline)
                             .foregroundStyle(.secondary)
                             .padding(.horizontal)
@@ -685,7 +685,7 @@ struct AppsSettingsView: View {
                 VStack(alignment: .leading, spacing: 4) {
                     Text("应用")
                         .font(.largeTitle.bold())
-                    Text("Keep installed apps current and review app-linked data before cleanup.")
+                    Text("让已安装应用保持最新，并在清理前检查应用关联数据。")
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
                 }
@@ -782,7 +782,7 @@ struct AppsSettingsView: View {
                 )
                 Divider().padding(.leading)
                 ToggleRow(
-                    title: "Installed app notifications",
+                    title: "已安装应用的通知",
                     description: "后台扫描发现新更新时通知你。",
                     isOn: $settingsModel.settings.installedAppUpdateNotificationsEnabled
                 )
@@ -1348,7 +1348,7 @@ private struct InstalledAppReleaseNotesSheet: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                 } else if let url = entry.releaseNotesURL {
                     VStack(spacing: 12) {
-                        Text("Notes are published online.")
+                        Text("便签会发布到网上。")
                             .font(.subheadline)
                             .foregroundStyle(.secondary)
                         Button("在浏览器中打开") {
@@ -1734,10 +1734,10 @@ struct GeneralSettingsView: View {
 
                             Group {
                                 Text("主过渡动画").font(.caption.bold()).foregroundColor(.secondary)
-                                AnimationSliderRow(title: "展开响应", description: "Opening the main widget view.", value: $settings.settings.customAnimationConfiguration.expandResponse, range: 0.1...1.0)
+                                AnimationSliderRow(title: "展开响应", description: "打开主组件视图。", value: $settings.settings.customAnimationConfiguration.expandResponse, range: 0.1...1.0)
                                 AnimationSliderRow(title: "展开阻尼", description: "", value: $settings.settings.customAnimationConfiguration.expandDamping, range: 0.4...1.0)
                                 Divider()
-                                AnimationSliderRow(title: "收起响应", description: "Closing the main widget view.", value: $settings.settings.customAnimationConfiguration.collapseResponse, range: 0.1...1.0)
+                                AnimationSliderRow(title: "收起响应", description: "关闭主组件视图。", value: $settings.settings.customAnimationConfiguration.collapseResponse, range: 0.1...1.0)
                                 AnimationSliderRow(title: "收起阻尼", description: "", value: $settings.settings.customAnimationConfiguration.collapseDamping, range: 0.4...1.0)
                                 Divider()
                                 AnimationSliderRow(title: "滑动打开响应", description: "用触控板滑动打开组件。", value: $settings.settings.customAnimationConfiguration.swipeOpenResponse, range: 0.1...1.0)
@@ -1755,8 +1755,8 @@ struct GeneralSettingsView: View {
 
                             Group {
                                 Text("Content & Activities").font(.caption.bold()).foregroundColor(.secondary).padding(.top)
-                                AnimationSliderRow(title: "Content Transition Response", description: "组件在展开视图中的出现方式。", value: $settings.settings.customAnimationConfiguration.contentTransitionResponse, range: 0.1...1.0)
-                                AnimationSliderRow(title: "Content Transition Damping", description: "", value: $settings.settings.customAnimationConfiguration.contentTransitionDamping, range: 0.4...1.0)
+                                AnimationSliderRow(title: "内容切换响应", description: "组件在展开视图中的出现方式。", value: $settings.settings.customAnimationConfiguration.contentTransitionResponse, range: 0.1...1.0)
+                                AnimationSliderRow(title: "内容切换阻尼", description: "", value: $settings.settings.customAnimationConfiguration.contentTransitionDamping, range: 0.4...1.0)
                                 Divider()
                                 AnimationSliderRow(title: "Activity Switch Response", description: "在不同实时活动之间切换。", value: $settings.settings.customAnimationConfiguration.activityToActivityResponse, range: 0.1...1.0)
                                 AnimationSliderRow(title: "Activity Switch Damping", description: "", value: $settings.settings.customAnimationConfiguration.activityToActivityDamping, range: 0.4...1.0)
@@ -1950,7 +1950,7 @@ struct CustomNotchConfigView: View {
     var body: some View {
         VStack(spacing: 0) {
             HStack {
-                Text("Custom Notch Configuration")
+                Text("自定义刘海参数")
                     .font(.title2.bold())
                 Spacer()
                 Button(action: { dismiss() }) {
@@ -1994,14 +1994,14 @@ struct CustomNotchConfigView: View {
 
                     Section(header: Text("延迟").font(.headline)) {
                         CustomSliderRowView(label: "Collapse Animation Delay", value: $collapseAnimationDelay, range: 0.0...1.0, specifier: "%.2f s")
-                        CustomSliderRowView(label: "Drag Activation Collapse Delay", value: $dragActivationCollapseDelay, range: 0.0...1.0, specifier: "%.2f s")
+                        CustomSliderRowView(label: "拖动激活收起延迟", value: $dragActivationCollapseDelay, range: 0.0...1.0, specifier: "%.2f s")
                     }
 
                     Section(header: Text("内边距").font(.headline)) {
                         CustomSliderRowView(label: "Content Top Padding", value: $contentTopPadding, range: 0...50, specifier: "%.1f")
                         CustomSliderRowView(label: "Content Bottom Padding", value: $contentBottomPadding, range: 0...50, specifier: "%.1f")
-                        CustomSliderRowView(label: "Content Horizontal Padding", value: $contentHorizontalPadding, range: 0...100, specifier: "%.1f")
-                        CustomSliderRowView(label: "Auto-Expanded Vertical Padding", value: $autoExpandedContentVerticalPadding, range: 0...50, specifier: "%.1f")
+                        CustomSliderRowView(label: "内容水平内边距", value: $contentHorizontalPadding, range: 0...100, specifier: "%.1f")
+                        CustomSliderRowView(label: "自动展开的垂直内边距", value: $autoExpandedContentVerticalPadding, range: 0...50, specifier: "%.1f")
                     }
 
                     Section(header: Text("模糊与阴影").font(.headline)) {
@@ -2117,7 +2117,7 @@ struct FileShelfSettingsView: View {
                     Divider().padding(.leading, 20)
 
                     ToggleRow(
-                        title: "Remove File After Drag Out",
+                        title: "拖出后移除文件",
                         description: "When you drag a file out of the shelf, remove it from the shelf automatically.",
                         isOn: $settings.settings.removeFileFromShelfAfterDrag
                     )
@@ -2170,7 +2170,7 @@ struct NotesSettingsView: View {
                 VStack(alignment: .leading, spacing: 0) {
                     ToggleRow(
                         title: "Enable Notes Widget",
-                        description: "Show the quick notes widget in the notch widget strip.",
+                        description: "在刘海组件栏显示快速便签组件。",
                         isOn: $settings.settings.notesWidgetEnabled
                     )
 
@@ -2196,7 +2196,7 @@ struct NotesSettingsView: View {
 
                     SwipeActionPickerRow(
                         title: "右滑",
-                        description: "Leading swipe on a note row.",
+                        description: "在便签条目上右滑。",
                         selection: $settings.settings.swipeActionSettings.notesLeading,
                         options: NotesSwipeAction.allCases,
                         label: { $0.displayName }
@@ -2206,7 +2206,7 @@ struct NotesSettingsView: View {
 
                     SwipeActionPickerRow(
                         title: "左滑",
-                        description: "Trailing swipe on a note row.",
+                        description: "在便签条目上左滑。",
                         selection: $settings.settings.swipeActionSettings.notesTrailing,
                         options: NotesSwipeAction.allCases,
                         label: { $0.displayName }
@@ -2321,7 +2321,7 @@ struct ClipboardSettingsView: View {
                 VStack(alignment: .leading, spacing: 0) {
                     ToggleRow(
                         title: "Enable Clipboard Widget",
-                        description: "Show recent clipboard items in the notch widget strip.",
+                        description: "在刘海组件栏显示最近的剪贴板条目。",
                         isOn: $settings.settings.clipboardWidgetEnabled
                     )
 
@@ -2329,14 +2329,14 @@ struct ClipboardSettingsView: View {
 
                     ToggleRow(
                         title: "Open Clipboard on Click",
-                        description: "Clicking the clipboard widget expands into the full clipboard history.",
+                        description: "点击剪贴板组件可展开为完整剪贴板历史。",
                         isOn: $settings.settings.clipboardOpenOnClick
                     )
 
                     Divider().padding(.leading, 20)
 
                     ToggleRow(
-                        title: "Show Clipboard in Notch Bar",
+                        title: "在刘海栏显示剪贴板",
                         description: "在展开的刘海标题栏加入剪贴板图标以便快速访问。",
                         isOn: $settings.settings.clipboardIconEnabled
                     )
@@ -2345,7 +2345,7 @@ struct ClipboardSettingsView: View {
 
                     ToggleRow(
                         title: "监控剪贴板",
-                        description: "Continuously capture newly copied text and images into Sapphire history.",
+                        description: "持续把新复制的文本与图片存入 Sapphire 历史。",
                         isOn: $settings.settings.clipboardMonitoringEnabled
                     )
                     .onChange(of: settings.settings.clipboardMonitoringEnabled) { _, enabled in
@@ -2505,14 +2505,14 @@ struct ClipboardSettingsView: View {
 
                             ToggleRow(
                                 title: "清理复制的链接",
-                                description: "Rewrite copied URLs without their tracking parameters.",
+                                description: "重写复制的网址，去掉跟踪参数。",
                                 isOn: $settings.settings.clipboardCleanURLEnabled
                             )
 
                             if settings.settings.clipboardCleanURLEnabled {
                                 Divider().padding(.leading, 20)
                                 ToggleRow(
-                                    title: "Clean Automatically on Copy",
+                                    title: "复制时自动清理",
                                     description: "Clean as soon as a link is copied. Turn off to only clean from the picker.",
                                     isOn: $settings.settings.clipboardCleanURLAutoClean
                                 )
@@ -2537,7 +2537,7 @@ struct ClipboardSettingsView: View {
                                 Divider().padding(.leading, 20)
                                 ToggleRow(
                                     title: "Paste Images as PNG Files",
-                                    description: "⌘V in Finder turns a copied image into a PNG file in the front folder.",
+                                    description: "在访达中按 ⌘V 会把复制的图片存成 PNG 到当前文件夹。",
                                     isOn: $settings.settings.clipboardFinderPasteImagesAsPNG
                                 )
 
@@ -2707,8 +2707,8 @@ struct CaffeineSettingsView: View {
 
                 VStack(alignment: .leading, spacing: 0) {
                     ToggleRow(
-                        title: "Show Caffeinate in Notch Bar",
-                        description: "Add a caffeinate toggle to the expanded notch header.",
+                        title: "在刘海栏显示防休眠",
+                        description: "在展开的刘海标题栏加入防休眠开关。",
                         isOn: $settings.settings.caffeinateEnabled
                     )
 
@@ -2786,7 +2786,7 @@ struct WidgetsSettingsView: View {
                     Text("行为").font(.headline).padding([.top, .horizontal])
                     ToggleRow(
                         title: "Remember Last Open Menu",
-                        description: "When re-opening the notch, it will return to the last menu you had open.",
+                        description: "再次打开刘海时会回到你上次停留的菜单。",
                         isOn: $settings.settings.rememberLastMenu
                     )
                     Divider().padding(.leading, 20)
@@ -2798,7 +2798,7 @@ struct WidgetsSettingsView: View {
 
                 VStack(alignment: .leading, spacing: 0) {
                     Text("外观").font(.headline).padding([.top, .horizontal])
-                    ToggleRow(title: "Show Dividers Between Widgets", description: "在组件之间显示一条细分割线。", isOn: $settings.settings.showDividersBetweenWidgets)
+                    ToggleRow(title: "在组件之间显示分割线", description: "在组件之间显示一条细分割线。", isOn: $settings.settings.showDividersBetweenWidgets)
                     ToggleRow(
                         title: "Ignore Widget Space Limit",
                         description: "Allow any widget to be enabled even when Sapphire estimates there is not enough notch space.",
@@ -2905,7 +2905,7 @@ struct LiveActivitiesSettingsView: View {
                     Text("通用行为").font(.headline).padding([.top, .horizontal])
                     ToggleRow(
                           title: "显示精简专注实时活动文字",
-                          description: "Instead of showing the full focus name, only on/off.",
+                          description: "不显示完整专注名称，只显示开/关。",
                           isOn: Binding(
                               get: { settings.settings.focusDisplayMode == .compact },
                               set: { settings.settings.focusDisplayMode = $0 ? .compact : .full }
@@ -2923,12 +2923,12 @@ struct LiveActivitiesSettingsView: View {
                     ToggleRow(title: "滑动关闭", description: "在实时活动上向下滑动即可关闭。", isOn: $settings.settings.swipeToDismissLiveActivity)
                     Divider().padding(.leading, 20)
                     ToggleRow(
-                        title: "Hide When Source App is Active",
+                        title: "来源应用在前台时隐藏",
                         description: "Automatically hide the music live activity when Spotify or Music is the frontmost app.",
                         isOn: $settings.settings.hideLiveActivityWhenSourceActive
                     )
                     Divider().padding(.leading, 20)
-                    ToggleRow(title: "Hide All in Full Screen", description: "Automatically hide all live activities when an app is in full screen.", isOn: $settings.settings.hideLiveActivityInFullScreen)
+                    ToggleRow(title: "Hide All in Full Screen", description: "有应用进入全屏时自动隐藏所有实时活动。", isOn: $settings.settings.hideLiveActivityInFullScreen)
 
                     DisclosureGroup("Advanced: Hide Specific Activities in Full Screen") {
                         VStack(spacing: 0) {
@@ -3005,7 +3005,7 @@ struct LiveActivitiesSettingsView: View {
 
                     VStack(alignment: .leading, spacing: 12) {
                         Toggle(isOn: $settings.settings.statsLiveActivityThresholdEnabled) {
-                            Text("Only Show When Usage is High")
+                            Text("仅在高占用时显示")
                                 .font(.headline)
                         }
                         .padding()
@@ -3027,7 +3027,7 @@ struct LiveActivitiesSettingsView: View {
                 }
 
                 VStack(alignment: .leading, spacing: 10) {
-                    Text("Activity Visibility & Order").font(.headline).padding([.horizontal, .top])
+                    Text("活动可见性与排序").font(.headline).padding([.horizontal, .top])
                     Text("启用、停用并排序所有可用的实时活动。").font(.caption).foregroundColor(.secondary).padding(.horizontal).padding(.bottom, 5)
                     if settings.settings.statsLiveActivityEnabled {
                         InfoContainer(text: "Enabling stats will increase the app's cpu and power consumption.", iconName: "info.circle", color: .yellow)
@@ -3773,7 +3773,7 @@ struct LockScreenSettingsView: View {
                     Text("壁纸").font(.headline).padding([.top, .horizontal])
 
                     ToggleRow(
-                        title: "Custom Lock Screen Wallpaper",
+                        title: "自定义锁屏壁纸",
                         description: "Show your own image or video behind the clock, sign-in controls, and Sapphire widgets on the lock screen.",
                         isOn: $settings.settings.lockScreenCustomWallpaperEnabled
                     )
@@ -3820,7 +3820,7 @@ struct LockScreenSettingsView: View {
                         HStack {
                             SettingsRowLabel(
                                 title: "缩放",
-                                description: "How the wallpaper fits screens with a different shape.",
+                                description: "壁纸如何适配不同形状的屏幕。",
                                 titleFont: .system(size: 14, weight: .medium)
                             )
                             Spacer()
@@ -3893,7 +3893,7 @@ struct LockScreenSettingsView: View {
 
                     ToggleRow(
                         title: "Show Info Widget(s)",
-                        description: "Display small, informational widgets below the clock.",
+                        description: "在时钟下方显示小巧的信息组件。",
                         isOn: $settings.settings.lockScreenShowInfoWidget
                     )
 
@@ -3902,7 +3902,7 @@ struct LockScreenSettingsView: View {
 
                         ToggleRow(
                             title: "非活动时隐藏",
-                            description: "Only show widgets like Music, Calendar, or Focus when they are active.",
+                            description: "仅在音乐、日历或专注等组件活动时显示它们。",
                             isOn: $settings.settings.lockScreenHideInactiveInfoWidgets
                         )
 
@@ -4017,7 +4017,7 @@ struct LockScreenSettingsView: View {
                     Divider().padding(.leading, 20)
 
                     ToggleRow(
-                        title: "Show Lock Screen Live Activity",
+                        title: "显示锁屏实时活动",
                         description: "Display an authentication status activity in the notch on the lock screen.",
                         isOn: $settings.settings.lockScreenLiveActivityEnabled
                     )
@@ -4463,7 +4463,7 @@ struct SnapZonesSettingsView: View {
             }.padding()
             Divider()
             if settings.settings.customSnapLayouts.isEmpty {
-                Text("No custom layouts created yet.").foregroundColor(.secondary).frame(maxWidth: .infinity, minHeight: 60, alignment: .center)
+                Text("尚未创建自定义布局。").foregroundColor(.secondary).frame(maxWidth: .infinity, minHeight: 60, alignment: .center)
             } else {
                 ForEach(settings.settings.customSnapLayouts) { layout in
                     CustomLayoutRow(layout: layout, onEdit: { layoutToEdit = layout }, onDelete: { deleteLayout(layout) })
@@ -5037,7 +5037,7 @@ struct NotificationsSettingsView: View {
                         Divider().padding(.leading, 20)
 
                         ToggleRow(
-                            title: "Auto-copy verification codes",
+                            title: "自动复制验证码",
                             description: "识别到验证码时自动复制到剪贴板。",
                             isOn: $settings.settings.autoCopyVerificationCodes
                         )
@@ -5077,7 +5077,7 @@ struct NotificationsSettingsView: View {
                         Divider().padding(.leading, 20)
 
                         ToggleRow(
-                            title: "Parcel tracking from email",
+                            title: "从邮件追踪快递",
                             description: "在「邮件」中识别 UPS/FedEx/USPS/DHL/亚马逊的快递单号。",
                             isOn: $settings.settings.parcelTrackingEnabled
                         )
@@ -5515,7 +5515,7 @@ struct ProximityUnlockSettingsView: View {
                 range: 5...120,
                 specifier: "%.0f sec"
             )
-            Text("Stops Face ID scanning when your face isn't recognized for this long.")
+            Text("超过这段时间仍未识别到面容时停止扫描。")
                 .font(.caption).foregroundColor(.secondary).padding(.horizontal).padding(.bottom, 8)
         }
     }
@@ -5525,7 +5525,7 @@ struct ProximityUnlockSettingsView: View {
         VStack(alignment: .leading, spacing: 0) {
             ToggleRow(
                 title: "Enable Bluetooth Unlock",
-                description: "Automatically lock and unlock your Mac using a trusted Bluetooth device.",
+                description: "用可信蓝牙设备自动锁定与解锁 Mac。",
                 isOn: isBluetoothEnabled
             )
             .disabled(!authManager.isPasswordSet)
@@ -5623,7 +5623,7 @@ struct ProximityUnlockSettingsView: View {
             Divider().padding(.leading, 20)
             CustomSliderRowView(label: "无信号超时", value: $settings.settings.bluetoothUnlockNoSignalTimeout, range: 10...300, specifier: "%.0f sec")
             Divider().padding(.leading, 20)
-            ToggleRow(title: "被动模式", description: "Uses less energy but may be slightly slower to react.", isOn: $settings.settings.bluetoothUnlockPassiveMode)
+            ToggleRow(title: "被动模式", description: "更省电，但反应可能稍慢。", isOn: $settings.settings.bluetoothUnlockPassiveMode)
             Divider().padding(.leading, 20)
             CustomSliderRowView(label: "最低扫描信号强度", value: Binding(get: { Double(settings.settings.bluetoothUnlockMinScanRSSI) }, set: { settings.settings.bluetoothUnlockMinScanRSSI = Int($0) }), range: -100 ... -30, specifier: "%.0f dBm")
         }.padding(.vertical)
@@ -5752,7 +5752,7 @@ fileprivate struct FindDeviceByDistanceWizard: View {
     @ViewBuilder
     private var step1: some View {
         Image(systemName: "arrow.down.to.line.compact").font(.system(size: 40)).foregroundColor(.accentColor)
-        Text("Step 1: Bring Device Close").font(.title2)
+        Text("第 1 步：把设备靠近").font(.title2)
         Text("Bring your desired device as close as possible to your Mac, then press Next.").multilineTextAlignment(.center).foregroundColor(.secondary)
 
         let strongestDevice = authManager.scannedDevices.max(by: { $0.rssi < $1.rssi })
@@ -5769,7 +5769,7 @@ fileprivate struct FindDeviceByDistanceWizard: View {
     @ViewBuilder
     private var step2: some View {
         Image(systemName: "arrow.up.right.and.arrow.down.left.rectangle").font(.system(size: 40)).foregroundColor(.accentColor)
-        Text("Step 2: Move Device Far Away").font(.title2)
+        Text("第 2 步：把设备移远").font(.title2)
         Text("Now, move the device about 3 meters (10 feet) away. The scan will complete automatically.").multilineTextAlignment(.center).foregroundColor(.secondary)
 
         Text("Time remaining: \(countdown)s")
@@ -5780,7 +5780,7 @@ fileprivate struct FindDeviceByDistanceWizard: View {
     @ViewBuilder
     private var step3: some View {
         Image(systemName: "checkmark.shield.fill").font(.system(size: 40)).foregroundColor(.green)
-        Text("Step 3: Select Your Device").font(.title2)
+        Text("第 3 步：选择你的设备").font(.title2)
         Text("依据信号变化，以下是可能性最高的候选设备。").multilineTextAlignment(.center).foregroundColor(.secondary)
 
         if results.isEmpty {
@@ -6464,7 +6464,7 @@ struct LidAngleCaffeineSettingsView: View {
 
             Divider().padding(.leading, 20)
             ToggleRow(
-                title: "Pause media when nearly closed",
+                title: "快合上时暂停媒体",
                 description: "Automatically pause now playing media and resume when the lid opens back up.",
                 isOn: $settings.settings.lidAnglePauseMediaEnabled
             )
@@ -6845,7 +6845,7 @@ struct ComponentPowerBreakdownView: View {
                 shareStrip
                 componentRows
             } else {
-                Text("Waiting for power sensors…")
+                Text("正在等待电源传感器…")
                     .font(.system(size: 13, weight: .medium, design: .rounded))
                     .foregroundStyle(MaterialChartPalette.onSurfaceVariant)
                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -8058,20 +8058,20 @@ struct BatteryConfigurationView: View {
 
     @ViewBuilder private var notificationsSection: some View {
         VStack(alignment: .leading, spacing: 0) {
-            Text("Notifications & Live Activity").font(.headline).padding([.top, .horizontal])
-            CustomSliderRowView(label: "Notify when battery is below", value: Binding(get: { Double(settings.settings.lowBatteryNotificationPercentage) }, set: { settings.settings.lowBatteryNotificationPercentage = Int($0) }), range: 10...50, specifier: "%.0f %%")
+            Text("通知与实时活动").font(.headline).padding([.top, .horizontal])
+            CustomSliderRowView(label: "电量低于此值时提醒", value: Binding(get: { Double(settings.settings.lowBatteryNotificationPercentage) }, set: { settings.settings.lowBatteryNotificationPercentage = Int($0) }), range: 10...50, specifier: "%.0f %%")
             Divider().padding(.leading, 20)
-            ToggleRow(title: "低电量提醒时播放声音", description: "Get an audible alert when your battery is running low.", isOn: $settings.settings.lowBatteryNotificationSoundEnabled)
+            ToggleRow(title: "低电量提醒时播放声音", description: "电量偏低时发出声音提醒。", isOn: $settings.settings.lowBatteryNotificationSoundEnabled)
             Divider().padding(.leading, 20)
             ToggleRow(title: "提示开启低电量模式", description: "Show a convenient button to enable Low Power Mode when your battery gets low.", isOn: $settings.settings.promptForLowPowerMode)
             Divider().padding(.leading, 20)
-            ToggleRow(title: "Show Estimated Time Remaining", description: "Display the estimated time to full (when charging) or time to empty (when on battery) in the live activity.", isOn: $settings.settings.showEstimatedBatteryTime)
+            ToggleRow(title: "显示预计剩余时间", description: "Display the estimated time to full (when charging) or time to empty (when on battery) in the live activity.", isOn: $settings.settings.showEstimatedBatteryTime)
         }.modifier(SettingsContainerModifier())
     }
 
     @ViewBuilder private var coreFeaturesSection: some View {
         VStack(alignment: .leading, spacing: 0) {
-            Text("Battery Management Features").font(.headline).padding([.top, .horizontal])
+            Text("电池管理功能").font(.headline).padding([.top, .horizontal])
             CustomSliderRowView(label: "充电上限", value: Binding(get: { Double(settings.settings.batteryChargeLimit) }, set: { settings.settings.batteryChargeLimit = Int($0) }), range: 50...100, specifier: "%.0f %%")
             Divider().padding(.leading, 20)
             ToggleRow(title: "航行模式", description: "Prevents battery wear from constant micro-charging cycles when plugged in for long periods. Charging will pause at the limit and only resume when the battery drops by a set amount.", isOn: $settings.settings.sailingModeEnabled)
@@ -8091,7 +8091,7 @@ struct BatteryConfigurationView: View {
         VStack(alignment: .leading, spacing: 0) {
             Text("自动放电").font(.headline).padding([.top, .horizontal])
             ToggleRow(
-                title: "Enable Automatic Discharge",
+                title: "启用自动放电",
                 description: "When enabled, your Mac will stop using AC power and run from its battery until the battery limit is reached.",
                 isOn: $settings.settings.dischargeToLimitEnabled
             )
@@ -8102,14 +8102,14 @@ struct BatteryConfigurationView: View {
         VStack(alignment: .leading, spacing: 0) {
             Text("充电与睡眠").font(.headline).padding([.top, .horizontal])
             InfoContainer(text: "Although functionality is in place to keep the battery management functinal even when the device is sleeping it may not always work. Use these settings if you want to be certain of the behaviour when the device is sleeping.", iconName: "info.circle", color: .yellow).padding()
-            ToggleRow(title: "Stop charging when sleeping", description: "Prevents your Mac from sitting at 100% charge overnight, which can degrade the battery over time. Charging resumes on wake.", isOn: $settings.settings.stopChargingWhenSleeping)
+            ToggleRow(title: "睡眠时停止充电", description: "Prevents your Mac from sitting at 100% charge overnight, which can degrade the battery over time. Charging resumes on wake.", isOn: $settings.settings.stopChargingWhenSleeping)
             Divider().padding(.leading, 20)
             ToggleRow(title: "Log battery during sleep", description: "Wakes the Mac briefly (display stays off) at a set interval to record battery state and re-assert your charge limit overnight. Sleep is never disabled.", isOn: $settings.settings.logBatteryDuringSleep)
             if settings.settings.logBatteryDuringSleep {
                 CustomSliderRowView(label: "记录间隔", value: Binding(get: { Double(settings.settings.sleepLoggingIntervalMinutes) }, set: { settings.settings.sleepLoggingIntervalMinutes = Int($0) }), range: 15...120, specifier: "%.0f min")
             }
             Divider().padding(.leading, 20)
-            ToggleRow(title: "Stop charging when app closed", description: "The helper tool ensures your charging rules are still applied even if the Sapphire app isn't running.", isOn: .constant(true)).disabled(true)
+            ToggleRow(title: "应用关闭时停止充电", description: "The helper tool ensures your charging rules are still applied even if the Sapphire app isn't running.", isOn: .constant(true)).disabled(true)
             Divider().padding(.leading, 20)
             ToggleRow(title: "充电到上限前禁止睡眠", description: "Keeps your Mac awake to ensure it reaches the charge limit, useful for 'top-up' schedules before you need to leave.", isOn: $settings.settings.disableSleepUntilChargeLimit)
         }.modifier(SettingsContainerModifier())
@@ -8484,7 +8484,7 @@ struct HUDSettingsView: View {
                     Divider().padding(.top, 10).padding(.leading, 20)
 
                     ToggleRow(
-                        title: "Show Spotify Device in HUD",
+                        title: "在浮层中显示 Spotify 设备",
                         description: "Display a special HUD with the active device name when changing volume while Spotify is active.",
                         isOn: $settings.settings.showSpotifyVolumeHUD
                     )
@@ -8667,7 +8667,7 @@ struct HUDSettingsView: View {
 
                     ToggleRow(
                         title: "显示圆点",
-                        description: "Display brightness as a row of dots instead of a bar.",
+                        description: "亮度用一排圆点表示，而非长条。",
                         isOn: $settings.settings.brightnessHUDShowDots
                     )
                     .disabled(!settings.settings.enableBrightnessHUD)
@@ -8773,7 +8773,7 @@ struct MusicSettingsView: View {
                     }.padding()
                     if settings.settings.mediaSource != .system {
                         Divider().padding(.leading, 20)
-                        ToggleRow(title: "Prioritize Selected Source", description: "Only show media from your selected source, ignoring browsers and other apps.", isOn: $settings.settings.prioritizeMediaSource)
+                        ToggleRow(title: "优先选定的来源", description: "Only show media from your selected source, ignoring browsers and other apps.", isOn: $settings.settings.prioritizeMediaSource)
                     }
                 }
                 .modifier(SettingsContainerModifier())
@@ -8800,7 +8800,7 @@ struct MusicSettingsView: View {
                     Divider().padding(.leading, 20)
                     ToggleRow(title: "Invert Swipe Gestures", description: "右滑跳过，左滑返回。", isOn: $settings.settings.invertMusicGestures)
                     Divider().padding(.leading, 20)
-                    ToggleRow(title: "Two-Finger Tap to Play/Pause", description: "Tap the album art with two fingers to toggle playback.", isOn: $settings.settings.twoFingerTapToPauseMusic)
+                    ToggleRow(title: "双指轻点播放/暂停", description: "双指轻点专辑封面即可切换播放。", isOn: $settings.settings.twoFingerTapToPauseMusic)
                 }
                 .modifier(SettingsContainerModifier())
 
@@ -8855,12 +8855,12 @@ struct MusicSettingsView: View {
                     Divider().padding(.leading, 20)
                     HStack { Text("点击实时活动时打开详细音乐组件"); Spacer(); SettingsSwitch(isOn: $settings.settings.musicOpenOnClick) }.padding()
                     Divider().padding(.leading, 20)
-                    HStack { Text("Waveform is volume sensitive"); Spacer(); SettingsSwitch(isOn: $settings.settings.musicWaveformIsVolumeSensitive) }.padding()
+                    HStack { Text("波形随音量变化"); Spacer(); SettingsSwitch(isOn: $settings.settings.musicWaveformIsVolumeSensitive) }.padding()
                     Divider().padding(.leading, 20)
                     Text("波形外观").font(.headline).padding([.top, .horizontal])
                     ToggleRow(title: "启用渐变", description: "依据专辑封面为波形应用渐变色彩。", isOn: $settings.settings.waveformUseGradient)
                     Divider().padding(.leading, 20)
-                    ToggleRow(title: "Use Static Waveform", description: "Show a non-animating waveform when music is playing.", isOn: $settings.settings.useStaticWaveform)
+                    ToggleRow(title: "Use Static Waveform", description: "播放音乐时显示静态波形。", isOn: $settings.settings.useStaticWaveform)
                     Divider().padding(.leading, 20)
                     CustomSliderRowView(label: "柱数", value: Binding(get: { Double(settings.settings.waveformBarCount) }, set: { settings.settings.waveformBarCount = Int($0) }), range: 3...6, specifier: "%.0f")
                     Divider().padding(.leading, 20)
@@ -8876,9 +8876,9 @@ struct MusicSettingsView: View {
                 .modifier(SettingsContainerModifier())
 
                 VStack(spacing: 0) {
-                    ToggleRow(title: "Enable track info on Hover", description: "悬停实时活动中的专辑封面即可看到歌名。", isOn: $settings.settings.enableQuickPeekOnHover)
+                    ToggleRow(title: "悬停时显示曲目信息", description: "悬停实时活动中的专辑封面即可看到歌名。", isOn: $settings.settings.enableQuickPeekOnHover)
                     Divider().padding(.leading, 20)
-                    ToggleRow(title: "切歌时显示曲目信息", description: "Briefly show the song title when a new track begins.", isOn: $settings.settings.showQuickPeekOnTrackChange)
+                    ToggleRow(title: "切歌时显示曲目信息", description: "新曲目开始前短暂显示歌名。", isOn: $settings.settings.showQuickPeekOnTrackChange)
                     Divider().padding(.leading, 20)
                     ToggleRow(title: "在音乐播放器中显示曲目热度", description: "Requires a spotify login", isOn: $settings.settings.showPopularityInMusicPlayer)
                     Divider().padding(.leading, 20)
@@ -9004,7 +9004,7 @@ VStack(alignment: .leading, spacing: 8) {
 
                 VStack(alignment: .leading, spacing: 0) {
                     Text("歌词").font(.headline).padding([.top, .horizontal])
-                    ToggleRow(title: "Show Lyrics in Live Activity", description: "有同步歌词时显示。", isOn: $settings.settings.showLyricsInLiveActivity)
+                    ToggleRow(title: "在实时活动中显示歌词", description: "有同步歌词时显示。", isOn: $settings.settings.showLyricsInLiveActivity)
                     if settings.settings.showLyricsInLiveActivity {
                         Divider().padding(.leading, 20)
                         ToggleRow(title: "启用翻译", description: "自动翻译非英文歌词。", isOn: $settings.settings.enableLyricTranslation)
@@ -9041,7 +9041,7 @@ VStack(alignment: .leading, spacing: 8) {
                         if #available(macOS 26.0, *) {
                             Divider().padding(.leading, 20)
                             ToggleRow(
-                                title: "Generate Word-by-Word Timing",
+                                title: "生成逐字时间轴",
                                 description: "When a song only has line timing, listen to the music app's audio on this Mac to time each word, and share good results. Asks for audio access and downloads Apple's speech model once.",
                                 isOn: $settings.settings.generateWordTimedLyrics
                             )
@@ -9284,8 +9284,8 @@ struct CalendarSettingsView: View {
                     Divider().padding(.leading, 20)
 
                     ToggleRow(
-                        title: "Enable Calendar Live Activity",
-                        description: "Show upcoming events as a live activity in the notch.",
+                        title: "启用日历实时活动",
+                        description: "把即将到来的日程作为实时活动显示在刘海。",
                         isOn: $settings.settings.calendarLiveActivityEnabled
                     )
                 }
@@ -9338,7 +9338,7 @@ struct EyeBreakRecommendationsView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
             HStack {
-                Text("Eye Health Recommendations")
+                Text("护眼建议")
                     .font(.title2.bold())
                 Spacer()
                 Button {
@@ -9439,8 +9439,8 @@ struct EyeBreakSettingsView: View {
 
                 VStack(alignment: .leading, spacing: 0) {
                     ToggleRow(
-                        title: "Enable Eye Break Reminders",
-                        description: "Receive live activities reminding you to take breaks.",
+                        title: "启用护眼提醒",
+                        description: "接收提醒你休息的实时活动。",
                         isOn: $settings.settings.eyeBreakLiveActivityEnabled
                     )
                     .onChange(of: settings.settings.eyeBreakLiveActivityEnabled) {
@@ -9488,7 +9488,7 @@ struct EyeBreakSettingsView: View {
 
             if eyeBreakManager.isBreakTime {
                 VStack(alignment: .leading, spacing: 4) {
-                    Text("Look away from your screen")
+                    Text("把视线移开屏幕")
                         .font(.subheadline)
                         .foregroundColor(.primary)
 
@@ -10007,7 +10007,7 @@ struct BluetoothSettingsView: View {
 
                 VStack(spacing: 0) {
                     Text("实时活动").font(.headline).padding([.top, .horizontal])
-                    ToggleRow(title: "Show Bluetooth Live Activity", description: "Show connection, disconnection, and battery events for Bluetooth devices.", isOn: $settings.settings.bluetoothLiveActivityEnabled)
+                    ToggleRow(title: "显示蓝牙实时活动", description: "Show connection, disconnection, and battery events for Bluetooth devices.", isOn: $settings.settings.bluetoothLiveActivityEnabled)
                     Divider().padding(.leading, 20)
                     ToggleRow(title: "Show Continuity Devices", description: "Show live activity events for Apple devices like iPhone, iPad, Mac, and Apple Watch.", isOn: $settings.settings.showBluetoothContinuityDevices)
                     Divider().padding(.leading, 20)
@@ -10097,7 +10097,7 @@ struct NeardropSettingsView: View {
                                 .overlay(RoundedRectangle(cornerRadius: 8).stroke(isPathValid ? Color.white.opacity(0.2) : Color.red, lineWidth: 1))
 
                                 if !isPathValid {
-                                    Text("A valid directory is required.")
+                                    Text("需要一个有效的目录。")
                                         .font(.caption)
                                         .foregroundColor(.red)
                                 }
@@ -10498,7 +10498,7 @@ struct AboutSettingsView: View {
                 Text("发布通道")
                     .font(.headline)
                     .padding([.horizontal, .top])
-                Text("Choose which update channel to receive releases from.")
+                Text("选择从哪个更新通道接收版本。")
                     .font(.caption)
                     .foregroundStyle(.secondary)
                     .padding(.horizontal)
@@ -10551,7 +10551,7 @@ struct AboutSettingsView: View {
                 Divider().padding(.leading)
                 ToggleRow(
                     title: "Update notifications",
-                    description: "Notify you when a verified Sapphire release is ready.",
+                    description: "有已验证的 Sapphire 版本就绪时通知你。",
                     isOn: $settingsModel.settings.updateAvailableNotificationsEnabled
                 )
                 .disabled(!settingsModel.settings.automaticUpdateChecksEnabled)
@@ -10980,7 +10980,7 @@ struct AppearanceSettingsView: View {
                     .font(.largeTitle.bold())
                 PerDisplayNotchSettingsView()
                 NotchAppearanceEditorView(appearance: $settings.settings.notchWidgetAppearance, title: "Expanded Notch Appearance")
-                NotchAppearanceEditorView(appearance: $settings.settings.notchLiveActivityAppearance, title: "Collapsed Notch Appearance")
+                NotchAppearanceEditorView(appearance: $settings.settings.notchLiveActivityAppearance, title: "收起时的刘海外观")
                 MenuBarHidingSettingsView()
                 MenuBarProfilesSettingsView()
                 MenuBarAppearanceSettingsView()
@@ -11174,7 +11174,7 @@ struct MenuBarHidingSettingsView: View {
             }
 
             VStack(spacing: 0) {
-                ToggleRow(title: "Enable Menu Bar Icon Hiding", description: "", isOn: $settings.settings.menuBarEnabled)
+                ToggleRow(title: "启用菜单栏图标隐藏", description: "", isOn: $settings.settings.menuBarEnabled)
             }.modifier(SettingsContainerModifier())
 
             if settings.settings.menuBarEnabled {
@@ -11205,7 +11205,7 @@ struct MenuBarHidingSettingsView: View {
                         .padding(.top, 8)
 
                     Text("显示隐藏项目").font(.headline).padding([.top, .horizontal])
-                    ToggleRow(title: "点击时显示", description: "Show hidden items when clicking empty menu bar space", isOn: $settings.settings.showOnClick)
+                    ToggleRow(title: "点击时显示", description: "点击菜单栏空白处时显示隐藏项目", isOn: $settings.settings.showOnClick)
                     Divider().padding(.leading, 20)
                     ToggleRow(title: "悬停时显示", description: "悬停菜单栏后显示隐藏的项目", isOn: $settings.settings.showOnHover)
                     if settings.settings.showOnHover {
@@ -11222,7 +11222,7 @@ struct MenuBarHidingSettingsView: View {
 
                 VStack(alignment: .leading, spacing: 0) {
                     Text("自动重新隐藏").font(.headline).padding([.top, .horizontal])
-                    ToggleRow(title: "Automatically Rehide Items", description: "显示后自动隐藏项目", isOn: $settings.settings.autoRehide)
+                    ToggleRow(title: "自动重新隐藏项目", description: "显示后自动隐藏项目", isOn: $settings.settings.autoRehide)
                     if settings.settings.autoRehide {
                         Divider().padding(.leading, 20)
                         VStack(alignment: .leading, spacing: 8) {
@@ -11241,7 +11241,7 @@ struct MenuBarHidingSettingsView: View {
                     Text("隐藏外观").font(.headline).padding([.top, .horizontal])
                     ToggleRow(title: "Show Section Dividers", description: "", isOn: $settings.settings.showSectionDividers)
                     Divider().padding(.leading, 20)
-                    ToggleRow(title: "Enable Always-Hidden Section", description: "", isOn: $settings.settings.enableAlwaysHiddenSection)
+                    ToggleRow(title: "启用「始终隐藏」区块", description: "", isOn: $settings.settings.enableAlwaysHiddenSection)
                     Divider().padding(.leading, 20)
                     ToggleRow(title: "Hide Main Control Icon", description: "", isOn: $settings.settings.hideMenuBarIcon)
                 }.modifier(SettingsContainerModifier())
@@ -11419,7 +11419,7 @@ private struct MenuBarRevealConditionsSection: View {
             }
 
             if profile.revealConditions.isEmpty {
-                Text("No conditions — this profile will never reveal items.")
+                Text("无条件——此配置永远不会显示项目。")
                     .font(.caption)
                     .foregroundColor(.secondary)
             } else {
@@ -12493,7 +12493,7 @@ struct FocusSessionSettingsView: View {
             )
             Divider().opacity(0.3).padding(.horizontal, 16)
             ToggleRow(
-                title: "Break & Session Notifications",
+                title: "休息与会话通知",
                 description: "Get a notification when a focus block ends and a break starts, when a break ends, and when the session finishes.",
                 isOn: $settings.settings.focusNotificationsEnabled
             )
@@ -12860,7 +12860,7 @@ struct FocusSessionSettingsView: View {
                     if shortcutRecorder.isRecording {
                         HStack(spacing: 6) {
                             ProgressView().scaleEffect(0.7)
-                            Text("Recording... (Esc to cancel)")
+                            Text("录制中…（按 Esc 取消）")
                                 .foregroundColor(.accentColor)
                         }
                     } else {

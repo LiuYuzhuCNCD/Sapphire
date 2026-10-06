@@ -501,7 +501,7 @@ private struct CorePreferencesStepView: View {
             Text("Personalize your experience. You can change these any time in Settings.").font(.title3).multilineTextAlignment(.center).foregroundColor(.secondary).padding(.horizontal, 50)
             VStack(spacing: 15) {
                 ModernOnboardingRow(iconName: "sparkles.tv", iconColor: .cyan, title: "显示自定义浮层", description: "Replace default volume & brightness indicators.") { SettingsSwitch(isOn: showHudsBinding) }
-                ModernOnboardingRow(iconName: "eye.fill", iconColor: .cyan, title: "Enable Eye Break Reminders", description: "Get reminded to look away from your screen periodically.") {
+                ModernOnboardingRow(iconName: "eye.fill", iconColor: .cyan, title: "启用护眼提醒", description: "Get reminded to look away from your screen periodically.") {
                     SettingsSwitch(isOn: $settings.settings.eyeBreakLiveActivityEnabled)
                 }
                 ModernOnboardingRow(iconName: "thermometer.sun.fill", iconColor: .orange, title: "温度单位", description: "Preferred unit for weather forecasts.") { Picker("", selection: $settings.settings.weatherUseCelsius) { Text("°C").tag(true); Text("°F").tag(false) }.pickerStyle(.segmented).labelsHidden().frame(width: 100) }
