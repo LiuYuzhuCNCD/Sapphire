@@ -140,7 +140,7 @@ struct CalendarDetailView: View {
                 }
                 Divider().frame(height: 14)
                 Button(action: { withAnimation(.spring()) { viewModel.selectDate(Date()) } }) {
-                    Text("Today").font(.system(size: 13, weight: .semibold, design: .rounded)).padding(.horizontal, 10)
+                    Text("今天").font(.system(size: 13, weight: .semibold, design: .rounded)).padding(.horizontal, 10)
                 }
                 Divider().frame(height: 14)
                 Button(action: {

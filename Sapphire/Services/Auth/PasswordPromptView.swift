@@ -43,7 +43,7 @@ struct PasswordPromptView: View {
             }
 
             HStack(spacing: 12) {
-                Button("Cancel") {
+                Button("取消") {
                     isPresented = false
                 }
                 .keyboardShortcut(.cancelAction)

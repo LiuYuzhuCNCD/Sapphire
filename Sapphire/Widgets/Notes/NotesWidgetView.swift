@@ -165,12 +165,12 @@ struct NotesPlayerView: View {
             Button(note.isDone ? "Mark Undone" : "Mark Done") {
                 notesManager.toggleNoteDone(id: note.id)
             }
-            Button("Edit") { editorGate.editingNoteID = note.id }
+            Button("编辑") { editorGate.editingNoteID = note.id }
             Button("Copy") {
                 NSPasteboard.general.copyString("\(note.title)\n\(note.body)")
             }
             Divider()
-            Button("Delete", role: .destructive) {
+            Button("删除", role: .destructive) {
                 notesManager.deleteNote(id: note.id)
             }
         }
@@ -262,7 +262,7 @@ private struct InNotchNoteEditor: View {
                 )
 
                 Button(action: saveAndBack) {
-                    Text("Done")
+                    Text("完成")
                         .font(.system(size: 12, weight: .bold, design: .rounded))
                         .padding(.horizontal, 12)
                         .padding(.vertical, 7)

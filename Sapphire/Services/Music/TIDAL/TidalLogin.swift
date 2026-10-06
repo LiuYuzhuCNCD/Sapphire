@@ -23,7 +23,7 @@ struct TidalLoginWebView: View {
             HStack {
                 Text("Log in to TIDAL").font(.headline)
                 Spacer()
-                Button("Cancel", action: cancelLogin)
+                Button("取消", action: cancelLogin)
                     .controlSize(.small)
             }
             .padding(.horizontal, 14)

@@ -324,7 +324,7 @@ struct LockScreenFocusMiniWidget: View {
                 .background(Color.indigo.opacity(0.18), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
 
             VStack(alignment: .leading, spacing: 4) {
-                Text("Focus")
+                Text("专注")
                     .font(.system(size: 15, weight: .semibold, design: .rounded))
                 Text(status.isActive ? info.name : "Focus Off")
                     .font(.system(size: 13, weight: .medium, design: .rounded))
@@ -407,7 +407,7 @@ struct LockScreenSystemMiniWidget: View {
         let gpu = Int(((statsManager.currentStats?.gpu?.utilization ?? 0) * 100).rounded())
 
         VStack(alignment: .leading, spacing: 10) {
-            Text("System")
+            Text("系统")
                 .font(.system(size: 14, weight: .bold, design: .rounded))
 
             HStack(spacing: 16) {

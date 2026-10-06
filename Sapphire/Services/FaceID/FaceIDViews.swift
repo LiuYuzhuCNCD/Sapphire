@@ -250,7 +250,7 @@ struct FaceIDRegistrationView: View {
                                 .buttonStyle(.bordered)
                                 .controlSize(.regular)
 
-                                Button("Continue") {
+                                Button("继续") {
                                     cameraController.acceptExtendedRegistration()
                                 }
                                 .buttonStyle(.borderedProminent)
@@ -293,8 +293,8 @@ struct FaceIDRegistrationView: View {
                             } else {
                                 HStack(spacing: 10) {
                                     poseIndicator(label: "Front", key: "center")
-                                    poseIndicator(label: "Left", key: "left")
-                                    poseIndicator(label: "Right", key: "right")
+                                    poseIndicator(label: "左", key: "left")
+                                    poseIndicator(label: "右", key: "right")
                                 }
                             }
 

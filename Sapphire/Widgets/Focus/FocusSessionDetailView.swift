@@ -99,7 +99,7 @@ struct FocusSessionDetailView: View {
                     }
 
                     HStack(spacing: 6) {
-                        Text("Custom")
+                        Text("自定义")
                             .font(.system(size: 10, weight: .semibold))
                             .foregroundColor(isCustomDuration ? accent : .white.opacity(0.4))
                         TextField("Minutes", value: $customMinutes, format: .number)

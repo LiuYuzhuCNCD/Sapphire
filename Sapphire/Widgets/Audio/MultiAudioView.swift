@@ -282,7 +282,7 @@ fileprivate struct AppVolumeSlider: View {
 
     var body: some View {
         BoldPillSlider(
-            label: "Volume",
+            label: "音量",
             value: $localValue,
             range: 0...100,
             specifier: "%.0f%%"

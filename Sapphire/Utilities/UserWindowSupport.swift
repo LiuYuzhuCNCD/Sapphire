@@ -31,9 +31,9 @@ enum SapphireStandardMenu {
             keyEquivalent: "q"
         )
 
-        let editMenuItem = NSMenuItem(title: "Edit", action: nil, keyEquivalent: "")
+        let editMenuItem = NSMenuItem(title: "编辑", action: nil, keyEquivalent: "")
         mainMenu.addItem(editMenuItem)
-        let editMenu = NSMenu(title: "Edit")
+        let editMenu = NSMenu(title: "编辑")
         editMenuItem.submenu = editMenu
 
         editMenu.addItem(withTitle: "Undo", action: Selector("undo:"), keyEquivalent: "z")

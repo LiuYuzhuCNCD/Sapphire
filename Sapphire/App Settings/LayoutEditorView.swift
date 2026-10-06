@@ -23,7 +23,7 @@ struct LayoutEditorView: View {
                 Text("布局编辑器")
                     .font(.title.bold())
                 Spacer()
-                Button("Done") {
+                Button("完成") {
                     onSave(layout)
                     dismiss()
                 }

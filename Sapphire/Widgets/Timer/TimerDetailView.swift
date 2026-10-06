@@ -95,7 +95,7 @@ struct TimerDetailView: View {
                 Button {
                     startTimer()
                 } label: {
-                    Label("Start", systemImage: "play.fill")
+                    Label("开始", systemImage: "play.fill")
                         .font(.system(size: 13, weight: .semibold))
                         .padding(.horizontal, 14)
                         .padding(.vertical, 7)
@@ -167,7 +167,7 @@ struct TimerDetailView: View {
                         Spacer()
 
                         if timer.remainingTime <= 0 {
-                            Text("Done")
+                            Text("完成")
                                 .font(.caption)
                                 .foregroundColor(.orange)
                         } else {

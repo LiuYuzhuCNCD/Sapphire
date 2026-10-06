@@ -92,7 +92,7 @@ struct AudioSettingsView: View {
                 .modifier(SettingsContainerModifier())
 
                 VStack(alignment: .leading, spacing: 0) {
-                    Text("Reset")
+                    Text("重置")
                         .font(.headline)
                         .padding([.top, .horizontal])
 
@@ -105,8 +105,8 @@ struct AudioSettingsView: View {
                         showResetAppConfirmation = true
                     }
                     .alert("Reset Per-App Settings?", isPresented: $showResetAppConfirmation) {
-                        Button("Cancel", role: .cancel) { }
-                        Button("Reset", role: .destructive) { resetAllAppSettings() }
+                        Button("取消", role: .cancel) { }
+                        Button("重置", role: .destructive) { resetAllAppSettings() }
                     } message: {
                         Text("This restores default volume, flat EQ, surround, and 8D audio for every application.")
                     }
@@ -122,8 +122,8 @@ struct AudioSettingsView: View {
                         showResetDeviceConfirmation = true
                     }
                     .alert("Reset Device Settings?", isPresented: $showResetDeviceConfirmation) {
-                        Button("Cancel", role: .cancel) { }
-                        Button("Reset", role: .destructive) { resetAllDeviceSettings() }
+                        Button("取消", role: .cancel) { }
+                        Button("重置", role: .destructive) { resetAllDeviceSettings() }
                     } message: {
                         Text("This reverts all connected output devices to their default state.")
                     }
@@ -219,7 +219,7 @@ private struct AudioSettingsAdjustmentSheet: View {
                 Text("Audio Adjustment")
                     .font(.headline)
                 Spacer()
-                Button("Done") { dismiss() }
+                Button("完成") { dismiss() }
                     .keyboardShortcut(.defaultAction)
             }
             .padding(.horizontal, 20)

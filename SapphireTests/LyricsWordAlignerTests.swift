@@ -112,7 +112,7 @@ struct LyricsWordAlignerTests {
             ],
             recognized: [Self.heard("its", 1.5, 2.0), Self.heard("no", 2.1, 3.2)]
         )
-        let yaml = LyricsfileWriter.document(title: "No", artist: "O'Brien", album: nil, lines: aligned.lines)
+        let yaml = LyricsfileWriter.document(title: "否", artist: "O'Brien", album: nil, lines: aligned.lines)
 
         let parsed = try #require(LyricsParser.parseLyricsfile(yaml))
         #expect(parsed.map(\.text) == ["It's No", ""])

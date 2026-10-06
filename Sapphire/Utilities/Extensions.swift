@@ -62,7 +62,7 @@ enum SystemPreferencesPane {
     var url: URL {
         let suffix: String
         switch self {
-        case .privacyRoot: suffix = "Privacy"
+        case .privacyRoot: suffix = "隐私"
         case .accessibility: suffix = "Privacy_Accessibility"
         case .camera: suffix = "Privacy_Camera"
         case .screenCapture: suffix = "Privacy_ScreenCapture"

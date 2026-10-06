@@ -274,7 +274,7 @@ struct AppDownloadQrView: View {
             } else {
                 ProgressView().frame(width: 250, height: 250)
             }
-            Button("Done") { dismiss() }.keyboardShortcut(.defaultAction).padding(.top)
+            Button("完成") { dismiss() }.keyboardShortcut(.defaultAction).padding(.top)
         }.padding(40).frame(minWidth: 400, minHeight: 450)
     }
 }

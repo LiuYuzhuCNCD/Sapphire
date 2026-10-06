@@ -78,7 +78,7 @@ struct MirrorPlayerView: View {
                         .foregroundStyle(camera.isLive ? Color.green : Color.secondary)
                 }
                 VStack(alignment: .leading, spacing: 1) {
-                    Text("Mirror")
+                    Text("镜像")
                         .font(.system(size: 14, weight: .bold, design: .rounded))
                     if camera.isLive {
                         HStack(spacing: 4) {
@@ -137,7 +137,7 @@ struct MirrorPlayerView: View {
         Button {
             camera.stop()
         } label: {
-            Label("Stop", systemImage: "stop.fill")
+            Label("停止", systemImage: "stop.fill")
                 .font(.system(size: 11, weight: .semibold, design: .rounded))
                 .foregroundStyle(.white)
                 .padding(.horizontal, 12)
@@ -304,7 +304,7 @@ struct MirrorFullscreenView: View {
                         Button {
                             camera.stop()
                         } label: {
-                            Label("Stop", systemImage: "stop.fill")
+                            Label("停止", systemImage: "stop.fill")
                                 .font(.system(size: 12, weight: .semibold, design: .rounded))
                                 .foregroundStyle(.white)
                                 .padding(.horizontal, 14)

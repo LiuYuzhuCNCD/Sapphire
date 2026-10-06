@@ -146,7 +146,7 @@ private struct PermissionsStepView: View {
 
             Spacer()
 
-            OnboardingButton(title: "Continue", action: onContinue)
+            OnboardingButton(title: "继续", action: onContinue)
                 .disabled(!permissionsManager.areAllRequiredPermissionsGranted)
                 .animation(.easeInOut, value: permissionsManager.areAllRequiredPermissionsGranted)
         }
@@ -332,7 +332,7 @@ private struct PrivacyStepView: View {
 
             Spacer(minLength: 20)
 
-            OnboardingButton(title: "Continue", action: onContinue)
+            OnboardingButton(title: "继续", action: onContinue)
         }
     }
 
@@ -377,7 +377,7 @@ private struct MusicChoiceStepView: View {
 
             Spacer()
 
-            OnboardingButton(title: "Next", action: {
+            OnboardingButton(title: "下一个", action: {
                 if let finalSelection = selection {
                     settings.settings.defaultMusicPlayer = finalSelection
                     onNext()
@@ -419,7 +419,7 @@ private struct SpotifySetupStepView: View {
                 }
             }.padding(25).background(.black.opacity(0.15)).clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous)).overlay(RoundedRectangle(cornerRadius: 20, style: .continuous).stroke(Color.white.opacity(0.1), lineWidth: 1)).padding(50)
             Spacer()
-            if musicManager.isPrivateAPIAuthenticated { OnboardingButton(title: "Continue", action: onNext) } else if !isLoading { Button("Skip for Now", action: onNext).buttonStyle(.plain).foregroundColor(.secondary).padding(.bottom, 50) } else { OnboardingButton(title: "Continue", action: {}).hidden().padding(.bottom, 50) }
+            if musicManager.isPrivateAPIAuthenticated { OnboardingButton(title: "继续", action: onNext) } else if !isLoading { Button("Skip for Now", action: onNext).buttonStyle(.plain).foregroundColor(.secondary).padding(.bottom, 50) } else { OnboardingButton(title: "继续", action: {}).hidden().padding(.bottom, 50) }
         }
         .sheet(item: $spotifyPrivateAPI.loginChallenge) { _ in
             SpotifyLoginWebView(
@@ -485,7 +485,7 @@ private struct BatterySetupStepView: View {
             .padding(50)
 
             Spacer()
-            OnboardingButton(title: "Continue", action: onNext)
+            OnboardingButton(title: "继续", action: onNext)
         }
     }
 }
@@ -508,7 +508,7 @@ private struct CorePreferencesStepView: View {
                 ModernOnboardingRow(iconName: "bolt.horizontal.circle.fill", iconColor: .purple, title: "Launch at Login", description: "Start Sapphire automatically with your Mac.") { SettingsSwitch(isOn: $settings.settings.launchAtLogin) }
             }.padding(50)
             Spacer()
-            OnboardingButton(title: "Continue", action: onNext)
+            OnboardingButton(title: "继续", action: onNext)
         }
     }
 }
@@ -550,7 +550,7 @@ private struct LockScreenSetupStepView: View {
             .padding(50)
 
             Spacer()
-            OnboardingButton(title: "Continue", action: onNext)
+            OnboardingButton(title: "继续", action: onNext)
         }
     }
 }

@@ -184,7 +184,7 @@ struct FileActionView: View {
 
     private var primaryActions: some View {
         HStack(spacing: 8) {
-            DetailButton(title: "Open", systemImage: "play.fill", isProminent: true) {
+            DetailButton(title: "打开", systemImage: "play.fill", isProminent: true) {
                 NSWorkspace.shared.open(liveItem.storedAt)
             }
             DetailButton(title: "In Finder", systemImage: "folder.fill", isProminent: false, tint: .primary) {
@@ -215,7 +215,7 @@ struct FileActionView: View {
             Divider().overlay(Color.white.opacity(0.08))
             MetadataRow(label: "Added", value: metadata.added, icon: "calendar")
             Divider().overlay(Color.white.opacity(0.08))
-            MetadataRow(label: "Location", value: liveItem.storedAt.path, icon: "folder")
+            MetadataRow(label: "位置", value: liveItem.storedAt.path, icon: "folder")
         }
         .padding(.vertical, 4)
         .background(Color.black.opacity(0.12), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
@@ -254,10 +254,10 @@ struct FileActionView: View {
                     .lineLimit(2)
                     .multilineTextAlignment(.center)
                 HStack(spacing: 8) {
-                    DetailButton(title: "Delete", systemImage: "trash", isProminent: true, tint: .red) {
+                    DetailButton(title: "删除", systemImage: "trash", isProminent: true, tint: .red) {
                         performDelete()
                     }
-                    DetailButton(title: "Cancel", systemImage: nil, isProminent: false, tint: .primary) {
+                    DetailButton(title: "取消", systemImage: nil, isProminent: false, tint: .primary) {
                         isConfirmingDelete = false
                     }
                 }
@@ -271,7 +271,7 @@ struct FileActionView: View {
                     }
                 }
                 Button(action: onDismiss) {
-                    Text("Done")
+                    Text("完成")
                         .font(.system(size: 14, weight: .semibold))
                         .frame(maxWidth: .infinity)
                         .padding(9)

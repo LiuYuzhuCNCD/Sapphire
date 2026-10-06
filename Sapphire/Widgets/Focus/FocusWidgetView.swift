@@ -77,7 +77,7 @@ struct FocusWidgetView: View {
                     if focusManager.isSessionActive {
                         FocusWidgetCountdownText(focusManager: focusManager)
                     } else {
-                        Text("Focus")
+                        Text("专注")
                     }
                 }
                 .font(.system(size: 30, weight: .bold, design: .rounded))

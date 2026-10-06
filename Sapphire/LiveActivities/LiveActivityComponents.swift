@@ -1096,7 +1096,7 @@ struct EyeBreakFullActivityView: View {
                         liveActivityManager.dismissCurrentActivity()
                     } label: {
                         HStack(spacing: 6) {
-                            Text("Done")
+                            Text("完成")
                             Text(String(format: "(%02d)", Int(eyeBreakManager.timeRemainingInBreak)))
                                 .font(.system(.body, design: .monospaced))
                                 .contentTransition(.numericText(countsDown: true))
@@ -1424,7 +1424,7 @@ struct TimerFinishedActivityView: View {
                     Button {
                         timerManager.dismissRingingTimer(id: timer.id)
                     } label: {
-                        Label("Stop", systemImage: "xmark")
+                        Label("停止", systemImage: "xmark")
                             .font(.system(size: 14, weight: .semibold))
                             .frame(maxWidth: .infinity)
                             .padding(.vertical, 9)
@@ -1682,12 +1682,12 @@ struct NotificationLiveActivityView: View {
             }
 
             if payload.appIdentifier == "com.apple.sharingd" {
-                standardActionButton(title: "Show", systemName: "folder", isPrimary: true) {
+                standardActionButton(title: "显示", systemName: "folder", isPrimary: true) {
                     if let url = FileManager.default.urls(for: .downloadsDirectory, in: .userDomainMask).first { NSWorkspace.shared.open(url) }
                     notificationManager.dismissLatestNotification()
                 }
             } else {
-                standardActionButton(title: "Open", systemName: "arrow.up.forward.app", isPrimary: true) {
+                standardActionButton(title: "打开", systemName: "arrow.up.forward.app", isPrimary: true) {
                     NSWorkspace.shared.launchApplication(withBundleIdentifier: payload.appIdentifier, options: [], additionalEventParamDescriptor: nil, launchIdentifier: nil)
                     notificationManager.dismissLatestNotification()
                 }
@@ -1878,7 +1878,7 @@ struct CalibrationActivityView: View {
                 calibrationManager.cancel()
                 liveActivityManager.dismissCurrentActivity()
             }) {
-                Text("Cancel")
+                Text("取消")
                     .font(.subheadline.weight(.semibold))
                     .padding(.vertical, 8)
                     .padding(.horizontal, 16)

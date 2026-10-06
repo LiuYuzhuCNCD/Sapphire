@@ -36,7 +36,7 @@ struct BetaBlockerView: View {
         VStack(spacing: 12) {
             Text("Beta validation is not included in this build.")
                 .foregroundColor(.secondary)
-            Button("Continue", action: onValidationComplete)
+            Button("继续", action: onValidationComplete)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
@@ -52,7 +52,7 @@ struct NativePaymentSheetView: View {
         VStack(spacing: 12) {
             Text("Purchases are not included in this build.")
                 .foregroundColor(.secondary)
-            Button("Close", action: onDismiss)
+            Button("关闭", action: onDismiss)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }

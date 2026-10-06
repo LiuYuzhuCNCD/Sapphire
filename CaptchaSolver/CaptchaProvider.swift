@@ -33,7 +33,7 @@ internal struct LoginWebView: View {
 
             LoginWebViewRepresentable(onComplete: onComplete)
 
-            Button("Cancel", action: onCancel).padding()
+            Button("取消", action: onCancel).padding()
         }
         .frame(width: 800, height: 700)
     }

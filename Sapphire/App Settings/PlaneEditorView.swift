@@ -81,7 +81,7 @@ struct PlaneEditorView: View {
                                 Text("Zone \(index + 1)")
                                 Spacer()
                                 Picker("App", selection: appBinding(for: zone.id)) {
-                                    Text("None").tag(noAppSelectedID)
+                                    Text("无").tag(noAppSelectedID)
                                     Divider()
                                     ForEach(allApps) { app in
                                         Text(app.name).tag(app.id)
@@ -103,9 +103,9 @@ struct PlaneEditorView: View {
             }
 
             HStack {
-                Button("Cancel", role: .cancel) { dismiss() }
+                Button("取消", role: .cancel) { dismiss() }
                 Spacer()
-                Button("Save") {
+                Button("保存") {
                     onSave(plane)
                     dismiss()
                 }

@@ -87,7 +87,7 @@ struct DeviceAdjustView: View {
             VStack(spacing: 16) {
                 HStack(spacing: 16) {
                     VStack(spacing: 12) {
-                        ModernDarkSlider(label: "Volume", value: $settings.volume, range: 0...1.0, formatDisplay: { "\(Int($0 * 100))%" })
+                        ModernDarkSlider(label: "音量", value: $settings.volume, range: 0...1.0, formatDisplay: { "\(Int($0 * 100))%" })
                         ModernDarkSlider(label: "Delay", value: $settings.delay, range: 0...0.5, formatDisplay: { "\(Int($0 * 1000))ms" })
                         ModernDarkSlider(label: "Balance", value: $settings.balance, range: 0...1.0, formatDisplay: { val in
                             if abs(val - 0.5) < 0.02 { return "Center" }

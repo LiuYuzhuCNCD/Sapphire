@@ -315,7 +315,7 @@ final class OpenMeteoService {
 
     private func uvDescription(_ uv: Double) -> String {
         switch uv {
-        case ..<3:   return "Low"
+        case ..<3:   return "低"
         case ..<6:   return "Moderate"
         case ..<8:   return "High"
         case ..<11:  return "Very High"

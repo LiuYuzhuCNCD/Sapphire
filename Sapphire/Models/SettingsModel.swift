@@ -61,7 +61,7 @@ enum AnimationProfile: String, Codable, CaseIterable, Identifiable {
         case .snappy: "Snappy"
         case .bouncy: "Bouncy"
         case .calm: "Calm"
-        case .custom: "Custom"
+        case .custom: "自定义"
         }
     }
 }
@@ -251,7 +251,7 @@ enum LockScreenWidgetType: String, Codable, CaseIterable, Identifiable {
         case .clock: return "Clock"
         case .notes: return "便签"
         case .clipboard: return "剪贴板"
-        case .system: return "System"
+        case .system: return "系统"
         default: return self.rawValue.capitalized
         }
     }
@@ -270,7 +270,7 @@ enum LockScreenMiniWidgetType: String, Codable, CaseIterable, Identifiable {
         case .timer: return "Timer"
         case .clipboard: return "剪贴板"
         case .notes: return "便签"
-        case .system: return "System"
+        case .system: return "系统"
         default: return self.rawValue.capitalized
         }
     }
@@ -421,7 +421,7 @@ enum NotchAppearanceMode: String, Codable, CaseIterable, Identifiable {
         case .default: return "Default"
         case .liquidGlass: return "液态玻璃"
         case .blur: return "Blur"
-        case .custom: return "Custom"
+        case .custom: return "自定义"
         }
     }
 }
@@ -616,8 +616,8 @@ enum MusicLongPressTarget: String, CaseIterable, Identifiable {
 
     var displayName: String {
         switch self {
-        case .previous: return "Previous"
-        case .next: return "Next"
+        case .previous: return "上一个"
+        case .next: return "下一个"
         case .playPause: return "Play / Pause"
         case .playlists: return "Queue"
         case .devices: return "Devices"
@@ -702,8 +702,8 @@ enum NotesSwipeAction: String, Codable, CaseIterable, Identifiable {
         switch self {
         case .toggleDone: return "Toggle Done"
         case .copy: return "Copy"
-        case .delete: return "Delete"
-        case .none: return "None"
+        case .delete: return "删除"
+        case .none: return "无"
         }
     }
 }
@@ -715,8 +715,8 @@ enum ClipboardSwipeAction: String, Codable, CaseIterable, Identifiable {
         switch self {
         case .share: return "Share"
         case .copy: return "Copy"
-        case .delete: return "Delete"
-        case .none: return "None"
+        case .delete: return "删除"
+        case .none: return "无"
         }
     }
 }
@@ -727,8 +727,8 @@ enum FileDropSwipeAction: String, Codable, CaseIterable, Identifiable {
     var displayName: String {
         switch self {
         case .share: return "Share"
-        case .delete: return "Delete"
-        case .none: return "None"
+        case .delete: return "删除"
+        case .none: return "无"
         }
     }
 }
@@ -2578,7 +2578,7 @@ enum LowPowerMode: String, Codable, CaseIterable, Identifiable {
         switch self {
         case .alwaysOn: "Always On"
         case .onBattery: "使用电池时"
-        case .never: "Never"
+        case .never: "从不"
         }
     }
 }
@@ -2597,10 +2597,10 @@ enum WidgetType: String, Codable, CaseIterable, Identifiable, Equatable {
         case .shopify: return "Shopify 订单"
         case .notes: return "便签"
         case .clipboard: return "剪贴板"
-        case .mirror: return "Mirror"
+        case .mirror: return "镜像"
         case .battery: return "电池"
         case .timer: return "Timer"
-        case .focusSession: return "Focus"
+        case .focusSession: return "专注"
         case .storage: return "存储"
         case .agent: return "Agent"
         }
@@ -2612,7 +2612,7 @@ enum LiveActivityType: String, Codable, CaseIterable, Identifiable, Equatable {
     var id: String { self.rawValue }
     var displayName: String {
         switch self {
-        case .music: "音乐"; case .weather: "天气"; case .calendar: "日历"; case .reminders: "Reminders"; case .timers: "Timers"; case .battery: "电池"; case .eyeBreak: "护眼"; case .desktop: "Desktop"; case .focus: "Focus"; case .fileShelf: "文件架"; case .fileProgress: "File Progress"; case .stats: "Stats"; case .microphone: "Microphone"; case .devActivity: "开发者活动"; case .sports: "体育"; case .finance: "财经"
+        case .music: "音乐"; case .weather: "天气"; case .calendar: "日历"; case .reminders: "Reminders"; case .timers: "Timers"; case .battery: "电池"; case .eyeBreak: "护眼"; case .desktop: "Desktop"; case .focus: "专注"; case .fileShelf: "文件架"; case .fileProgress: "File Progress"; case .stats: "Stats"; case .microphone: "Microphone"; case .devActivity: "开发者活动"; case .sports: "体育"; case .finance: "财经"
         }
     }
 }
@@ -2688,7 +2688,7 @@ enum MirrorRotationMode: String, Codable, CaseIterable, Identifiable {
 
     var displayName: String {
         switch self {
-        case .auto: return "Automatic"
+        case .auto: return "自动"
         case .angle90: return "90°"
         case .angle180: return "180°"
         case .angle270: return "270°"
@@ -2732,7 +2732,7 @@ enum FocusShortcutSyncMode: String, Codable, CaseIterable, Identifiable {
 
     var displayName: String {
         switch self {
-        case .none: return "Off"
+        case .none: return "关"
         case .timer: return "Sync Timer"
         case .stopwatch: return "Sync Stopwatch"
         }
@@ -2818,7 +2818,7 @@ enum BatteryNotificationStyle: String, CaseIterable, Identifiable, Decodable, En
 enum NotificationSource: String, CaseIterable, Identifiable {
     case iMessage, faceTime, airDrop
     var id: String { rawValue }
-    var displayName: String { switch self { case .iMessage: "iMessage"; case .faceTime: "FaceTime"; case .airDrop: "AirDrop" } }
+    var displayName: String { switch self { case .iMessage: "iMessage"; case .faceTime: "FaceTime"; case .airDrop: "隔空投送" } }
     var systemImage: String { switch self { case .iMessage: "message.fill"; case .faceTime: "video.fill"; case .airDrop: "shareplay" } }
     var iconColor: Color { switch self { case .iMessage, .faceTime: .green; case .airDrop: .blue } }
 }
@@ -2863,9 +2863,9 @@ enum NotchButtonType: String, Codable, Identifiable, Equatable {
 
     var displayName: String {
         switch self {
-        case .settings: "Settings"; case .fileShelf: "文件架"; case .notes: "便签"; case .clipboard: "剪贴板"
+        case .settings: "设置"; case .fileShelf: "文件架"; case .notes: "便签"; case .clipboard: "剪贴板"
         case .intelligence: "Blip"; case .intelligenceLive: "Gemini";
-        case .focusSession: "Focus";
+        case .focusSession: "专注";
         case .caffeine: "防休眠"; case .spacer: "Spacer";
         case .multiAudio: "Multi-Audio (Beta)"; case .battery: "电池"; case .pin: "Pin"
         }
@@ -3172,7 +3172,7 @@ enum SettingsSection: String, CaseIterable, Identifiable {
 
     var label: String {
         switch self {
-        case .general: "通用"; case .systemEnhance: "系统增强"; case .apps: "应用"; case .storage: "存储"; case .widgets: "小组件"; case .liveActivities: "实时活动"; case .appearance: "外观"; case .lockScreen: "锁屏"; case .bluetoothUnlock: "身份验证"; case .shortcuts: "快捷指令"; case .keyboardShortcuts: "键盘快捷键"; case .snapZones: "窗口吸附"; case .audio: "音频"; case .battery: "电池"; case .bluetooth: "蓝牙"; case .hud: "浮层"; case .notifications: "通知"; case .neardrop: "附近共享"; case .continuity: "安卓互联"; case .fileShelf: "文件架"; case .notes: "便签";        case .clipboard: "剪贴板"; case .emoji: "表情符号"; case .mouse: "鼠标"; case .monitoring: "监控"; case .devActivity: "开发者活动"; case .archives: "压缩包与 DMG"; case .mirror: "Mirror"; case .caffeine: "防休眠"; case .music: "音乐"; case .weather: "天气";        case .calendar: "日历"; case .eyeBreak: "护眼"; case .focusSession: "专注会话"; case .appLock: "应用锁"; case .intelligence: "Blip"; case .sports: "体育"; case .finance: "财经"; case .dockLayouts: "程序坞"; case .mediaOptimizer: "媒体优化"; case .about: "关于"
+        case .general: "通用"; case .systemEnhance: "系统增强"; case .apps: "应用"; case .storage: "存储"; case .widgets: "小组件"; case .liveActivities: "实时活动"; case .appearance: "外观"; case .lockScreen: "锁屏"; case .bluetoothUnlock: "身份验证"; case .shortcuts: "快捷指令"; case .keyboardShortcuts: "键盘快捷键"; case .snapZones: "窗口吸附"; case .audio: "音频"; case .battery: "电池"; case .bluetooth: "蓝牙"; case .hud: "浮层"; case .notifications: "通知"; case .neardrop: "附近共享"; case .continuity: "安卓互联"; case .fileShelf: "文件架"; case .notes: "便签";        case .clipboard: "剪贴板"; case .emoji: "表情符号"; case .mouse: "鼠标"; case .monitoring: "监控"; case .devActivity: "开发者活动"; case .archives: "压缩包与 DMG"; case .mirror: "镜像"; case .caffeine: "防休眠"; case .music: "音乐"; case .weather: "天气";        case .calendar: "日历"; case .eyeBreak: "护眼"; case .focusSession: "专注会话"; case .appLock: "应用锁"; case .intelligence: "Blip"; case .sports: "体育"; case .finance: "财经"; case .dockLayouts: "程序坞"; case .mediaOptimizer: "媒体优化"; case .about: "关于"
         }
     }
 

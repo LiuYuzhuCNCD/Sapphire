@@ -22,9 +22,9 @@ enum TimeRange: Hashable, Identifiable {
         switch self {
         case .last24Hours: return "24h"
         case .last7Days: return "7d"
-        case .lastMonth: return "Month"
-        case .lastYear: return "Year"
-        case .custom: return "Custom"
+        case .lastMonth: return "月"
+        case .lastYear: return "年"
+        case .custom: return "自定义"
         }
     }
 

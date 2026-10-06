@@ -24,12 +24,12 @@ enum LockScreenMusicTab: String, CaseIterable, Identifiable {
 
     var title: String {
         switch self {
-        case .nowPlaying: "Overview"
+        case .nowPlaying: "概览"
         case .artist: "Artist"
         case .playlists: "Playlists"
         case .queue: "Queue"
         case .devices: "Devices"
-        case .lyrics: "Lyrics"
+        case .lyrics: "歌词"
         }
     }
 

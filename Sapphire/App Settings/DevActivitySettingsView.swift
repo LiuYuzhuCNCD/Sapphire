@@ -94,7 +94,7 @@ struct DevActivitySettingsView: View {
                 Text("Detected Right Now")
                     .font(.system(size: 14, weight: .medium))
                 Spacer()
-                Button("Refresh") { monitor.refreshNow() }
+                Button("刷新") { monitor.refreshNow() }
                     .buttonStyle(.borderless)
                     .font(.caption)
             }

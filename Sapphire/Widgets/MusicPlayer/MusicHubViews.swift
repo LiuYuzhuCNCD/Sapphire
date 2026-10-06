@@ -382,7 +382,7 @@ struct QueueAndPlaylistsView: View {
                 Button {
                     musicManager.appleMusic.revealCurrentTrack()
                 } label: {
-                    Text("Open")
+                    Text("打开")
                         .font(.system(size: 9, weight: .medium, design: .rounded))
                         .foregroundStyle(.secondary.opacity(0.9))
                 }
@@ -581,7 +581,7 @@ struct QueueAndPlaylistsView: View {
                                 HStack(spacing: 4) {
                                     Image(systemName: "arrow.up.right.square")
                                         .font(.system(size: 11))
-                                    Text("Open")
+                                    Text("打开")
                                         .font(.system(size: 10, weight: .medium, design: .rounded))
                                 }
                                 .foregroundStyle(.secondary)
@@ -1107,7 +1107,7 @@ struct QueueAndPlaylistsView: View {
                     .menuStyle(.borderlessButton)
                 } else if isAppleMusic {
                     Button { Task { await fetchData(for: .library) } } label: {
-                        Label("Refresh", systemImage: "arrow.clockwise")
+                        Label("刷新", systemImage: "arrow.clockwise")
                             .font(.system(size: 11, weight: .semibold, design: .rounded))
                             .padding(.horizontal, 12)
                             .padding(.vertical, 7)
@@ -2360,7 +2360,7 @@ enum MusicAudioHubSection: Int, CaseIterable {
         case .spotify: return "Spotify"
         case .airplay: return "AirPlay"
         case .apps: return "应用"
-        case .system: return "System"
+        case .system: return "系统"
         }
     }
 
@@ -2593,7 +2593,7 @@ struct DevicesView: View {
             TabButton(title: "AirPlay", systemImage: "airplayaudio", isSelected: selectedTab == .airplay) {
                 selectedTab = .airplay
             }
-            TabButton(title: "System", systemImage: "hifispeaker.and.homepod.mini.fill", isSelected: selectedTab == .system) {
+            TabButton(title: "系统", systemImage: "hifispeaker.and.homepod.mini.fill", isSelected: selectedTab == .system) {
                 selectedTab = .system
             }
         }
@@ -2876,7 +2876,7 @@ fileprivate struct AppleMusicDeviceRow: View {
                 if device.isSelected { Image(systemName: "checkmark.circle.fill").font(.title2).foregroundColor(.blue).transition(.opacity.combined(with: .scale(scale: 0.8))) }
             }
             if device.isSelected {
-                BoldPillSlider(label: "Volume", value: $volume, range: 0...100, specifier: "%.0f %%", style: .large, onCommit: sendVolumeUpdate)
+                BoldPillSlider(label: "音量", value: $volume, range: 0...100, specifier: "%.0f %%", style: .large, onCommit: sendVolumeUpdate)
                     .padding(.leading, 45)
                     .transition(.opacity.combined(with: .offset(y: 5)))
             }
@@ -2908,7 +2908,7 @@ fileprivate struct SpotifyDeviceRow: View {
                 if device.isActive { Image(systemName: "checkmark.circle.fill").font(.title2).foregroundColor(.green).transition(.opacity.combined(with: .scale(scale: 0.8))) }
             }
             if device.isActive && device.volumePercent != nil {
-                BoldPillSlider(label: "Volume", value: $volume, range: 0...100, specifier: "%.0f %%", style: .large, onCommit: onCommit)
+                BoldPillSlider(label: "音量", value: $volume, range: 0...100, specifier: "%.0f %%", style: .large, onCommit: onCommit)
                     .padding(.leading, 45)
                     .transition(.opacity.combined(with: .offset(y: 5)))
             }
@@ -2966,7 +2966,7 @@ fileprivate struct SpotifyNativeDeviceRow: View {
                 }
             }
             if isActive && (device.capabilities.volumeSteps ?? 0) > 0 {
-                BoldPillSlider(label: "Volume", value: $volume, range: 0...100, specifier: "%.0f %%", style: .large, onCommit: onCommit)
+                BoldPillSlider(label: "音量", value: $volume, range: 0...100, specifier: "%.0f %%", style: .large, onCommit: onCommit)
                     .padding(.leading, 45)
                     .transition(.opacity.combined(with: .offset(y: 5)))
             }

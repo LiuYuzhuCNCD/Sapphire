@@ -384,7 +384,7 @@ struct SearchBar: View {
         HStack(spacing: 6) {
             Image(systemName: "magnifyingglass").foregroundColor(.white.opacity(0.5)).font(.system(size: 15, weight: .semibold))
             ZStack(alignment: .leading) {
-                Text("Search").foregroundColor(.white.opacity(0.5)).font(.system(size: 16, weight: .regular)).opacity(text.isEmpty && !isFocused.wrappedValue ? 1 : 0)
+                Text("搜索").foregroundColor(.white.opacity(0.5)).font(.system(size: 16, weight: .regular)).opacity(text.isEmpty && !isFocused.wrappedValue ? 1 : 0)
                 TextField("", text: $text).focused(isFocused).textFieldStyle(.plain).foregroundColor(.white).font(.system(size: 16, weight: .regular))
             }
         }
@@ -608,7 +608,7 @@ struct LaunchpadView: View {
             Button(role: .destructive) { viewModel.confirmDeleteItem() } label: {
                 if case .app = viewModel.itemToDelete { Text("Move to Trash") } else { Text("Disband") }
             }
-            Button("Cancel", role: .cancel) { viewModel.cancelDeleteItem() }
+            Button("取消", role: .cancel) { viewModel.cancelDeleteItem() }
         } message: { _ in
             Text(viewModel.deleteAlertMessage)
         }

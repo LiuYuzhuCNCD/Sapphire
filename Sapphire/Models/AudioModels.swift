@@ -123,7 +123,7 @@ enum EQPreset: String, CaseIterable, Identifiable {
         case .hipHop: "Hip-Hop"
         case .podcast: "Podcast"
         case .loudness: "Loudness"
-        case .custom: "Custom"
+        case .custom: "自定义"
         }
     }
 

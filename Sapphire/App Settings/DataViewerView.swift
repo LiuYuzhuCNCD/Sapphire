@@ -31,7 +31,7 @@ struct DataViewerView: View {
             .navigationTitle("Collected Data")
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("Done") {
+                    Button("完成") {
                         dismiss()
                     }
                 }
@@ -132,7 +132,7 @@ struct DataViewerView: View {
 
     private func overviewSection(_ summary: DataSummary) -> some View {
         VStack(alignment: .leading, spacing: 16) {
-            Text("Overview")
+            Text("概览")
                 .font(.headline)
 
             HStack(spacing: 20) {

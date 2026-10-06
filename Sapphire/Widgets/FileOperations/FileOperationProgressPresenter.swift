@@ -137,7 +137,7 @@ private struct FileOperationProgressPopupView: View {
                         .foregroundStyle(.secondary)
                         .lineLimit(1)
                 } else {
-                    Text("Done")
+                    Text("完成")
                         .font(.system(size: 11))
                         .foregroundStyle(.secondary)
                 }

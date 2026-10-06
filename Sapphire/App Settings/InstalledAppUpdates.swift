@@ -2077,7 +2077,7 @@ final class InstalledAppUpdatesChecker: ObservableObject {
     // MARK: Action routing
 
     func buttonLabel(for entry: InstalledAppUpdateEntry) -> String {
-        guard case .updateAvailable = entry.status else { return "Update" }
+        guard case .updateAvailable = entry.status else { return "更新" }
         switch entry.source {
         case .appStore:
             return "App Store"

@@ -68,11 +68,11 @@ enum EmojiSkinTone: String, Codable, CaseIterable, Identifiable {
     var displayName: String {
         switch self {
         case .none: "Default"
-        case .light: "Light"
+        case .light: "浅色"
         case .mediumLight: "Medium Light"
         case .medium: "Medium"
         case .mediumDark: "Medium Dark"
-        case .dark: "Dark"
+        case .dark: "深色"
         }
     }
 }
@@ -211,7 +211,7 @@ enum MenuBarRevealConditionKind: String, Codable, CaseIterable, Identifiable {
         switch self {
         case .batteryBelow: "Battery Level Below"
         case .batteryAbove: "Battery Level Above"
-        case .charging: "Charging"
+        case .charging: "充电中"
         case .onBatteryPower: "On Battery Power"
         case .focusActive: "Any Focus Active"
         case .focusIdentifier: "Focus Mode Is"

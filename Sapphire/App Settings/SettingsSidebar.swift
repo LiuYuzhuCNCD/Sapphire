@@ -136,7 +136,7 @@ struct SettingsSidebarView: View {
                         .frame(width: 30, height: 30)
                         .background(Color.red.opacity(0.15))
                         .clipShape(RoundedRectangle(cornerRadius: 6, style: .continuous))
-                    Text("Quit")
+                    Text("退出")
                         .font(.system(size: 15, weight: .medium))
                         .foregroundStyle(.white)
                 }
