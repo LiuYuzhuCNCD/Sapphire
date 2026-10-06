@@ -552,7 +552,7 @@ private struct AirDropRowView: View {
 
             VStack(alignment: .leading, spacing: 2) {
                 Text(task.fileName).font(.callout).fontWeight(.semibold).lineLimit(1)
-                Text("Receiving via AirDrop...").font(.caption).foregroundColor(.secondary).lineLimit(1)
+                Text("正在通过隔空投送接收…").font(.caption).foregroundColor(.secondary).lineLimit(1)
             }
             Spacer(minLength: 8)
 

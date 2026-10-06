@@ -714,7 +714,7 @@ private struct LyricsDetachedRightPane: View {
             Group {
                 if lyrics.isEmpty {
                     VStack(alignment: .leading, spacing: 16) {
-                        Text("Lyrics aren't available.")
+                        Text("暂无歌词。")
                             .font(.system(size: 36, weight: .bold))
                             .foregroundColor(.white.opacity(0.4))
                     }

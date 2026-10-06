@@ -136,7 +136,7 @@ class MenuBarSpacingManager {
         try await signalAppToQuit(app)
 
         if !app.isTerminated {
-            throw RelaunchError(message: "Application did not terminate.")
+            throw RelaunchError(message: "应用未退出。")
         }
 
         try await launch(url: url, bundleIdentifier: bundleIdentifier)

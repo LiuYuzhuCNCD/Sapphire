@@ -615,7 +615,7 @@ struct QueueAndPlaylistsView: View {
                         Image(systemName: "music.note.list")
                             .font(.system(size: 20, weight: .light))
                             .foregroundStyle(.tertiary)
-                        Text("Nothing queued in Apple Music.")
+                        Text("Apple Music 队列为空。")
                             .font(.system(size: 11, weight: .medium, design: .rounded))
                             .foregroundStyle(.secondary)
                             .multilineTextAlignment(.center)
@@ -1711,7 +1711,7 @@ struct AddToPlaylistMenuView: View {
             let removeCandidates = allPlaylists.filter { containedPlaylistURIs.contains($0.uri) }
 
             if addCandidates.isEmpty && removeCandidates.isEmpty {
-                Text("No playlists available.")
+                Text("暂无播放列表。")
                     .font(.system(size: 11, weight: .medium, design: .rounded))
                     .foregroundStyle(.secondary)
                     .padding(.horizontal, 12)
@@ -2616,7 +2616,7 @@ struct DevicesView: View {
     @ViewBuilder
     private var appleMusicDeviceListContent: some View {
         if musicManager.airplayDevices.isEmpty {
-            Text("No AirPlay devices found.")
+            Text("未找到 AirPlay 设备。")
                 .font(.system(size: 12, weight: .medium, design: .rounded))
                 .foregroundColor(.secondary)
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -2642,7 +2642,7 @@ struct DevicesView: View {
     @ViewBuilder
     private var appleMusicDeviceList: some View {
         if musicManager.airplayDevices.isEmpty {
-            Text("No AirPlay devices found.")
+            Text("未找到 AirPlay 设备。")
                 .foregroundColor(.secondary)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
         } else {
@@ -3190,7 +3190,7 @@ struct PlaylistView: View {
                     if isLoading {
                         ProgressView().scaleEffect(1.2)
                     } else {
-                        Text("This playlist is empty.")
+                        Text("此播放列表是空的。")
                             .foregroundStyle(.secondary)
                     }
                 } else {
@@ -4765,7 +4765,7 @@ struct ApiKeysMissingView: View {
                 .font(.system(size: 40))
                 .foregroundColor(.yellow)
 
-            Text("Spotify API Keys Missing")
+            Text("缺少 Spotify API 密钥")
                 .font(.title2).bold()
 
             Text("要启用 Spotify 整合，请在 Sapphire 设置中填入 API 凭据。")

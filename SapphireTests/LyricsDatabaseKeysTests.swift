@@ -16,7 +16,7 @@ struct LyricsDatabaseKeysTests {
                 == "meta:ed56ea04ec93c46f5440e67fa1c5cf99"
         )
         #expect(
-            LyricsDatabaseKeys.metadataKey(title: "Café Déjà Vu (feat. Guest)", artist: "Ünïcode Artist & Friend")
+            LyricsDatabaseKeys.metadataKey(title: "似曾相识咖啡馆（特邀嘉宾）", artist: "Ünïcode Artist & Friend")
                 == "meta:f6508ae2ec4e8af9f38ad0619d35992a"
         )
     }

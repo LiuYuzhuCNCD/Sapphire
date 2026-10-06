@@ -1359,7 +1359,7 @@ private struct LockScreenMusicPaneLyrics: View {
             let elapsed = musicManager.lyricsElapsedTime(at: context.date)
 
             if musicManager.lyrics.isEmpty {
-                Text("Lyrics aren't available.")
+                Text("暂无歌词。")
                     .font(.system(size: 28, weight: .bold, design: .rounded))
                     .foregroundStyle(.white.opacity(0.3))
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)

@@ -47,7 +47,7 @@ struct MultiAudioPermissionRequiredView: View {
                 .font(.system(size: 40))
                 .foregroundColor(.orange)
 
-            Text("Screen Recording Required")
+            Text("需要屏幕录制权限")
                 .font(.title2).bold()
 
             Text("Multi-audio won't work without Screen Recording permission. Sapphire needs it to adjust app volumes, eqs and more.")

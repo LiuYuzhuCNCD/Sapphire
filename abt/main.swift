@@ -52,7 +52,7 @@ struct item: Codable, Equatable {
 struct airbattery: ParsableCommand {
     static var configuration = CommandConfiguration(version: "0.1.0")
 
-    @Flag(name: .shortAndLong, help: "Including Nearcast devices")
+    @Flag(name: .shortAndLong, help: "包含 Nearcast 设备")
     var nearcast: Bool = false
 
     @Flag(name: .shortAndLong, help: "以 JSON 格式打印")

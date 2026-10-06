@@ -252,7 +252,7 @@ struct FocusStreakPanelView: View {
                     }
                 }
             } else {
-                Text("No upcoming immunity days.")
+                Text("没有即将到来的豁免日。")
                     .font(.system(size: 11))
                     .foregroundColor(.white.opacity(0.4))
             }

@@ -97,7 +97,7 @@ struct AudioSettingsView: View {
                         .padding([.top, .horizontal])
 
                     AudioResetRow(
-                        title: "Reset Per-App Adjustments",
+                        title: "重置分应用调节",
                         subtitle: "清空所有应用的自定义音量、静音、均衡器与 8D 空间音频。",
                         buttonTitle: "Reset Apps",
                         buttonColor: .red
@@ -257,7 +257,7 @@ private struct MicrophoneAmplifierSettingsView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            Text("Microphone Gain Preview")
+            Text("麦克风增益预览")
                 .font(.headline)
                 .padding([.top, .horizontal])
 

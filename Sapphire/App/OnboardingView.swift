@@ -294,7 +294,7 @@ private struct PrivacyStepView: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 18) {
                     PrivacySection(
-                        title: "Data We Collect (Analytics)",
+                        title: "我们收集的数据（统计）",
                         content: "To improve Sapphire, we collect completely anonymous, aggregated usage data. This helps us understand which features are popular, identify bugs, and make the app better for everyone."
                     )
 
@@ -309,7 +309,7 @@ private struct PrivacyStepView: View {
                     )
 
                     PrivacySection(
-                        title: "Data Storage & Third Parties",
+                        title: "数据存储与第三方",
                         content: "Anonymous data is processed by google for analytics. This data is always aggregated and cannot be used to identify you."
                     )
                 }
@@ -350,7 +350,7 @@ private struct MusicChoiceStepView: View {
     var body: some View {
         VStack(spacing: 20) {
             Spacer()
-            Text("Choose Your Music Service")
+            Text("选择你的音乐服务")
                 .font(.system(size: 32, weight: .bold, design: .rounded))
 
             Text("选择主用音乐播放器以获得最佳整合。")
@@ -452,7 +452,7 @@ private struct BatterySetupStepView: View {
     var body: some View {
         VStack(spacing: 20) {
             Spacer()
-            Text("Intelligent Battery Management")
+            Text("智能电池管理")
                 .fontWeight(.bold)
                 .font(.system(size: 32, weight: .bold, design: .rounded))
 

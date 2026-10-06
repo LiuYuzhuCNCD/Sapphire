@@ -312,7 +312,7 @@ private struct EmptyDropZoneView: View {
         VStack(spacing: 8) {
             Image(systemName: "slider.horizontal.3")
                 .font(.system(size: 25, weight: .light))
-            Text("No destinations enabled")
+            Text("未启用任何投放目标")
                 .font(.system(.headline, design: .rounded).weight(.medium))
             Text("在文件架设置中选择投放目标")
                 .font(.system(size: 10, design: .rounded))

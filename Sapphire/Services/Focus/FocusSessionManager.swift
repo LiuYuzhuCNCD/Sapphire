@@ -455,7 +455,7 @@ final class FocusSessionManager: ObservableObject {
         stopShortcutTimerIfNeeded()
         NotificationCenter.default.post(name: .focusSessionEnded, object: nil)
         postCompletionNotification(
-            title: "Focus session complete ",
+            title: "专注会话已完成 ",
             body: "You finished \(sessionCompletedBlocks) block\(sessionCompletedBlocks == 1 ? "" : "s"). Total focus today: \(Self.format(completedToday))."
         )
     }

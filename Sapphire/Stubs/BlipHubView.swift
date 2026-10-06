@@ -17,7 +17,7 @@ struct BlipHubView: View {
     var body: some View {
         VStack(spacing: 8) {
             Image(systemName: "sparkles.rectangle.stack.fill").font(.system(size: 22))
-            Text("Blip unavailable in this build").font(.caption)
+            Text("此构建不含 Blip").font(.caption)
         }
         .frame(width: 320)
     }

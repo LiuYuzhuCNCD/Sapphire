@@ -127,7 +127,7 @@ final class SapphireBrowserIntegration {
                 )
             } else {
                 postLocalNotification(
-                    title: "Link from Sapphire Browser",
+                    title: "来自 Sapphire 浏览器的链接",
                     body: title,
                     category: Self.linkNotificationCategory,
                     userInfo: ["url": url.absoluteString]

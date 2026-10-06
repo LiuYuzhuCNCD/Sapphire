@@ -588,7 +588,7 @@ class Helper: NSObject, HelperProtocol {
 
     func setMagSafeLED(color: Int, reply: @escaping (Error?) -> Void) {
         guard let ledKey = keyMagsafeLED else {
-            reply(makeError(code: .smcWriteFailed, description: "MagSafe LED key not found."))
+            reply(makeError(code: .smcWriteFailed, description: "未找到 MagSafe 指示灯键。"))
             return
         }
         guard color >= 0, color <= 255 else {
@@ -1011,7 +1011,7 @@ class Helper: NSObject, HelperProtocol {
             fanStateLock.unlock()
             reply(nil)
         } else {
-            reply(makeError(code: .smcWriteFailed, description: "Failed to set fan mode."))
+            reply(makeError(code: .smcWriteFailed, description: "设置风扇模式失败。"))
         }
     }
     func setFanTargetSpeed(fanIndex: Int, speed: Int, reply: @escaping (Error?) -> Void) {

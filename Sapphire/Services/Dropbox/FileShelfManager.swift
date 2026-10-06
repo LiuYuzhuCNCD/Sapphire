@@ -203,7 +203,7 @@ private struct ShelfEmptyStateView: View {
             Text("文件架是空的")
                 .font(.system(size: 14, weight: .semibold))
                 .foregroundColor(.white.opacity(0.8))
-            Text("Drag files here to add them.")
+            Text("把文件拖到这里即可添加。")
                 .font(.system(size: 12))
                 .foregroundColor(.white.opacity(0.6))
         }

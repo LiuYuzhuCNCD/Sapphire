@@ -58,7 +58,7 @@ struct DataViewerView: View {
         VStack(spacing: 16) {
             ProgressView()
                 .scaleEffect(1.5)
-            Text("Loading data summary...")
+            Text("正在载入数据摘要…")
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
         }
