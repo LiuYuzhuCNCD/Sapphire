@@ -107,7 +107,7 @@ struct SystemAudioPanel: View {
             MultiAudioPermissionRequiredView(navigationStack: $navigationStack)
         } else if unified {
             VStack(alignment: .leading, spacing: 18) {
-                Text("APPS")
+                Text("应用")
                     .font(.system(size: 11, weight: .black))
                     .foregroundStyle(.secondary)
                     .tracking(1.2)
@@ -309,7 +309,7 @@ struct DeviceSectionView: View {
     var body: some View {
         VStack(spacing: 24) {
             VStack(alignment: .leading, spacing: 10) {
-                Text("OUTPUTS").font(.system(size: 11, weight: .black)).foregroundStyle(.secondary).tracking(1.2).padding(.horizontal, 4)
+                Text("输出").font(.system(size: 11, weight: .black)).foregroundStyle(.secondary).tracking(1.2).padding(.horizontal, 4)
                 VStack(spacing: 8) {
                     ForEach(audioManager.availableOutputDevices) { device in
                         let isSel = audioManager.selectedOutputDeviceIDs.contains(device.id)
@@ -333,7 +333,7 @@ struct DeviceSectionView: View {
 
             if !audioManager.availableInputDevices.isEmpty {
                 VStack(alignment: .leading, spacing: 10) {
-                    Text("INPUTS").font(.system(size: 11, weight: .black)).foregroundStyle(.secondary).tracking(1.2).padding(.horizontal, 4)
+                    Text("输入").font(.system(size: 11, weight: .black)).foregroundStyle(.secondary).tracking(1.2).padding(.horizontal, 4)
                     VStack(spacing: 8) {
                         ForEach(audioManager.availableInputDevices) { device in
                             DeviceControlCard(

@@ -331,7 +331,7 @@ private struct LockScreenFocusInfoSlot: View {
                 HStack(spacing: LockScreenConfiguration.infoWidgetGenericHSpacing) {
                     Image(systemName: "moon.zzz.fill")
                         .font(.system(size: LockScreenConfiguration.infoWidgetIconFontSize))
-                    Text("Focus Off")
+                    Text("专注关闭")
                 }
                 .foregroundColor(.secondary)
                 .modifier(TransparentEffect())
@@ -365,7 +365,7 @@ private struct LockScreenBluetoothInfoSlot: View {
                 HStack(spacing: LockScreenConfiguration.infoWidgetGenericHSpacing) {
                     Image(systemName: "headphones")
                         .font(.system(size: LockScreenConfiguration.infoWidgetIconFontSize))
-                    Text("No Device")
+                    Text("无设备")
                 }
                 .foregroundColor(.secondary)
                 .modifier(TransparentEffect())

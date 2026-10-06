@@ -244,7 +244,7 @@ struct FaceIDRegistrationView: View {
                                 .padding(.horizontal, 10)
 
                             HStack(spacing: 12) {
-                                Button("Skip") {
+                                Button("跳过") {
                                     cameraController.skipExtendedRegistration()
                                 }
                                 .buttonStyle(.bordered)
@@ -281,18 +281,18 @@ struct FaceIDRegistrationView: View {
                         VStack(spacing: 16) {
                             if cameraController.isExtendedPhase {
                                 HStack(spacing: 10) {
-                                    poseIndicator(label: "Up", key: "up")
-                                    poseIndicator(label: "Down", key: "down")
-                                    poseIndicator(label: "Tilt L", key: "tiltLeft")
-                                    poseIndicator(label: "Tilt R", key: "tiltRight")
+                                    poseIndicator(label: "上", key: "up")
+                                    poseIndicator(label: "下", key: "down")
+                                    poseIndicator(label: "左倾", key: "tiltLeft")
+                                    poseIndicator(label: "右倾", key: "tiltRight")
                                 }
                                 HStack(spacing: 10) {
-                                    poseIndicator(label: "Near", key: "closer")
-                                    poseIndicator(label: "Far", key: "farther")
+                                    poseIndicator(label: "近", key: "closer")
+                                    poseIndicator(label: "远", key: "farther")
                                 }
                             } else {
                                 HStack(spacing: 10) {
-                                    poseIndicator(label: "Front", key: "center")
+                                    poseIndicator(label: "前置", key: "center")
                                     poseIndicator(label: "左", key: "left")
                                     poseIndicator(label: "右", key: "right")
                                 }
@@ -372,7 +372,7 @@ struct FaceIDUnlockView: View {
                 }
 
                 if isUnlocked {
-                    Text("Unlocked")
+                    Text("已解锁")
                         .font(.title)
                         .foregroundColor(.green)
                         .transition(.opacity)

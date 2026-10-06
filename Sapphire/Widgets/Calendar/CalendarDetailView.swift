@@ -242,7 +242,7 @@ struct CalendarDetailView: View {
                         .font(.system(size: 40, weight: .light))
                         .foregroundColor(.green)
                     VStack {
-                        Text("All Clear").font(.title3.weight(.bold))
+                        Text("一切正常").font(.title3.weight(.bold))
                         Text("You have no events or reminders scheduled.").foregroundColor(.white.opacity(0.6))
                     }
                     Spacer()
@@ -282,7 +282,7 @@ struct DetailedScheduleItemRow: View {
                 if item.hasTime {
                     Text(item.date, style: .time).font(.system(size: 13, weight: .semibold, design: .rounded))
                 } else {
-                    Text("All-Day").font(.system(size: 13, weight: .semibold, design: .rounded)).opacity(0.8)
+                    Text("全天").font(.system(size: 13, weight: .semibold, design: .rounded)).opacity(0.8)
                 }
             }
         }

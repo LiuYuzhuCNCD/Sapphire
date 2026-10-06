@@ -25,7 +25,7 @@ enum LockScreenMusicTab: String, CaseIterable, Identifiable {
     var title: String {
         switch self {
         case .nowPlaying: "概览"
-        case .artist: "Artist"
+        case .artist: "歌手"
         case .playlists: "Playlists"
         case .queue: "Queue"
         case .devices: "Devices"
@@ -338,7 +338,7 @@ struct LockScreenFullScreenMusicPane: View {
                         if musicManager.totalDuration > 0 {
                             let mins = Int(musicManager.totalDuration) / 60
                             let secs = Int(musicManager.totalDuration) % 60
-                            statPill(icon: "clock.fill", label: "Duration", value: String(format: "%d:%02d", mins, secs), color: .cyan)
+                            statPill(icon: "clock.fill", label: "时长", value: String(format: "%d:%02d", mins, secs), color: .cyan)
                         }
                         if isSpotify {
                             SpotifyNowPlayingExtras()
@@ -452,7 +452,7 @@ struct LockScreenFullScreenMusicPane: View {
                     .frame(maxWidth: .infinity)
 
                     VStack(alignment: .leading, spacing: 24) {
-                        overviewSection(title: "Up Next", icon: "text.line.first.and.arrowtriangle.forward", accent: .green) {
+                        overviewSection(title: "接下来", icon: "text.line.first.and.arrowtriangle.forward", accent: .green) {
                             if queue.isEmpty && musicManager.nativeQueue.isEmpty {
                                 Text("Nothing queued")
                                     .font(.system(size: 13, weight: .medium, design: .rounded))
@@ -1146,7 +1146,7 @@ struct LockScreenFullScreenMusicPane: View {
                                 }
                                 Spacer()
                                 if isActive {
-                                    Text("Active")
+                                    Text("活动中")
                                         .font(.system(size: 10, weight: .bold, design: .rounded))
                                         .foregroundStyle(.green)
                                         .padding(.horizontal, 8).padding(.vertical, 3)

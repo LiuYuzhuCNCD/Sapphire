@@ -37,7 +37,7 @@ fileprivate enum MusicHubPane: Int, CaseIterable {
     var title: String {
         switch self {
         case .now: return "Now"
-        case .library: return "Library"
+        case .library: return "资料库"
         case .discover: return "Discover"
         case .audio: return "音频"
         }
@@ -337,7 +337,7 @@ struct QueueAndPlaylistsView: View {
                         musicManager.spotifyPrivateAPI.logout()
                     }
                 } label: {
-                    Text("Log out")
+                    Text("退出登录")
                         .font(.system(size: 9, weight: .medium, design: .rounded))
                         .foregroundStyle(.secondary.opacity(0.9))
                 }
@@ -609,7 +609,7 @@ struct QueueAndPlaylistsView: View {
             }
             .frame(maxWidth: .infinity, alignment: .leading)
 
-            materialExpressiveCard(title: "Up Next", systemImage: "list.bullet", accent: MaterialChartPalette.primary) {
+            materialExpressiveCard(title: "接下来", systemImage: "list.bullet", accent: MaterialChartPalette.primary) {
                 if appleMusicQueue.isEmpty {
                     VStack(spacing: 8) {
                         Image(systemName: "music.note.list")
@@ -697,7 +697,7 @@ struct QueueAndPlaylistsView: View {
             }
             .frame(maxWidth: .infinity, alignment: .leading)
 
-            materialExpressiveCard(title: "Loading…", systemImage: "arrow.clockwise", accent: MaterialChartPalette.primary) {
+            materialExpressiveCard(title: "载入中…", systemImage: "arrow.clockwise", accent: MaterialChartPalette.primary) {
                 HStack(spacing: 8) {
                     ProgressView().controlSize(.small)
                     Text("Connecting to Spotify…")
@@ -767,7 +767,7 @@ struct QueueAndPlaylistsView: View {
                                 }
 
                                 if !musicManager.spotifyPrivateAPI.trackArtistCredits.isEmpty {
-                                    materialExpressiveCard(title: "Credits", systemImage: "person.2.fill", accent: MaterialChartPalette.secondary) {
+                                    materialExpressiveCard(title: "鸣谢", systemImage: "person.2.fill", accent: MaterialChartPalette.secondary) {
                                         ScrollView(.horizontal, showsIndicators: false) {
                                             LazyHStack(spacing: 10) {
                                                 ForEach(musicManager.spotifyPrivateAPI.trackArtistCredits) { credit in
@@ -795,7 +795,7 @@ struct QueueAndPlaylistsView: View {
                                 }
 
                                 if let artist = musicManager.spotifyPrivateAPI.nowPlayingArtist, !artist.merch.isEmpty {
-                                    materialExpressiveCard(title: "Merch", systemImage: "bag.fill", accent: MaterialChartPalette.warning) {
+                                    materialExpressiveCard(title: "周边商品", systemImage: "bag.fill", accent: MaterialChartPalette.warning) {
                                         ScrollView(.horizontal, showsIndicators: false) {
                                             LazyHStack(spacing: 12) {
                                                 ForEach(artist.merch.prefix(8)) { item in
@@ -825,7 +825,7 @@ struct QueueAndPlaylistsView: View {
                     }
                     .mask(fadeMask)
 
-                    materialExpressiveCard(title: "Up Next", systemImage: "list.bullet", accent: MaterialChartPalette.primary) {
+                    materialExpressiveCard(title: "接下来", systemImage: "list.bullet", accent: MaterialChartPalette.primary) {
                         if musicManager.nativeQueue.isEmpty {
                             Text("Nothing queued — add tracks from Library or suggestions.")
                                 .font(.system(size: 11, weight: .medium, design: .rounded))
@@ -1040,7 +1040,7 @@ struct QueueAndPlaylistsView: View {
                 .transition(.opacity)
 
                 VStack(alignment: .leading, spacing: 0) {
-                    SectionHeader(title: "Next Up").padding(.bottom, 5)
+                    SectionHeader(title: "接下来").padding(.bottom, 5)
                     if !queue.queue.isEmpty {
                         ScrollView(showsIndicators: false) {
                             LazyVStack(alignment: .leading, spacing: 8) {
@@ -1062,7 +1062,7 @@ struct QueueAndPlaylistsView: View {
         VStack(spacing: 12) {
             HStack(alignment: .firstTextBaseline) {
                 VStack(alignment: .leading, spacing: 2) {
-                    Text("Library")
+                    Text("资料库")
                         .font(.system(size: 20, weight: .bold, design: .rounded))
                     Text(isAppleMusic ? "Your Apple Music playlists" : "Playlists sorted by Spotify")
                         .font(.system(size: 11, weight: .medium, design: .rounded))
@@ -2550,7 +2550,7 @@ struct DevicesView: View {
                 Spacer()
                 deviceSubTabBar
                 if musicManager.isOfficialAPIAuthenticated {
-                    Button("Log out") { musicManager.spotifyOfficialAPI.logout() }
+                    Button("退出登录") { musicManager.spotifyOfficialAPI.logout() }
                         .buttonStyle(.plain).font(.caption).foregroundColor(.secondary)
                 }
             }
@@ -3394,7 +3394,7 @@ struct PlaylistView: View {
             sortHeader(.title, width: nil, alignment: .leading)
                 .frame(minWidth: 220, maxWidth: .infinity, alignment: .leading)
 
-            Text("Added by")
+            Text("添加者")
                 .frame(width: 100, alignment: .leading)
                 .foregroundStyle(.secondary)
 
@@ -4719,7 +4719,7 @@ struct SpotifyAccountBadge: View {
 
     var body: some View {
         if let info = accountInfo, info.isPremium {
-            Text("PREMIUM")
+            Text("高级版")
                 .font(.system(size: 9, weight: .bold, design: .rounded))
                 .padding(.horizontal, 6)
                 .padding(.vertical, 2)
@@ -5378,7 +5378,7 @@ private struct AppleMusicArtistRow: View {
                     Text(artist.name)
                         .font(.system(size: 12, weight: .semibold, design: .rounded))
                         .lineLimit(1)
-                    Text("Artist")
+                    Text("歌手")
                         .font(.system(size: 10, weight: .medium, design: .rounded))
                         .foregroundStyle(.secondary)
                         .lineLimit(1)

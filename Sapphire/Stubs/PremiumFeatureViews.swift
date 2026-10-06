@@ -43,7 +43,7 @@ struct ContinuitySettingsView: View { var body: some View { PremiumUnavailableVi
 struct EmojiSettingsView: View { var body: some View { PremiumUnavailableView(title: "表情符号") } }
 struct MouseSettingsView: View { var body: some View { PremiumUnavailableView(title: "鼠标") } }
 struct MonitoringSettingsView: View { var body: some View { PremiumUnavailableView(title: "监控") } }
-struct ArchivesAndDMGInstallerSettingsView: View { var body: some View { PremiumUnavailableView(title: "Archives") } }
+struct ArchivesAndDMGInstallerSettingsView: View { var body: some View { PremiumUnavailableView(title: "压缩包") } }
 struct AppLockSettingsView: View { var body: some View { PremiumUnavailableView(title: "应用锁") } }
 struct DockLayoutsSettingsView: View { var body: some View { PremiumUnavailableView(title: "Dock Layouts") } }
 struct MediaOptimizerSettingsView: View { var body: some View { PremiumUnavailableView(title: "媒体优化") } }
@@ -56,7 +56,7 @@ struct StorageWorkspaceView: View {
 struct EightDAudioView: View {
     let bundleID: String
     let appName: String
-    var body: some View { PremiumUnavailableView(title: "8D Audio") }
+    var body: some View { PremiumUnavailableView(title: "8D 音效") }
 }
 
 struct SurroundAudioView: View {

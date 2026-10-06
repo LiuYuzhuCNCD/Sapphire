@@ -90,7 +90,7 @@ class PermissionsManager: NSObject, ObservableObject, @MainActor CLLocationManag
         .init(type: .location, title: "位置", description: "Needed to provide live weather updates for your current location.", iconName: "location.fill", iconColor: .blue, category: .recommended),
         .init(type: .calendar, title: "日历", description: "Needed to show your upcoming events.", iconName: "calendar", iconColor: .red, category: .recommended),
         .init(type: .bluetooth, title: "蓝牙", description: "Needed to detect connected devices and their battery levels.", iconName: "ipad.landscape.and.iphone", iconColor: .blue, category: .recommended),
-        .init(type: .reminders, title: "Reminders", description: "Needed to show your upcoming reminders.", iconName: "checklist", iconColor: .orange, category: .optional),
+        .init(type: .reminders, title: "提醒事项", description: "Needed to show your upcoming reminders.", iconName: "checklist", iconColor: .orange, category: .optional),
         .init(type: .focusStatus, title: "Focus Status", description: "Needed to show when a Focus mode is active.", iconName: "moon.fill", iconColor: .indigo, category: .optional)
     ]
 

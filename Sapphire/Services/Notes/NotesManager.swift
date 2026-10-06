@@ -73,7 +73,7 @@ final class NotesManager: ObservableObject {
     private init() {
         load()
         if notes.isEmpty {
-            notes = [QuickNote(title: "Welcome", body: "Tap to expand and edit your notes.")]
+            notes = [QuickNote(title: "欢迎", body: "Tap to expand and edit your notes.")]
         }
     }
 

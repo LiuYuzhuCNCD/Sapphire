@@ -88,8 +88,8 @@ struct DeviceAdjustView: View {
                 HStack(spacing: 16) {
                     VStack(spacing: 12) {
                         ModernDarkSlider(label: "音量", value: $settings.volume, range: 0...1.0, formatDisplay: { "\(Int($0 * 100))%" })
-                        ModernDarkSlider(label: "Delay", value: $settings.delay, range: 0...0.5, formatDisplay: { "\(Int($0 * 1000))ms" })
-                        ModernDarkSlider(label: "Balance", value: $settings.balance, range: 0...1.0, formatDisplay: { val in
+                        ModernDarkSlider(label: "延迟", value: $settings.delay, range: 0...0.5, formatDisplay: { "\(Int($0 * 1000))ms" })
+                        ModernDarkSlider(label: "平衡", value: $settings.balance, range: 0...1.0, formatDisplay: { val in
                             if abs(val - 0.5) < 0.02 { return "Center" }
                             return val < 0.5 ? "L \(Int((0.5-val)*200))" : "R \(Int((val-0.5)*200))"
                         })
@@ -124,7 +124,7 @@ struct DeviceAdjustView: View {
         HStack(alignment: .top, spacing: 16) {
             VStack(spacing: 12) {
                 VStack(alignment: .leading, spacing: 12) {
-                    Text("LEVELS").font(.system(size: 9, weight: .bold)).foregroundStyle(.white.opacity(0.4)).tracking(1)
+                    Text("电平").font(.system(size: 9, weight: .bold)).foregroundStyle(.white.opacity(0.4)).tracking(1)
                     ModernDarkSlider(label: "Input Gain", value: Binding(get: { micGain }, set: { micGain = $0; audioManager.setInputVolume(Float($0), for: device.id) }), range: 0...1.0, formatDisplay: { "\(Int($0 * 100))%" })
 
                     HStack {

@@ -83,7 +83,7 @@ struct MirrorPlayerView: View {
                     if camera.isLive {
                         HStack(spacing: 4) {
                             Circle().fill(Color.red).frame(width: 5, height: 5)
-                            Text("Live")
+                            Text("实时")
                                 .font(.system(size: 9, weight: .semibold, design: .rounded))
                                 .foregroundStyle(Color.red.opacity(0.9))
                         }
@@ -263,7 +263,7 @@ struct MirrorFullscreenView: View {
                     if camera.isLive {
                         HStack(spacing: 5) {
                             Circle().fill(Color.red).frame(width: 7, height: 7)
-                            Text("LIVE")
+                            Text("实时")
                                 .font(.system(size: 11, weight: .bold, design: .rounded))
                         }
                         .foregroundStyle(.white)

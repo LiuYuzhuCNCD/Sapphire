@@ -248,7 +248,7 @@ private struct InNotchNoteEditor: View {
     var body: some View {
         VStack(spacing: 0) {
             HStack(spacing: 10) {
-                NotchSearchField(placeholder: "Title", text: $draft.title, autofocus: draft.title == "New Note" || draft.title.isEmpty)
+                NotchSearchField(placeholder: "标题", text: $draft.title, autofocus: draft.title == "New Note" || draft.title.isEmpty)
                     .font(.system(size: 15, weight: .bold, design: .rounded))
 
                 Spacer(minLength: 8)

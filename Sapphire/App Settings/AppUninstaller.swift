@@ -29,7 +29,7 @@ enum AppArtifactCategory: String, CaseIterable, Identifiable {
         case .preferences: return "slider.horizontal.3"
         case .savedState: return "clock.arrow.circlepath"
         case .containers: return "shippingbox.fill"
-        case .webData: return "network"
+        case .webData: return "网络"
         case .logs: return "doc.text.fill"
         case .launchItems: return "bolt.fill"
         case .other: return "doc.fill"

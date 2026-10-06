@@ -76,7 +76,7 @@ struct LockScreenTimerInfoView: View {
                 HStack(spacing: LockScreenConfiguration.infoWidgetGenericHSpacing) {
                     Image(systemName: "timer")
                         .font(.system(size: LockScreenConfiguration.infoWidgetIconFontSize))
-                    Text("No Timer")
+                    Text("无计时器")
                 }
                 .foregroundColor(.secondary)
                 .modifier(TransparentEffect())
@@ -138,7 +138,7 @@ struct LockScreenNotesInfoView: View {
             HStack(spacing: LockScreenConfiguration.infoWidgetGenericHSpacing) {
                 Image(systemName: "note.text")
                     .font(.system(size: LockScreenConfiguration.infoWidgetIconFontSize))
-                Text("No Notes")
+                Text("无便签")
             }
             .foregroundColor(.secondary)
             .modifier(TransparentEffect())
@@ -238,7 +238,7 @@ struct LockScreenCaffeineMiniWidget: View {
                     .background(Color.white.opacity(0.08), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
 
                 VStack(alignment: .leading, spacing: 4) {
-                    Text("Caffeine")
+                    Text("防休眠")
                         .font(.system(size: 15, weight: .semibold, design: .rounded))
                     Text(caffeineManager.isActive ? "Keeping awake" : "Tap to enable")
                         .font(.system(size: 12, weight: .medium, design: .rounded))

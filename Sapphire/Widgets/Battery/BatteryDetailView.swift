@@ -92,7 +92,7 @@ struct BatteryDetailView: View {
 
     private var header: some View {
         VStack(alignment: .leading, spacing: 3) {
-            Text("BATTERY")
+            Text("电池")
                 .font(.system(size: 10, weight: .bold))
                 .tracking(1.5)
                 .foregroundColor(levelColor)

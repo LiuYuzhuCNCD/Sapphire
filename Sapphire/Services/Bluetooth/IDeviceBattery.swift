@@ -111,7 +111,7 @@ final class IDeviceBattery {
     }
 
     private func scanConnectedDevices() {
-        scanDevices(connectionFlag: "-n", label: "network")
+        scanDevices(connectionFlag: "-n", label: "网络")
         scanDevices(connectionFlag: "-l", label: "USB")
     }
 

@@ -49,7 +49,7 @@ struct AndroidWidgetConfigurationIntent: WidgetConfigurationIntent {
     static let title: LocalizedStringResource = "Android Widget"
     static let description = IntentDescription("Choose a widget mirrored from your paired Android phone.")
 
-    @Parameter(title: "Widget")
+    @Parameter(title: "组件")
     var widget: AndroidWidgetChoice?
 }
 

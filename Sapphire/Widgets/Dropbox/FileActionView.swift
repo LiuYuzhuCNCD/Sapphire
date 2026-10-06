@@ -195,7 +195,7 @@ struct FileActionView: View {
 
     private var quickActions: some View {
         HStack(spacing: 8) {
-            QuickIconAction(systemImage: "square.and.arrow.up", title: "Share") {
+            QuickIconAction(systemImage: "square.and.arrow.up", title: "共享") {
                 presentSharePicker()
             }
             QuickIconAction(systemImage: "plus.square.on.square", title: "Duplicate") {
@@ -209,11 +209,11 @@ struct FileActionView: View {
 
     private var metadataSection: some View {
         VStack(spacing: 0) {
-            MetadataRow(label: "Type", value: metadata.type, icon: "doc.text")
+            MetadataRow(label: "类型", value: metadata.type, icon: "doc.text")
             Divider().overlay(Color.white.opacity(0.08))
-            MetadataRow(label: "Size", value: metadata.size, icon: "internaldrive")
+            MetadataRow(label: "大小", value: metadata.size, icon: "internaldrive")
             Divider().overlay(Color.white.opacity(0.08))
-            MetadataRow(label: "Added", value: metadata.added, icon: "calendar")
+            MetadataRow(label: "已添加", value: metadata.added, icon: "calendar")
             Divider().overlay(Color.white.opacity(0.08))
             MetadataRow(label: "位置", value: liveItem.storedAt.path, icon: "folder")
         }
@@ -263,10 +263,10 @@ struct FileActionView: View {
                 }
             } else {
                 HStack(spacing: 8) {
-                    DetailButton(title: "Rename", systemImage: "pencil", isProminent: false, tint: .primary) {
+                    DetailButton(title: "重命名", systemImage: "pencil", isProminent: false, tint: .primary) {
                         beginRename()
                     }
-                    DetailButton(title: "Trash", systemImage: "trash", isProminent: false, tint: .red) {
+                    DetailButton(title: "废纸篓", systemImage: "trash", isProminent: false, tint: .red) {
                         isConfirmingDelete = true
                     }
                 }

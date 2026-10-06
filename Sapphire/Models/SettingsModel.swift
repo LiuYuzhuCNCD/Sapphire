@@ -246,8 +246,8 @@ enum LockScreenWidgetType: String, Codable, CaseIterable, Identifiable {
     var id: String { self.rawValue }
     var displayName: String {
         switch self {
-        case .caffeine: return "Caffeine"
-        case .timer: return "Timer"
+        case .caffeine: return "防休眠"
+        case .timer: return "计时器"
         case .clock: return "Clock"
         case .notes: return "便签"
         case .clipboard: return "剪贴板"
@@ -266,8 +266,8 @@ enum LockScreenMiniWidgetType: String, Codable, CaseIterable, Identifiable {
     var id: String { self.rawValue }
     var displayName: String {
         switch self {
-        case .caffeine: return "Caffeine"
-        case .timer: return "Timer"
+        case .caffeine: return "防休眠"
+        case .timer: return "计时器"
         case .clipboard: return "剪贴板"
         case .notes: return "便签"
         case .system: return "系统"
@@ -713,7 +713,7 @@ enum ClipboardSwipeAction: String, Codable, CaseIterable, Identifiable {
     var id: String { rawValue }
     var displayName: String {
         switch self {
-        case .share: return "Share"
+        case .share: return "共享"
         case .copy: return "Copy"
         case .delete: return "删除"
         case .none: return "无"
@@ -726,7 +726,7 @@ enum FileDropSwipeAction: String, Codable, CaseIterable, Identifiable {
     var id: String { rawValue }
     var displayName: String {
         switch self {
-        case .share: return "Share"
+        case .share: return "共享"
         case .delete: return "删除"
         case .none: return "无"
         }
@@ -2599,7 +2599,7 @@ enum WidgetType: String, Codable, CaseIterable, Identifiable, Equatable {
         case .clipboard: return "剪贴板"
         case .mirror: return "镜像"
         case .battery: return "电池"
-        case .timer: return "Timer"
+        case .timer: return "计时器"
         case .focusSession: return "专注"
         case .storage: return "存储"
         case .agent: return "Agent"
@@ -2612,7 +2612,7 @@ enum LiveActivityType: String, Codable, CaseIterable, Identifiable, Equatable {
     var id: String { self.rawValue }
     var displayName: String {
         switch self {
-        case .music: "音乐"; case .weather: "天气"; case .calendar: "日历"; case .reminders: "Reminders"; case .timers: "Timers"; case .battery: "电池"; case .eyeBreak: "护眼"; case .desktop: "Desktop"; case .focus: "专注"; case .fileShelf: "文件架"; case .fileProgress: "File Progress"; case .stats: "Stats"; case .microphone: "Microphone"; case .devActivity: "开发者活动"; case .sports: "体育"; case .finance: "财经"
+        case .music: "音乐"; case .weather: "天气"; case .calendar: "日历"; case .reminders: "提醒事项"; case .timers: "计时器"; case .battery: "电池"; case .eyeBreak: "护眼"; case .desktop: "Desktop"; case .focus: "专注"; case .fileShelf: "文件架"; case .fileProgress: "File Progress"; case .stats: "Stats"; case .microphone: "Microphone"; case .devActivity: "开发者活动"; case .sports: "体育"; case .finance: "财经"
         }
     }
 }
@@ -3131,7 +3131,7 @@ enum SettingsSection: String, CaseIterable, Identifiable {
         case .clipboard: ["clipboard", "pasteboard", "history", "copy", "paste"]
         case .emoji: ["emoji", "emoticon", "shortcut", "shortcode", "slack", "rocket", "smiley", "smile", "gif", "picker", "skin tone", "colon", "symbols", "kaomoji"]
         case .mouse: ["mouse", "trackpad", "scroll", "scrolling", "acceleration", "pointer", "cursor", "buttons", "remap", "remapping", "linearmouse", "linear mouse", "natural scrolling", "wheel", "sensitivity", "speed", "invert", "modifier", "back", "forward"]
-        case .monitoring: ["monitor", "readout", "menu bar", "cpu", "ram", "memory", "network", "speed", "alerts", "notifications", "disk", "space", "pressure", "usage", "stats"]
+        case .monitoring: ["monitor", "readout", "menu bar", "cpu", "ram", "memory", "网络", "speed", "alerts", "notifications", "disk", "space", "pressure", "usage", "stats"]
         case .devActivity: ["dev", "developer", "ai", "agent", "agents", "build", "builds", "compile", "compiling", "terminal", "command", "task", "tasks", "progress", "claude", "codex", "cursor", "antigravity", "copilot", "devin", "windsurf", "gemini", "aider", "xcode", "android studio", "gradle", "npm", "cargo", "make", "iterm", "warp", "ghostty", "caffeinate", "awake"]
         case .archives: ["archive", "unarchive", "extract", "extractor", "unarchiver", "zip", "unzip", "rar", "7z", "7-zip", "tar", "gzip", "bzip2", "xz", "compressed", "password", "encrypted", "iso", "cpio", "uncompress", "dmg", "disk image", "install", "mount", "unmount", "eject", "trash", "cleanup", "easy dmg", "easydmg"]
         case .mirror: ["mirror", "camera", "camera feed", "selfie", "webcam"]

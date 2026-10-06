@@ -525,7 +525,7 @@ private struct LocalFileRowView: View {
 
             VStack(alignment: .leading, spacing: 2) {
                 Text(item.fileName).font(.callout).fontWeight(.semibold).lineLimit(1)
-                Text("On Shelf").font(.caption).foregroundColor(.secondary).lineLimit(1)
+                Text("在文件架").font(.caption).foregroundColor(.secondary).lineLimit(1)
             }
             Spacer(minLength: 8)
 

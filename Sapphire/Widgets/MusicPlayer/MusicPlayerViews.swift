@@ -802,7 +802,7 @@ struct NextTrackInline: View {
                 .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
 
                 VStack(alignment: .leading, spacing: 1) {
-                    Text("UP NEXT")
+                    Text("接下来")
                         .font(.system(size: 7, weight: .heavy, design: .rounded))
                         .kerning(1.1)
                         .foregroundStyle(accent)

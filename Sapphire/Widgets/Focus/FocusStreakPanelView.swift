@@ -87,9 +87,9 @@ struct FocusStreakPanelView: View {
 
     private var stripLegend: some View {
         HStack(spacing: 12) {
-            legendItem(icon: "flame.fill", color: .orange, label: "Focused")
-            legendItem(icon: "shield.fill", color: .teal, label: "Immunity")
-            legendItem(icon: "circle.fill", color: .white.opacity(0.12), label: "Missed")
+            legendItem(icon: "flame.fill", color: .orange, label: "专注中")
+            legendItem(icon: "shield.fill", color: .teal, label: "免疫")
+            legendItem(icon: "circle.fill", color: .white.opacity(0.12), label: "已错过")
         }
         .padding(.top, 2)
     }

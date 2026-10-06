@@ -138,9 +138,9 @@ private struct PermissionsStepView: View {
 
             ScrollView {
                 VStack(spacing: 25) {
-                    PermissionSectionView(title: "Required", permissions: permissionsManager.requiredPermissions, manager: permissionsManager)
+                    PermissionSectionView(title: "必需", permissions: permissionsManager.requiredPermissions, manager: permissionsManager)
                     PermissionSectionView(title: "Recommended", permissions: permissionsManager.recommendedPermissions, description: "These permissions enable major features like widgets and live activities.", manager: permissionsManager)
-                    PermissionSectionView(title: "Optional", permissions: permissionsManager.optionalPermissions, description: "These permissions enable minor or cosmetic features.", manager: permissionsManager)
+                    PermissionSectionView(title: "可选", permissions: permissionsManager.optionalPermissions, description: "These permissions enable minor or cosmetic features.", manager: permissionsManager)
                 }.padding(.horizontal, 50)
             }
 
@@ -646,7 +646,7 @@ private struct SubscriptionOverviewStepView: View {
 
             Spacer()
 
-            OnboardingButton(title: "Skip", action: onNext)
+            OnboardingButton(title: "跳过", action: onNext)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .onAppear {
@@ -718,7 +718,7 @@ private struct OnboardingPlanCard: View {
                             .font(.system(size: 17, weight: .bold, design: .rounded))
                             .foregroundStyle(.white)
                         if isCurrent {
-                            Text("CURRENT")
+                            Text("当前")
                                 .font(.system(size: 8, weight: .black))
                                 .padding(.horizontal, 6)
                                 .padding(.vertical, 3)
@@ -969,7 +969,7 @@ private struct PermissionRowView: View {
             case .denied: Image(systemName: "xmark.circle.fill").font(.title2).foregroundColor(.red)
             case .notRequested:
                 Button(action: { manager.requestPermission(permission.type) }) {
-                    Text("Request")
+                    Text("请求")
                         .fontWeight(.bold)
                         .padding(.horizontal, 18)
                         .padding(.vertical, 8)

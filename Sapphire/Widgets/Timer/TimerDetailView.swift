@@ -231,7 +231,7 @@ struct TimerDetailView: View {
     private var systemTimersSection: some View {
         if !timerManager.activeTimers.isEmpty {
             VStack(alignment: .leading, spacing: 8) {
-                Text("Timers")
+                Text("计时器")
                     .font(.title3.bold())
                     .foregroundColor(.orange)
                 ForEach(timerManager.activeTimers) { timer in

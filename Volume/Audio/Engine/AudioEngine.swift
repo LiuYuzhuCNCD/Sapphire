@@ -62,8 +62,8 @@ final class AudioEngine {
 
     // MARK: - Echo Suppression
 
-    private let outputEchoTracker = EchoTracker(label: "Output")
-    private let inputEchoTracker = EchoTracker(label: "Input")
+    private let outputEchoTracker = EchoTracker(label: "输出")
+    private let inputEchoTracker = EchoTracker(label: "输入")
 
     var outputDevices: [AudioDevice] {
         deviceMonitor.outputDevices

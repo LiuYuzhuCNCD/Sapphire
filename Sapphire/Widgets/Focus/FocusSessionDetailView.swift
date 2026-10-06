@@ -288,11 +288,11 @@ struct FocusSessionDetailView: View {
 
     private var statsStrip: some View {
         HStack(spacing: 8) {
-            statItem(label: "Focused", value: FocusSessionManager.format(focusManager.completedToday))
+            statItem(label: "专注中", value: FocusSessionManager.format(focusManager.completedToday))
             Divider().frame(height: 20).opacity(0.15)
-            statItem(label: "Blocks", value: "\(focusManager.blocksCompletedThisSession)")
+            statItem(label: "区块", value: "\(focusManager.blocksCompletedThisSession)")
             Divider().frame(height: 20).opacity(0.15)
-            statItem(label: "Total", value: "\(focusManager.history.count)")
+            statItem(label: "总计", value: "\(focusManager.history.count)")
         }
         .padding(.vertical, 6)
         .padding(.horizontal, 2)
@@ -326,7 +326,7 @@ struct FocusSessionDetailView: View {
                 Spacer()
 
                 if ambient.isPlaying {
-                    Text("PLAYING")
+                    Text("播放中")
                         .font(.system(size: 8, weight: .bold))
                         .foregroundColor(accent)
                         .tracking(1)
@@ -409,7 +409,7 @@ struct FocusSessionDetailView: View {
 
             LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 6) {
                 quickToggleChip(
-                    title: "Dim Apps",
+                    title: "变暗应用",
                     icon: "moon.fill",
                     isOn: $settings.settings.focusDimInactiveApps
                 )

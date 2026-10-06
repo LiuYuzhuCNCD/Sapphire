@@ -72,7 +72,7 @@ struct CalendarNotificationLayout<Details: View>: View {
 
             HStack(spacing: 9) {
                 Button(action: onDismiss) {
-                    Label("Dismiss", systemImage: "xmark")
+                    Label("关闭", systemImage: "xmark")
                         .frame(maxWidth: .infinity)
                 }
                 .buttonStyle(CalendarActivityButtonStyle())

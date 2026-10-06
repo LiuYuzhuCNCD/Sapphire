@@ -190,7 +190,7 @@ struct PermissionStatusRowView: View {
             switch status {
             case .granted: Image(systemName: "checkmark.circle.fill").font(.title2).foregroundColor(.green)
             case .denied: Image(systemName: "xmark.circle.fill").font(.title2).foregroundColor(.red)
-            case .notRequested: Button("Request") { permissionsManager.requestPermission(permission.type) }.buttonStyle(.bordered).tint(.accentColor)
+            case .notRequested: Button("请求") { permissionsManager.requestPermission(permission.type) }.buttonStyle(.bordered).tint(.accentColor)
             }
             PermissionFeatureInfoButton(permission: permission)
                 .padding(.trailing, 4)
@@ -3071,7 +3071,7 @@ struct StatThresholdRow: View {
 
             if threshold.isEnabled {
                 HStack {
-                    Text("Threshold")
+                    Text("阈值")
                         .foregroundColor(.secondary)
                     Spacer()
                     Stepper(
@@ -3770,7 +3770,7 @@ struct LockScreenSettingsView: View {
                     .padding(.bottom)
 
                 VStack(alignment: .leading, spacing: 0) {
-                    Text("Wallpaper").font(.headline).padding([.top, .horizontal])
+                    Text("壁纸").font(.headline).padding([.top, .horizontal])
 
                     ToggleRow(
                         title: "Custom Lock Screen Wallpaper",
@@ -5398,7 +5398,7 @@ struct ProximityUnlockSettingsView: View {
     @ViewBuilder
     private var faceIDLocationSection: some View {
         VStack(alignment: .leading, spacing: 10) {
-            Text("Locations").font(.subheadline).bold().padding([.horizontal, .top])
+            Text("位置").font(.subheadline).bold().padding([.horizontal, .top])
 
             Picker("Face ID works", selection: $settings.settings.faceIDLocationPolicy) {
                 ForEach(FaceIDLocationPolicy.allCases) { policy in
@@ -6744,7 +6744,7 @@ struct HeroMetricsView: View {
                 MaterialStatChip(label: "电源", value: String(format: "%.1f W", abs(viewModel.powerConsumption)), color: MaterialChartPalette.warning, icon: "bolt.fill")
                 MaterialStatChip(label: "电压", value: String(format: "%.2f V", viewModel.voltage / 1000.0), color: MaterialChartPalette.tertiary, icon: "wave.3.right")
                 MaterialStatChip(label: "当前", value: String(format: "%.2f A", Double(abs(viewModel.amperage)) / 1000.0), color: MaterialChartPalette.primary, icon: "arrow.left.arrow.right")
-                MaterialStatChip(label: "Condition", value: viewModel.health, color: .pink, icon: "heart.text.square")
+                MaterialStatChip(label: "条件", value: viewModel.health, color: .pink, icon: "heart.text.square")
             }
             .frame(maxWidth: .infinity, alignment: .leading)
         }
@@ -7417,9 +7417,9 @@ struct BatteryHistoryView: View {
                 if let stats = summaryStats {
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 10) {
-                            StatPill(label: "Min", value: "\(stats.min)%", color: MaterialChartPalette.warning)
-                            StatPill(label: "Avg", value: "\(stats.avg)%", color: MaterialChartPalette.primary)
-                            StatPill(label: "Max", value: "\(stats.max)%", color: MaterialChartPalette.tertiary)
+                            StatPill(label: "最小", value: "\(stats.min)%", color: MaterialChartPalette.warning)
+                            StatPill(label: "平均", value: "\(stats.avg)%", color: MaterialChartPalette.primary)
+                            StatPill(label: "最大", value: "\(stats.max)%", color: MaterialChartPalette.tertiary)
                             if stats.avgTemp > 0 {
                                 StatPill(label: "温度", value: String(format: "%.0f°", stats.avgTemp), color: MaterialChartPalette.error)
                             }
@@ -9503,7 +9503,7 @@ struct EyeBreakSettingsView: View {
                     HStack {
                         Spacer()
 
-                        Button("Skip") {
+                        Button("跳过") {
                             eyeBreakManager.dismissBreak()
                         }
                         .buttonStyle(.plain)

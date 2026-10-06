@@ -528,7 +528,7 @@ struct MusicUpNextView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 3) {
-            Text("UP NEXT")
+            Text("接下来")
                 .font(.system(size: 7.5, weight: .heavy, design: .rounded))
                 .kerning(1.3)
                 .foregroundColor(.gray.opacity(0.9))
@@ -1068,7 +1068,7 @@ struct EyeBreakFullActivityView: View {
 
             VStack(alignment: .leading, spacing: 8) {
                 VStack(alignment: .leading, spacing: 2) {
-                    Text("Look Away")
+                    Text("看向远处")
                         .font(.system(size: 22, weight: .bold, design: .rounded))
 
                     Text("Focus 20ft away.")
@@ -1081,7 +1081,7 @@ struct EyeBreakFullActivityView: View {
                         eyeBreakManager.dismissBreak()
                         liveActivityManager.dismissCurrentActivity()
                     } label: {
-                        Text("Skip")
+                        Text("跳过")
                             .frame(maxWidth: .infinity)
                     }
                     .buttonStyle(EyeBreakPillButtonStyle(isProminent: false, isHovered: skipHovered))
@@ -1404,7 +1404,7 @@ struct TimerFinishedActivityView: View {
                         .frame(width: 46, height: 46)
 
                         VStack(alignment: .leading, spacing: 2) {
-                            Text("Timer")
+                            Text("计时器")
                                 .font(.system(size: 12, weight: .medium))
                                 .foregroundStyle(.secondary)
                             Text(timer.label)
@@ -1537,7 +1537,7 @@ struct NotificationLiveActivityView: View {
                     HStack {
                         Text(payload.title).font(.headline).fontWeight(.bold)
                         Spacer()
-                        Text("now").font(.caption).foregroundStyle(.secondary)
+                        Text("现在").font(.caption).foregroundStyle(.secondary)
                     }
                     if !payload.hasAudioAttachment && !payload.hasImageAttachment {
                         Text(payload.body).font(.subheadline).foregroundStyle(.secondary)
@@ -1648,7 +1648,7 @@ struct NotificationLiveActivityView: View {
     @ViewBuilder
     private var actionButtons: some View {
         HStack {
-            standardActionButton(title: "Dismiss", systemName: "xmark") {
+            standardActionButton(title: "关闭", systemName: "xmark") {
                 notificationManager.dismissLatestNotification()
             }
 
