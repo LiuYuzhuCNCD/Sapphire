@@ -55,7 +55,7 @@ struct OpenBubblesActivationView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 30) {
             VStack(alignment: .leading) {
-                Text("iMessage Registration")
+                Text("iMessage 注册")
                     .font(.largeTitle.bold())
                 Text("用于 OpenBubbles")
                     .font(.title2)
@@ -105,7 +105,7 @@ struct OpenBubblesActivationView: View {
             HStack(alignment: .top, spacing: 20) {
                 VStack {
                     if let hardwareQrImage {
-                        Image(hardwareQrImage, scale: 1.0, label: Text("Hardware Info QR Code"))
+                        Image(hardwareQrImage, scale: 1.0, label: Text("硬件信息二维码"))
                             .interpolation(.none).resizable().scaledToFit()
                             .clipShape(RoundedRectangle(cornerRadius: 8))
                     } else {

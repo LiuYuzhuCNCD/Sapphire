@@ -1229,7 +1229,7 @@ struct UpdateAvailableWidgetView: View {
             Button(action: openAboutSettings) {
                 HStack(spacing: 8) {
                     Image(systemName: "gearshape.fill")
-                    Text("Open About in Settings")
+                    Text("在设置中打开「关于」")
                         .fontWeight(.semibold)
                 }
                 .foregroundColor(.black)

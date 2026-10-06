@@ -220,7 +220,7 @@ private struct LockScreenCalendarInfoSlot: View {
                 HStack(spacing: LockScreenConfiguration.infoWidgetInternalHSpacing) {
                     Image(systemName: "calendar")
                         .font(.system(size: LockScreenConfiguration.infoWidgetIconFontSize))
-                    Text("No More Events Today")
+                    Text("今日已无更多日程")
                 }
                 .foregroundColor(.secondary)
                 .modifier(TransparentEffect())

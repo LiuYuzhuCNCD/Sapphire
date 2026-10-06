@@ -486,7 +486,7 @@ struct AppTogglesListView: View {
 
         VStack(alignment: .leading, spacing: 8) {
             if showSearch {
-                ClearableSearchField(placeholder: "Search installed apps", text: $query)
+                ClearableSearchField(placeholder: "搜索已安装应用", text: $query)
                 .padding(10)
                 .background(Color.white.opacity(0.06), in: RoundedRectangle(cornerRadius: 10, style: .continuous))
                 .padding(.horizontal)

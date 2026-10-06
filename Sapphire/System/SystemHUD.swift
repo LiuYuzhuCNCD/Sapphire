@@ -1284,7 +1284,7 @@ struct ExternalDeviceIndicatorHUD: View {
                         Capsule()
                             .fill(Color.gray.opacity(0.25))
                             .frame(height: 14)
-                            .overlay(Text("Volume Not Adjustable").font(.caption2).foregroundColor(.secondary))
+                            .overlay(Text("音量不可调节").font(.caption2).foregroundColor(.secondary))
                     }
                 }
 

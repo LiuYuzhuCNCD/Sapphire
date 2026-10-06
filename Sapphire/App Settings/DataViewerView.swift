@@ -98,7 +98,7 @@ struct DataViewerView: View {
                 .font(.system(size: 48))
                 .foregroundStyle(.secondary)
 
-            Text("No Data Collected Yet")
+            Text("尚未采集数据")
                 .font(.title2.bold())
 
             Text("启用监控以开始采集性能数据")

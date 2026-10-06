@@ -146,7 +146,7 @@ struct DeviceAdjustView: View {
                 Button(action: { NSWorkspace.shared.open(URL(fileURLWithPath: "/System/Applications/Utilities/Audio MIDI Setup.app")) }) {
                     HStack {
                         Image(systemName: "dial.min.fill")
-                        Text("Open Audio MIDI Setup").font(.system(size: 13, weight: .medium))
+                        Text("打开「音频 MIDI 设置」").font(.system(size: 13, weight: .medium))
                         Spacer()
                         Image(systemName: "arrow.up.right.square").opacity(0.5)
                     }

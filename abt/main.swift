@@ -55,7 +55,7 @@ struct airbattery: ParsableCommand {
     @Flag(name: .shortAndLong, help: "Including Nearcast devices")
     var nearcast: Bool = false
 
-    @Flag(name: .shortAndLong, help: "Print in JSON format")
+    @Flag(name: .shortAndLong, help: "以 JSON 格式打印")
     var json: Bool = false
 
     @Flag(name: .shortAndLong, help: "以 CSV 格式打印")

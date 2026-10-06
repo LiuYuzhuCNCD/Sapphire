@@ -1114,7 +1114,7 @@ private enum StorageScanner {
         }
         sizeBuckets.removeAll(keepingCapacity: false)
         guard !sampleCandidates.isEmpty else {
-            await progress(StorageScanProgress(state: .hashingDuplicates, fraction: 0.99, label: "No duplicate candidates"))
+            await progress(StorageScanProgress(state: .hashingDuplicates, fraction: 0.99, label: "没有重复候选"))
             return ([], [])
         }
 

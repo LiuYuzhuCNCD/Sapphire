@@ -166,7 +166,7 @@ private struct HelperInstallationStepView: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            Text("Install Helper Service")
+            Text("安装助手服务")
                 .font(.system(size: 32, weight: .bold, design: .rounded))
                 .padding(.top, 40).padding(.bottom, 10)
 
@@ -304,7 +304,7 @@ private struct PrivacyStepView: View {
                     )
 
                     PrivacySection(
-                        title: "Data We NEVER Collect",
+                        title: "我们绝不收集的数据",
                         content: "We are committed to your privacy. We DO NOT automatically collect, store, or transmit any personal or sensitive information. This includes, but is not limited to:\n• Your name, email, or other personal identifiers\n• Screen contents or keyboard input\n• Application data from other apps"
                     )
 
@@ -406,7 +406,7 @@ private struct SpotifySetupStepView: View {
             Text("Log in to enable enhanced features like liking tracks and skipping ads directly from the notch.").font(.title3).multilineTextAlignment(.center).foregroundColor(.secondary).padding(.horizontal)
             VStack(alignment: .center, spacing: 15) {
                 if musicManager.isPrivateAPIAuthenticated {
-                    HStack(spacing: 10) { Image(systemName: "checkmark.circle.fill").font(.title).foregroundColor(.green); Text("Logged in successfully!").font(.headline) }
+                    HStack(spacing: 10) { Image(systemName: "checkmark.circle.fill").font(.title).foregroundColor(.green); Text("登录成功！").font(.headline) }
                 } else {
                     Text("私有 API 登录").font(.headline)
                     Text("此方法对免费与高级用户均适用。请自行斟酌使用。").font(.caption).foregroundColor(.secondary).multilineTextAlignment(.center)
@@ -478,7 +478,7 @@ private struct BatterySetupStepView: View {
                     SettingsSwitch(isOn: $settings.settings.sailingModeEnabled)
                 }
 
-                ModernOnboardingRow(iconName: "thermometer.medium", iconColor: .red, title: "Enable Heat Protection", description: "电池过热时暂停充电。") {
+                ModernOnboardingRow(iconName: "thermometer.medium", iconColor: .red, title: "启用高温保护", description: "电池过热时暂停充电。") {
                     SettingsSwitch(isOn: $settings.settings.heatProtectionEnabled)
                 }
             }
@@ -530,7 +530,7 @@ private struct LockScreenSetupStepView: View {
                 .padding(.horizontal, 50)
 
             VStack(spacing: 15) {
-                ModernOnboardingRow(iconName: "lock.display", iconColor: .red, title: "Enable on Lock Screen", description: "Mac 锁屏时仍显示 Sapphire 的刘海与功能。") {
+                ModernOnboardingRow(iconName: "lock.display", iconColor: .red, title: "在锁屏启用", description: "Mac 锁屏时仍显示 Sapphire 的刘海与功能。") {
                     SettingsSwitch(isOn: $settings.settings.lockScreenShowNotch)
                 }
 
@@ -885,7 +885,7 @@ private struct OnboardingUpdateStatusView: View {
     var body: some View {
         Group {
             switch updateChecker.status {
-            case .checking: HStack(spacing: 8) { ProgressView().controlSize(.small); Text("Checking for updates...").foregroundStyle(.secondary) }
+            case .checking: HStack(spacing: 8) { ProgressView().controlSize(.small); Text("正在检查更新…").foregroundStyle(.secondary) }
             case .upToDate: HStack(spacing: 8) { Image(systemName: "checkmark.circle.fill").foregroundStyle(.green); Text("已是最新版本！").foregroundStyle(.secondary) }
             case .available(let version, _): VStack(spacing: 8) { Text("Version \(version) is available!").font(.headline); Link(destination: URL(string: "https://github.com/cshariq/Sapphire/releases")!) { Text("从 GitHub 下载") }.buttonStyle(.bordered).tint(.accentColor) }
             case .error(let message): HStack(spacing: 8) { Image(systemName: "xmark.octagon.fill").foregroundColor(.red); Text(message).foregroundStyle(.secondary).lineLimit(1) }

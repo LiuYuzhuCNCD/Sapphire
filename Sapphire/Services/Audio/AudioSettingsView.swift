@@ -114,7 +114,7 @@ struct AudioSettingsView: View {
                     Divider().padding(.leading, 20)
 
                     AudioResetRow(
-                        title: "Reset Device Settings",
+                        title: "重置设备设置",
                         subtitle: "清空所有设备的总音量、平衡、延迟与均衡器。",
                         buttonTitle: "Reset Devices",
                         buttonColor: .red

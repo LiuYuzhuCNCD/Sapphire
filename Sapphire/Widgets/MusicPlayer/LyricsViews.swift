@@ -439,7 +439,7 @@ struct LyricsView: View {
     }
 
     private var emptyLyricsView: some View {
-        Text("No lyrics available.")
+        Text("暂无歌词。")
             .font(.headline)
             .foregroundColor(.secondary)
     }

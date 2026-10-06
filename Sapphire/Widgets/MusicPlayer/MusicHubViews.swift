@@ -700,7 +700,7 @@ struct QueueAndPlaylistsView: View {
             materialExpressiveCard(title: "载入中…", systemImage: "arrow.clockwise", accent: MaterialChartPalette.primary) {
                 HStack(spacing: 8) {
                     ProgressView().controlSize(.small)
-                    Text("Connecting to Spotify…")
+                    Text("正在连接 Spotify…")
                         .font(.system(size: 11, weight: .medium, design: .rounded))
                         .foregroundStyle(.secondary)
                 }
@@ -4789,7 +4789,7 @@ struct GeminiApiKeysMissingView: View {
                 .font(.system(size: 40))
                 .symbolRenderingMode(.multicolor)
 
-            Text("Gemini API Key Missing")
+            Text("缺少 Gemini API 密钥")
                 .font(.title2).bold()
 
             Text("要使用 Gemini Live，请在 Sapphire 设置中填入 Google AI Studio 的 API 密钥。")

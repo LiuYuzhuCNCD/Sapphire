@@ -458,7 +458,7 @@ class Helper: NSObject, HelperProtocol {
                 writes = [(dischargeKey, Data(discharging ? [0x08] : [0x00]))]
             default:
                 logger.error("[SapphireHelper] ERROR: Unknown discharge key '\(dischargeKey)'.")
-                return makeError(code: .smcWriteFailed, description: "Unknown discharge key.")
+                return makeError(code: .smcWriteFailed, description: "未知的放电键。")
             }
 
             var succeeded = false
