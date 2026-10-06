@@ -32,10 +32,10 @@ enum InstalledAppUpdateSource: Equatable {
 
     var displayName: String {
         switch self {
-        case .none: return "No update source"
+        case .none: return "无更新来源"
         case .sparkle: return "Sparkle"
         case .appStore: return "Mac App Store"
-        case .keystone: return "Google Update"
+        case .keystone: return "Google 更新"
         case .electron(.github): return "electron-updater · GitHub"
         case .electron(.generic): return "electron-updater"
         case .homebrew: return "Homebrew"
@@ -44,9 +44,9 @@ enum InstalledAppUpdateSource: Equatable {
         case .jsonManifest: return "应用更新清单"
         case .visualStudioCode: return "Visual Studio Code Update"
         case .androidStudio: return "Android Studio 更新"
-        case .jetBrains: return "JetBrains Update"
-        case .microsoftEdge: return "Microsoft Edge Update"
-        case .github: return "GitHub Releases"
+        case .jetBrains: return "JetBrains 更新"
+        case .microsoftEdge: return "Microsoft Edge 更新"
+        case .github: return "GitHub 发行版"
         case .blender: return "Blender 发行版"
         case .selfUpdating: return "Self-updating"
         }

@@ -21,7 +21,7 @@ enum ArchiveExtractionMode: String, Codable, CaseIterable, Identifiable {
         switch self {
         case .smart: "Smart"
         case .folder: "始终存入同一文件夹"
-        case .inPlace: "In Place"
+        case .inPlace: "就地"
         }
     }
 }

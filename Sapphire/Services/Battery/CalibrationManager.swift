@@ -23,7 +23,7 @@ class CalibrationManager: ObservableObject {
 
         var description: String {
             switch self {
-            case .idle: return "Idle"
+            case .idle: return "空闲"
             case .chargingToFull: return "Step 1: Charging to 100%"
             case .holdingAtFull(let time): return "Step 2: Holding at 100% (\(time.formattedInterval()))"
             case .dischargingToLow: return "Step 3: Discharging to 10%"

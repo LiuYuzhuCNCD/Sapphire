@@ -27,11 +27,11 @@ enum SpotAPIError: Error, LocalizedError {
     var errorDescription: String? {
         switch self {
         case .authenticationFailed(let message): return "Authentication Failed: \(message)"
-        case .invalidResponse: return "Invalid response from Spotify server."
+        case .invalidResponse: return "Spotify 服务器返回无效响应。"
         case .decodingError(let error): return "Failed to decode data: \(error.localizedDescription)"
         case .missingData(let field): return "Missing required data: \(field)"
         case .urlConstructionFailed(let url): return "Failed to construct URL: \(url)"
-        case .loginCancelled: return "Login was cancelled by the user."
+        case .loginCancelled: return "登录已被用户取消。"
         case .connectionClosedUnexpectedly: return "The server closed the connection unexpectedly."
         case .apiError(let message): return "Spotify API Error: \(message)"
         case .rateLimited(let message): return "Spotify is rate limiting requests: \(message)"

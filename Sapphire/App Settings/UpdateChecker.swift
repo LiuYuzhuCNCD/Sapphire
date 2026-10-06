@@ -269,9 +269,9 @@ private enum UpdateMetadataError: LocalizedError {
             if let retry { return "GitHub rate-limited update checks. Retrying \(retry.formatted(date: .omitted, time: .shortened))." }
             return "GitHub rate-limited update checks. Sapphire will retry automatically."
         case .responseTooLarge: return "The update metadata was unexpectedly large."
-        case .emptyCache: return "No cached update information is available."
+        case .emptyCache: return "没有可用的缓存更新信息。"
         case .invalidMetadata: return "The update information could not be verified."
-        case .noEligibleRelease: return "No release is available for the selected channel."
+        case .noEligibleRelease: return "所选通道没有可用版本。"
         case .noEligibleAsset: return "This release does not include a trusted Sapphire ZIP for this Mac."
         }
     }

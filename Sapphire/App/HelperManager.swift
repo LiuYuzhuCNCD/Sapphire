@@ -31,9 +31,9 @@ enum HelperIssue: Equatable {
 
     var title: String {
         switch self {
-        case .spawnFailed: return "Helper cannot start"
-        case .needsApproval: return "Login Items approval required"
-        case .notFound: return "Helper registration missing"
+        case .spawnFailed: return "助手无法启动"
+        case .needsApproval: return "需要批准登录项"
+        case .notFound: return "缺少助手注册"
         }
     }
 
@@ -631,10 +631,10 @@ class HelperManager: ObservableObject {
 extension SMAppService.Status: CustomStringConvertible {
     public var description: String {
         switch self {
-        case .notRegistered: return "Not Registered"
+        case .notRegistered: return "未注册"
         case .enabled: return "已启用"
         case .requiresApproval: return "Requires Approval"
-        case .notFound: return "Not Found"
+        case .notFound: return "未找到"
         @unknown default: return "Unknown"
         }
     }

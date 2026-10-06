@@ -318,8 +318,8 @@ struct FileProgressLiveActivityView {
             let verb: String
             switch transferTask.sourceType {
             case .finder: verb = "正在复制…"
-            case .archiveExtraction: verb = "Extracting..."
-            case .dmgInstall: verb = "Installing..."
+            case .archiveExtraction: verb = "正在解压…"
+            case .dmgInstall: verb = "正在安装…"
             case .browserDownload, .manual: verb = "正在下载…"
             }
             if transferTask.sourceType == .finder {

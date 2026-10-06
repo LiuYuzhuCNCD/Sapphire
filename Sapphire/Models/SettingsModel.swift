@@ -32,7 +32,7 @@ public enum StatType: String, Codable, CaseIterable, Identifiable {
         switch self {
         case .cpu: return "CPU 占用"
         case .ram: return "RAM Usage"
-        case .gpu: return "GPU Usage"
+        case .gpu: return "GPU 占用"
         case .disk: return "磁盘活动"
         case .systemPower: return "系统功耗"
         case .batteryPower: return "电池放电"
@@ -79,7 +79,7 @@ enum WidgetSwitchTransition: String, Codable, CaseIterable, Identifiable {
     var displayName: String {
         switch self {
         case .slide: "Slide"
-        case .fade: "Fade"
+        case .fade: "渐隐"
         case .blurAndFade: "模糊渐隐"
         }
     }
@@ -195,17 +195,17 @@ enum WeatherInfoType: String, Codable, CaseIterable, Identifiable {
         case .temperature: "当前温度"
         case .condition: "天气状况图标"
         case .wind: "Wind"
-        case .humidity: "Humidity"
-        case .feelsLike: "Feels Like"
+        case .humidity: "湿度"
+        case .feelsLike: "体感温度"
         case .precipitation: "Precipitation"
         case .sunrise: "Sunrise"
         case .sunset: "Sunset"
         case .uvIndex: "UV Index"
         case .visibility: "Visibility"
         case .pressure: "Pressure"
-        case .locationName: "Location Name"
+        case .locationName: "位置名称"
         case .conditionDescription: "天气状况描述"
-        case .highLowTemp: "High / Low Temperature"
+        case .highLowTemp: "最高 / 最低温度"
         }
     }
 
@@ -220,7 +220,7 @@ enum FocusDisplayMode: String, Codable, CaseIterable, Identifiable {
     var displayName: String {
         switch self {
         case .full: "Show Full Name"
-        case .compact: "Icon Only (On/Off)"
+        case .compact: "仅图标（开/关）"
         }
     }
 }
@@ -521,8 +521,8 @@ enum NotchDisplayTarget: String, Codable, CaseIterable, Identifiable {
     var id: String { self.rawValue }
     var displayName: String {
         switch self {
-        case .macbookDisplay: "MacBook Display Only"
-        case .mainDisplay: "Main Display Only"
+        case .macbookDisplay: "仅 MacBook 屏幕"
+        case .mainDisplay: "仅主显示器"
         case .allDisplays: "所有显示器"
         }
     }
@@ -580,13 +580,13 @@ enum MusicLongPressAction: String, Codable, CaseIterable, Identifiable, Equatabl
 
     var displayName: String {
         switch self {
-        case .none: return "None (tap only)"
+        case .none: return "无（仅点按）"
         case .seek: return "Seek"
         case .shuffle: return "随机"
         case .repeatMode: return "循环"
         case .like: return "收藏"
         case .playPause: return "播放 / 暂停"
-        case .nextTrack: return "Next Track"
+        case .nextTrack: return "下一首"
         case .previousTrack: return "Previous Track"
         case .openQueue: return "Open Queue"
         case .openDevices: return "Open Devices"
@@ -1751,7 +1751,7 @@ enum ControlItemIconStyle: String, Codable, CaseIterable, Identifiable {
         case .chevron: return "尖角"
         case .arrow: return "箭头"
         case .dot: return "圆点"
-        case .line: return "Line"
+        case .line: return "线条"
         case .bracket: return "方括号"
         case .circle: return "圆形"
         case .triangle: return "Triangle"
@@ -2612,7 +2612,7 @@ enum LiveActivityType: String, Codable, CaseIterable, Identifiable, Equatable {
     var id: String { self.rawValue }
     var displayName: String {
         switch self {
-        case .music: "音乐"; case .weather: "天气"; case .calendar: "日历"; case .reminders: "提醒事项"; case .timers: "计时器"; case .battery: "电池"; case .eyeBreak: "护眼"; case .desktop: "桌面"; case .focus: "专注"; case .fileShelf: "文件架"; case .fileProgress: "File Progress"; case .stats: "Stats"; case .microphone: "Microphone"; case .devActivity: "开发者活动"; case .sports: "体育"; case .finance: "财经"
+        case .music: "音乐"; case .weather: "天气"; case .calendar: "日历"; case .reminders: "提醒事项"; case .timers: "计时器"; case .battery: "电池"; case .eyeBreak: "护眼"; case .desktop: "桌面"; case .focus: "专注"; case .fileShelf: "文件架"; case .fileProgress: "文件进度"; case .stats: "Stats"; case .microphone: "麦克风"; case .devActivity: "开发者活动"; case .sports: "体育"; case .finance: "财经"
         }
     }
 }
@@ -2627,8 +2627,8 @@ enum FocusIntensity: String, Codable, CaseIterable, Identifiable {
 
     var displayName: String {
         switch self {
-        case .minimal: return "Minimal"
-        case .gentle: return "Gentle"
+        case .minimal: return "极简"
+        case .gentle: return "轻柔"
         case .standard: return "Standard"
         case .strict: return "Strict"
         }
@@ -2797,8 +2797,8 @@ enum MicrophoneLiveActivityBehavior: String, Codable, CaseIterable, Identifiable
 
     var displayName: String {
         switch self {
-        case .iconOnly: return "Icon Only"
-        case .iconAndGesture: return "Icon + Gesture"
+        case .iconOnly: return "仅图标"
+        case .iconAndGesture: return "图标 + 手势"
         }
     }
 }
@@ -2828,10 +2828,10 @@ enum GeneralSettingType: String, CaseIterable, Identifiable, Equatable {
     var id: String { self.rawValue }
     var displayName: String {
         switch self {
-        case .expandOnHover: "Expand on Hover"
+        case .expandOnHover: "悬停自动展开"
         case .swipeToSwitchWidgets: "Swipe to Switch Widgets"
         case .enableOpeningBounce: "打开组件时弹跳"
-        case .capsLockHorizontalLock: "Lock Cursor Horizontally with Caps Lock"
+        case .capsLockHorizontalLock: "大写锁定时锁定光标横移"
         }
     }
     var systemImage: String {
@@ -2867,7 +2867,7 @@ enum NotchButtonType: String, Codable, Identifiable, Equatable {
         case .intelligence: "Blip"; case .intelligenceLive: "Gemini";
         case .focusSession: "专注";
         case .caffeine: "防休眠"; case .spacer: "Spacer";
-        case .multiAudio: "Multi-Audio (Beta)"; case .battery: "电池"; case .pin: "Pin"
+        case .multiAudio: "多音频（测试版）"; case .battery: "电池"; case .pin: "Pin"
         }
     }
 
@@ -3060,39 +3060,39 @@ enum SettingsSection: String, CaseIterable, Identifiable {
 
     var shortDescription: String {
         switch self {
-        case .general: "Core app behavior, launch options, animations, and notch controls."
+        case .general: "应用核心行为、启动选项、动画与刘海控制。"
         case .systemEnhance: "Window previews, app switching, dock controls, and display behavior."
         case .apps: "Review installed applications, inspect bundle details, and safely move unwanted apps to Trash."
         case .storage: "Find large folders and reclaim space with transparent, user-approved cleanup."
-        case .widgets: "Choose which widgets appear in the notch and how they are ordered."
+        case .widgets: "选择刘海中出现哪些组件及其排序。"
         case .liveActivities: "Control which live activities can surface and auto-expand in the notch."
         case .appearance: "Tune the notch look, materials, colors, and layout styling."
-        case .lockScreen: "Configure Sapphire content and behavior while your Mac is locked."
+        case .lockScreen: "配置 Mac 锁屏时 Sapphire 的内容与行为。"
         case .bluetoothUnlock: "Set up proximity-based authentication and trusted device behavior."
-        case .shortcuts: "Manage quick actions and shortcut surfaces shown in Sapphire."
+        case .shortcuts: "管理 Sapphire 中显示的快捷操作与快捷面板。"
         case .keyboardShortcuts: "Reference page listing every keyboard shortcut in Sapphire — global hotkeys, snap zones, and in-app shortcuts."
-        case .snapZones: "Configure window snapping behavior, layouts, and zone actions."
+        case .snapZones: "配置窗口吸附行为、布局与区域操作。"
         case .audio: "音频调节、均衡器与分应用音量调节。"
         case .battery: "Battery widgets, history, charging preferences, and power-related controls."
-        case .bluetooth: "Bluetooth device integrations, visibility, and connection behavior."
+        case .bluetooth: "蓝牙设备整合、可见性与连接行为。"
         case .hud: "Heads-up display overlays for volume, brightness, keyboard, and media feedback."
-        case .notifications: "Choose which system notifications Sapphire mirrors or enhances."
-        case .neardrop: "Nearby sharing preferences, transfers, and device discovery options."
+        case .notifications: "选择 Sapphire 镜像或增强哪些系统通知。"
+        case .neardrop: "附近共享偏好、传输与设备发现选项。"
         case .continuity: "Pair an Android phone for clipboard, notifications, media, battery, and Instant Hotspot."
-        case .fileShelf: "Manage temporary file storage, drag targets, and shelf behavior."
+        case .fileShelf: "管理临时文件存储、拖放目标与文件架行为。"
         case .notes: "Quick notes widget, click-to-expand behavior, and notch bar access."
-        case .clipboard: "Clipboard history, monitoring, and notch clipboard shortcuts."
+        case .clipboard: "剪贴板历史、监控与刘海剪贴板快捷方式。"
         case .emoji: "Slack-style emoji typing with :shortcode: suggestions and a full search picker."
-        case .mouse: "Mouse and trackpad scroll, acceleration, and button customization."
+        case .mouse: "鼠标与触控板的滚动、加速与按键自定义。"
         case .monitoring: "Menu bar readouts and notifications for CPU, memory, disk, and network."
         case .devActivity: "Track AI agents, builds, and terminal commands, and keep the Mac awake while they run."
         case .archives: "Extract ZIP, RAR, 7-Zip, TAR, and other archives — or auto-mount and install disk images (DMGs) — from anywhere."
         case .mirror: "Mirror widget showing live camera feed, with expandable fullscreen view."
         case .caffeine: "Keep your Mac awake, clamshell sleep behavior, and lid-angle display controls."
-        case .music: "Music widget sources, playback controls, and media integrations."
+        case .music: "音乐组件来源、播放控制与媒体整合。"
         case .weather: "Weather widget data sources, units, and location-based behavior."
         case .calendar: "Calendar and reminder integrations shown in widgets and live activities."
-        case .eyeBreak: "Break reminders, timing, and focus nudges for healthier screen habits."
+        case .eyeBreak: "休息提醒、计时与专注提示，养成更健康的用屏习惯。"
         case .focusSession: "Session-style focus mode with timers, app/website blocking, and session history."
         case .appLock: "Lock apps behind Touch ID or password — blur overlays, idle/sleep auto-lock, and auto-close."
         case .intelligence: "Sapphire Blip — Mac agent with memory, skills, tools, and computer use."

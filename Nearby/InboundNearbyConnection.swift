@@ -147,7 +147,7 @@ class InboundNearbyConnection: NearbyConnection {
     }
 
     private func processConnectionRequestFrame(_ frame: Location_Nearby_Connections_OfflineFrame) throws {
-        guard frame.hasV1, frame.v1.hasConnectionRequest, frame.v1.connectionRequest.hasEndpointInfo, case .connectionRequest = frame.v1.type else { throw NearbyError.protocolError("Invalid connection request frame") }
+        guard frame.hasV1, frame.v1.hasConnectionRequest, frame.v1.connectionRequest.hasEndpointInfo, case .connectionRequest = frame.v1.type else { throw NearbyError.protocolError("无效的连接请求帧") }
         print("[\(id)] Processing connection request")
         let endpointInfo=frame.v1.connectionRequest.endpointInfo; guard endpointInfo.count>17 else { throw NearbyError.protocolError("Endpoint info too short") }
         let nameLen=Int(endpointInfo[17]); guard endpointInfo.count>=nameLen+18 else { throw NearbyError.protocolError("Endpoint info too short for name") }

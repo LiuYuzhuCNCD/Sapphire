@@ -372,7 +372,7 @@ enum FileProviderError: Error, LocalizedError {
     case loadingFailed, noValidURLFound, duplicationFailed(Error)
     var errorDescription: String? {
         switch self {
-        case .loadingFailed: return "Failed to load data from the item provider."
+        case .loadingFailed: return "无法从项目提供程序载入数据。"
         case .noValidURLFound: return "无法从拖入的项目中获取有效的文件地址。"
         case .duplicationFailed(let e): return "Failed to copy the file: \(e.localizedDescription)"
         }

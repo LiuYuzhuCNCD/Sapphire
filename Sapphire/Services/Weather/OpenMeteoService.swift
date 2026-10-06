@@ -139,10 +139,10 @@ enum OpenMeteoServiceError: LocalizedError {
 
     var errorDescription: String? {
         switch self {
-        case .invalidURL:              return "Invalid Open-Meteo URL."
+        case .invalidURL:              return "Open-Meteo 地址无效。"
         case .networkError(let e):     return e.localizedDescription
         case .decodingError(let e):    return "Failed to parse Open-Meteo response: \(e.localizedDescription)"
-        case .noData:                  return "No data from Open-Meteo."
+        case .noData:                  return "Open-Meteo 未返回数据。"
         }
     }
 }
@@ -316,8 +316,8 @@ final class OpenMeteoService {
     private func uvDescription(_ uv: Double) -> String {
         switch uv {
         case ..<3:   return "低"
-        case ..<6:   return "Moderate"
-        case ..<8:   return "High"
+        case ..<6:   return "适中"
+        case ..<8:   return "高"
         case ..<11:  return "Very High"
         default:     return "Extreme"
         }

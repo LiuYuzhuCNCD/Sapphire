@@ -1618,7 +1618,7 @@ struct SystemHUDSlimActivityView {
          switch type {
          case .volume: return "音量"
          case .brightness, .multiDisplayBrightness: return "亮度"
-         case .keyboardBrightness: return "Keyboard Brightness"
+         case .keyboardBrightness: return "键盘背光亮度"
          case .externalDeviceVolume(let deviceName, _, _, _, let isControllingExternal, _):
              return isControllingExternal ? deviceName : "Volume"
          case .appVolume(let appName, _, _): return appName

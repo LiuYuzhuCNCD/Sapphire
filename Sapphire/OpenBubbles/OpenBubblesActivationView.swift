@@ -40,8 +40,8 @@ struct OpenBubblesActivationView: View {
 
     private var buttonTitle: String {
         switch buttonState {
-        case .idle: return "Generate One-Time Activation Code"
-        case .processing: return "Generating..."
+        case .idle: return "生成一次性激活码"
+        case .processing: return "正在生成…"
         case .success: return "Succeeded!"
         case .error: return "发生错误"
         }

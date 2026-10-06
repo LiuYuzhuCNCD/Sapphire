@@ -428,7 +428,7 @@ private struct UniversalTransferRowView: View {
         switch task.sourceType {
         case .finder: return "正在复制"
         case .archiveExtraction: return "正在解压"
-        case .dmgInstall: return "Installing"
+        case .dmgInstall: return "正在安装"
         case .browserDownload, .manual: return "正在下载"
         }
     }

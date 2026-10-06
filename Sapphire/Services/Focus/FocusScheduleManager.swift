@@ -22,7 +22,7 @@ enum FocusScheduleRepeat: String, Codable, CaseIterable, Identifiable {
         case .weekdays: return "Weekdays"
         case .weekly: return "Weekly"
         case .custom: return "Specific days"
-        case .monthly: return "Monthly"
+        case .monthly: return "每月"
         }
     }
 }

@@ -71,18 +71,18 @@ enum EQPreset: String, CaseIterable, Identifiable {
         case .podcast: return "播客"
         case .spokenWord: return "Spoken Word"
         case .loudness: return "响度"
-        case .lateNight: return "Late Night"
+        case .lateNight: return "深夜"
         case .smallSpeakers: return "Small Speakers"
         case .rock: return "摇滚"
         case .pop: return "Pop"
         case .electronic: return "电子"
-        case .jazz: return "Jazz"
+        case .jazz: return "爵士"
         case .classical: return "古典"
         case .hipHop: return "嘻哈"
         case .rnb: return "R&B"
         case .deep: return "深"
         case .acoustic: return "原声"
-        case .movie: return "Movie"
+        case .movie: return "影视"
         }
     }
 

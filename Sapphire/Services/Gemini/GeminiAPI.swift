@@ -59,8 +59,8 @@ enum GeminiLiveError: LocalizedError {
         case .websocketError(let msg): return "WebSocket error: \(msg)"
         case .apiError(let msg): return "Gemini Live API error: \(msg)"
         case .disconnected: return "已断开 Gemini Live"
-        case .invalidMessage: return "Invalid message from server"
-        case .setupTimeout: return "Gemini Live setup timed out"
+        case .invalidMessage: return "来自服务器的无效消息"
+        case .setupTimeout: return "Gemini Live 设置超时"
         }
     }
 }

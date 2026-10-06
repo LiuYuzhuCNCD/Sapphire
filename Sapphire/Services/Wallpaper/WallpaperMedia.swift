@@ -60,8 +60,8 @@ enum WallpaperScaling: String, Codable, CaseIterable, Identifiable {
 
     var displayName: String {
         switch self {
-        case .fill: return "Fill Screen"
-        case .fit: return "Fit to Screen"
+        case .fill: return "铺满屏幕"
+        case .fit: return "适应屏幕"
         case .stretch: return "Stretch to Fill"
         }
     }
@@ -107,7 +107,7 @@ enum LiveWallpaperPlaybackMode: String, Codable, CaseIterable, Identifiable {
         switch self {
         case .always: return "持续播放"
         case .adaptive: return "自适应"
-        case .never: return "Never Playing"
+        case .never: return "从不播放"
         }
     }
 

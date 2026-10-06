@@ -295,9 +295,9 @@ final class AutoEQFetcher {
 
         var errorDescription: String? {
             switch self {
-            case .invalidURL: return "Invalid profile URL"
+            case .invalidURL: return "配置文件的地址无效"
             case .profileNotFound(let name): return "Profile not found: \(name)"
-            case .invalidData: return "Invalid profile data"
+            case .invalidData: return "配置文件数据无效"
             case .parseFailed(let name): return "Failed to parse profile: \(name)"
             }
         }

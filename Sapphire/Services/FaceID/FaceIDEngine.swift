@@ -38,7 +38,7 @@ enum RegistrationStep: Equatable {
     case scanning, askExtended, finalizing
     var instruction: String {
         switch self {
-        case .scanning: return "Look straight at the camera to begin."
+        case .scanning: return "请直视摄像头开始。"
         case .askExtended: return "基础注册完成。"
         case .finalizing: return "Securing your face profile..."
         }
@@ -71,12 +71,12 @@ enum FacePoseBucket: String, CaseIterable {
         case .center: return "把脸对准中央"
         case .left: return "Slowly turn left"
         case .right: return "Slowly turn right"
-        case .up: return "Look slightly up"
-        case .down: return "Look slightly down"
+        case .up: return "稍微向上看"
+        case .down: return "稍微向下看"
         case .tiltLeft: return "Tilt head left"
         case .tiltRight: return "Tilt head right"
-        case .closer: return "Move closer"
-        case .farther: return "Move further back"
+        case .closer: return "再靠近一些"
+        case .farther: return "再退后一些"
         }
     }
 
