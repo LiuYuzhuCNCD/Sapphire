@@ -25,7 +25,6 @@ jobs:
 
       - name: 编译（Release，不签名）
         run: |
-          set -o pipefail
           xcodebuild \
             -project Sapphire.xcodeproj \
             -scheme Sapphire \
@@ -35,7 +34,15 @@ jobs:
             CODE_SIGNING_REQUIRED=NO \
             CODE_SIGN_IDENTITY="" \
             EXCLUDED_SOURCE_FILE_NAMES="" \
-            build 2>&1 | tail -80
+            build > /tmp/build.log 2>&1
+          STATUS=$?
+          echo "==================== 编译错误（去重）===================="
+          grep -E "error: " /tmp/build.log | sed 's|/Users/runner/work/Sapphire/Sapphire/||' | sort -u | head -60
+          echo "==================== 错误上下文 ===================="
+          grep -B4 -A6 "error: " /tmp/build.log | sed 's|/Users/runner/work/Sapphire/Sapphire/||' | head -140
+          echo "==================== 日志结尾 ===================="
+          tail -15 /tmp/build.log
+          exit $STATUS
 
       - name: 定位产物
         if: always()
