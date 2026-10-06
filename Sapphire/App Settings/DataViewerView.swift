@@ -73,7 +73,7 @@ struct DataViewerView: View {
                 .font(.system(size: 48))
                 .foregroundStyle(.orange)
 
-            Text("Failed to Load Data")
+            Text("载入数据失败")
                 .font(.title2.bold())
 
             Text(message)

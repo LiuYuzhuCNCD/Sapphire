@@ -151,7 +151,7 @@ struct DevActivitySettingsView: View {
 
     private var supportedToolsSection: some View {
         VStack(alignment: .leading, spacing: 10) {
-            Text("How Detection Works")
+            Text("检测原理")
                 .font(.system(size: 14, weight: .medium))
 
             Text("""

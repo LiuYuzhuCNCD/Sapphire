@@ -28,7 +28,7 @@ class CalibrationManager: ObservableObject {
             case .holdingAtFull(let time): return "Step 2: Holding at 100% (\(time.formattedInterval()))"
             case .dischargingToLow: return "Step 3: Discharging to 10%"
             case .finalChargeToLimit: return "Step 4: Recharging to original limit"
-            case .done: return "Calibration Complete"
+            case .done: return "校准完成"
             case .error(let msg): return "Error: \(msg)"
             }
         }

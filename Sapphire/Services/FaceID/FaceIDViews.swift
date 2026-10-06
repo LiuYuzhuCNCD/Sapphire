@@ -233,7 +233,7 @@ struct FaceIDRegistrationView: View {
                                 .font(.system(size: 42))
                                 .foregroundStyle(.blue)
 
-                            Text("Basic Setup Complete")
+                            Text("基础设置完成")
                                 .font(.headline)
                                 .foregroundColor(.primary)
 

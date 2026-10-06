@@ -281,7 +281,7 @@ private struct PrivacyStepView: View {
                 .font(.system(size: 48, weight: .bold))
                 .foregroundStyle(.indigo)
 
-            Text("Your Privacy Matters")
+            Text("你的隐私很重要")
                 .font(.system(size: 32, weight: .bold, design: .rounded))
 
             Text("我们坚持透明。请阅读下方的数据处理说明。")
@@ -520,7 +520,7 @@ private struct LockScreenSetupStepView: View {
     var body: some View {
         VStack(spacing: 20) {
             Spacer()
-            Text("Lock Screen Features")
+            Text("锁屏功能")
                 .font(.system(size: 32, weight: .bold, design: .rounded))
 
             Text("用刘海区的实时活动与组件增强 Mac 锁屏。")
@@ -535,7 +535,7 @@ private struct LockScreenSetupStepView: View {
                 }
 
                 VStack(spacing: 15) {
-                    ModernOnboardingRow(iconName: "timer", iconColor: .cyan, title: "Show Live Activities", description: "显示计时器、音乐等。") {
+                    ModernOnboardingRow(iconName: "timer", iconColor: .cyan, title: "显示实时活动", description: "显示计时器、音乐等。") {
                         SettingsSwitch(isOn: $settings.settings.lockScreenLiveActivityEnabled)
                     }
 
@@ -887,7 +887,7 @@ private struct OnboardingUpdateStatusView: View {
             switch updateChecker.status {
             case .checking: HStack(spacing: 8) { ProgressView().controlSize(.small); Text("Checking for updates...").foregroundStyle(.secondary) }
             case .upToDate: HStack(spacing: 8) { Image(systemName: "checkmark.circle.fill").foregroundStyle(.green); Text("已是最新版本！").foregroundStyle(.secondary) }
-            case .available(let version, _): VStack(spacing: 8) { Text("Version \(version) is available!").font(.headline); Link(destination: URL(string: "https://github.com/cshariq/Sapphire/releases")!) { Text("Download from GitHub") }.buttonStyle(.bordered).tint(.accentColor) }
+            case .available(let version, _): VStack(spacing: 8) { Text("Version \(version) is available!").font(.headline); Link(destination: URL(string: "https://github.com/cshariq/Sapphire/releases")!) { Text("从 GitHub 下载") }.buttonStyle(.bordered).tint(.accentColor) }
             case .error(let message): HStack(spacing: 8) { Image(systemName: "xmark.octagon.fill").foregroundColor(.red); Text(message).foregroundStyle(.secondary).lineLimit(1) }
             default: EmptyView()
             }

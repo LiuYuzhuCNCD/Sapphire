@@ -29,7 +29,7 @@ struct AudioSettingsView: View {
                         .padding([.top, .horizontal])
 
                     CompactToggleRow(
-                        title: "Multi-Audio in Notch",
+                        title: "刘海中的多音频",
                         description: "在展开的刘海显示分应用混音器。",
                         isOn: Binding(
                             get: { settings.settings.notchButtonOrder.contains(.multiAudio) },

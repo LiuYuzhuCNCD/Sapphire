@@ -423,7 +423,7 @@ class Helper: NSObject, HelperProtocol {
             writes = [(chargeKey, Data(enabled ? [0x00, 0x00, 0x00, 0x00] : [0x01, 0x00, 0x00, 0x00]))]
         default:
             logger.error("[SapphireHelper] ERROR: Unknown charge key '\(chargeKey)'.")
-            reply(makeError(code: .smcWriteFailed, description: "Unknown charge key."))
+            reply(makeError(code: .smcWriteFailed, description: "未知的充电键。"))
             return
         }
 

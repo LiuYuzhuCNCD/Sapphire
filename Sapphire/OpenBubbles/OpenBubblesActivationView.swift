@@ -66,7 +66,7 @@ struct OpenBubblesActivationView: View {
                 HStack(spacing: 12) {
                     Image(systemName: "bubble.left.and.bubble.right.fill")
                         .font(.title).foregroundStyle(.blue)
-                    Text("What is OpenBubbles?").font(.headline)
+                    Text("什么是 OpenBubbles？").font(.headline)
                 }
                 Text("OpenBubbles is a free, open-source project that brings iMessage, FaceTime, and other Apple services to Android, Windows, and Linux. This tool generates a registration code using your Mac's hardware identifiers, allowing other devices to connect directly to Apple's services.")
                     .font(.subheadline).foregroundStyle(.secondary)
@@ -268,7 +268,7 @@ struct AppDownloadQrView: View {
             Text("用手机相机扫描此二维码，即可前往下载页。")
                 .font(.headline).multilineTextAlignment(.center).foregroundStyle(.secondary).padding(.horizontal)
             if let qrImage {
-                Image(qrImage, scale: 1.0, label: Text("App Download QR Code"))
+                Image(qrImage, scale: 1.0, label: Text("应用下载二维码"))
                     .interpolation(.none).resizable().scaledToFit().frame(width: 250, height: 250)
                     .background(Color.white).padding(10).clipShape(RoundedRectangle(cornerRadius: 16))
             } else {

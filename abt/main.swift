@@ -58,7 +58,7 @@ struct airbattery: ParsableCommand {
     @Flag(name: .shortAndLong, help: "Print in JSON format")
     var json: Bool = false
 
-    @Flag(name: .shortAndLong, help: "Print in CSV format")
+    @Flag(name: .shortAndLong, help: "以 CSV 格式打印")
     var csv: Bool = false
 
     mutating func validate() throws {

@@ -1699,7 +1699,7 @@ struct AddToPlaylistMenuView: View {
             if isCheckingMembership {
                 HStack(spacing: 6) {
                     ProgressView().controlSize(.mini)
-                    Text("Checking playlists…")
+                    Text("正在检查播放列表…")
                         .font(.system(size: 11, weight: .medium, design: .rounded))
                         .foregroundStyle(.secondary)
                 }
