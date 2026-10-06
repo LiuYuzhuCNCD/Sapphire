@@ -1,0 +1,63 @@
+name: build-zh
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main, zh-cn ]
+
+jobs:
+  build:
+    runs-on: macos-latest
+    timeout-minutes: 150
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 环境信息
+        run: |
+          ls /Applications | grep -i xcode || true
+          xcodebuild -version || true
+          swift --version || true
+          echo "CPU: $(sysctl -n machdep.cpu.brand_string 2>/dev/null || uname -m)"
+
+      - name: 解析 SwiftPM 依赖
+        run: |
+          xcodebuild -resolvePackageDependencies -project Sapphire.xcodeproj -scheme Sapphire
+
+      - name: 编译（Release，不签名）
+        run: |
+          set -o pipefail
+          xcodebuild \
+            -project Sapphire.xcodeproj \
+            -scheme Sapphire \
+            -configuration Release \
+            -derivedDataPath build \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGN_IDENTITY="" \
+            build 2>&1 | tail -80
+
+      - name: 定位产物
+        if: always()
+        run: |
+          echo "=== 找 .app ==="
+          find build -name "*.app" -maxdepth 6 -print || true
+          find ~/Library/Developer/Xcode/DerivedData -name "*.app" -maxdepth 6 -print 2>/dev/null | head || true
+
+      - name: 打包
+        if: success()
+        run: |
+          APP=$(find build -name "Sapphire.app" -maxdepth 6 | head -1)
+          echo "APP=$APP"
+          if [ -z "$APP" ]; then echo "未找到 Sapphire.app"; exit 1; fi
+          mkdir -p out
+          ditto -c -k --sequesterRsrc --keepParent "$APP" out/Sapphire-zh-unsigned.zip
+          ls -lh out/
+
+      - name: 上传产物
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Sapphire-zh-unsigned
+          path: out/Sapphire-zh-unsigned.zip
+          retention-days: 14
+          if-no-files-found: error
