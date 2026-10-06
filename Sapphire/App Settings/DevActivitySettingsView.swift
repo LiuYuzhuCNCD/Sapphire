@@ -72,7 +72,7 @@ struct DevActivitySettingsView: View {
             Divider().padding(.leading, 20)
 
             ToggleRow(
-                title: "Terminal Commands",
+                title: "终端命令",
                 description: "Anything long-running you started in Terminal, iTerm, Warp, Ghostty, or an editor's built-in terminal. Watchers and dev servers are ignored, since they never finish.",
                 isOn: kindBinding(.command, keyPath: \.devActivityKinds)
             )
@@ -91,7 +91,7 @@ struct DevActivitySettingsView: View {
     private var whatIsRunningSection: some View {
         VStack(alignment: .leading, spacing: 0) {
             HStack {
-                Text("Detected Right Now")
+                Text("当前检测到")
                     .font(.system(size: 14, weight: .medium))
                 Spacer()
                 Button("刷新") { monitor.refreshNow() }
@@ -133,7 +133,7 @@ struct DevActivitySettingsView: View {
 
             VStack(alignment: .leading, spacing: 4) {
                 CustomSliderRowView(
-                    label: "Sensitivity",
+                    label: "灵敏度",
                     value: $settings.settings.devActivitySensitivity,
                     range: 0.4...2.0,
                     specifier: "%.1f×"
@@ -264,7 +264,7 @@ struct CaffeineAutoTaskSettingsView: View {
 
                 HStack {
                     VStack(alignment: .leading, spacing: 2) {
-                        Text("Currently Detected")
+                        Text("当前检测到")
                         Text(runningSummary)
                             .font(.caption)
                             .foregroundStyle(.secondary)
@@ -287,7 +287,7 @@ struct CaffeineAutoTaskSettingsView: View {
                 Divider().padding(.leading, 20)
 
                 ToggleRow(
-                    title: "Terminal Commands",
+                    title: "终端命令",
                     description: "Off by default — not every long command is worth holding the display on for.",
                     isOn: kindBinding(.command)
                 )

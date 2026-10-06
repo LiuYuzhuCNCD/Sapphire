@@ -42,7 +42,7 @@ struct PlaneEditorView: View {
                 }
 
                 HStack {
-                    Text("Keyboard Shortcut")
+                    Text("键盘快捷键")
                     Spacer()
                     Button(action: {
                         if shortcutRecorder.isRecording {

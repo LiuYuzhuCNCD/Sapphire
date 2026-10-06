@@ -1859,7 +1859,7 @@ struct CalibrationActivityView: View {
                     .font(.system(size: 24, weight: .bold))
                     .foregroundStyle(.cyan)
 
-                Text("Battery Calibration")
+                Text("电池校准")
                     .font(.system(size: 22, weight: .bold, design: .rounded))
             }
 

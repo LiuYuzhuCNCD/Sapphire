@@ -460,14 +460,14 @@ struct SystemEnhanceSettingsView: View {
 
                 VStack(alignment: .leading, spacing: 0) {
                     Text("输入行为").font(.headline).padding([.top, .horizontal])
-                    ToggleRow(title: "Paste as Plain Text", description: "用 ⌘V 粘贴时移除文本格式。", isOn: $settings.settings.systemEnhancePasteAsPlainTextEnabled)
+                    ToggleRow(title: "粘贴为纯文本", description: "用 ⌘V 粘贴时移除文本格式。", isOn: $settings.settings.systemEnhancePasteAsPlainTextEnabled)
                     if settings.settings.systemEnhancePasteAsPlainTextEnabled {
                         Divider().padding(.leading, 20)
                         ToggleRow(title: "移除链接", description: "从粘贴文本中移除网址。", isOn: $settings.settings.systemEnhancePasteAsPlainStripLinks)
                         Divider().padding(.leading, 20)
                         ToggleRow(title: "移除表情符号", description: "从粘贴文本中移除表情符号。", isOn: $settings.settings.systemEnhancePasteAsPlainStripEmojis)
                         Divider().padding(.leading, 20)
-                        ToggleRow(title: "Remove List Markers", description: "Remove bullets and numbered markers such as •, -, and 1. from list items.", isOn: $settings.settings.systemEnhancePasteAsPlainStripListMarkers)
+                        ToggleRow(title: "移除列表符号", description: "Remove bullets and numbered markers such as •, -, and 1. from list items.", isOn: $settings.settings.systemEnhancePasteAsPlainStripListMarkers)
                     }
                 }.modifier(SettingsContainerModifier())
 
@@ -517,7 +517,7 @@ struct SystemEnhanceSettingsView: View {
                         }
                         if settings.settings.systemEnhanceQuitProtectionMode == .doublePress {
                             Divider().padding(.leading, 20)
-                            CustomSliderRowView(label: "Double Press Window", value: $settings.settings.systemEnhanceQuitProtectionDoublePressInterval, range: 0.2...1.5, specifier: "%.2fs").padding(.horizontal)
+                            CustomSliderRowView(label: "双击时间窗", value: $settings.settings.systemEnhanceQuitProtectionDoublePressInterval, range: 0.2...1.5, specifier: "%.2fs").padding(.horizontal)
                         }
                         if settings.settings.systemEnhanceQuitProtectionMode == .extraModifier {
                             Divider().padding(.leading, 20)
@@ -1611,7 +1611,7 @@ struct GeneralSettingsView: View {
                     Divider().padding(.leading, 20)
 
                     ToggleRow(
-                        title: "Swipe to Hide Notch",
+                        title: "上滑隐藏刘海",
                         description: "When the notch is collapsed, swipe up over it to hide it completely. Swipe down near the notch area to bring it back.",
                         isOn: $settings.settings.swipeToHideNotch
                     )
@@ -1679,7 +1679,7 @@ struct GeneralSettingsView: View {
 
                 }
 
-                SettingsCard(title: "Widget Transitions", description: "Control the visual effects when switching between widgets inside the expanded notch.") {
+                SettingsCard(title: "组件动画", description: "Control the visual effects when switching between widgets inside the expanded notch.") {
 
                     Toggle("Enable Fade Effect", isOn: $settings.settings.enableWidgetSwitchFade)
                         .padding()
@@ -1740,8 +1740,8 @@ struct GeneralSettingsView: View {
                                 AnimationSliderRow(title: "收起响应", description: "Closing the main widget view.", value: $settings.settings.customAnimationConfiguration.collapseResponse, range: 0.1...1.0)
                                 AnimationSliderRow(title: "收起阻尼", description: "", value: $settings.settings.customAnimationConfiguration.collapseDamping, range: 0.4...1.0)
                                 Divider()
-                                AnimationSliderRow(title: "Swipe Open Response", description: "用触控板滑动打开组件。", value: $settings.settings.customAnimationConfiguration.swipeOpenResponse, range: 0.1...1.0)
-                                AnimationSliderRow(title: "Swipe Open Damping", description: "", value: $settings.settings.customAnimationConfiguration.swipeOpenDamping, range: 0.4...1.0)
+                                AnimationSliderRow(title: "滑动打开响应", description: "用触控板滑动打开组件。", value: $settings.settings.customAnimationConfiguration.swipeOpenResponse, range: 0.1...1.0)
+                                AnimationSliderRow(title: "滑动打开阻尼", description: "", value: $settings.settings.customAnimationConfiguration.swipeOpenDamping, range: 0.4...1.0)
                             }
 
                             Group {
@@ -1750,7 +1750,7 @@ struct GeneralSettingsView: View {
                                 AnimationSliderRow(title: "悬停阻尼", description: "", value: $settings.settings.customAnimationConfiguration.hoverDamping, range: 0.4...1.0)
                                 Divider()
                                 AnimationSliderRow(title: "Auto-Expand Response", description: "实时活动自动出现时。", value: $settings.settings.customAnimationConfiguration.autoExpandResponse, range: 0.1...1.0)
-                                AnimationSliderRow(title: "Auto-Expand Damping", description: "", value: $settings.settings.customAnimationConfiguration.autoExpandDamping, range: 0.4...1.0)
+                                AnimationSliderRow(title: "自动展开阻尼", description: "", value: $settings.settings.customAnimationConfiguration.autoExpandDamping, range: 0.4...1.0)
                             }
 
                             Group {
@@ -1972,22 +1972,22 @@ struct CustomNotchConfigView: View {
                     }
 
                     Section(header: Text("悬停状态").font(.headline)) {
-                        CustomSliderRowView(label: "Hover Scale Factor", value: $scaleFactor, range: 1.0...1.5, specifier: "%.2f x")
+                        CustomSliderRowView(label: "悬停缩放系数", value: $scaleFactor, range: 1.0...1.5, specifier: "%.2f x")
                     }
 
                     Section(header: Text("圆角半径").font(.headline)) {
                         CustomSliderRowView(label: "初始", value: $initialCornerRadius, range: 5...50, specifier: "%.1f")
                         CustomSliderRowView(label: "悬停展开", value: $hoverExpandedCornerRadius, range: 10...60, specifier: "%.1f")
-                        CustomSliderRowView(label: "Auto-Expanded", value: $autoExpandedCornerRadius, range: 10...60, specifier: "%.1f")
+                        CustomSliderRowView(label: "自动展开", value: $autoExpandedCornerRadius, range: 10...60, specifier: "%.1f")
                         CustomSliderRowView(label: "点击展开", value: $clickExpandedCornerRadius, range: 10...60, specifier: "%.1f")
                         CustomSliderRowView(label: "Live Activity Bottom", value: $liveActivityBottomCornerRadius, range: 10...60, specifier: "%.1f")
                     }
 
-                    Section(header: Text("Animation (Springs)").font(.headline)) {
+                    Section(header: Text("动画（弹性）").font(.headline)) {
                         CustomSliderRowView(label: "展开响应", value: $expandAnimationResponse, range: 0.1...1.0, specifier: "%.2f")
                         CustomSliderRowView(label: "展开阻尼", value: $expandAnimationDamping, range: 0.1...1.0, specifier: "%.2f")
-                        CustomSliderRowView(label: "Swipe Open Response", value: $swipeOpenAnimationResponse, range: 0.1...1.0, specifier: "%.2f")
-                        CustomSliderRowView(label: "Swipe Open Damping", value: $swipeOpenAnimationDamping, range: 0.1...1.0, specifier: "%.2f")
+                        CustomSliderRowView(label: "滑动打开响应", value: $swipeOpenAnimationResponse, range: 0.1...1.0, specifier: "%.2f")
+                        CustomSliderRowView(label: "滑动打开阻尼", value: $swipeOpenAnimationDamping, range: 0.1...1.0, specifier: "%.2f")
                         CustomSliderRowView(label: "收起响应", value: $collapseAnimationResponse, range: 0.1...1.0, specifier: "%.2f")
                         CustomSliderRowView(label: "收起阻尼", value: $collapseAnimationDamping, range: 0.1...1.0, specifier: "%.2f")
                     }
@@ -2504,7 +2504,7 @@ struct ClipboardSettingsView: View {
                             SettingsSectionHeader(title: "清理链接", description: "Strip tracking parameters (utm_*, fbclid, gclid, …) from copied links automatically. Images, files and rich text pass through untouched.")
 
                             ToggleRow(
-                                title: "Clean Copied Links",
+                                title: "清理复制的链接",
                                 description: "Rewrite copied URLs without their tracking parameters.",
                                 isOn: $settings.settings.clipboardCleanURLEnabled
                             )
@@ -2525,7 +2525,7 @@ struct ClipboardSettingsView: View {
                 VStack(alignment: .leading, spacing: 0) {
                     PremiumFeatureView(feature: .clipboardAdvancedTools) {
                         VStack(alignment: .leading, spacing: 0) {
-                            SettingsSectionHeader(title: "Finder Cut & Paste", description: "⌘X then ⌘V moves copied files instead of copying them, ⌘V pastes copied images as PNG files into the front Finder folder, and F2 renames the selected item.")
+                            SettingsSectionHeader(title: "访达剪切与粘贴", description: "⌘X then ⌘V moves copied files instead of copying them, ⌘V pastes copied images as PNG files into the front Finder folder, and F2 renames the selected item.")
 
                             ToggleRow(
                                 title: "Enable Finder Shortcuts",
@@ -2948,7 +2948,7 @@ struct LiveActivitiesSettingsView: View {
                 .animation(.default, value: settings.settings.hideLiveActivityInFullScreen)
 
                 VStack(alignment: .leading, spacing: 0) {
-                    Text("Persistent Activity").font(.headline).padding([.top, .horizontal])
+                    Text("常驻活动").font(.headline).padding([.top, .horizontal])
 
                     InfoContainer(
                         text: "Choose one activity to be displayed persistently when no other higher-priority activity is active.",
@@ -2957,9 +2957,9 @@ struct LiveActivitiesSettingsView: View {
                     ).padding()
 
                     HStack {
-                        Text("Persistent Activity")
+                        Text("常驻活动")
                         Spacer()
-                        Picker("Persistent Activity", selection: persistentActivityBinding) {
+                        Picker("常驻活动", selection: persistentActivityBinding) {
                             ForEach(PersistentActivitySelection.allCases) { option in
                                 Text(option.rawValue).tag(option)
                             }
@@ -3100,7 +3100,7 @@ fileprivate struct SensorSelectionView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            Text("Stats Configuration").font(.headline).padding([.top, .horizontal])
+            Text("统计配置").font(.headline).padding([.top, .horizontal])
 
             DisclosureGroup("Select high-level stats") {
                 VStack(spacing: 0) {
@@ -3130,7 +3130,7 @@ fileprivate struct SensorSelectionView: View {
                 if allSensors.isEmpty {
                     VStack {
                         ProgressView()
-                        Text("Loading sensors...")
+                        Text("正在载入传感器…")
                             .foregroundColor(.secondary)
                             .padding(.top, 8)
                     }
@@ -3201,7 +3201,7 @@ struct ShortcutsSettingsView: View {
 
                     VStack {
                         if settings.settings.selectedShortcuts.isEmpty {
-                            Text("No shortcuts added.")
+                            Text("尚未添加快捷键。")
                                 .font(.caption).foregroundColor(.secondary)
                                 .frame(maxWidth: .infinity, minHeight: 60, alignment: .center)
                         } else {
@@ -3224,7 +3224,7 @@ struct ShortcutsSettingsView: View {
                 .modifier(SettingsContainerModifier())
 
                 VStack(alignment: .leading, spacing: 10) {
-                    Text("Available Shortcuts")
+                    Text("可用快捷键")
                         .font(.headline).padding(.horizontal)
 
                     TextField("Search Shortcuts", text: $searchText)
@@ -3516,7 +3516,7 @@ fileprivate struct IconPickerView: View {
             "laptopcomputer"
         ]),
 
-        IconSection(title: "Communication", symbols: [
+        IconSection(title: "通信", symbols: [
             "envelope.fill", "envelope", "envelope.open.fill", "envelope.open", "tray.fill", "tray",
             "tray.and.arrow.up.fill", "tray.and.arrow.up", "tray.and.arrow.down.fill", "tray.and.arrow.down",
             "paperplane.fill", "paperplane", "message.fill", "message", "bubble.left.fill", "bubble.left",
@@ -3600,7 +3600,7 @@ fileprivate struct IconPickerView: View {
             "circles.hexagongrid.fill", "circles.hexagongrid", "bell.badge.fill", "bell.badge"
         ]),
 
-        IconSection(title: "Accessibility", symbols: [
+        IconSection(title: "辅助功能", symbols: [
             "figure.walk.circle.fill", "figure.walk.circle", "figure.roll", "ear.and.waveform", "ear.fill",
             "hand.raised.fingers.spread.fill", "hand.raised.fingers.spread",
             "character.cursor.ibeam",
@@ -3901,7 +3901,7 @@ struct LockScreenSettingsView: View {
                         Divider().padding(.leading, 20)
 
                         ToggleRow(
-                            title: "Hide When Inactive",
+                            title: "非活动时隐藏",
                             description: "Only show widgets like Music, Calendar, or Focus when they are active.",
                             isOn: $settings.settings.lockScreenHideInactiveInfoWidgets
                         )
@@ -4178,7 +4178,7 @@ struct SnapZonesSettingsView: View {
     var body: some View {
         ScrollView {
             LazyVStack(alignment: .leading, spacing: 25) {
-                Text("Snap Zones & Planes")
+                Text("吸附区域与平面")
                     .font(.system(size: 32, weight: .bold))
                     .padding(.bottom, 5)
 
@@ -4218,10 +4218,10 @@ struct SnapZonesSettingsView: View {
 
                     VStack(alignment: .leading, spacing: 8) {
                         HStack {
-                            Text("Reposition & Resize")
+                            Text("移动与调整大小")
                                 .font(.system(size: 14, weight: .medium))
                             Spacer()
-                            Picker("Reposition & Resize", selection: $settings.settings.snapWindowAnimation) {
+                            Picker("移动与调整大小", selection: $settings.settings.snapWindowAnimation) {
                                 ForEach(SnapWindowAnimation.allCases) { animation in
                                     Text(animation.displayName).tag(animation)
                                 }
@@ -4242,7 +4242,7 @@ struct SnapZonesSettingsView: View {
 
                 VStack(alignment: .leading, spacing: 0) {
                     HStack {
-                        Text("Global Widget Style").font(.headline)
+                        Text("全局组件样式").font(.headline)
                         Spacer()
                         Picker("Widget View Style", selection: $settings.settings.snapZoneViewMode) {
                             ForEach(SnapZoneViewMode.allCases) { mode in
@@ -4619,7 +4619,7 @@ fileprivate struct SnapZoneShortcutLayoutView: View {
                             if shortcutRecorder.isRecording && shortcutRecorder.recordingIdentifier == identifier {
                                 ProgressView()
                                     .controlSize(.small)
-                                Text("Recording...")
+                                Text("录音中…")
                             } else if let zoneShortcut {
                                 Image(systemName: "keyboard")
                                 Text("\(KeyboardShortcutHelper.description(for: zoneShortcut.modifiers))\(zoneShortcut.key)")
@@ -5016,7 +5016,7 @@ struct NotificationsSettingsView: View {
                 VStack(spacing: 20) {
 
                     VStack(alignment: .leading, spacing: 0) {
-                        Text("Verification Codes")
+                        Text("验证码")
                             .font(.headline)
                             .padding([.top, .horizontal])
 
@@ -5069,7 +5069,7 @@ struct NotificationsSettingsView: View {
                             .padding([.top, .horizontal])
 
                         ToggleRow(
-                            title: "Enable Smart Inbox",
+                            title: "启用智能收件箱",
                             description: "不依赖 AI 的邮件功能：验证码识别与快递追踪。",
                             isOn: $settings.settings.smartInboxEnabled
                         )
@@ -5575,7 +5575,7 @@ struct ProximityUnlockSettingsView: View {
                     ScrollView {
                         LazyVStack(spacing: 0) {
                             if authManager.scannedDevices.isEmpty && authManager.isScanning {
-                                Text("Scanning...").font(.caption).foregroundColor(.secondary).frame(minHeight: 80)
+                                Text("扫描中…").font(.caption).foregroundColor(.secondary).frame(minHeight: 80)
                             } else if filteredScannedDevices.isEmpty {
                                  Text(showUnnamedDevices ? "No devices found. Ensure device is nearby and discoverable." : "No named devices found. Try enabling 'Show unnamed devices'.")
                                      .font(.caption).foregroundColor(.secondary).frame(minHeight: 80).padding(.horizontal).multilineTextAlignment(.center)
@@ -5600,7 +5600,7 @@ struct ProximityUnlockSettingsView: View {
     private var sensitivitySection: some View {
         VStack(alignment: .leading, spacing: 10) {
             HStack {
-                Text("Sensitivity").font(.subheadline).bold()
+                Text("灵敏度").font(.subheadline).bold()
                 if authManager.selectedDeviceID != nil {
                     Spacer()
                     let rssiString = authManager.lastRSSI.map { "\($0) dBm" } ?? "N/A"
@@ -5649,8 +5649,8 @@ struct ProximityUnlockSettingsView: View {
     private var pairingStatusView: some View {
         HStack(spacing: 4) {
             switch authManager.monitoredPeripheralState {
-            case .connected: Image(systemName: "checkmark.shield.fill").foregroundColor(.green); Text("Paired & Monitoring")
-            case .connecting: ProgressView().scaleEffect(0.5); Text("Connecting...")
+            case .connected: Image(systemName: "checkmark.shield.fill").foregroundColor(.green); Text("已配对并监控中")
+            case .connecting: ProgressView().scaleEffect(0.5); Text("正在连接…")
             case .disconnecting: Image(systemName: "xmark.shield.fill").foregroundColor(.gray); Text("正在断开…")
             case .disconnected: Image(systemName: "xmark.shield.fill").foregroundColor(.red); Text("超出范围")
             @unknown default: Image(systemName: "questionmark.circle.fill").foregroundColor(.gray); Text("未知状态")
@@ -5737,7 +5737,7 @@ fileprivate struct FindDeviceByDistanceWizard: View {
             case 1: step1
             case 2: step2
             case 3: step3
-            default: Text("An error occurred.")
+            default: Text("发生错误。")
             }
         }
         .frame(width: 450, height: 400)
@@ -5889,7 +5889,7 @@ fileprivate struct CalibrateRSSIView: View {
             case 1: step1Near
             case 2: step2Far
             case 3: step3Results
-            default: Text("An error occurred.")
+            default: Text("发生错误。")
             }
         }
         .frame(width: 450, height: 400)
@@ -6198,7 +6198,7 @@ struct FanControlSheetView: View {
             Picker("Control Mode", selection: $selectedMode) {
                 Text("自动").tag(0)
                 Text("固定转速").tag(1)
-                Text("Sensor-based").tag(2)
+                Text("基于传感器").tag(2)
                 Text("自定义曲线").tag(3)
             }
             .pickerStyle(.segmented)
@@ -6355,7 +6355,7 @@ struct CalibrationView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            Text("Battery Calibration").font(.headline).padding([.top, .horizontal])
+            Text("电池校准").font(.headline).padding([.top, .horizontal])
             InfoContainer(
                 text: "Calibrating your battery helps macOS get a more accurate reading of its health and time remaining. This process can take several hours and involves a full charge and discharge cycle. Sleeping will be disabled during calibration.",
                 iconName: "gauge.high",
@@ -6489,7 +6489,7 @@ struct LidAngleCaffeineSettingsView: View {
             if settings.settings.lidAngleMuteAudioEnabled {
                 Divider().padding(.leading, 20)
                 CustomSliderRowView(
-                    label: "Mute Audio Trigger",
+                    label: "静音音频触发",
                     value: $settings.settings.lidAngleMuteAudioTrigger,
                     range: 0...140,
                     specifier: "%.0f°"
@@ -6639,7 +6639,7 @@ struct DateRangePickerView: View {
 
     private var customDatePickerView: some View {
         VStack(spacing: 15) {
-            Text("Select Custom Range")
+            Text("选择自定义范围")
                 .font(.headline)
 
             DatePicker("Start Date", selection: $customStartDate, in: ...customEndDate, displayedComponents: .date)
@@ -6740,7 +6740,7 @@ struct HeroMetricsView: View {
                 MaterialStatChip(label: "剩余时间", value: viewModel.timeRemaining, color: MaterialChartPalette.primary, icon: "clock.fill")
                 MaterialStatChip(label: "健康", value: "\(viewModel.maxCapacityPercentage)%", color: Color.pink, icon: "heart.fill")
                 MaterialStatChip(label: "循环", value: "\(viewModel.cycleCount)", color: MaterialChartPalette.secondary, icon: "arrow.triangle.2.circlepath")
-                MaterialStatChip(label: "Temperature", value: String(format: "%.1f°C", viewModel.temperature), color: MaterialChartPalette.error, icon: "thermometer.medium")
+                MaterialStatChip(label: "温度", value: String(format: "%.1f°C", viewModel.temperature), color: MaterialChartPalette.error, icon: "thermometer.medium")
                 MaterialStatChip(label: "电源", value: String(format: "%.1f W", abs(viewModel.powerConsumption)), color: MaterialChartPalette.warning, icon: "bolt.fill")
                 MaterialStatChip(label: "电压", value: String(format: "%.2f V", viewModel.voltage / 1000.0), color: MaterialChartPalette.tertiary, icon: "wave.3.right")
                 MaterialStatChip(label: "当前", value: String(format: "%.2f A", Double(abs(viewModel.amperage)) / 1000.0), color: MaterialChartPalette.primary, icon: "arrow.left.arrow.right")
@@ -7269,7 +7269,7 @@ struct TemperatureGraphCard: View {
 
     var body: some View {
         BatteryMetricGraphCard(
-            title: "Temperature",
+            title: "温度",
             currentValue: String(format: "%.1f °C", viewModel.temperature),
             color: MaterialChartPalette.error,
             chartData: historyViewModel.chartData.filter { $0.temperature > 0 },
@@ -7474,7 +7474,7 @@ struct BatteryHistoryView: View {
             legendChip(label: "使用电池时", color: MaterialChartPalette.warning)
             legendChip(label: "低", color: MaterialChartPalette.error)
             Spacer(minLength: 0)
-            Text("Line color = status")
+            Text("线条颜色＝状态")
                 .font(.system(size: 10, weight: .medium, design: .rounded))
                 .foregroundStyle(MaterialChartPalette.onSurfaceVariant.opacity(0.75))
         }
@@ -7871,7 +7871,7 @@ struct PowerAdapterSpecsCard: View {
             HStack {
                 Image(systemName: "powerplug.fill")
                     .foregroundStyle(MaterialChartPalette.onSurfaceVariant)
-                Text("Power Adapter Specs")
+                Text("电源适配器参数")
                     .font(.system(size: 15, weight: .semibold, design: .rounded))
             }
 
@@ -7903,7 +7903,7 @@ struct PowerAdapterSpecsCard: View {
                 }
 
                 if !info.manufacturer.isEmpty && info.manufacturer != "N/A" {
-                    SpecRow(label: "Manufacturer", value: info.manufacturer)
+                    SpecRow(label: "制造商", value: info.manufacturer)
                 }
 
                 if !info.serialNumber.isEmpty && info.serialNumber != "N/A" {
@@ -8089,7 +8089,7 @@ struct BatteryConfigurationView: View {
 
     @ViewBuilder private var automaticDischargeSection: some View {
         VStack(alignment: .leading, spacing: 0) {
-            Text("Automatic Discharge").font(.headline).padding([.top, .horizontal])
+            Text("自动放电").font(.headline).padding([.top, .horizontal])
             ToggleRow(
                 title: "Enable Automatic Discharge",
                 description: "When enabled, your Mac will stop using AC power and run from its battery until the battery limit is reached.",
@@ -8117,7 +8117,7 @@ struct BatteryConfigurationView: View {
 
     @ViewBuilder private var schedulingSection: some View {
         VStack(alignment: .leading, spacing: 0) {
-            Text("Scheduling").font(.headline).padding([.top, .horizontal])
+            Text("计划安排").font(.headline).padding([.top, .horizontal])
             InfoContainer(text: "Automate charging behaviors and perform manual or scheduled calibrations to keep your battery's readings accurate.", iconName: "calendar.badge.clock", color: .cyan).padding()
             Divider().padding(.horizontal)
             HStack {
@@ -8157,7 +8157,7 @@ struct OneTimeDischargeView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            Text("One-Time Discharge").font(.headline).padding([.top, .horizontal])
+            Text("单次放电").font(.headline).padding([.top, .horizontal])
             InfoContainer(
                 text: "Temporarily discharge to a specific percentage. This will not affect your main charge limit or automatic discharge settings.",
                 iconName: "target",
@@ -8240,7 +8240,7 @@ struct ScheduleView: View {
 
     var body: some View {
         VStack(spacing: 20) {
-            Text("Schedule Automation").font(.largeTitle.bold())
+            Text("计划自动化").font(.largeTitle.bold())
 
             VStack {
                 HStack {
@@ -8250,7 +8250,7 @@ struct ScheduleView: View {
                 }.padding([.horizontal, .top])
 
                 if settings.settings.scheduledTasks.isEmpty {
-                    Text("No tasks scheduled.").foregroundColor(.secondary).padding()
+                    Text("没有计划任务。").foregroundColor(.secondary).padding()
                 } else {
                     List {
                         ForEach($settings.settings.scheduledTasks) { $task in
@@ -8317,7 +8317,7 @@ struct AddTaskView: View {
 
     var body: some View {
         VStack(spacing: 20) {
-            Text("New Scheduled Task").font(.title.bold())
+            Text("新建计划任务").font(.title.bold())
 
             VStack(spacing: 15) {
                 Picker("Action:", selection: $newTask.action) {
@@ -8437,7 +8437,7 @@ struct HUDSettingsView: View {
                     Divider().padding(.leading, 20)
                     ToggleRow(title: "显示百分比", description: "", isOn: $settings.settings.hudShowPercentage)
                     Divider().padding(.leading, 20)
-                    ToggleRow(title: "Show Function Name", description: "Display the HUD name (e.g. Volume, Brightness, Spotify) when the thin style is enabled.", isOn: $settings.settings.hudShowFunctionName)
+                    ToggleRow(title: "显示功能名称", description: "Display the HUD name (e.g. Volume, Brightness, Spotify) when the thin style is enabled.", isOn: $settings.settings.hudShowFunctionName)
 
                     if pillStyleEnabled {
                         Divider().padding(.leading, 20)
@@ -8704,7 +8704,7 @@ struct HUDSettingsView: View {
                         Divider()
 
                         CustomSliderRowView(
-                            label: "Max XDR Brightness",
+                            label: "最高 XDR 亮度",
                             value: xdrBrightnessLevelBinding,
                             range: 100...Double(getDeviceMaxBrightness() * 100),
                             specifier: "%.0f%%"
@@ -8794,7 +8794,7 @@ struct MusicSettingsView: View {
 
                 VStack(alignment: .leading, spacing: 0) {
                     Text("手势").font(.headline).padding([.top, .horizontal])
-                    ToggleRow(title: "Swipe Left to Skip", description: "In the music live activity, swipe left on the album art to go to the next track.", isOn: $settings.settings.swipeToSkipMusic)
+                    ToggleRow(title: "左滑跳过", description: "In the music live activity, swipe left on the album art to go to the next track.", isOn: $settings.settings.swipeToSkipMusic)
                     Divider().padding(.leading, 20)
                     ToggleRow(title: "Swipe Right to Rewind", description: "在专辑封面上右滑即可回到上一首。", isOn: $settings.settings.swipeToRewindMusic)
                     Divider().padding(.leading, 20)
@@ -8857,7 +8857,7 @@ struct MusicSettingsView: View {
                     Divider().padding(.leading, 20)
                     HStack { Text("Waveform is volume sensitive"); Spacer(); SettingsSwitch(isOn: $settings.settings.musicWaveformIsVolumeSensitive) }.padding()
                     Divider().padding(.leading, 20)
-                    Text("Waveform Appearance").font(.headline).padding([.top, .horizontal])
+                    Text("波形外观").font(.headline).padding([.top, .horizontal])
                     ToggleRow(title: "启用渐变", description: "依据专辑封面为波形应用渐变色彩。", isOn: $settings.settings.waveformUseGradient)
                     Divider().padding(.leading, 20)
                     ToggleRow(title: "Use Static Waveform", description: "Show a non-animating waveform when music is playing.", isOn: $settings.settings.useStaticWaveform)
@@ -9007,7 +9007,7 @@ VStack(alignment: .leading, spacing: 8) {
                     ToggleRow(title: "Show Lyrics in Live Activity", description: "有同步歌词时显示。", isOn: $settings.settings.showLyricsInLiveActivity)
                     if settings.settings.showLyricsInLiveActivity {
                         Divider().padding(.leading, 20)
-                        ToggleRow(title: "Enable Translation", description: "自动翻译非英文歌词。", isOn: $settings.settings.enableLyricTranslation)
+                        ToggleRow(title: "启用翻译", description: "自动翻译非英文歌词。", isOn: $settings.settings.enableLyricTranslation)
                         HStack {
                             Text("翻译为"); Spacer()
                             Picker("", selection: $settings.settings.lyricTranslationLanguage) { Text("英语").tag("en"); Text("西班牙语").tag("es"); Text("法语").tag("fr") }.labelsHidden().frame(width: 150)
@@ -9053,7 +9053,7 @@ VStack(alignment: .leading, spacing: 8) {
 
                 if settings.settings.showLyricsInLiveActivity {
                     VStack(alignment: .leading, spacing: 10) {
-                        Text("Allow Lyrics From:").font(.headline).padding([.horizontal, .top])
+                        Text("允许歌词来源：").font(.headline).padding([.horizontal, .top])
                         AppTogglesListView(
                             isEnabled: { app in binding(for: app, isBrowser: app.isBrowser) },
                             maxHeight: 360,
@@ -9293,7 +9293,7 @@ struct CalendarSettingsView: View {
 
                 VStack(spacing: 0) {
                     HStack {
-                        Text("Show All-Day Events")
+                        Text("显示全天事件")
                         Spacer()
                         Toggle("", isOn: $settings.settings.calendarShowAllDayEvents)
                             .labelsHidden().toggleStyle(.switch)
@@ -9361,7 +9361,7 @@ struct EyeBreakRecommendationsView: View {
                     )
 
                     recommendationCard(
-                        title: "Adjust Your Screen",
+                        title: "调整你的屏幕",
                         description: "Position your monitor about an arm's length away and adjust the angle of the screen so that the top it is at or slightly below eye level. This reduces strain on your neck and eyes.",
                         icon: "display",
                         color: .green
@@ -9575,7 +9575,7 @@ struct EyeBreakSettingsView: View {
 
     private var configurationSection: some View {
         VStack(alignment: .leading, spacing: 0) {
-            Text("Configuration").font(.headline).padding([.top, .horizontal])
+            Text("配置").font(.headline).padding([.top, .horizontal])
 
             HStack {
                 VStack(alignment: .leading, spacing: 8) {
@@ -9655,7 +9655,7 @@ struct EyeBreakSettingsView: View {
 
     private var statisticsSection: some View {
         VStack(alignment: .leading, spacing: 10) {
-            Text("Activity Statistics").font(.headline).padding([.top, .horizontal])
+            Text("活动统计").font(.headline).padding([.top, .horizontal])
             if settings.settings.showEyeBreakGraph {
                 EyeBreakGraphView(summaries: eyeBreakManager.dailySummaries)
                     .environmentObject(settings)
@@ -9777,7 +9777,7 @@ struct EyeBreakGraphView: View {
             )
 
             MetricCardView(
-                title: "Compliance",
+                title: "合规性",
                 value: "\(Int((summaries.first?.complianceRate ?? 0) * 100))%",
                 icon: "checkmark.circle",
                 color: complianceColor,
@@ -10041,7 +10041,7 @@ struct NeardropSettingsView: View {
 
                     VStack(spacing: 0) {
                         HStack {
-                            Text("Enable Nearby Share")
+                            Text("启用附近共享")
                                 .font(.system(size: 14, weight: .medium))
                             Spacer()
                             SettingsSwitch(isOn: $settings.settings.neardropEnabled)
@@ -10059,7 +10059,7 @@ struct NeardropSettingsView: View {
 
                         VStack(alignment: .leading, spacing: 15) {
                             VStack(alignment: .leading, spacing: 8) {
-                                Text("Device Display Name")
+                                Text("设备显示名称")
                                     .font(.system(size: 14, weight: .medium))
                                     .foregroundStyle(.white)
 
@@ -10532,7 +10532,7 @@ struct AboutSettingsView: View {
             .modifier(SettingsContainerModifier())
 
             VStack(alignment: .leading, spacing: 0) {
-                Text("Update Preferences")
+                Text("更新偏好")
                     .font(.headline)
                     .padding([.horizontal, .top])
                 ToggleRow(
@@ -10629,7 +10629,7 @@ struct ModernUpdateStatusView: View {
                         .font(.system(size: 24, weight: .bold))
                         .foregroundStyle(.green)
                         .symbolEffect(.bounce, value: upToDateAnimationTrigger)
-                    Text("You are up to date!")
+                    Text("已是最新版本！")
                         .foregroundStyle(.secondary)
                     if canShowReleaseNotes {
                         releaseNotesButton
@@ -10682,7 +10682,7 @@ struct ModernUpdateStatusView: View {
                 .transition(.opacity)
             case .downloaded:
                 VStack(spacing: 12) {
-                    Text("Download Complete!")
+                    Text("下载完成！")
                         .font(.system(size: 16, weight: .bold))
                     Button(action: { updateChecker.installAndRelaunch() }) {
                         HStack(spacing: 8) {
@@ -11180,7 +11180,7 @@ struct MenuBarHidingSettingsView: View {
             if settings.settings.menuBarEnabled {
                 VStack(alignment: .leading, spacing: 0) {
 
-                    Text("Control Item Icons").font(.headline).padding([.top, .horizontal])
+                    Text("控制项图标").font(.headline).padding([.top, .horizontal])
                     Text("选择主控制项图标样式。").font(.caption).foregroundColor(.secondary).padding(.horizontal).padding(.bottom, 10)
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 12) {
@@ -11221,7 +11221,7 @@ struct MenuBarHidingSettingsView: View {
                 }.modifier(SettingsContainerModifier())
 
                 VStack(alignment: .leading, spacing: 0) {
-                    Text("Auto-Rehide").font(.headline).padding([.top, .horizontal])
+                    Text("自动重新隐藏").font(.headline).padding([.top, .horizontal])
                     ToggleRow(title: "Automatically Rehide Items", description: "显示后自动隐藏项目", isOn: $settings.settings.autoRehide)
                     if settings.settings.autoRehide {
                         Divider().padding(.leading, 20)
@@ -12438,7 +12438,7 @@ struct FocusSessionSettingsView: View {
 
     private var schedulingSection: some View {
         VStack(alignment: .leading, spacing: 0) {
-            sectionLabel("Scheduling")
+            sectionLabel("计划安排")
             Text("Auto-start a focus session at a set time of day — daily, on specific days of the week, weekly, monthly, or once.")
                 .font(.caption)
                 .foregroundColor(.secondary)
@@ -12581,7 +12581,7 @@ struct FocusSessionSettingsView: View {
                         .foregroundColor(.white)
                         .frame(width: 20, height: 20)
                         .background(Color.white.opacity(0.1), in: RoundedRectangle(cornerRadius: 5))
-                    Text("Blocking Intensity")
+                    Text("屏蔽强度")
                         .font(.system(size: 12, weight: .semibold))
                 }
                 .padding(.top, 10).padding(.horizontal, 16).padding(.bottom, 6)
@@ -12758,7 +12758,7 @@ struct FocusSessionSettingsView: View {
                 .padding(.top, 4)
                 .padding(.bottom, 8)
 
-            ToggleRow(title: "Dim Inactive Apps", description: "Darken windows you're not using so the active app stands out and visual clutter recedes.", isOn: $settings.settings.focusDimInactiveApps)
+            ToggleRow(title: "变暗非活动应用", description: "Darken windows you're not using so the active app stands out and visual clutter recedes.", isOn: $settings.settings.focusDimInactiveApps)
             if settings.settings.focusDimInactiveApps {
                 Divider().opacity(0.3).padding(.horizontal, 16)
                 HStack {
@@ -12778,7 +12778,7 @@ struct FocusSessionSettingsView: View {
             ToggleRow(title: "隐藏壁纸", description: "Cover the desktop wallpaper and icons with black for the duration of the session.", isOn: $settings.settings.focusHideWallpaper)
 
             Divider().opacity(0.3).padding(.horizontal, 16)
-            ToggleRow(title: "Limit Visible Apps", description: "Keep only a few apps on screen; switching to another tucks the oldest one away (restored when the session ends).", isOn: $settings.settings.focusAppLimitEnabled)
+            ToggleRow(title: "限制可见应用数", description: "Keep only a few apps on screen; switching to another tucks the oldest one away (restored when the session ends).", isOn: $settings.settings.focusAppLimitEnabled)
             if settings.settings.focusAppLimitEnabled {
                 Divider().opacity(0.3).padding(.horizontal, 16)
                 HStack {
@@ -13154,7 +13154,7 @@ private struct AddFocusScheduleView: View {
 
     var body: some View {
         VStack(spacing: 20) {
-            Text("New Focus Schedule")
+            Text("新建专注日程")
                 .font(.title.bold())
 
             VStack(spacing: 16) {

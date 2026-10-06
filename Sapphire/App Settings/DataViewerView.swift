@@ -138,7 +138,7 @@ struct DataViewerView: View {
             HStack(spacing: 20) {
                 StatCard(
                     icon: "chart.bar.fill",
-                    title: "Total Data Points",
+                    title: "数据点总数",
                     value: "\(summary.totalDataPoints)",
                     color: .blue
                 )

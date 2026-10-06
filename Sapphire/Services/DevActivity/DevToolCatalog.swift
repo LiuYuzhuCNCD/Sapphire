@@ -19,7 +19,7 @@ enum DevTaskKind: String, Codable, CaseIterable, Identifiable, Equatable {
         switch self {
         case .ai: return "AI 代理"
         case .build: return "构建与测试"
-        case .command: return "Terminal Commands"
+        case .command: return "终端命令"
         }
     }
 

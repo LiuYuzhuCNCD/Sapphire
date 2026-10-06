@@ -81,7 +81,7 @@ class PermissionsManager: NSObject, ObservableObject, @MainActor CLLocationManag
     private var cancellables = Set<AnyCancellable>()
 
     public let allPermissions: [PermissionItem] = [
-        .init(type: .accessibility, title: "Accessibility", description: "Needed for media key presses, window snapping, and HUDs.", iconName: "figure.wave.circle.fill", iconColor: .purple, category: .required),
+        .init(type: .accessibility, title: "辅助功能", description: "Needed for media key presses, window snapping, and HUDs.", iconName: "figure.wave.circle.fill", iconColor: .purple, category: .required),
         .init(type: .fullDiskAccess, title: "完整磁盘访问", description: "Enables File Shelf, Intelligence file access, and deeper system integrations.", iconName: "folder.badge.gearshape", iconColor: .gray, category: .recommended),
         .init(type: .screenRecording, title: "屏幕录制", description: "Required for Gemini Live screen sharing, per-app audio capture, live window previews, and the hinge-driven desktop animation.", iconName: "record.circle", iconColor: .orange, category: .recommended),
         .init(type: .localNetwork, title: "Local Network", description: "Needed to discover and control supported media players on your network.", iconName: "network", iconColor: .cyan, category: .recommended),
