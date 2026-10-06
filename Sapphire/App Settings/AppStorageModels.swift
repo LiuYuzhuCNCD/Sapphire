@@ -994,7 +994,7 @@ private enum StorageScanner {
                 logicalSize = 0
                 failures.append(DirectoryScanFailure(
                     url: child,
-                    message: "Skipped a mounted volume. Scan that volume directly to include it."
+                    message: "已跳过某个已挂载卷。直接扫描该卷即可将其纳入。"
                 ))
             } else if collectCandidates,
                       !isSymbolicLink,
@@ -1806,7 +1806,7 @@ enum DirectorySize {
         }) else {
             measurement.failures.append(DirectoryScanFailure(
                 url: url,
-                message: "The folder path could not be represented by the file system."
+                message: "该文件夹路径无法被文件系统表示。"
             ))
             return measurement
         }
@@ -3650,7 +3650,7 @@ private struct StoragePresentedScan {
             }
             recommendations.append(CleanupRecommendation(
                 category: .duplicates,
-                description: "Byte-for-byte identical files that can be reviewed safely",
+                description: "逐字节完全相同的文件，可放心处理",
                 potentialSpaceFreed: size,
                 actionDescription: "Review \(duplicateGroups.count) duplicate group\(duplicateGroups.count == 1 ? "" : "s")",
                 isAutomatic: false,
