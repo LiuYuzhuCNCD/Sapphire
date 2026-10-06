@@ -1,0 +1,40 @@
+name: build-zh
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: macos-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 环境（Xcode 版本）
+        run: |
+          ls /Applications | grep -i xcode || true
+          xcodebuild -version || true
+          swift --version || true
+
+      - name: 解析 SwiftPM 依赖
+        run: |
+          xcodebuild -resolvePackageDependencies -project Sapphire.xcodeproj -scheme Sapphire
+
+      - name: 编译（先做无签名冒烟测试）
+        run: |
+          set -o pipefail
+          xcodebuild \
+            -project Sapphire.xcodeproj \
+            -scheme Sapphire \
+            -configuration Release \
+            -derivedDataPath build \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGN_IDENTITY="" \
+            build
+
+      - name: 产物定位
+        if: always()
+        run: find build -name "*.app" -maxdepth 6 -print || true
