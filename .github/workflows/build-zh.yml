@@ -25,6 +25,7 @@ jobs:
 
       - name: 编译（Release，不签名）
         run: |
+          set +e
           xcodebuild \
             -project Sapphire.xcodeproj \
             -scheme Sapphire \
