@@ -42,7 +42,7 @@ enum InstalledAppUpdateSource: Equatable {
         case .mozilla(.firefox): return "Mozilla"
         case .mozilla(.thunderbird): return "Mozilla"
         case .jsonManifest: return "应用更新清单"
-        case .visualStudioCode: return "Visual Studio Code Update"
+        case .visualStudioCode: return "Visual Studio Code 更新"
         case .androidStudio: return "Android Studio 更新"
         case .jetBrains: return "JetBrains 更新"
         case .microsoftEdge: return "Microsoft Edge 更新"
@@ -633,8 +633,8 @@ private enum InstalledAppHTTPError: LocalizedError {
 
     var errorDescription: String? {
         switch self {
-        case .insecureResponse: return "Update service redirected to an insecure address"
-        case .responseTooLarge: return "Update metadata was unexpectedly large"
+        case .insecureResponse: return "更新服务被重定向到不安全的地址"
+        case .responseTooLarge: return "更新元数据异常庞大"
         }
     }
 }

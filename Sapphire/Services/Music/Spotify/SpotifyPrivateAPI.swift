@@ -32,7 +32,7 @@ enum SpotAPIError: Error, LocalizedError {
         case .missingData(let field): return "Missing required data: \(field)"
         case .urlConstructionFailed(let url): return "Failed to construct URL: \(url)"
         case .loginCancelled: return "登录已被用户取消。"
-        case .connectionClosedUnexpectedly: return "The server closed the connection unexpectedly."
+        case .connectionClosedUnexpectedly: return "服务器意外关闭了连接。"
         case .apiError(let message): return "Spotify API Error: \(message)"
         case .rateLimited(let message): return "Spotify is rate limiting requests: \(message)"
         }

@@ -21,7 +21,7 @@ enum FocusScheduleRepeat: String, Codable, CaseIterable, Identifiable {
         case .daily: return "每天"
         case .weekdays: return "Weekdays"
         case .weekly: return "Weekly"
-        case .custom: return "Specific days"
+        case .custom: return "指定日期"
         case .monthly: return "每月"
         }
     }

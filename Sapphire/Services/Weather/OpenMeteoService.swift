@@ -318,7 +318,7 @@ final class OpenMeteoService {
         case ..<3:   return "低"
         case ..<6:   return "适中"
         case ..<8:   return "高"
-        case ..<11:  return "Very High"
+        case ..<11:  return "极高"
         default:     return "Extreme"
         }
     }

@@ -116,7 +116,7 @@ enum EQPreset: String, CaseIterable, Identifiable {
         case .flat: "平坦"
         case .bassBoost: "低音增强器"
         case .trebleBoost: "Treble Booster"
-        case .vocalBoost: "Vocal Booster"
+        case .vocalBoost: "人声增强器"
         case .acoustic: "原声"
         case .rock: "摇滚"
         case .electronic: "电子"

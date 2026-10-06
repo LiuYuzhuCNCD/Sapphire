@@ -262,17 +262,17 @@ private enum UpdateMetadataError: LocalizedError {
 
     var errorDescription: String? {
         switch self {
-        case .invalidResponse: return "The update server returned an invalid response."
-        case .insecureRedirect: return "The update server redirected to an untrusted address."
+        case .invalidResponse: return "更新服务器返回无效响应。"
+        case .insecureRedirect: return "更新服务器重定向到不受信任的地址。"
         case .httpStatus(let status): return "The update server returned HTTP \(status)."
         case .rateLimited(let retry):
             if let retry { return "GitHub rate-limited update checks. Retrying \(retry.formatted(date: .omitted, time: .shortened))." }
             return "GitHub rate-limited update checks. Sapphire will retry automatically."
-        case .responseTooLarge: return "The update metadata was unexpectedly large."
+        case .responseTooLarge: return "更新元数据异常庞大。"
         case .emptyCache: return "没有可用的缓存更新信息。"
-        case .invalidMetadata: return "The update information could not be verified."
+        case .invalidMetadata: return "无法验证更新信息。"
         case .noEligibleRelease: return "所选通道没有可用版本。"
-        case .noEligibleAsset: return "This release does not include a trusted Sapphire ZIP for this Mac."
+        case .noEligibleAsset: return "此版本未提供适用于本机的可信 Sapphire 压缩包。"
         }
     }
 }

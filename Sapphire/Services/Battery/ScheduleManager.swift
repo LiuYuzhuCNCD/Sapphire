@@ -19,12 +19,12 @@ enum TaskAction: String, Codable, CaseIterable, Identifiable {
     var displayName: String {
         switch self {
         case .setChargeLimit: "设置充电上限"
-        case .topUp: "Top Up (Charge to 100%)"
+        case .topUp: "补电（充至 100%）"
         case .dischargeTo: "放电至"
         case .startCalibration: "开始校准"
-        case .setFanAuto: "Set Fans to Automatic"
-        case .setFanConstant: "Set Fans to Constant RPM"
-        case .setFanSensorBased: "Set Fans to Sensor-based"
+        case .setFanAuto: "风扇设为自动"
+        case .setFanConstant: "风扇设为固定转速"
+        case .setFanSensorBased: "风扇设为传感器控制"
         }
     }
 }

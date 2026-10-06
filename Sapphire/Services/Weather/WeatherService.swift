@@ -403,14 +403,14 @@ enum WeatherServiceError: LocalizedError {
 
     var errorDescription: String? {
         switch self {
-        case .missingAPIKey: return "Weather API key is not configured."
+        case .missingAPIKey: return "未配置天气 API 密钥。"
         case .locationDisabled: return "系统级定位服务已关闭。"
         case .locationDenied: return "位置访问被拒绝。请在系统设置中启用。"
-        case .locationNotDetermined: return "Grant Location access in Sapphire's Permissions settings to show weather."
+        case .locationNotDetermined: return "在 Sapphire 的权限设置中授予位置访问即可显示天气。"
         case .locationUnavailable: return "无法确定你的位置。"
-        case .unknownAuthorization: return "Unknown location authorization status."
+        case .unknownAuthorization: return "位置授权状态未知。"
         case .invalidURL: return "天气 API 地址无效。"
-        case .unavailableData: return "Weather data is temporarily unavailable."
+        case .unavailableData: return "天气数据暂时不可用。"
         }
     }
 }

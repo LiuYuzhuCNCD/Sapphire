@@ -40,7 +40,7 @@ enum RegistrationStep: Equatable {
         switch self {
         case .scanning: return "请直视摄像头开始。"
         case .askExtended: return "基础注册完成。"
-        case .finalizing: return "Securing your face profile..."
+        case .finalizing: return "正在加密你的面容数据…"
         }
     }
 }
@@ -70,11 +70,11 @@ enum FacePoseBucket: String, CaseIterable {
         switch self {
         case .center: return "把脸对准中央"
         case .left: return "Slowly turn left"
-        case .right: return "Slowly turn right"
+        case .right: return "缓慢向右转"
         case .up: return "稍微向上看"
         case .down: return "稍微向下看"
-        case .tiltLeft: return "Tilt head left"
-        case .tiltRight: return "Tilt head right"
+        case .tiltLeft: return "头向左倾"
+        case .tiltRight: return "头向右倾"
         case .closer: return "再靠近一些"
         case .farther: return "再退后一些"
         }

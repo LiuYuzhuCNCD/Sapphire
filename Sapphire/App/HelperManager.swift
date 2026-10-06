@@ -633,7 +633,7 @@ extension SMAppService.Status: CustomStringConvertible {
         switch self {
         case .notRegistered: return "未注册"
         case .enabled: return "已启用"
-        case .requiresApproval: return "Requires Approval"
+        case .requiresApproval: return "需要批准"
         case .notFound: return "未找到"
         @unknown default: return "Unknown"
         }

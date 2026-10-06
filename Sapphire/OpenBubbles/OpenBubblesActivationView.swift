@@ -42,7 +42,7 @@ struct OpenBubblesActivationView: View {
         switch buttonState {
         case .idle: return "生成一次性激活码"
         case .processing: return "正在生成…"
-        case .success: return "Succeeded!"
+        case .success: return "成功！"
         case .error: return "发生错误"
         }
     }

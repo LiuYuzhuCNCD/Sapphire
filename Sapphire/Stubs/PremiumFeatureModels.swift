@@ -212,14 +212,14 @@ enum MenuBarRevealConditionKind: String, Codable, CaseIterable, Identifiable {
         case .batteryBelow: "电量低于"
         case .batteryAbove: "电量高于"
         case .charging: "充电中"
-        case .onBatteryPower: "On Battery Power"
+        case .onBatteryPower: "使用电池供电"
         case .focusActive: "任意专注模式生效时"
         case .focusIdentifier: "专注模式为"
-        case .wifiEquals: "Wi-Fi Network Is"
-        case .wifiConnected: "Wi-Fi Connected"
-        case .scriptSucceeds: "Script Exits Successfully"
-        case .scriptFails: "Script Fails"
-        case .scriptExitCode: "Script Exit Code Is"
+        case .wifiEquals: "Wi-Fi 网络为"
+        case .wifiConnected: "Wi-Fi 已连接"
+        case .scriptSucceeds: "脚本成功退出"
+        case .scriptFails: "脚本失败"
+        case .scriptExitCode: "脚本退出码为"
         }
     }
 

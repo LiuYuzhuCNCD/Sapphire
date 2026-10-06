@@ -1719,7 +1719,7 @@ struct NotificationLiveActivityView: View {
 struct AudioMessageView: View {
     let attachment: MessageAttachment
     @Binding var playbackState: NotificationLiveActivityView.AudioPlaybackState
-    private var buttonLabel: String { switch playbackState { case .idle: "Play Audio Message"; case .playing: "Playing..."; case .finished: "Playback Finished" } }
+    private var buttonLabel: String { switch playbackState { case .idle: "播放语音消息"; case .playing: "Playing..."; case .finished: "播放结束" } }
     private var buttonIcon: String { switch playbackState { case .idle: "play.circle.fill"; case .playing: "stop.circle.fill"; case .finished: "checkmark.circle.fill" } }
     var body: some View {
         Button(action: { if playbackState == .idle { iMessageActionManager.shared.playAudio(at: attachment.localURL); playbackState = .playing } }) {

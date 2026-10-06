@@ -34,7 +34,7 @@ enum ArchivePostExtractAction: String, Codable, CaseIterable, Identifiable {
     var displayName: String {
         switch self {
         case .reveal: "在访达中显示"
-        case .open: "Open Folder"
+        case .open: "打开文件夹"
         case .none: "Nothing"
         }
     }

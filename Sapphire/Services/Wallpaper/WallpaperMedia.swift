@@ -62,7 +62,7 @@ enum WallpaperScaling: String, Codable, CaseIterable, Identifiable {
         switch self {
         case .fill: return "铺满屏幕"
         case .fit: return "适应屏幕"
-        case .stretch: return "Stretch to Fill"
+        case .stretch: return "拉伸铺满"
         }
     }
 

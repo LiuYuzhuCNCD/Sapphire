@@ -31,7 +31,7 @@ public enum StatType: String, Codable, CaseIterable, Identifiable {
     var displayName: String {
         switch self {
         case .cpu: return "CPU 占用"
-        case .ram: return "RAM Usage"
+        case .ram: return "内存占用"
         case .gpu: return "GPU 占用"
         case .disk: return "磁盘活动"
         case .systemPower: return "系统功耗"
@@ -200,7 +200,7 @@ enum WeatherInfoType: String, Codable, CaseIterable, Identifiable {
         case .precipitation: "Precipitation"
         case .sunrise: "Sunrise"
         case .sunset: "Sunset"
-        case .uvIndex: "UV Index"
+        case .uvIndex: "紫外线指数"
         case .visibility: "Visibility"
         case .pressure: "Pressure"
         case .locationName: "位置名称"
@@ -219,7 +219,7 @@ enum FocusDisplayMode: String, Codable, CaseIterable, Identifiable {
     var id: String { self.rawValue }
     var displayName: String {
         switch self {
-        case .full: "Show Full Name"
+        case .full: "显示完整名称"
         case .compact: "仅图标（开/关）"
         }
     }
@@ -287,8 +287,8 @@ enum BatteryInfoType: String, Codable, CaseIterable, Identifiable {
     var displayName: String {
         switch self {
         case .percentage: "Percentage"
-        case .statusIcon: "Status Icon"
-        case .statusText: "Status Text"
+        case .statusIcon: "状态图标"
+        case .statusText: "状态文字"
         case .batteryIcon: "电池图标"
         case .estimatedTime: "预计时间"
         }
@@ -308,8 +308,8 @@ enum SnapWindowAnimation: String, Codable, CaseIterable, Identifiable {
 
     var summary: String {
         switch self {
-        case .fast: return "Windows jump straight to their zone."
-        case .smooth: return "Windows glide into their zone with a short eased animation."
+        case .fast: return "窗口直接跳到对应区域。"
+        case .smooth: return "窗口以短促缓动动画滑入对应区域。"
         }
     }
 }
@@ -323,7 +323,7 @@ enum FaceIDLocationPolicy: String, Codable, CaseIterable, Identifiable {
     var displayName: String {
         switch self {
         case .everywhere: return "所有位置"
-        case .selectedWiFiNetworks: return "Selected Wi-Fi Networks"
+        case .selectedWiFiNetworks: return "选定的 Wi-Fi 网络"
         }
     }
 }
@@ -457,7 +457,7 @@ enum MediaSource: String, Codable, CaseIterable, Identifiable {
     var id: String { self.rawValue }
     var displayName: String {
         switch self {
-        case .system: "System Wide"
+        case .system: "全系统"
         case .spotify: "Spotify"
         case .appleMusic: "Apple Music"
         }
@@ -587,9 +587,9 @@ enum MusicLongPressAction: String, Codable, CaseIterable, Identifiable, Equatabl
         case .like: return "收藏"
         case .playPause: return "播放 / 暂停"
         case .nextTrack: return "下一首"
-        case .previousTrack: return "Previous Track"
-        case .openQueue: return "Open Queue"
-        case .openDevices: return "Open Devices"
+        case .previousTrack: return "上一首"
+        case .openQueue: return "打开队列"
+        case .openDevices: return "打开设备"
         }
     }
 
@@ -700,7 +700,7 @@ enum NotesSwipeAction: String, Codable, CaseIterable, Identifiable {
     var id: String { rawValue }
     var displayName: String {
         switch self {
-        case .toggleDone: return "Toggle Done"
+        case .toggleDone: return "切换完成"
         case .copy: return "复制"
         case .delete: return "删除"
         case .none: return "无"
@@ -774,7 +774,7 @@ enum DMGPostInstallAction: String, Codable, CaseIterable, Identifiable {
 
     var displayName: String {
         switch self {
-        case .open: "Open the app"
+        case .open: "打开应用"
         case .revealInFinder: "在访达中显示"
         case .none: "不执行任何操作"
         }
@@ -798,7 +798,7 @@ enum FileOperationProgressDisplay: String, Codable, CaseIterable, Identifiable {
     var displayName: String {
         switch self {
         case .liveActivity: "实时活动"
-        case .popup: "Popup Window"
+        case .popup: "弹出窗口"
         }
     }
 }
@@ -2733,8 +2733,8 @@ enum FocusShortcutSyncMode: String, Codable, CaseIterable, Identifiable {
     var displayName: String {
         switch self {
         case .none: return "关"
-        case .timer: return "Sync Timer"
-        case .stopwatch: return "Sync Stopwatch"
+        case .timer: return "同步计时器"
+        case .stopwatch: return "同步秒表"
         }
     }
 }
@@ -2772,8 +2772,8 @@ enum FocusAmbientSoundType: String, Codable, CaseIterable, Identifiable {
 
     var displayName: String {
         switch self {
-        case .whiteNoise: return "White Noise"
-        case .pinkNoise: return "Pink Noise"
+        case .whiteNoise: return "白噪音"
+        case .pinkNoise: return "粉噪音"
         case .brownNoise: return "棕噪音"
         case .rain: return "Rain"
         }
@@ -2829,7 +2829,7 @@ enum GeneralSettingType: String, CaseIterable, Identifiable, Equatable {
     var displayName: String {
         switch self {
         case .expandOnHover: "悬停自动展开"
-        case .swipeToSwitchWidgets: "Swipe to Switch Widgets"
+        case .swipeToSwitchWidgets: "滑动切换组件"
         case .enableOpeningBounce: "打开组件时弹跳"
         case .capsLockHorizontalLock: "大写锁定时锁定光标横移"
         }
@@ -3061,45 +3061,45 @@ enum SettingsSection: String, CaseIterable, Identifiable {
     var shortDescription: String {
         switch self {
         case .general: "应用核心行为、启动选项、动画与刘海控制。"
-        case .systemEnhance: "Window previews, app switching, dock controls, and display behavior."
-        case .apps: "Review installed applications, inspect bundle details, and safely move unwanted apps to Trash."
-        case .storage: "Find large folders and reclaim space with transparent, user-approved cleanup."
+        case .systemEnhance: "窗口预览、应用切换、程序坞控制与显示器行为。"
+        case .apps: "检查已安装应用、查看包详情，并安全地把不需要的应用移到废纸篓。"
+        case .storage: "找出大文件夹，经用户确认后透明地回收空间。"
         case .widgets: "选择刘海中出现哪些组件及其排序。"
-        case .liveActivities: "Control which live activities can surface and auto-expand in the notch."
-        case .appearance: "Tune the notch look, materials, colors, and layout styling."
+        case .liveActivities: "控制哪些实时活动可以在刘海出现并自动展开。"
+        case .appearance: "调整刘海的外观、材质、色彩与布局样式。"
         case .lockScreen: "配置 Mac 锁屏时 Sapphire 的内容与行为。"
-        case .bluetoothUnlock: "Set up proximity-based authentication and trusted device behavior."
+        case .bluetoothUnlock: "设置基于靠近的验证与可信设备行为。"
         case .shortcuts: "管理 Sapphire 中显示的快捷操作与快捷面板。"
         case .keyboardShortcuts: "Reference page listing every keyboard shortcut in Sapphire — global hotkeys, snap zones, and in-app shortcuts."
         case .snapZones: "配置窗口吸附行为、布局与区域操作。"
         case .audio: "音频调节、均衡器与分应用音量调节。"
-        case .battery: "Battery widgets, history, charging preferences, and power-related controls."
+        case .battery: "电池组件、历史、充电偏好与电源相关控制。"
         case .bluetooth: "蓝牙设备整合、可见性与连接行为。"
-        case .hud: "Heads-up display overlays for volume, brightness, keyboard, and media feedback."
+        case .hud: "音量、亮度、键盘与媒体反馈的浮层提示。"
         case .notifications: "选择 Sapphire 镜像或增强哪些系统通知。"
         case .neardrop: "附近共享偏好、传输与设备发现选项。"
-        case .continuity: "Pair an Android phone for clipboard, notifications, media, battery, and Instant Hotspot."
+        case .continuity: "配对安卓手机，实现剪贴板、通知、媒体、电量与即时热点。"
         case .fileShelf: "管理临时文件存储、拖放目标与文件架行为。"
-        case .notes: "Quick notes widget, click-to-expand behavior, and notch bar access."
+        case .notes: "快速便签组件、点击展开行为与刘海栏入口。"
         case .clipboard: "剪贴板历史、监控与刘海剪贴板快捷方式。"
         case .emoji: "Slack-style emoji typing with :shortcode: suggestions and a full search picker."
         case .mouse: "鼠标与触控板的滚动、加速与按键自定义。"
-        case .monitoring: "Menu bar readouts and notifications for CPU, memory, disk, and network."
-        case .devActivity: "Track AI agents, builds, and terminal commands, and keep the Mac awake while they run."
+        case .monitoring: "菜单栏中的 CPU、内存、磁盘与网络读数与通知。"
+        case .devActivity: "追踪 AI 智能体、构建与终端命令，运行期间让 Mac 保持唤醒。"
         case .archives: "Extract ZIP, RAR, 7-Zip, TAR, and other archives — or auto-mount and install disk images (DMGs) — from anywhere."
-        case .mirror: "Mirror widget showing live camera feed, with expandable fullscreen view."
-        case .caffeine: "Keep your Mac awake, clamshell sleep behavior, and lid-angle display controls."
+        case .mirror: "显示实时摄像头画面的镜像组件，可展开全屏。"
+        case .caffeine: "让 Mac 保持唤醒、合盖睡眠行为与按开合角度的屏幕控制。"
         case .music: "音乐组件来源、播放控制与媒体整合。"
-        case .weather: "Weather widget data sources, units, and location-based behavior."
-        case .calendar: "Calendar and reminder integrations shown in widgets and live activities."
+        case .weather: "天气组件的数据源、单位与基于位置的行为。"
+        case .calendar: "在组件与实时活动中显示的日历与提醒整合。"
         case .eyeBreak: "休息提醒、计时与专注提示，养成更健康的用屏习惯。"
-        case .focusSession: "Session-style focus mode with timers, app/website blocking, and session history."
-        case .appLock: "Lock apps behind Touch ID or password — blur overlays, idle/sleep auto-lock, and auto-close."
-        case .intelligence: "Sapphire Blip — Mac agent with memory, skills, tools, and computer use."
-        case .sports: "Sports widget settings, favorite teams selection, and scoreboard configurations."
-        case .finance: "Stock market ticker configurations, favorite stocks, and trendline visualizations."
-        case .dockLayouts: "Save Dock layouts as presets and switch between them with a click or hotkey."
-        case .mediaOptimizer: "Automatically shrink images, compress media, and extract text with OCR."
+        case .focusSession: "会话式专注模式：计时器、应用/网站屏蔽与会话历史。"
+        case .appLock: "用触控 ID 或密码锁定应用——模糊遮罩、空闲/睡眠自动锁定与自动关闭。"
+        case .intelligence: "Sapphire Blip——具备记忆、技能、工具与电脑操作能力的 Mac 智能体。"
+        case .sports: "体育组件设置、主队选择与记分板配置。"
+        case .finance: "股市行情配置、自选股与走势图可视化。"
+        case .dockLayouts: "把程序坞布局存为预设，一键或快捷键切换。"
+        case .mediaOptimizer: "自动压缩图片与媒体，并用 OCR 提取文字。"
 
         case .about: "App version details, Sapphire updates, release channels, credits, links, and project information."
         }
@@ -3109,7 +3109,7 @@ enum SettingsSection: String, CaseIterable, Identifiable {
         switch self {
         case .general: ["startup", "login", "animation", "notch", "system", "behavior", "analytics", "google", "privacy", "tracking", "telemetry", "swipe", "hide", "lock"]
         case .systemEnhance: ["dock", "preview", "previews", "alt tab", "cmd tab", "window", "switcher", "calendar", "compact", "layout", "lock dock", "monitor", "paste", "plain text", "formatting", "running apps", "hide apps", "static only", "hinge", "lid", "angle", "fold", "folding", "animation", "iphone duo"]
-        case .apps: ["apps", "applications", "uninstall", "cleaner", "appcleaner", "bundle", "extensions", "startup", "update", "updates", "检查更新", "upgrade", "version", "new version", "auto update", "release"]
+        case .apps: ["apps", "applications", "uninstall", "cleaner", "appcleaner", "bundle", "extensions", "startup", "update", "updates", "检查更新", "upgrade", "version", "新版本", "auto update", "release"]
         case .storage: ["storage", "disk", "space", "large files", "cache", "cleanup", "daisy disk", "scanner"]
         case .widgets: ["widget", "widgets", "reorder", "layout"]
         case .liveActivities: ["live", "activity", "activities", "dynamic", "focus"]
